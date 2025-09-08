@@ -3,9 +3,9 @@
 
 export default function Home() {
   return (
-    <main 
+    <main
       className="text-white overflow-hidden"
-      style={{ backgroundColor: '#030303' }}
+      style={{ backgroundColor: "#030303" }}
     >
       {/* Hero Content */}
       <section
