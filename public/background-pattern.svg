@@ -12,25 +12,25 @@
       <stop offset="100%" style="stop-color:rgba(0,0,0,0.9);stop-opacity:1" />
     </linearGradient>
   </defs>
-  
+
   <!-- Base background -->
   <rect width="1920" height="1080" fill="#000000"/>
-  
+
   <!-- Grid pattern -->
   <rect width="1920" height="1080" fill="url(#grid)"/>
-  
+
   <!-- Dot pattern -->
   <rect width="1920" height="1080" fill="url(#dots)"/>
-  
+
   <!-- Gradient overlay -->
   <rect width="1920" height="1080" fill="url(#fadeGradient)"/>
-  
+
   <!-- Floating geometric shapes -->
   <circle cx="200" cy="150" r="3" fill="rgba(59, 130, 246, 0.3)" opacity="0.6"/>
   <circle cx="1700" cy="300" r="2" fill="rgba(249, 115, 22, 0.4)" opacity="0.8"/>
   <circle cx="300" cy="800" r="4" fill="rgba(34, 197, 94, 0.2)" opacity="0.7"/>
   <circle cx="1600" cy="900" r="2.5" fill="rgba(168, 85, 247, 0.3)" opacity="0.5"/>
-  
+
   <!-- Abstract lines -->
   <path d="M0,540 Q480,300 960,540 T1920,540" stroke="rgba(59, 130, 246, 0.1)" stroke-width="2" fill="none"/>
   <path d="M0,600 Q480,360 960,600 T1920,600" stroke="rgba(249, 115, 22, 0.08)" stroke-width="1.5" fill="none"/>
