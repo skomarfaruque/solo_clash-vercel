@@ -3,7 +3,10 @@
 
 export default function Home() {
   return (
-    <main className="bg-black text-white overflow-hidden">
+    <main 
+      className="text-white overflow-hidden"
+      style={{ backgroundColor: '#030303' }}
+    >
       {/* Hero Content */}
       <section
         className="justify-center text-center px-6 lg:px-20"
