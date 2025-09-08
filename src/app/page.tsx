@@ -12,7 +12,7 @@ export default function Home() {
           backgroundSize: "contain",
           backgroundPosition: "top",
           backgroundRepeat: "no-repeat",
-          height: "100vh",
+          height: "1080px",
         }}
       >
         {/* Content container */}

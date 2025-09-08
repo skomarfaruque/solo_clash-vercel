@@ -28,8 +28,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {/* Navigation Header */}
-        <header className="absolute top-10 w-full z-50 bg-black/80 backdrop-blur-md border-b border-gray-800">
-          <nav className="max-w-7xl mx-auto px-6 lg:px-8">
+        <header className="absolute top-10 w-full z-50">
+          <nav className="w-[1320px] mx-auto px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
               {/* Logo */}
               <div className="flex items-center">
