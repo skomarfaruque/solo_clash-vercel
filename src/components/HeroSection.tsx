@@ -1,3 +1,5 @@
+import StartNowButton from "./StartNowButton";
+
 export default function HeroSection() {
   return (
     <section
@@ -31,12 +33,10 @@ export default function HeroSection() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="px-8 py-4 rounded-xl bg-gradient-to-r from-orange-400 to-orange-600 text-black font-semibold shadow-lg hover:scale-105 transition">
-            Start Now →
-          </button>
-          <button className="px-8 py-4 rounded-xl border border-gray-600 text-gray-300 hover:text-white hover:border-gray-400 transition">
+          <StartNowButton>Start Now</StartNowButton>
+          <span className="text-gray-300 hover:text-white transition cursor-pointer">
             See Account Types
-          </button>
+          </span>
         </div>
       </div>
     </section>
