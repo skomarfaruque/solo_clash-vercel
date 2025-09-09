@@ -1,4 +1,5 @@
 import FeatureCard from "./FeatureCard";
+import HomeButton from "./HomeButton";
 
 export default function FeaturesSection() {
   return (
@@ -8,9 +9,7 @@ export default function FeaturesSection() {
     >
       <div className="max-w-[1320px] mx-auto">
         {/* Top Badge */}
-        <div className="inline-block px-4 py-1 mb-6 text-sm rounded-full border border-orange-500 text-orange-400">
-          WHY CHOOSE US →
-        </div>
+        <HomeButton>WHY CHOOSE US</HomeButton>
 
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-white">

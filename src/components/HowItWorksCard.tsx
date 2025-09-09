@@ -40,7 +40,7 @@ export default function HowItWorksCard({
         </div>
         <p
           className="font-normal text-base leading-6 text-left"
-          style={{ color: "#B7B7B7" }}
+          style={{ color: "#B7B7B7", width: "326px" }}
         >
           {description}
         </p>

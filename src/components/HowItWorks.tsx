@@ -1,4 +1,5 @@
 import HowItWorksCard from "./HowItWorksCard";
+import HomeButton from "./HomeButton";
 
 export default function HowItWorks() {
   return (
@@ -8,9 +9,7 @@ export default function HowItWorks() {
     >
       <div className="flex flex-col justify-center items-center gap-6">
         {/* Top Badge */}
-        <div className="inline-block px-4 py-1 mb-6 text-sm rounded-full border border-orange-500 text-orange-400">
-          How it works →
-        </div>
+        <HomeButton>How it works</HomeButton>
 
         {/* Heading */}
         <h2
