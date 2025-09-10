@@ -1,3 +1,5 @@
+import SubscriptionButton from "./SubscriptionButton";
+
 interface SubscriptionCardProps {
   readonly backgroundImage: string;
   readonly step: string;
@@ -24,7 +26,7 @@ export default function SubscriptionCard({
         padding: "32px",
       }}
     >
-      <div>
+      <div className="flex flex-col gap-8">
         {/* Pricing Header */}
         <div className="flex justify-between items-center mb-4">
           <div>
@@ -104,24 +106,8 @@ export default function SubscriptionCard({
           </div>
         </div>
 
-        {/* Title and Step */}
-        <div className="flex justify-between items-start mb-2">
-          <h3
-            className="font-semibold text-2xl leading-tight text-white text-left"
-            style={{ width: "326px" }}
-          >
-            {title}
-          </h3>
-          <span className="font-normal text-sm leading-6 uppercase text-[#FB782D]">
-            {step}
-          </span>
-        </div>
-        <p
-          className="font-normal text-base leading-6 text-left"
-          style={{ color: "#B7B7B7", width: "326px" }}
-        >
-          {description}
-        </p>
+        {/* Button */}
+        <SubscriptionButton text="Start challenge" />
       </div>
     </div>
   );
