@@ -1,6 +1,7 @@
 import HomeButton from "./HomeButton";
 import SubscriptionCard from "./SubscriptionCard";
 import SubscriptionActiveCard from "./SubscriptionActiveCard";
+import ViewFullPriceButton from "./ViewFullPriceButton";
 
 export default function Subscriptions() {
   return (
@@ -34,6 +35,7 @@ export default function Subscriptions() {
             step="Basic"
             title="Starter Plan"
             description="Perfect for beginners looking to start their trading journey."
+            isActive={false}
           />
 
           {/* Card 2 - Active */}
@@ -42,6 +44,7 @@ export default function Subscriptions() {
             step="Pro"
             title="Professional Plan"
             description="Advanced features for experienced traders who need more tools."
+            isActive={true}
           />
 
           {/* Card 3 */}
@@ -50,7 +53,13 @@ export default function Subscriptions() {
             step="Elite"
             title="Elite Plan"
             description="Premium access with all features and priority support."
+            isActive={false}
           />
+        </div>
+
+        {/* View Full Price Button */}
+        <div style={{ marginTop: "56px" }}>
+          <ViewFullPriceButton text="View full pricing" />
         </div>
       </div>
     </section>

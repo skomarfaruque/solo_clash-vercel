@@ -1,10 +1,12 @@
 import SubscriptionButton from "./SubscriptionButton";
+import SubscriptionActiveButton from "./SubscriptionActiveButton";
 
 interface SubscriptionCardProps {
   readonly backgroundImage: string;
   readonly step: string;
   readonly title: string;
   readonly description: string;
+  readonly isActive: boolean;
 }
 
 export default function SubscriptionCard({
@@ -12,6 +14,7 @@ export default function SubscriptionCard({
   step,
   title,
   description,
+  isActive,
 }: SubscriptionCardProps) {
   return (
     <div
@@ -107,7 +110,11 @@ export default function SubscriptionCard({
         </div>
 
         {/* Button */}
-        <SubscriptionButton text="Start challenge" />
+        {isActive ? (
+          <SubscriptionActiveButton text="Current Plan" />
+        ) : (
+          <SubscriptionButton text="Start challenge" />
+        )}
       </div>
     </div>
   );
