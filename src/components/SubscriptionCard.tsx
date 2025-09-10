@@ -31,8 +31,17 @@ export default function SubscriptionCard({
             <div className="text-white text-2xl font-bold text-left">$25K</div>
             <div className="text-gray-400 text-sm text-left">Buying Power</div>
           </div>
-          <div className="text-white text-xl font-semibold text-left">
-            $49/mo
+          <div 
+            className="text-right font-semibold text-2xl leading-6"
+            style={{ color: "#2AB6DC" }}
+          >
+            $49/mo{' '}
+            <sup
+              className="font-normal text-sm leading-6"
+              style={{ color: "#B7B7B7" }}
+            >
+              USD
+            </sup>
           </div>
         </div>
 
