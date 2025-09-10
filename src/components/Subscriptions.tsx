@@ -37,7 +37,7 @@ export default function Subscriptions() {
           />
 
           {/* Card 2 - Active */}
-          <SubscriptionActiveCard
+          <SubscriptionCard
             backgroundImage="subscription_active_bg.svg"
             step="Pro"
             title="Professional Plan"

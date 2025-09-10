@@ -21,12 +21,81 @@ export default function SubscriptionCard({
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        paddingLeft: "32px",
-        paddingTop: "31px",
-        paddingRight: "29px",
+        padding: "32px",
       }}
     >
       <div>
+        {/* Pricing Header */}
+        <div className="flex justify-between items-center mb-4">
+          <div>
+            <div className="text-white text-2xl font-bold text-left">$25K</div>
+            <div className="text-gray-400 text-sm text-left">Buying Power</div>
+          </div>
+          <div className="text-white text-xl font-semibold text-left">
+            $49/mo
+          </div>
+        </div>
+
+        {/* Account Size Section */}
+        <div className="mb-4">
+          <div className="space-y-4">
+            <div className="flex justify-between items-center">
+              <span
+                className="font-normal text-base leading-6"
+                style={{ color: "#B7B7B7" }}
+              >
+                Account Size
+              </span>
+              <span className="text-white text-sm">$25,000</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span
+                className="font-normal text-base leading-6"
+                style={{ color: "#B7B7B7" }}
+              >
+                Row 2 left
+              </span>
+              <span className="text-white text-sm">Row 2 right</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span
+                className="font-normal text-base leading-6"
+                style={{ color: "#B7B7B7" }}
+              >
+                Row 3 left
+              </span>
+              <span className="text-white text-sm">$90000</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span
+                className="font-normal text-base leading-6"
+                style={{ color: "#B7B7B7" }}
+              >
+                Row 4 left
+              </span>
+              <span className="text-white text-sm">$4000</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span
+                className="font-normal text-base leading-6"
+                style={{ color: "#B7B7B7" }}
+              >
+                Row 5 left
+              </span>
+              <span className="text-white text-sm">$100</span>
+            </div>
+            <div className="flex justify-start items-center">
+              <span
+                className="font-normal text-base leading-6"
+                style={{ color: "#B7B7B7" }}
+              >
+                VolSys & VolBook included
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Title and Step */}
         <div className="flex justify-between items-start mb-2">
           <h3
             className="font-semibold text-2xl leading-tight text-white text-left"
