@@ -5,6 +5,7 @@ import FeaturesSection from "../components/FeaturesSection";
 import HeroSection from "../components/HeroSection";
 import HowItWorks from "../components/HowItWorks";
 import Subscriptions from "../components/Subscriptions";
+import SpinWinTrade from "../components/SpinWinTrade";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <FeaturesSection />
       <HowItWorks />
       <Subscriptions />
+      <SpinWinTrade />
     </main>
   );
 }
