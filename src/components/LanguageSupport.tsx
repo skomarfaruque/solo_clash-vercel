@@ -1,4 +1,6 @@
 // components/LanguageSupport.tsx
+import "./LanguageSupport.css";
+
 export default function LanguageSupport() {
   const languages = [
     "English",
@@ -24,7 +26,13 @@ export default function LanguageSupport() {
         {languages.map((lang) => (
           <button
             key={lang}
-            className="px-4 py-2 border border-white/60 rounded-full text-white text-sm hover:bg-white hover:text-black transition"
+            className="language-button px-4 py-2 text-sm hover:cursor-pointer transition"
+            style={{
+              border: "1px solid rgba(255, 255, 255, 0.12)",
+              borderRadius: "62px",
+              color: "#B7B7B7",
+              background: "transparent",
+            }}
           >
             {lang}
           </button>
