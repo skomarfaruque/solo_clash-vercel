@@ -215,7 +215,7 @@ export default function Footer() {
         </div>
 
         {/* Support Contact Info */}
-        <div className="space-y-3">
+        <div className="space-y-3 pb-[40px] border-b border-gray-800">
           <div className="flex items-center space-x-3">
             {/* Email Icon */}
             <svg

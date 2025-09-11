@@ -10,7 +10,7 @@ export default function LanguageSupport() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center py-10">
+    <div className="flex flex-col items-center justify-center pt-10">
       {/* Title */}
       <div className="flex items-center space-x-2 mb-6">
         <span className="text-white text-lg">🌐</span>
