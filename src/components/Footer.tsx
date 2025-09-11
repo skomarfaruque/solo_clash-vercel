@@ -1,3 +1,5 @@
+import LanguageSupport from "./LanguageSupport";
+
 export default function Footer() {
   return (
     <footer
@@ -251,6 +253,7 @@ export default function Footer() {
             </span>
           </div>
         </div>
+        <LanguageSupport />
 
         {/* Bottom Section */}
         <div className="border-t border-gray-800 mt-12 pt-8">
