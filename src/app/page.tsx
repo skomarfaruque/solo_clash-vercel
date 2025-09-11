@@ -7,6 +7,7 @@ import HowItWorks from "../components/HowItWorks";
 import Subscriptions from "../components/Subscriptions";
 import SpinWinTrade from "../components/SpinWinTrade";
 import Faq from "../components/Faq";
+import Banner from "../components/Banner";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Subscriptions />
       <SpinWinTrade />
       <Faq />
+      <Banner />
     </main>
   );
 }
