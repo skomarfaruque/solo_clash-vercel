@@ -1,7 +1,10 @@
 // components/StartNowButton.jsx
 export default function StartNowButton({ children }) {
   return (
-    <button className="relative inline-flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-300">
+    <button
+      className="relative inline-flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-300 gap-5 cursor-pointer"
+      style={{ top: "28px" }}
+    >
       <svg
         width="268"
         height="111"
