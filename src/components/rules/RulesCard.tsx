@@ -13,9 +13,8 @@ export default function RulesCard({
 }: FeatureCardProps) {
   return (
     <div
-      className="rounded-2xl hover:scale-105 transition flex flex-col items-center text-center p-6 relative"
+      className="rounded-2xl hover:scale-105 transition flex flex-col text-center p-6 relative w-full"
       style={{
-        width: "424px",
         height: "266px",
         backgroundImage: "url('/rules_card_bg.svg')",
         backgroundSize: "cover",

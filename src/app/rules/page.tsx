@@ -17,10 +17,7 @@ export default function RulesPage() {
     >
       <HeroSection />
       <RulesSection />
-      <HowItWorks />
-      <Subscriptions />
-      <SpinWinTrade />
-      <Faq />
+
       <Banner />
     </main>
   );
