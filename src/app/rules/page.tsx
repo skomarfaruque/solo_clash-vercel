@@ -7,6 +7,7 @@ import Subscriptions from "../../components/Subscriptions";
 import SpinWinTrade from "../../components/SpinWinTrade";
 import Faq from "../../components/Faq";
 import Banner from "../../components/Banner";
+import RulesSection from "@/components/rules/RulesSection";
 
 export default function RulesPage() {
   return (
@@ -15,7 +16,7 @@ export default function RulesPage() {
       style={{ backgroundColor: "#030303" }}
     >
       <HeroSection />
-      <FeaturesSection />
+      <RulesSection />
       <HowItWorks />
       <Subscriptions />
       <SpinWinTrade />

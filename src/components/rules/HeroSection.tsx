@@ -3,7 +3,7 @@ import StartNowButton from "../StartNowButton";
 export default function HeroSection() {
   return (
     <section className="justify-center text-center px-6 lg:px-20">
-      <div className="relative z-10 max-w-4xl mx-auto pt-[217px] pb-[343px]">
+      <div className="relative z-10 max-w-4xl mx-auto pt-[217px]">
         <h2
           className="mb-4"
           style={{
