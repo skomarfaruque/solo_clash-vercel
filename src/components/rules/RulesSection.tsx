@@ -12,9 +12,9 @@ export default function RulesSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Card 1 */}
           <RulesCard
-            iconPath="/rules_card_svg.svg"
-            title="90/10 Profit split"
-            description="Industry-leading payouts that reward performance."
+            iconPath="/icons/rules/rules_1.png"
+            title="Evaluation Period"
+            description="A minimum of three (3) trading days is required to complete the challenge. There is no maximum time limit to finish the evaluation."
           />
 
           {/* Card 2 */}

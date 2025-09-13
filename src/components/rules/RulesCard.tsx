@@ -13,7 +13,7 @@ export default function RulesCard({
 }: FeatureCardProps) {
   return (
     <div
-      className="rounded-2xl hover:scale-105 transition flex flex-col items-center text-center p-8 relative"
+      className="rounded-2xl hover:scale-105 transition flex flex-col items-center text-center p-6 relative"
       style={{
         width: "424px",
         height: "266px",
@@ -23,24 +23,20 @@ export default function RulesCard({
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div
-        className="w-28 h-28 flex items-center justify-center absolute"
-        style={{ top: "85.5px" }}
-      >
+      <div className="flex flex-col gap-4 items-start">
         <Image
           src={iconPath}
           alt={title}
-          width={100}
-          height={100}
-          className="h-25 w-25"
+          width={66}
+          height={66}
+          className="w-[66px] h-[66px]"
+          style={{ width: "66px", height: "66px" }}
         />
-      </div>
-      <div className="absolute" style={{ top: "220px", width: "320px" }}>
         <h3 className="font-semibold text-2xl leading-relaxed mb-2 text-white">
           {title}
         </h3>
         <p
-          className="font-normal text-base leading-6 text-center"
+          className="font-normal text-base leading-6 text-left"
           style={{ color: "#B7B7B7" }}
         >
           {description}
