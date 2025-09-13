@@ -21,7 +21,7 @@ export default function Home() {
       <Subscriptions />
       <SpinWinTrade />
       <Faq />
-      <Banner />
+      <Banner page="account" title="Ready to trade real capital?" />
     </main>
   );
 }

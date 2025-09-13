@@ -1,6 +1,18 @@
 import BannerButton from "./BannerButton";
+import BannerRulesButton from "./BannerRulesButton";
+import Image from "next/image";
 
-export default function Banner() {
+export default function Banner({
+  page,
+  bannerIconPath,
+  title,
+  description,
+}: Readonly<{
+  page: string;
+  title: string | null;
+  description?: string | null;
+  bannerIconPath?: string | null;
+}>) {
   return (
     <section
       className="flex items-center justify-center py-20 px-6 lg:px-20"
@@ -19,12 +31,31 @@ export default function Banner() {
       >
         <div className="flex flex-col items-center justify-center text-center gap-8">
           {/* Banner Text */}
+          {bannerIconPath && (
+            <Image
+              src={bannerIconPath}
+              alt="Banner Icon"
+              width={66}
+              height={66}
+              className="w-[66px] h-[66px]"
+            />
+          )}
           <h2 className="font-bold text-5xl leading-tight text-white">
-            Ready to trade real capital?
+            {title}
           </h2>
+          {description && (
+            <p
+              className="font-normal text-lg leading-7 max-w-2xl"
+              style={{ color: "#B7B7B7" }}
+            >
+              {description}
+            </p>
+          )}
+          {/* Banner Button */}
+          {page === "account" && <BannerButton text="Get Started" />}
 
-          {/* Button */}
-          <BannerButton text="Open Your Challenge" />
+          {/* BannerRulesButton for rules page */}
+          {page === "rules" && <BannerRulesButton text="Start Challenge" />}
         </div>
       </div>
     </section>
