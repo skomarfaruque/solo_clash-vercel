@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Navbar() {
   const [langOpen, setLangOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <nav className="flex items-center justify-between bg-transparent text-white absolute left-1/2 transform -translate-x-1/2 max-w-screen-xl w-full h-[52px]">
@@ -49,28 +51,63 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-6 text-sm ml-6">
           <div className="flex items-center gap-6">
             <Link
-              href="/account"
-              className="rounded-[58px] px-6 py-3 h-[52px] font-medium text-center
-          bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)]
-          shadow-[0px_2px_12px_rgba(7,5,24,0.5)]
-          backdrop-blur-[11.2993px]
-          transition hover:opacity-90"
+              href="/"
+              className={`${
+                pathname === "/"
+                  ? "rounded-[58px] px-6 py-3 h-[52px] font-medium text-center bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)] shadow-[0px_2px_12px_rgba(7,5,24,0.5)] backdrop-blur-[11.2993px] transition hover:opacity-90"
+                  : "text-[#B7B7B7] hover:text-white transition"
+              }`}
             >
               Account
             </Link>
-            <Link href="/rules" className="hover:text-white transition">
+            <Link
+              href="/rules"
+              className={`${
+                pathname === "/rules"
+                  ? "rounded-[58px] px-6 py-3 h-[52px] font-medium text-center bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)] shadow-[0px_2px_12px_rgba(7,5,24,0.5)] backdrop-blur-[11.2993px] transition hover:opacity-90"
+                  : "text-[#B7B7B7] hover:text-white transition"
+              }`}
+            >
               Rules
             </Link>
-            <Link href="/clash-shop" className="hover:text-white transition">
+            <Link
+              href="/clash-shop"
+              className={`${
+                pathname === "/clash-shop"
+                  ? "rounded-[58px] px-6 py-3 h-[52px] font-medium text-center bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)] shadow-[0px_2px_12px_rgba(7,5,24,0.5)] backdrop-blur-[11.2993px] transition hover:opacity-90"
+                  : "text-[#B7B7B7] hover:text-white transition"
+              }`}
+            >
               Clash Shop
             </Link>
-            <Link href="/affiliates" className="hover:text-white transition">
+            <Link
+              href="/affiliates"
+              className={`${
+                pathname === "/affiliates"
+                  ? "rounded-[58px] px-6 py-3 h-[52px] font-medium text-center bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)] shadow-[0px_2px_12px_rgba(7,5,24,0.5)] backdrop-blur-[11.2993px] transition hover:opacity-90"
+                  : "text-[#B7B7B7] hover:text-white transition"
+              }`}
+            >
               Affiliates
             </Link>
-            <Link href="/faq" className="hover:text-white transition">
+            <Link
+              href="/faq"
+              className={`${
+                pathname === "/faq"
+                  ? "rounded-[58px] px-6 py-3 h-[52px] font-medium text-center bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)] shadow-[0px_2px_12px_rgba(7,5,24,0.5)] backdrop-blur-[11.2993px] transition hover:opacity-90"
+                  : "text-[#B7B7B7] hover:text-white transition"
+              }`}
+            >
               FAQ
             </Link>
-            <Link href="/contact" className="hover:text-white transition">
+            <Link
+              href="/contact"
+              className={`${
+                pathname === "/contact"
+                  ? "rounded-[58px] px-6 py-3 h-[52px] font-medium text-center bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)] shadow-[0px_2px_12px_rgba(7,5,24,0.5)] backdrop-blur-[11.2993px] transition hover:opacity-90"
+                  : "text-[#B7B7B7] hover:text-white transition"
+              }`}
+            >
               Contact Us
             </Link>
           </div>
