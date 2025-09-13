@@ -9,7 +9,7 @@ export default function Navbar() {
   const [langOpen, setLangOpen] = useState(false);
 
   return (
-    <nav className="flex items-center justify-between px-6 py-3 bg-transparent text-white absolute left-1/2 transform -translate-x-1/2 max-w-screen-xl w-full h-[52px]">
+    <nav className="flex items-center justify-between bg-transparent text-white absolute left-1/2 transform -translate-x-1/2 max-w-screen-xl w-full h-[52px]">
       {/* Left Section */}
       <div className="flex items-center gap-6">
         {/* Logo */}
@@ -21,7 +21,7 @@ export default function Navbar() {
         <div className="relative">
           <button
             onClick={() => setLangOpen(!langOpen)}
-            className="flex items-center gap-2 bg-neutral-900 px-3 py-1.5 rounded-full"
+            className="flex items-center gap-2 bg-neutral-900 h-[52px] px-4 py-1.5 rounded-full"
           >
             <Image
               src="/en.png"
@@ -46,26 +46,42 @@ export default function Navbar() {
         </div>
 
         {/* Links */}
-        <div className="hidden md:flex items-center gap-6 text-sm">
-          <Link href="/rules">Rules</Link>
-          <Link href="/clash-shop">Clash Shop</Link>
-          <Link href="/affiliates">Affiliates</Link>
-          <Link href="/faq">FAQ</Link>
-          <Link href="/contact">Contact Us</Link>
+        <div className="hidden md:flex items-center gap-6 text-sm ml-6">
+          <div className="flex items-center gap-6">
+            <Link
+              href="/account"
+              className="rounded-[58px] px-6 py-3 h-[52px] font-medium text-center
+          bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)]
+          shadow-[0px_2px_12px_rgba(7,5,24,0.5)]
+          backdrop-blur-[11.2993px]
+          transition hover:opacity-90"
+            >
+              Account
+            </Link>
+            <Link href="/rules" className="hover:text-white transition">
+              Rules
+            </Link>
+            <Link href="/clash-shop" className="hover:text-white transition">
+              Clash Shop
+            </Link>
+            <Link href="/affiliates" className="hover:text-white transition">
+              Affiliates
+            </Link>
+            <Link href="/faq" className="hover:text-white transition">
+              FAQ
+            </Link>
+            <Link href="/contact" className="hover:text-white transition">
+              Contact Us
+            </Link>
+          </div>
         </div>
       </div>
 
       {/* Right Section */}
       <div className="flex items-center gap-4">
         <Link
-          href="/account"
-          className="bg-neutral-900 px-4 py-2 rounded-full font-medium"
-        >
-          Account
-        </Link>
-        <Link
           href="/get-funded"
-          className="bg-neutral-900 px-4 py-2 rounded-full font-medium"
+          className="bg-neutral-900 px-4 py-2 rounded-full font-medium h-[52px] flex items-center justify-center"
         >
           Get Funded →
         </Link>
