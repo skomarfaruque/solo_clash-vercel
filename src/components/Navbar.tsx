@@ -54,7 +54,7 @@ export default function Navbar() {
               href="/"
               className={`${
                 pathname === "/"
-                  ? "rounded-[58px] px-6 py-3 h-[52px] font-medium text-center bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)] shadow-[0px_2px_12px_rgba(7,5,24,0.5)] backdrop-blur-[11.2993px] transition hover:opacity-90"
+                  ? "px-6 py-3 rounded-[58px] bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)] shadow-[0px_2px_12px_rgba(7,5,24,0.5)]"
                   : "text-[#B7B7B7] hover:text-white transition"
               }`}
             >
@@ -64,7 +64,7 @@ export default function Navbar() {
               href="/rules"
               className={`${
                 pathname === "/rules"
-                  ? "rounded-[58px] px-6 py-3 h-[52px] font-medium text-center bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)] shadow-[0px_2px_12px_rgba(7,5,24,0.5)] backdrop-blur-[11.2993px] transition hover:opacity-90"
+                  ? "px-6 py-3 rounded-[58px] bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)] shadow-[0px_2px_12px_rgba(7,5,24,0.5)]"
                   : "text-[#B7B7B7] hover:text-white transition"
               }`}
             >
@@ -74,7 +74,7 @@ export default function Navbar() {
               href="/clash-shop"
               className={`${
                 pathname === "/clash-shop"
-                  ? "rounded-[58px] px-6 py-3 h-[52px] font-medium text-center bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)] shadow-[0px_2px_12px_rgba(7,5,24,0.5)] backdrop-blur-[11.2993px] transition hover:opacity-90"
+                  ? "px-6 py-3 rounded-[58px] bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)] shadow-[0px_2px_12px_rgba(7,5,24,0.5)]"
                   : "text-[#B7B7B7] hover:text-white transition"
               }`}
             >
@@ -84,7 +84,7 @@ export default function Navbar() {
               href="/affiliates"
               className={`${
                 pathname === "/affiliates"
-                  ? "rounded-[58px] px-6 py-3 h-[52px] font-medium text-center bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)] shadow-[0px_2px_12px_rgba(7,5,24,0.5)] backdrop-blur-[11.2993px] transition hover:opacity-90"
+                  ? "px-6 py-3 rounded-[58px] bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)] shadow-[0px_2px_12px_rgba(7,5,24,0.5)]"
                   : "text-[#B7B7B7] hover:text-white transition"
               }`}
             >
@@ -94,7 +94,7 @@ export default function Navbar() {
               href="/faq"
               className={`${
                 pathname === "/faq"
-                  ? "rounded-[58px] px-6 py-3 h-[52px] font-medium text-center bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)] shadow-[0px_2px_12px_rgba(7,5,24,0.5)] backdrop-blur-[11.2993px] transition hover:opacity-90"
+                  ? "px-6 py-3 rounded-[58px] bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)] shadow-[0px_2px_12px_rgba(7,5,24,0.5)]"
                   : "text-[#B7B7B7] hover:text-white transition"
               }`}
             >
@@ -104,7 +104,7 @@ export default function Navbar() {
               href="/contact"
               className={`${
                 pathname === "/contact"
-                  ? "rounded-[58px] px-6 py-3 h-[52px] font-medium text-center bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)] shadow-[0px_2px_12px_rgba(7,5,24,0.5)] backdrop-blur-[11.2993px] transition hover:opacity-90"
+                  ? "px-6 py-3 rounded-[58px] bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)] shadow-[0px_2px_12px_rgba(7,5,24,0.5)]"
                   : "text-[#B7B7B7] hover:text-white transition"
               }`}
             >
