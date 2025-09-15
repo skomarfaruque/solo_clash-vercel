@@ -20,10 +20,34 @@ export default function Navbar() {
   ];
 
   const socialLinks = [
-    { href: "https://discord.com", src: "/reddit.png", alt: "discord", width: 52, height: 42 },
-    { href: "https://instagram.com", src: "/instagram.png", alt: "instagram", width: 52, height: 52 },
-    { href: "https://tiktok.com", src: "/tiktok.png", alt: "tiktok", width: 52, height: 52 },
-    { href: "https://twitter.com", src: "/twitter.png", alt: "twitter", width: 52, height: 42 },
+    {
+      href: "https://discord.com",
+      src: "/reddit.png",
+      alt: "discord",
+      width: 52,
+      height: 42,
+    },
+    {
+      href: "https://instagram.com",
+      src: "/instagram.png",
+      alt: "instagram",
+      width: 52,
+      height: 52,
+    },
+    {
+      href: "https://tiktok.com",
+      src: "/tiktok.png",
+      alt: "tiktok",
+      width: 52,
+      height: 52,
+    },
+    {
+      href: "https://twitter.com",
+      src: "/twitter.png",
+      alt: "twitter",
+      width: 52,
+      height: 42,
+    },
   ];
 
   const activeClass =
@@ -57,8 +81,12 @@ export default function Navbar() {
           </button>
           {langOpen && (
             <div className="absolute mt-2 w-32 bg-neutral-800 rounded-lg shadow-lg">
-              <button className="w-full px-4 py-2 text-left hover:bg-neutral-700">English</button>
-              <button className="w-full px-4 py-2 text-left hover:bg-neutral-700">Spanish</button>
+              <button className="w-full px-4 py-2 text-left hover:bg-neutral-700">
+                English
+              </button>
+              <button className="w-full px-4 py-2 text-left hover:bg-neutral-700">
+                Spanish
+              </button>
             </div>
           )}
         </div>

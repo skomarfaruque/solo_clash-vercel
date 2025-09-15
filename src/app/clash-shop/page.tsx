@@ -2,6 +2,7 @@
 
 import FeaturesSection from "../../components/FeaturesSection";
 import HeroSection from "../../components/clash-shop/HeroSection";
+import SpinDetailsSection from "../../components/clash-shop/SpinDetailsSection";
 import HowItWorks from "../../components/HowItWorks";
 import Subscriptions from "../../components/Subscriptions";
 import SpinWinTrade from "../../components/SpinWinTrade";
@@ -16,7 +17,7 @@ export default function RulesPage() {
       style={{ backgroundColor: "#030303" }}
     >
       <HeroSection />
-      <RulesSection />
+      <SpinDetailsSection />
 
       <Banner
         page="rules"
