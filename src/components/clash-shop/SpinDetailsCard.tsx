@@ -3,13 +3,13 @@ import Image from "next/image";
 interface FeatureCardProps {
   readonly iconPath: string;
   readonly title: string;
-  readonly description: string;
+  readonly tags: string[];
 }
 
 export default function SpinDetailsCard({
   iconPath,
   title,
-  description,
+  tags,
 }: FeatureCardProps) {
   return (
     <div
@@ -22,7 +22,7 @@ export default function SpinDetailsCard({
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="flex gap-4 items-start">
+      <div className="flex gap-4 items-center">
         <Image
           src={iconPath}
           alt={title}
@@ -31,8 +31,24 @@ export default function SpinDetailsCard({
           className="w-[40px] h-[40px]"
           style={{ width: "40px", height: "40px" }}
         />
-        <h3 className="font-normal text-[24px] leading-[150%] text-white">
+        <h3 className="font-normal text-[24px] leading-[150%] text-white flex flex-col items-start gap-4">
           {title}
+          {tags.length > 0 && (
+            <span
+              className="flex flex-row justify-center items-center px-2 py-[3.5px] gap-6 bg-[#FB782D] rounded-lg backdrop-blur-[11.3px] text-black text-xs font-medium w-auto"
+              style={{ backdropFilter: "blur(11.3px)" }}
+            >
+              {tags.map((tag, index) => (
+                <span
+                  key={index}
+                  className="flex flex-row justify-center items-center px-2 py-[3.5px] gap-6 bg-[#FB782D] rounded-lg backdrop-blur-[11.3px] text-black text-xs font-medium w-auto"
+                  style={{ backdropFilter: "blur(11.3px)" }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </span>
+          )}
         </h3>
       </div>
     </div>

@@ -5,37 +5,32 @@ const spinDetailsCards = [
   {
     iconPath: "/icons/spins/spin_details_1.png",
     title: "Evaluation Period",
-    description:
-      "A minimum of three (3) trading days is required to complete the challenge. There is no maximum time limit to finish the evaluation.",
+    tags: [],
   },
   {
     iconPath: "/icons/spins/spin_details_2.png",
     title: "End-of-Day-Drawdown",
-    description:
-      "The account is subject to an end-of-day drawdown, not a trailing drawdown.",
+    tags: [],
   },
   {
     iconPath: "/icons/spins/spin_details_3.png",
     title: "Profit Consistency",
-    description:
-      "A 30% consistency rule applies only during the evaluation phase. Traders must follow 30% of consistency to reach the profit target without breaching the maximum drawdown.",
+    tags: [],
   },
   {
     iconPath: "/icons/spins/spin_details_4.png",
     title: "Daily Loss Limit",
-    description:
-      "Exceeding the daily loss limit results in an immediate hard breach",
+    tags: [],
   },
   {
     iconPath: "/icons/spins/spin_details_5.png",
     title: "Reset Policy",
-    description:
-      "A reset fee of $139 applies after a breach during the evaluation phase.",
+    tags: [],
   },
   {
     iconPath: "/icons/spins/spin_details_6.png",
     title: "Payout Limit",
-    description: "8% payout cap per withdrawal request.",
+    tags: ["Legendary"],
   },
 ];
 
@@ -53,7 +48,7 @@ export default function SpinDetailsSection() {
               key={idx}
               iconPath={card.iconPath}
               title={card.title}
-              description={card.description}
+              tags={card.tags}
             />
           ))}
         </div>
