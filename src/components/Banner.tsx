@@ -1,6 +1,7 @@
 import BannerButton from "./BannerButton";
 import BannerRulesButton from "./BannerRulesButton";
 import Image from "next/image";
+import WhiteButton from "./buttons/WhiteButton";
 
 export default function Banner({
   page,
@@ -40,7 +41,7 @@ export default function Banner({
               className="w-[66px] h-[66px]"
             />
           )}
-          <h2 className="font-bold text-5xl leading-tight text-white">
+          <h2 className="font-bold text-5xl leading-tight text-white max-w-[583px]">
             {title}
           </h2>
           {description && (
@@ -56,6 +57,11 @@ export default function Banner({
 
           {/* BannerRulesButton for rules page */}
           {page === "rules" && <BannerRulesButton text="Start Challenge" />}
+
+          {/* BannerRulesButton for rules page */}
+          {page === "clash-shop" && (
+            <WhiteButton text="Redeem Free Ticket Now" iconPath="/trophy.png" />
+          )}
         </div>
       </div>
     </section>
