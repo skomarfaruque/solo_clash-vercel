@@ -9,6 +9,7 @@ import SpinWinTrade from "../../components/SpinWinTrade";
 import Faq from "../../components/Faq";
 import Banner from "../../components/Banner";
 import RulesSection from "@/components/rules/RulesSection";
+import HowToEarnCoins from "@/components/clash-shop/HowToEarnCoins";
 
 export default function RulesPage() {
   return (
@@ -18,6 +19,7 @@ export default function RulesPage() {
     >
       <HeroSection />
       <SpinDetailsSection />
+      <HowToEarnCoins />
 
       <Banner
         page="rules"
