@@ -10,6 +10,7 @@ import Faq from "../../components/Faq";
 import Banner from "../../components/Banner";
 import RulesSection from "@/components/rules/RulesSection";
 import HowToEarnCoins from "@/components/clash-shop/HowToEarnCoins";
+import TiredRewards from "@/components/affiliates/TiredRewards";
 
 export const metadata = {
   title: "Rules & Guidelines | Clash Shop",
@@ -26,6 +27,7 @@ export default function RulesPage() {
       <HeroSection />
 
       <HowItWorks />
+      <TiredRewards />
 
       <Banner
         page="clash-shop"

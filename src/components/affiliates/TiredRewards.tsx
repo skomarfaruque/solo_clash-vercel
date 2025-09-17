@@ -1,4 +1,4 @@
-import EarnCoinCard from "./EarnCoinCard";
+import TiredRewardCards from "./TiredRewardCards";
 
 const spinDetailsCards = [
   {
@@ -26,7 +26,7 @@ const spinDetailsCards = [
     priceRange: "$0 - $400",
   },
 ];
-export default function HowToEarnCoins() {
+export default function TiredRewards() {
   return (
     <section
       className="justify-center text-center px-6 lg:px-20 py-20"
@@ -38,7 +38,7 @@ export default function HowToEarnCoins() {
           className="font-bold text-5xl leading-tight text-white"
           style={{ width: "495px" }}
         >
-          How to Earn Coins
+          Tiered Rewards Earn More as You Grow
         </h2>
 
         {/* Description */}
@@ -46,13 +46,14 @@ export default function HowToEarnCoins() {
           className="font-normal text-lg leading-6 text-center mb-8"
           style={{ color: "#B7B7B7", width: "538px" }}
         >
-          Multiple ways to earn Clash Coins and unlock rewards.
+          Advance through our partner levels and unlock increasingly valuable
+          rewards.
         </p>
 
         {/* SpinWinTrade Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {spinDetailsCards.map((card, idx) => (
-            <EarnCoinCard
+            <TiredRewardCards
               key={idx}
               icon={card.iconPath}
               title={card.title}
