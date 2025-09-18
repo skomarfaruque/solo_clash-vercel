@@ -6,6 +6,7 @@ import HowItWorksAffiliates from "../../components/affiliates/HowItWorksAffiliat
 import Banner from "../../components/Banner";
 
 import TiredRewards from "@/components/affiliates/TiredRewards";
+import CommissionSection from "@/components/affiliates/CommissionSection";
 
 export const metadata = {
   title: "Rules & Guidelines | Clash Shop",
@@ -24,6 +25,7 @@ export default function RulesPage() {
       <HowItWorksAffiliates />
       <TiredRewards />
       <WhyChooseProgram />
+      <CommissionSection />
 
       <Banner
         page="clash-shop"
