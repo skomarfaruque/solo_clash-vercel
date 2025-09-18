@@ -23,7 +23,7 @@ export default function Banner({
         className="flex items-center justify-center"
         style={{
           width: "1325px",
-          height: "410px",
+          minHeight: "410px",
           backgroundImage: "url('/banner_bg.svg')",
           backgroundSize: "cover",
           backgroundPosition: "center",

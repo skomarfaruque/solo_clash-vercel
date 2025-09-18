@@ -1,5 +1,4 @@
 import WhyChooseProgram from "@/components/affiliates/WhyChoosePrograms";
-import HeroSection from "../../components/affiliates/HeroSection";
 
 import HowItWorksAffiliates from "../../components/affiliates/HowItWorksAffiliates";
 
@@ -7,25 +6,25 @@ import Banner from "../../components/Banner";
 
 import TiredRewards from "@/components/affiliates/TiredRewards";
 import CommissionSection from "@/components/affiliates/CommissionSection";
+import FaqHeroSection from "./FaqHeroSection";
+
+import FaqPageFaq from "@/components/faq/FaqPageFaq";
 
 export const metadata = {
-  title: "Affiliates | Clash Shop",
+  title: "Faq | Clash Shop",
   description:
     "Read the official rules and guidelines before participating in Clash Shop challenges.",
 };
 
-export default function AffiliatesPage() {
+export default function FaqPage() {
   return (
     <main
       className="text-white overflow-hidden"
       style={{ backgroundColor: "#030303" }}
     >
-      <HeroSection />
+      <FaqHeroSection />
 
-      <HowItWorksAffiliates />
-      <TiredRewards />
-      <WhyChooseProgram />
-      <CommissionSection />
+      <FaqPageFaq />
 
       <Banner
         page="clash-shop"
