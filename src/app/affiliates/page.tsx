@@ -1,3 +1,4 @@
+import WhyChooseProgram from "@/components/affiliates/WhyChoosePrograms";
 import HeroSection from "../../components/affiliates/HeroSection";
 
 import HowItWorksAffiliates from "../../components/affiliates/HowItWorksAffiliates";
@@ -22,6 +23,7 @@ export default function RulesPage() {
 
       <HowItWorksAffiliates />
       <TiredRewards />
+      <WhyChooseProgram />
 
       <Banner
         page="clash-shop"
