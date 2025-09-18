@@ -44,7 +44,7 @@ export default function TiredRewardCards({
       </div>
       <div className="flex justify-between mt-6">
         {/* Left Side */}
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1 items-start">
           <span className="font-normal text-[12px] leading-[150%] text-[#B7B7B7]">
             Commission:{" "}
           </span>
@@ -54,7 +54,7 @@ export default function TiredRewardCards({
         </div>
 
         {/* Right Side */}
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1 items-start">
           <span className="font-normal text-[12px] leading-[150%] text-[#B7B7B7]">
             Discount code:{" "}
           </span>
@@ -62,6 +62,14 @@ export default function TiredRewardCards({
             5%
           </span>
         </div>
+      </div>
+      <div className="flex flex-col justify-center items-start mt-6 gap-1">
+        <span className="font-normal text-[12px] leading-[150%] text-[#B7B7B7]">
+          Bonus:
+        </span>
+        <span className="font-medium text-[16px] leading-[150%] text-white">
+          One Free $50k Account
+        </span>
       </div>
       <h3 className="font-normal font-semibold text-[20px] leading-[150%] text-white text-center mb-4">
         {title}
