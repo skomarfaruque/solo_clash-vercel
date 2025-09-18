@@ -1,3 +1,4 @@
+import SvgButton from "@/components/buttons/svgButton";
 import HomeButton from "@/components/HomeButton";
 import Image from "next/image";
 
@@ -193,6 +194,7 @@ export default function ContactSection() {
               >
                 Submit →
               </button>
+              <SvgButton label="xt →" />
             </form>
           </div>
         </div>
