@@ -25,6 +25,18 @@ const spinDetailsCards = [
     description: "Bonus coins for passing evaluations",
     priceRange: "$0 - $400",
   },
+  {
+    iconPath: "/icons/coins_card/coin_card_4.png",
+    title: "Challenge Completion",
+    description: "Bonus coins for passing evaluations",
+    priceRange: "$0 - $400",
+  },
+  {
+    iconPath: "/icons/coins_card/coin_card_4.png",
+    title: "Challenge Completion",
+    description: "Bonus coins for passing evaluations",
+    priceRange: "$0 - $400",
+  },
 ];
 export default function TiredRewards() {
   return (
