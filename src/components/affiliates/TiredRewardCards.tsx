@@ -1,4 +1,5 @@
 import Image from "next/image";
+import SubscriptionActiveButton from "../SubscriptionActiveButton";
 
 interface TiredRewardCards {
   readonly description: string;
@@ -71,20 +72,8 @@ export default function TiredRewardCards({
           One Free $50k Account
         </span>
       </div>
-      <h3 className="font-normal font-semibold text-[20px] leading-[150%] text-white text-center mb-4">
-        {title}
-      </h3>
 
-      {/* Description */}
-      <p className="font-normal text-[14px] leading-[150%] text-center text-[#B7B7B7]">
-        {description}
-      </p>
-      <div className="flex justify-center items-center mt-4 gap-2">
-        <Image src="/paisa.png" alt={title} width={20} height={20} />
-        <span className="font-semibold text-[16px] leading-[150%] text-center text-[#2BB6DD]">
-          {priceRange}
-        </span>
-      </div>
+      <SubscriptionActiveButton text="Join now" />
     </div>
   );
 }

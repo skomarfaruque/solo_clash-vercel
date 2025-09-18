@@ -1,15 +1,9 @@
-// app/rules/page.tsx (Next.js 13+ App Router)
-
-import FeaturesSection from "../../components/FeaturesSection";
 import HeroSection from "../../components/affiliates/HeroSection";
-import SpinDetailsSection from "../../components/clash-shop/SpinDetailsSection";
+
 import HowItWorksAffiliates from "../../components/affiliates/HowItWorksAffiliates";
-import Subscriptions from "../../components/Subscriptions";
-import SpinWinTrade from "../../components/SpinWinTrade";
-import Faq from "../../components/Faq";
+
 import Banner from "../../components/Banner";
-import RulesSection from "@/components/rules/RulesSection";
-import HowToEarnCoins from "@/components/clash-shop/HowToEarnCoins";
+
 import TiredRewards from "@/components/affiliates/TiredRewards";
 
 export const metadata = {
