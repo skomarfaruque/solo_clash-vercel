@@ -43,7 +43,7 @@ export default function ContactSection() {
             </div>
 
             {/* Hours */}
-            <div className="flex items-start gap-6">
+            <div className="flex gap-6">
               <Image
                 src="/icons/contacts/address_2.png"
                 alt="Address"
@@ -51,16 +51,14 @@ export default function ContactSection() {
                 height={75}
                 className="w-[75px] h-[75px]"
               />
-              <div>
-                <p className="font-semibold">Hours</p>
-                <p className="text-sm leading-relaxed">
-                  24/7 Support in 6 Languages and Live Chat
-                </p>
+              <div className="text-sm leading-relaxed flex flex-1 flex-col justify-between items-start">
+                <span>Hours</span>
+                <span>24/7 Support in 6 Languages and Live Chat</span>
               </div>
             </div>
 
             {/* Email */}
-            <div className="flex items-start gap-6">
+            <div className="flex gap-6">
               <Image
                 src="/icons/contacts/address_3.png"
                 alt="Address"
@@ -68,11 +66,65 @@ export default function ContactSection() {
                 height={75}
                 className="w-[75px] h-[75px]"
               />
-              <div>
-                <p className="font-semibold">Email</p>
-                <p className="text-sm">support@soloclash.com</p>
+              <div className="text-sm leading-relaxed flex flex-1 flex-col justify-between items-start">
+                <span>Email</span>
+                <span>support@soloclash.com</span>
               </div>
             </div>
+          </div>
+          <div className="flex items-center gap-6 mt-[80px]">
+            <a
+              href="https://youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/icons/contacts/contact_youtube.png"
+                alt="YouTube"
+                width={40}
+                height={40}
+                className="w-[40px] h-[40px] hover:opacity-80 transition"
+              />
+            </a>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/icons/contacts/contact_x.png"
+                alt="Twitter"
+                width={40}
+                height={40}
+                className="w-[40px] h-[40px] hover:opacity-80 transition"
+              />
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/icons/contacts/contact_ig.png"
+                alt="Instagram"
+                width={40}
+                height={40}
+                className="w-[40px] h-[40px] hover:opacity-80 transition"
+              />
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/icons/contacts/contact_linkedin.png"
+                alt="LinkedIn"
+                width={40}
+                height={40}
+                className="w-[40px] h-[40px] hover:opacity-80 transition"
+              />
+            </a>
           </div>
         </div>
         <div className="flex flex-1">Form</div>
