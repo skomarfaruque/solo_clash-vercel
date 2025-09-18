@@ -3,7 +3,7 @@
 import FeaturesSection from "../../components/FeaturesSection";
 import HeroSection from "../../components/affiliates/HeroSection";
 import SpinDetailsSection from "../../components/clash-shop/SpinDetailsSection";
-import HowItWorks from "../../components/HowItWorks";
+import HowItWorksAffiliates from "../../components/affiliates/HowItWorksAffiliates";
 import Subscriptions from "../../components/Subscriptions";
 import SpinWinTrade from "../../components/SpinWinTrade";
 import Faq from "../../components/Faq";
@@ -26,7 +26,7 @@ export default function RulesPage() {
     >
       <HeroSection />
 
-      <HowItWorks />
+      <HowItWorksAffiliates />
       <TiredRewards />
 
       <Banner
