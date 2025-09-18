@@ -127,7 +127,75 @@ export default function ContactSection() {
             </a>
           </div>
         </div>
-        <div className="flex flex-1">Form</div>
+        <div className="flex flex-1">
+          <div
+            className="max-w-lg mx-auto text-white pl-6 pr-6 pt-8 rounded-2xl"
+            style={{
+              background: "rgba(255, 255, 255, 0.03)",
+              border: "1px solid rgba(255, 255, 255, 0.06)",
+              backdropFilter: "blur(10px)",
+            }}
+          >
+            {/* Title */}
+            <h2 className="text-2xl font-bold text-center mb-[50px]">
+              Have Questions?
+            </h2>
+
+            <form className="space-y-6 text-left">
+              {/* Name + Email */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm">Your Name</label>
+                  <input
+                    type="text"
+                    placeholder="Full name"
+                    className="w-full rounded-md bg-neutral-900 border border-neutral-800 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm">Your Email</label>
+                  <input
+                    type="email"
+                    placeholder="Email address"
+                    className="w-full rounded-md bg-neutral-900 border border-neutral-800 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  />
+                </div>
+              </div>
+
+              {/* Number */}
+              <div className="flex flex-col gap-2">
+                <label className="text-sm">Your Number</label>
+                <input
+                  type="text"
+                  placeholder="Your account number"
+                  className="w-full rounded-md bg-neutral-900 border border-neutral-800 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+                />
+              </div>
+
+              {/* Message */}
+              <div className="flex flex-col gap-2">
+                <label className="text-sm">Your Message</label>
+                <textarea
+                  rows={4}
+                  placeholder="Enter your message"
+                  className="w-full rounded-md bg-neutral-900 border border-neutral-800 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+                ></textarea>
+              </div>
+
+              {/* Button */}
+              <button
+                type="submit"
+                className="w-full mt-[45px] py-3.5 rounded-full text-black font-medium relative
+                     bg-gradient-to-r from-orange-500 to-orange-400
+                     shadow-[0_4px_30px_rgba(255,100,0,0.6)]
+                     hover:shadow-[0_4px_40px_rgba(255,120,0,0.8)]
+                     transition"
+              >
+                Submit →
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
   );
