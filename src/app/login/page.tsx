@@ -1,4 +1,4 @@
-import FaqHeroSection from "./FaqHeroSection";
+import LoginSection from "./LoginSection";
 
 export const metadata = {
   title: "Login | Clash Shop",
@@ -12,7 +12,7 @@ export default function LoginPage() {
       className="text-white overflow-hidden"
       style={{ backgroundColor: "#030303" }}
     >
-      <FaqHeroSection />
+      <LoginSection />
     </main>
   );
 }

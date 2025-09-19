@@ -31,7 +31,7 @@ export default function RootLayout({
         <LoginNavbar />
       </header>
       {/* Main content */}
-      <div>{children}</div>
+      {children}
     </>
   );
 }
