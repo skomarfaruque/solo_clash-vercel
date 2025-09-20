@@ -1,0 +1,159 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+export default function SignupSection() {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
+  return (
+    <section
+      className="justify-center text-center min-h-screen"
+      style={{
+        backgroundImage: "url('/login_bg.svg')",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "contain",
+        backgroundPosition: "top",
+      }}
+    >
+      {/* Content container */}
+      <div className="z-10 max-w-4xl mx-auto pt-[152px]">
+        <div className="flex items-center justify-center">
+          <div
+            className="w-full max-w-md rounded-2xl bg-gradient-to-b from-neutral-900 to-black p-8 shadow-xl"
+            style={{
+              backgroundImage: "url('/login_form_bg.svg')",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "contain",
+              backgroundPosition: "top",
+            }}
+          >
+            {/* Logo */}
+            <div className="flex justify-center mb-6">
+              <Image src="/logo.svg" alt="Logo" width={80} height={80} />
+            </div>
+
+            {/* Title */}
+            <h1 className="text-2xl font-bold text-white text-center">
+              Welcome to Solo Clash
+            </h1>
+            <p className="text-neutral-400 text-center mb-6">
+              Please enter your details
+            </p>
+
+            {/* Email */}
+            <div className="mb-4">
+              <label className="block text-sm text-white mb-2">
+                Email Address <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="email"
+                placeholder="example@email.com"
+                className="w-full rounded-lg bg-neutral-800 px-4 py-3 text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-orange-500"
+              />
+            </div>
+
+            {/* Username */}
+            <div className="mb-4">
+              <label className="block text-sm text-white mb-2">
+                Username <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                placeholder="example@email.com"
+                className="w-full rounded-lg bg-neutral-800 px-4 py-3 text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-orange-500"
+              />
+            </div>
+
+            {/* Password */}
+            <div className="mb-4">
+              <label className="block text-sm text-white mb-2">
+                Password <span className="text-red-500">*</span>
+              </label>
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="••••••••"
+                  className="w-full rounded-lg bg-neutral-800 px-4 py-3 text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-orange-500"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute inset-y-0 right-3 flex items-center text-neutral-400 hover:text-white"
+                >
+                  {showPassword ? "🙈" : "👁️"}
+                </button>
+              </div>
+            </div>
+
+            {/* Confirm Password */}
+            <div className="mb-4">
+              <label className="block text-sm text-white mb-2">
+                Confirm Password <span className="text-red-500">*</span>
+              </label>
+              <div className="relative">
+                <input
+                  type={showConfirm ? "text" : "password"}
+                  placeholder="••••••••"
+                  className="w-full rounded-lg bg-neutral-800 px-4 py-3 text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-orange-500"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowConfirm(!showConfirm)}
+                  className="absolute inset-y-0 right-3 flex items-center text-neutral-400 hover:text-white"
+                >
+                  {showConfirm ? "🙈" : "👁️"}
+                </button>
+              </div>
+            </div>
+
+            {/* Checkboxes */}
+            <div className="space-y-3 mb-6 text-sm text-neutral-400">
+              <label className="flex items-start gap-2">
+                <input
+                  type="checkbox"
+                  className="mt-1 rounded border-neutral-700 bg-neutral-800"
+                />
+                <span>
+                  I agree with the Privacy{" "}
+                  <a href="#" className="text-cyan-400 hover:underline">
+                    Policy
+                  </a>{" "}
+                  and{" "}
+                  <a href="#" className="text-cyan-400 hover:underline">
+                    Terms &amp; Conditions
+                  </a>
+                  .
+                </span>
+              </label>
+              <label className="flex items-start gap-2">
+                <input
+                  type="checkbox"
+                  className="mt-1 rounded border-neutral-700 bg-neutral-800"
+                />
+                <span>
+                  I would like to subscribe to the Solo Clash Futures
+                  newsletter.
+                </span>
+              </label>
+            </div>
+
+            {/* Submit */}
+            <button className="w-full relative rounded-lg bg-gradient-to-r from-orange-500 to-orange-400 py-3 font-semibold text-black shadow-md hover:opacity-90 transition overflow-hidden">
+              <span className="relative z-10">SIGN UP</span>
+              {/* glowing orange light effect */}
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-2 bg-orange-300 blur-2xl opacity-70" />
+            </button>
+
+            {/* Already have account */}
+            <p className="mt-6 text-center text-sm text-neutral-400">
+              Have an account?{" "}
+              <a href="#" className="text-orange-400 hover:underline">
+                Sign In
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

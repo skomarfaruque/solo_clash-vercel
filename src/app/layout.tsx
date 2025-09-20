@@ -24,7 +24,8 @@ export default function RootLayout({
   const pathname = usePathname();
 
   // Decide where to show navbar/footer
-  const hideLayout = pathname.startsWith("/login"); // e.g. hide for auth pages
+  const hideLayout =
+    pathname.startsWith("/login") || pathname.startsWith("/signup");
   return (
     <html lang="en">
       <body

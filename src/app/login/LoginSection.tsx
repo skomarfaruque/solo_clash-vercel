@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 export default function LoginSection() {
   const [showPassword, setShowPassword] = useState(false);
   return (
@@ -98,9 +99,9 @@ export default function LoginSection() {
             {/* Sign Up link */}
             <p className="mt-6 text-center text-sm text-neutral-400">
               New on our platform?{" "}
-              <a href="#" className="text-orange-400 hover:underline">
+              <Link href="/signup" className="text-orange-400 hover:underline">
                 Sign Up
-              </a>
+              </Link>
             </p>
           </div>
         </div>
