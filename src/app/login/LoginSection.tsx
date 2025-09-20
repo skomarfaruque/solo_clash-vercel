@@ -6,19 +6,29 @@ export default function LoginSection() {
   const [showPassword, setShowPassword] = useState(false);
   return (
     <section
-      className="justify-center text-center"
+      className="justify-center text-center min-h-screen"
       style={{
         backgroundImage: "url('/login_bg.svg')",
         backgroundRepeat: "no-repeat",
+        backgroundSize: "contain",
+        backgroundPosition: "top",
       }}
     >
       {/* Content container */}
-      <div className="z-10 max-w-4xl mx-auto pt-[307px] pb-[343px]">
-        <div className="min-h-screen flex items-center justify-center bg-black">
-          <div className="w-full max-w-md rounded-2xl bg-gradient-to-b from-neutral-900 to-black p-8 shadow-xl">
+      <div className="z-10 max-w-4xl mx-auto pt-[307px]">
+        <div className="flex items-center justify-center">
+          <div
+            className="w-full max-w-md rounded-2xl bg-gradient-to-b from-neutral-900 to-black p-8 shadow-xl"
+            style={{
+              backgroundImage: "url('/login_form_bg.svg')",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "contain",
+              backgroundPosition: "top",
+            }}
+          >
             {/* Logo */}
             <div className="flex justify-center mb-6">
-              <Image src="/logo.png" alt="Logo" width={80} height={80} />
+              <Image src="/logo.svg" alt="Logo" width={80} height={80} />
             </div>
 
             {/* Title */}
@@ -31,7 +41,7 @@ export default function LoginSection() {
 
             {/* Email */}
             <div className="mb-4">
-              <label className="block text-sm text-white mb-2">
+              <label className="block text-sm text-white mb-2 text-left">
                 Email Address
               </label>
               <input
@@ -43,7 +53,9 @@ export default function LoginSection() {
 
             {/* Password */}
             <div className="mb-4">
-              <label className="block text-sm text-white mb-2">Password</label>
+              <label className="block text-sm text-white mb-2 text-left">
+                Password
+              </label>
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
@@ -65,8 +77,12 @@ export default function LoginSection() {
               <label className="flex items-center gap-2 text-sm text-neutral-400">
                 <input
                   type="checkbox"
-                  className="rounded border-neutral-700 bg-neutral-800"
-                />
+                  className="appearance-none w-[18px] h-[18px] border border-[#D6D6D6] rounded-[4px] opacity-70 align-middle cursor-pointer checked:bg-orange-400 checked:border-orange-400"
+                  style={{
+                    left: 0,
+                    top: "0.5px",
+                  }}
+                />{" "}
                 Remember me
               </label>
               <a href="#" className="text-sm text-cyan-400 hover:underline">
