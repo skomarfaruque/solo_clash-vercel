@@ -24,10 +24,11 @@ export default function SignupSection() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value, type } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: type === "checkbox" ? checked : value,
+      [name]:
+        type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
     }));
   };
 
@@ -360,6 +361,11 @@ export default function SignupSection() {
                   SUBMIT
                 </button>
               </form>
+            </div>
+          )}
+          {step !== "1" && step !== "2" && (
+            <div className="w-full max-w-md rounded-2xl bg-gradient-to-b from-neutral-900 to-black p-8 shadow-xl">
+              Verify your email
             </div>
           )}
         </div>
