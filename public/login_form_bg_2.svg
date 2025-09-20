@@ -1,0 +1,28 @@
+<svg width="610" height="1038" viewBox="0 0 610 1038" fill="none" xmlns="http://www.w3.org/2000/svg">
+<foreignObject x="-5" y="-5" width="620" height="1048"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(2.5px);clip-path:url(#bgblur_1_2339_20460_clip_path);height:100%;width:100%"></div></foreignObject><g data-figma-bg-blur-radius="5">
+<g clip-path="url(#clip0_2339_20460)">
+<rect width="610" height="1038" rx="32" fill="white" fill-opacity="0.03"/>
+<g style="mix-blend-mode:plus-lighter" filter="url(#filter1_f_2339_20460)">
+<path d="M510 164.528L586.935 22.7638L663.87 -119" stroke="url(#paint0_linear_2339_20460)" stroke-width="216" stroke-linecap="round"/>
+</g>
+</g>
+<rect x="0.5" y="0.5" width="609" height="1037" rx="31.5" stroke="white" stroke-opacity="0.06"/>
+</g>
+<defs>
+<clipPath id="bgblur_1_2339_20460_clip_path" transform="translate(5 5)"><rect width="610" height="1038" rx="32"/>
+</clipPath><filter id="filter1_f_2339_20460" x="333.979" y="-295.021" width="505.912" height="635.569" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="34" result="effect1_foregroundBlur_2339_20460"/>
+</filter>
+<linearGradient id="paint0_linear_2339_20460" x1="939.181" y1="168.659" x2="746.324" y2="-162.045" gradientUnits="userSpaceOnUse">
+<stop stop-opacity="0"/>
+<stop offset="0.482597" stop-opacity="0"/>
+<stop offset="0.785212" stop-color="#FB782D" stop-opacity="0.6"/>
+<stop offset="1" stop-color="#FFBE98"/>
+</linearGradient>
+<clipPath id="clip0_2339_20460">
+<rect width="610" height="1038" rx="32" fill="white"/>
+</clipPath>
+</defs>
+</svg>
