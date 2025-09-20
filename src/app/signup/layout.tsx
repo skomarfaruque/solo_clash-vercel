@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import LoginNavbar from "../LoginNavbar";
+import SignupNavbar from "../SignupNavbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +29,7 @@ export default function RootLayout({
       {" "}
       {/* Navigation Header */}
       <header className="absolute top-10 w-full z-50">
-        <LoginNavbar />
+        <SignupNavbar />
       </header>
       {/* Main content */}
       {children}
