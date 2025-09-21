@@ -1,4 +1,5 @@
-.language-button:hover {
+.language-button.active,
+.language-button.active:hover {
   background: linear-gradient(
     94.79deg,
     #f37e2c 0.24%,

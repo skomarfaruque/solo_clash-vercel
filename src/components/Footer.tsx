@@ -1,4 +1,5 @@
 import LanguageSupport from "./LanguageSupport";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -13,9 +14,11 @@ export default function Footer() {
         >
           {/* Company Info */}
           <div className="space-y-4" style={{ width: "362px" }}>
-            <img
+            <Image
               src="/logo_footer.svg"
               alt="Solo Clash"
+              width={128}
+              height={32}
               className="h-8 w-auto"
             />
             <p className="text-gray-400 text-sm leading-relaxed">

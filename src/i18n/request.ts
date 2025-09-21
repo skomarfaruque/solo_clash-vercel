@@ -1,9 +1,13 @@
+// src/i18n/request.ts
+import { cookies } from "next/headers";
 import { getRequestConfig } from "next-intl/server";
 
 export default getRequestConfig(async () => {
-  // Static for now, we'll change this later
-  const locale = "bn";
+  // 1. Try to get locale from cookies
+  const cookieStore = cookies();
+  const locale = (await cookieStore).get("locale")?.value || "en";
 
+  // 2. Load the correct messages
   return {
     locale,
     messages: (await import(`../../messages/${locale}.json`)).default,
