@@ -1,5 +1,4 @@
 import RulesCard from "./RulesCard";
-import HomeButton from "../HomeButton";
 
 const rulesCards = [
   {

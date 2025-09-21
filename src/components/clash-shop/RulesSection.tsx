@@ -1,5 +1,4 @@
-import RulesCard from "./RulesCard";
-import HomeButton from "../HomeButton";
+import RulesCard from "@/components/rules/RulesCard";
 
 const rulesCards = [
   {
