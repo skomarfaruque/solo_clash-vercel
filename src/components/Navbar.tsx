@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Navbar() {
   const [langOpen, setLangOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const pathname = usePathname();
 
   const navLinks = [
@@ -55,76 +55,171 @@ export default function Navbar() {
   const inactiveClass = "text-[#B7B7B7] hover:text-white transition";
 
   return (
-    <nav className="flex items-center justify-between bg-transparent text-white absolute left-1/2 transform -translate-x-1/2 max-w-screen-xl w-full h-[52px]">
-      {/* Left Section */}
-      <div className="flex items-center gap-6">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <Image src="/logo.svg" alt="SOLO CLASH" width={65} height={52} />
-        </Link>
+    <>
+      <nav className="flex items-center justify-between bg-transparent text-white absolute left-1/2 transform -translate-x-1/2 max-w-screen-xl w-full h-[52px] px-2 sm:px-4">
+        {/* Left Section */}
+        <div className="flex items-center gap-2 sm:gap-6">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2">
+            <Image src="/logo.svg" alt="SOLO CLASH" width={65} height={52} />
+          </Link>
 
-        {/* Language Dropdown */}
-        <div className="relative">
-          <button
-            onClick={() => setLangOpen(!langOpen)}
-            className="flex items-center gap-2 bg-neutral-900 h-[52px] px-4 py-1.5 rounded-full"
-          >
-            <Image
-              src="/en.png"
-              alt="English"
-              width={26}
-              height={26}
-              className="rounded"
-            />
-            English
-            <span className="ml-1">▼</span>
-          </button>
-          {langOpen && (
-            <div className="absolute mt-2 w-32 bg-neutral-800 rounded-lg shadow-lg">
-              <button className="w-full px-4 py-2 text-left hover:bg-neutral-700">
-                English
-              </button>
-              <button className="w-full px-4 py-2 text-left hover:bg-neutral-700">
-                Spanish
-              </button>
+          {/* Language Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => setLangOpen(!langOpen)}
+              className="flex items-center gap-2 bg-neutral-900 h-[52px] px-4 py-1.5 rounded-full"
+            >
+              <Image
+                src="/en.png"
+                alt="English"
+                width={26}
+                height={26}
+                className="rounded"
+              />
+              English
+              <span className="ml-1">▼</span>
+            </button>
+            {langOpen && (
+              <div className="absolute mt-2 w-32 bg-neutral-800 rounded-lg shadow-lg">
+                <button className="w-full px-4 py-2 text-left hover:bg-neutral-700">
+                  English
+                </button>
+                <button className="w-full px-4 py-2 text-left hover:bg-neutral-700">
+                  Spanish
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* Links */}
+          <div className="hidden md:flex items-center gap-6 text-sm ml-6">
+            <div className="flex items-center gap-6">
+              {navLinks.map(({ href, label }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className={pathname === href ? activeClass : inactiveClass}
+                >
+                  {label}
+                </Link>
+              ))}
             </div>
-          )}
+          </div>
+          {/* Hamburger for mobile */}
+          <button
+            className="md:hidden flex flex-col items-center justify-center ml-2 p-2 rounded focus:outline-none focus:ring-2 focus:ring-orange-500"
+            onClick={() => setDrawerOpen(true)}
+            aria-label="Open menu"
+          >
+            <span className="block w-6 h-0.5 bg-white mb-1"></span>
+            <span className="block w-6 h-0.5 bg-white mb-1"></span>
+            <span className="block w-6 h-0.5 bg-white"></span>
+          </button>
         </div>
 
-        {/* Links */}
-        <div className="hidden md:flex items-center gap-6 text-sm ml-6">
-          <div className="flex items-center gap-6">
-            {navLinks.map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                className={pathname === href ? activeClass : inactiveClass}
-              >
-                {label}
+        {/* Right Section */}
+        <div className="hidden md:flex items-center gap-4">
+          <Link
+            href="/get-funded"
+            className="bg-neutral-900 px-4 py-2 rounded-full font-medium h-[52px] flex items-center justify-center"
+          >
+            Get Funded →
+          </Link>
+
+          {/* Social Icons */}
+          <div className="flex items-center gap-3">
+            {socialLinks.map(({ href, src, alt, width, height }) => (
+              <Link key={href} href={href}>
+                <Image src={src} alt={alt} width={width} height={height} />
               </Link>
             ))}
           </div>
         </div>
-      </div>
-
-      {/* Right Section */}
-      <div className="flex items-center gap-4">
-        <Link
-          href="/get-funded"
-          className="bg-neutral-900 px-4 py-2 rounded-full font-medium h-[52px] flex items-center justify-center"
-        >
-          Get Funded →
-        </Link>
-
-        {/* Social Icons */}
-        <div className="flex items-center gap-3">
-          {socialLinks.map(({ href, src, alt, width, height }) => (
-            <Link key={href} href={href}>
-              <Image src={src} alt={alt} width={width} height={height} />
+      </nav>
+      {/* Responsive Drawer Menu */}
+      {drawerOpen && (
+        <div className="fixed inset-0 z-50 flex">
+          {/* Overlay */}
+          <div
+            className="absolute inset-0 bg-black bg-opacity-60"
+            onClick={() => setDrawerOpen(false)}
+            tabIndex={0}
+            aria-label="Close menu"
+            role="button"
+            onKeyDown={(e) =>
+              (e.key === "Escape" || e.key === "Enter" || e.key === " ") &&
+              setDrawerOpen(false)
+            }
+          />
+          {/* Drawer */}
+          <div className="relative bg-neutral-900 w-4/5 max-w-xs h-full p-6 flex flex-col gap-6 shadow-2xl animate-slide-in-left">
+            <button
+              className="self-end mb-4 p-2 rounded focus:outline-none focus:ring-2 focus:ring-orange-500"
+              onClick={() => setDrawerOpen(false)}
+              aria-label="Close menu"
+            >
+              <span className="block w-6 h-0.5 bg-white mb-1 rotate-45 translate-y-1.5"></span>
+              <span className="block w-6 h-0.5 bg-white -rotate-45 -translate-y-1.5"></span>
+            </button>
+            {/* Mobile Language Dropdown */}
+            <div className="relative mb-4">
+              <button
+                onClick={() => setLangOpen(!langOpen)}
+                className="flex items-center gap-2 bg-neutral-800 h-[40px] px-3 py-1.5 rounded-full w-full"
+              >
+                <Image
+                  src="/en.png"
+                  alt="English"
+                  width={22}
+                  height={22}
+                  className="rounded"
+                />
+                English
+                <span className="ml-1">▼</span>
+              </button>
+              {langOpen && (
+                <div className="absolute mt-2 w-32 bg-neutral-800 rounded-lg shadow-lg z-20">
+                  <button className="w-full px-4 py-2 text-left hover:bg-neutral-700">
+                    English
+                  </button>
+                  <button className="w-full px-4 py-2 text-left hover:bg-neutral-700">
+                    Spanish
+                  </button>
+                </div>
+              )}
+            </div>
+            {/* Mobile Nav Links */}
+            <div className="flex flex-col gap-4">
+              {navLinks.map(({ href, label }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className={pathname === href ? activeClass : inactiveClass}
+                  onClick={() => setDrawerOpen(false)}
+                >
+                  {label}
+                </Link>
+              ))}
+            </div>
+            <Link
+              href="/get-funded"
+              className="bg-neutral-800 px-4 py-2 rounded-full font-medium h-[40px] flex items-center justify-center mt-4"
+              onClick={() => setDrawerOpen(false)}
+            >
+              Get Funded →
             </Link>
-          ))}
+            {/* Social Icons */}
+            <div className="flex items-center gap-3 mt-4">
+              {socialLinks.map(({ href, src, alt, width, height }) => (
+                <Link key={href} href={href}>
+                  <Image src={src} alt={alt} width={width} height={height} />
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
-    </nav>
+      )}
+    </>
   );
 }
