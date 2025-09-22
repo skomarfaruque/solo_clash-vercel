@@ -1,19 +1,18 @@
-import SvgButton from "@/components/buttons/svgButton";
 import SvgButton2 from "@/components/buttons/svgButton2";
 import HomeButton from "@/components/HomeButton";
 import Image from "next/image";
 
 export default function ContactSection() {
   return (
-    <section className="justify-center text-center px-6 lg:px-20">
-      <div className="flex z-10 max-w-4xl mx-auto pt-[217px] gap-[52px]">
-        <div className="flex flex-1 flex-col items-start">
+    <section className="justify-center text-center px-4 sm:px-6 lg:px-20">
+      <div className="flex flex-col lg:flex-row z-10 max-w-4xl mx-auto pt-[80px] lg:pt-[217px] gap-10 lg:gap-[52px]">
+        <div className="flex flex-1 flex-col items-center text-left">
           <HomeButton>CONTACT</HomeButton>
           <h3
-            className="pt-6"
+            className="pt-6 font-bold leading-[110%]"
             style={{
               fontWeight: 700,
-              fontSize: "55px",
+              fontSize: "clamp(2rem, 6vw, 55px)",
               lineHeight: "110%",
               letterSpacing: "0.005em",
               background:
@@ -28,7 +27,7 @@ export default function ContactSection() {
           <p className="font-normal text-[18px] leading-[150%] text-gray-300">
             Everything you need to know about getting started
           </p>
-          <div className="flex flex-col gap-8 w-full max-w-md text-[#B7B7B7] mt-[80px]">
+          <div className="flex flex-col gap-8 w-full max-w-md text-[#B7B7B7] mt-10 md:mt-[80px]">
             {/* Address */}
             <div className="flex gap-6">
               <Image
@@ -74,7 +73,7 @@ export default function ContactSection() {
               </div>
             </div>
           </div>
-          <div className="flex items-center gap-6 mt-[80px]">
+          <div className="flex flex-wrap items-center gap-4 md:gap-6 mt-10 md:mt-[80px] justify-center md:justify-start">
             <a
               href="https://youtube.com"
               target="_blank"
@@ -129,9 +128,9 @@ export default function ContactSection() {
             </a>
           </div>
         </div>
-        <div className="flex flex-1">
+        <div className="flex flex-1 w-full mt-10 lg:mt-0">
           <div
-            className="max-w-lg mx-auto text-white pl-6 pr-6 pt-8 rounded-2xl"
+            className="w-full max-w-lg mx-auto text-white px-2 sm:px-6 pt-8 rounded-2xl"
             style={{
               background: "rgba(255, 255, 255, 0.03)",
               border: "1px solid rgba(255, 255, 255, 0.06)",
@@ -143,9 +142,9 @@ export default function ContactSection() {
               Have Questions?
             </h2>
 
-            <form className="space-y-6 text-left">
+            <form className="space-y-6 text-left w-full">
               {/* Name + Email */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
                 <div className="flex flex-col gap-2">
                   <label className="text-sm">Your Name</label>
                   <input
@@ -185,7 +184,7 @@ export default function ContactSection() {
               </div>
 
               {/* Button */}
-              <div className="mt-[52px]">
+              <div className="mt-8 md:mt-[52px]">
                 <SvgButton2 label="Submit →" />
               </div>
             </form>
