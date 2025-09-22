@@ -1,4 +1,5 @@
 import SvgButton from "@/components/buttons/svgButton";
+import SvgButton2 from "@/components/buttons/svgButton2";
 import HomeButton from "@/components/HomeButton";
 import Image from "next/image";
 
@@ -184,17 +185,9 @@ export default function ContactSection() {
               </div>
 
               {/* Button */}
-              <button
-                type="submit"
-                className="w-full mt-[45px] py-3.5 rounded-full text-black font-medium relative
-                     bg-gradient-to-r from-orange-500 to-orange-400
-                     shadow-[0_4px_30px_rgba(255,100,0,0.6)]
-                     hover:shadow-[0_4px_40px_rgba(255,120,0,0.8)]
-                     transition"
-              >
-                Submit →
-              </button>
-              <SvgButton label="xt →" />
+              <div className="mt-[52px]">
+                <SvgButton2 label="Submit →" />
+              </div>
             </form>
           </div>
         </div>
