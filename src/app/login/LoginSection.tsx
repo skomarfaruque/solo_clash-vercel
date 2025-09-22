@@ -11,7 +11,7 @@ export default function LoginSection() {
       style={{
         backgroundImage: "url('/login_bg.svg')",
         backgroundRepeat: "no-repeat",
-        backgroundSize: "contain",
+        backgroundSize: "cover",
         backgroundPosition: "top",
       }}
     >
