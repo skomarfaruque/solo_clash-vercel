@@ -44,32 +44,32 @@ export default function Faq() {
   };
   return (
     <section
-      className="justify-center text-center px-6 lg:px-20 py-20 flex items-center"
+      className="justify-center text-center px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16 lg:py-20 flex items-center"
       style={{ backgroundColor: "#030303" }}
     >
-      <div className="flex flex-col justify-center items-center gap-6 w-[1009px]">
+      <div className="flex flex-col justify-center items-center gap-6 w-full max-w-4xl mx-auto">
         {/* Heading */}
-        <h2 className="font-bold text-5xl leading-tight text-white">
+        <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight text-white">
           Frequently Asked Questions
         </h2>
 
         {/* Description */}
         <p
-          className="font-normal text-lg leading-6 text-center mb-8"
-          style={{ color: "#B7B7B7", width: "538px" }}
+          className="font-normal text-base sm:text-lg leading-6 text-center mb-8 max-w-xl mx-auto"
+          style={{ color: "#B7B7B7" }}
         >
           Everything you need to know about getting started
         </p>
 
         {/* FAQ Accordion */}
-        <div className="w-full">
+  <div className="w-full">
           {faqData.map((faq, index) => (
             <div key={`faq-${index}-${faq.question.slice(0, 20)}`}>
               <button
                 onClick={() => toggleItem(index)}
-                className="w-full px-0 py-4 text-left flex justify-between items-center cursor-pointer"
+                className="w-full px-0 py-3 sm:py-4 text-left flex justify-between items-center cursor-pointer"
               >
-                <h3 className="font-semibold text-lg text-white">
+                <h3 className="font-semibold text-base sm:text-lg text-white">
                   {faq.question}
                 </h3>
                 <Image
@@ -93,8 +93,7 @@ export default function Faq() {
               >
                 <div className="pb-4 pt-0">
                   <p
-                    className="text-gray-300 text-left"
-                    style={{ fontSize: "16px", lineHeight: "150%" }}
+                    className="text-gray-300 text-left text-sm sm:text-base leading-relaxed"
                   >
                     {faq.answer}
                   </p>

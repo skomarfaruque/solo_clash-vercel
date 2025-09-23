@@ -7,14 +7,14 @@ export default function SpinWinTrade() {
       className="justify-center text-center px-4 sm:px-6 lg:px-20 py-10 sm:py-16 lg:py-20"
       style={{ backgroundColor: "#030303" }}
     >
-      <div className="flex flex-col justify-center items-center gap-6">
+      <div className="flex flex-col justify-center items-center gap-6 max-w-[1320px] mx-auto">
         {/* Heading */}
-        <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl leading-tight text-white max-w-full sm:max-w-xl">
+        <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl leading-tight text-white max-w-full sm:max-w-xl self-center">
           Spin. Win. Trade
         </h2>
 
         {/* Description */}
-        <p className="font-normal text-base sm:text-lg leading-6 text-center mb-8 text-[#B7B7B7] max-w-full sm:max-w-2xl">
+        <p className="font-normal text-base sm:text-lg leading-6 text-center mb-8 text-[#B7B7B7] max-w-full sm:max-w-2xl self-center">
           Daily spins, instant rewards - win Clash Coins, free tournament
           entries, discount codes, or even a funded account.
         </p>
