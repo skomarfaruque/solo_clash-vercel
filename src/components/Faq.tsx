@@ -62,7 +62,7 @@ export default function Faq() {
         </p>
 
         {/* FAQ Accordion */}
-  <div className="w-full">
+        <div className="w-full">
           {faqData.map((faq, index) => (
             <div key={`faq-${index}-${faq.question.slice(0, 20)}`}>
               <button
@@ -92,9 +92,7 @@ export default function Faq() {
                 }`}
               >
                 <div className="pb-4 pt-0">
-                  <p
-                    className="text-gray-300 text-left text-sm sm:text-base leading-relaxed"
-                  >
+                  <p className="text-gray-300 text-left text-sm sm:text-base leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>
