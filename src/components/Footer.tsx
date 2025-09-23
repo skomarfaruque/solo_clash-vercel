@@ -4,16 +4,13 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer
-      className="text-white py-16 px-6 lg:px-20 pb-0"
+      className="text-white py-10 sm:py-14 md:py-16 px-4 sm:px-6 lg:px-20 pb-0"
       style={{ backgroundColor: "#030303" }}
     >
       <div className="max-w-7xl mx-auto">
-        <div
-          className="flex flex-wrap justify-between"
-          style={{ gap: "128.5px" }}
-        >
+        <div className="flex flex-col md:flex-row flex-wrap justify-between gap-10 md:gap-16 lg:gap-32">
           {/* Company Info */}
-          <div className="space-y-4" style={{ width: "362px" }}>
+          <div className="space-y-4 w-full md:w-[320px] lg:w-[362px]">
             <Image
               src="/logo_footer.svg"
               alt="Solo Clash"
@@ -28,165 +25,168 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Platform</h4>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Features
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  How It Works
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Pricing
-                </a>
-              </li>
-            </ul>
-          </div>
+          {/* Footer Links as Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-8 flex-1 w-full mt-8 md:mt-0">
+            {/* Quick Links */}
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold">Platform</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                  >
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                  >
+                    Features
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                  >
+                    How It Works
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                  >
+                    Pricing
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-          {/* Features */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Features</h4>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Help Center
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Contact Us
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  FAQ
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Community
-                </a>
-              </li>
-            </ul>
-          </div>
+            {/* Features */}
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold">Features</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                  >
+                    Help Center
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                  >
+                    Contact Us
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                  >
+                    FAQ
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                  >
+                    Community
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-          {/* Support */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Support</h4>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  24/7 Live Chat
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Email Support
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Phone Support
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Knowledge Base
-                </a>
-              </li>
-            </ul>
-          </div>
+            {/* Support */}
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold">Support</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                  >
+                    24/7 Live Chat
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                  >
+                    Email Support
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                  >
+                    Phone Support
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                  >
+                    Knowledge Base
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-          {/* Legal */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Partners</h4>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Terms of Service
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Cookie Policy
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Risk Disclosure
-                </a>
-              </li>
-            </ul>
+            {/* Legal */}
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold">Partners</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                  >
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                  >
+                    Terms of Service
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                  >
+                    Cookie Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                  >
+                    Risk Disclosure
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
         {/* Support Contact Info */}
-        <div className="space-y-3 pb-[40px] border-b border-gray-800">
+        <div className="space-y-3 pb-10 border-b border-gray-800 mt-4">
           <div className="flex items-center space-x-3">
             {/* Email Icon */}
             <svg
@@ -227,7 +227,7 @@ export default function Footer() {
         <LanguageSupport />
 
         {/* Bottom Section */}
-        <div className="border-t border-gray-800 mt-12 pt-8">
+        <div className="border-t border-gray-800 mt-8 md:mt-12 pt-8">
           {/* First Row */}
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex space-x-6">
