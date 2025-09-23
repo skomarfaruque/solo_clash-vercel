@@ -14,16 +14,25 @@ export default function EarnCoinCard({
   priceRange,
 }: EarnCoinCardProps) {
   return (
+    // <div
+    //   className="rounded-2xl hover:scale-105 transition relative flex flex-col items-center justify-center text-center"
+    //   style={{
+    //     width: "312px",
+    //     height: "312px",
+    //     backgroundImage: "url(coin_card_bg.svg)",
+    //     backgroundSize: "cover",
+    //     backgroundPosition: "center",
+    //     backgroundRepeat: "no-repeat",
+    //     padding: "46px 30px",
+    //   }}
+    // >
     <div
-      className="rounded-2xl hover:scale-105 transition relative flex flex-col items-center justify-center text-center"
+      className="rounded-2xl hover:scale-105 transition relative flex flex-col items-center justify-center text-center w-full min-w-[312px] min-h-[312px] p-4 sm:p-6 md:p-8 lg:p-8"
       style={{
-        width: "312px",
-        height: "312px",
-        backgroundImage: "url(coin_card_bg.svg)",
+        backgroundImage: `url('/coin_card_bg.svg')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        padding: "46px 30px",
       }}
     >
       <div className="flex justify-center items-center mb-6">
