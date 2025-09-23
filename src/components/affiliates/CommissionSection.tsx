@@ -35,16 +35,16 @@ const spinDetailsCards = [
 export default function CommissionSection() {
   return (
     <section
-      className="justify-center text-center px-6 lg:px-20 py-20"
+      className="justify-center text-center px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16 lg:py-20"
       style={{ backgroundColor: "#030303" }}
     >
-      <div className="flex flex-col justify-center items-center gap-[80px]">
+      <div className="flex flex-col justify-center items-center gap-16 md:gap-[80px] w-full max-w-5xl mx-auto">
         {/* Heading */}
-        <h2 className="font-bold text-5xl leading-tight text-white">
+        <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight text-white max-w-2xl mx-auto">
           Commission & Payout Details
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
           {spinDetailsCards.map((card, idx) => (
             <CommissionCards
               key={idx}

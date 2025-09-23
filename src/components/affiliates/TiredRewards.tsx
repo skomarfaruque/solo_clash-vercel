@@ -41,29 +41,26 @@ const spinDetailsCards = [
 export default function TiredRewards() {
   return (
     <section
-      className="justify-center text-center px-6 lg:px-20 py-20"
+      className="justify-center text-center px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16 lg:py-20"
       style={{ backgroundColor: "#030303" }}
     >
-      <div className="flex flex-col justify-center items-center gap-6">
+      <div className="flex flex-col justify-center items-center gap-6 w-full max-w-6xl mx-auto">
         {/* Heading */}
-        <h2
-          className="font-bold text-5xl leading-tight text-white"
-          style={{ width: "495px" }}
-        >
+        <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight text-white max-w-2xl mx-auto">
           Tiered Rewards Earn More as You Grow
         </h2>
 
         {/* Description */}
         <p
-          className="font-normal text-lg leading-6 text-center mb-8"
-          style={{ color: "#B7B7B7", width: "538px" }}
+          className="font-normal text-base sm:text-lg leading-6 text-center mb-8 max-w-xl mx-auto"
+          style={{ color: "#B7B7B7" }}
         >
           Advance through our partner levels and unlock increasingly valuable
           rewards.
         </p>
 
         {/* SpinWinTrade Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
           {spinDetailsCards.map((card, idx) => (
             <TiredRewardCards
               key={idx}

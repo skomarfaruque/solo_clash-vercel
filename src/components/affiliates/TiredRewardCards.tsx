@@ -2,11 +2,15 @@ import Image from "next/image";
 import SubscriptionActiveButton from "../SubscriptionActiveButton";
 import BlackButton from "../buttons/BlackButton";
 
-interface TiredRewardCards {
+interface TiredRewardCardsProps {
   readonly description: string;
   readonly icon: string;
   readonly title: string;
   readonly priceRange: string;
+  readonly requirements?: string;
+  readonly commission?: string;
+  readonly discount?: string;
+  readonly bonus?: string;
 }
 
 export default function TiredRewardCards({
@@ -14,10 +18,14 @@ export default function TiredRewardCards({
   title,
   description,
   priceRange,
-}: TiredRewardCards) {
+  requirements = "requirement",
+  commission = "10%",
+  discount = "5%",
+  bonus = "One Free $50k Account",
+}: TiredRewardCardsProps) {
   return (
     <div
-      className="rounded-2xl hover:scale-105 transition relative flex flex-col w-[424px] h-[424px] p-6 justify-between"
+      className="rounded-2xl hover:scale-105 transition relative flex flex-col w-full max-w-[424px] min-w-[220px] min-h-[320px] h-[424px] p-4 sm:p-6 justify-between"
       style={{
         background:
           "linear-gradient(306.21deg, #000000 39.33%, #1F1E1E 99.95%)",
@@ -27,7 +35,7 @@ export default function TiredRewardCards({
       <div>
         <div className="flex items-center gap-4">
           <Image
-            src="/icons/rewards/rewards_icon_1.png"
+            src={icon}
             alt={title}
             width={66}
             height={66}
@@ -42,7 +50,7 @@ export default function TiredRewardCards({
             Requirements:
           </span>
           <span className="font-medium text-[16px] leading-[150%]">
-            requirement
+            {requirements}
           </span>
         </div>
         <div className="flex justify-between mt-6">
@@ -52,7 +60,7 @@ export default function TiredRewardCards({
               Commission:{" "}
             </span>
             <span className="font-medium text-[16px] leading-[150%] text-[#FB782D]">
-              10%
+              {commission}
             </span>
           </div>
 
@@ -62,7 +70,7 @@ export default function TiredRewardCards({
               Discount code:{" "}
             </span>
             <span className="font-medium text-[16px] leading-[150%] text-[#FD9E5B]">
-              5%
+              {discount}
             </span>
           </div>
         </div>
@@ -71,7 +79,7 @@ export default function TiredRewardCards({
             Bonus:
           </span>
           <span className="font-medium text-[16px] leading-[150%] text-white">
-            One Free $50k Account
+            {bonus}
           </span>
         </div>
       </div>

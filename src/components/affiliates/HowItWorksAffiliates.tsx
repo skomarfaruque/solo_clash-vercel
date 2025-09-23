@@ -39,37 +39,37 @@ export default function HowItWorksAffiliates() {
         <div className="relative mx-auto max-w-5xl">
           {/* Vertical Timeline Line: only till last circle */}
           <div
-            className="absolute left-1/2 top-0 w-px -translate-x-1/2 bg-gray-700"
+            className="hidden md:block absolute left-1/2 top-0 w-px -translate-x-1/2 bg-gray-700"
             style={{ height: `calc(100% - 5.5rem)` }}
           />
 
           <div className="space-y-24">
             {steps.map((step, i) => {
-              const isRight = i % 2 === 0; // odd index left, even index right
-
+              const isRight = i % 2 === 0;
               return (
                 <div
                   key={i}
-                  className={`relative flex items-start ${
-                    isRight ? "justify-end" : "justify-start"
+                  className={`relative flex flex-col items-center text-center md:flex-row md:items-start md:text-inherit ${
+                    isRight ? "md:justify-end" : "md:justify-start"
                   }`}
                 >
-                  {/* Step Content */}
-                  <div
-                    className={`w-5/12 ${
-                      isRight ? "text-left pl-12" : "text-right pr-12"
-                    }`}
-                  >
+                  {/* Number Circle - always centered on mobile, absolute on desktop */}
+                  <div className="flex md:hidden items-center justify-center mb-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full border border-gray-500 bg-black text-white text-lg font-semibold">
+                      {step.number}
+                    </div>
+                  </div>
+                  {/* Step Content - centered on mobile */}
+                  <div className="w-full md:w-5/12 px-2 md:px-0">
                     <h3 className="text-lg font-bold text-white">
                       {step.title}
                     </h3>
                     <p className="mt-2 text-gray-400">{step.description}</p>
                   </div>
-
-                  {/* Number Circle */}
+                  {/* Number Circle for desktop */}
                   {i === 0 ? (
                     <div
-                      className="absolute left-1/2 top-0 flex items-center justify-center text-white text-lg font-semibold"
+                      className="hidden md:flex absolute left-1/2 top-0 items-center justify-center text-white text-lg font-semibold"
                       style={{
                         borderRadius: "58px",
                         padding: "23px 32px",
@@ -84,7 +84,7 @@ export default function HowItWorksAffiliates() {
                       {step.number}
                     </div>
                   ) : (
-                    <div className="absolute left-1/2 top-0 flex h-[74px] w-[74px] -translate-x-1/2 items-center justify-center rounded-full border border-gray-500 bg-black text-white text-lg font-semibold">
+                    <div className="hidden md:flex absolute left-1/2 top-0 h-[74px] w-[74px] -translate-x-1/2 items-center justify-center rounded-full border border-gray-500 bg-black text-white text-lg font-semibold">
                       {step.number}
                     </div>
                   )}
