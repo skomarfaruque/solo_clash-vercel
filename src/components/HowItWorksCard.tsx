@@ -13,35 +13,21 @@ export default function HowItWorksCard({
 }: HowItWorksCardProps) {
   return (
     <div
-      className="rounded-2xl hover:scale-105 transition relative"
+      className="rounded-2xl hover:scale-105 transition relative w-full max-w-[500px] h-[320px] sm:h-[365px] bg-cover bg-center bg-no-repeat px-4 pt-6 sm:px-8 sm:pt-8"
       style={{
-        width: "500px",
-        height: "365px",
         backgroundImage: `url('/${backgroundImage}')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        paddingLeft: "32px",
-        paddingTop: "31px",
-        paddingRight: "29px",
       }}
     >
       <div>
-        <div className="flex justify-between items-start mb-2">
-          <h3
-            className="font-semibold text-2xl leading-tight text-white text-left"
-            style={{ width: "326px" }}
-          >
+        <div className="flex justify-between items-start mb-2 gap-2">
+          <h3 className="font-semibold text-lg sm:text-2xl leading-tight text-white text-left max-w-[70%] sm:max-w-[326px]">
             {title}
           </h3>
-          <span className="font-normal text-sm leading-6 uppercase text-[#FB782D]">
+          <span className="font-normal text-xs sm:text-sm leading-6 uppercase text-[#FB782D]">
             {step}
           </span>
         </div>
-        <p
-          className="font-normal text-base leading-6 text-left"
-          style={{ color: "#B7B7B7", width: "326px" }}
-        >
+        <p className="font-normal text-sm sm:text-base leading-6 text-left text-[#B7B7B7] max-w-full sm:max-w-[326px]">
           {description}
         </p>
       </div>

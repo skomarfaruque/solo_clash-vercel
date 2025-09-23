@@ -4,29 +4,23 @@ import SpinWinTradeCard from "./SpinWinTradeCard";
 export default function SpinWinTrade() {
   return (
     <section
-      className="justify-center text-center px-6 lg:px-20 py-20"
+      className="justify-center text-center px-4 sm:px-6 lg:px-20 py-10 sm:py-16 lg:py-20"
       style={{ backgroundColor: "#030303" }}
     >
       <div className="flex flex-col justify-center items-center gap-6">
         {/* Heading */}
-        <h2
-          className="font-bold text-5xl leading-tight text-white"
-          style={{ width: "495px" }}
-        >
+        <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl leading-tight text-white max-w-full sm:max-w-xl">
           Spin. Win. Trade
         </h2>
 
         {/* Description */}
-        <p
-          className="font-normal text-lg leading-6 text-center mb-8"
-          style={{ color: "#B7B7B7", width: "538px" }}
-        >
+        <p className="font-normal text-base sm:text-lg leading-6 text-center mb-8 text-[#B7B7B7] max-w-full sm:max-w-2xl">
           Daily spins, instant rewards - win Clash Coins, free tournament
           entries, discount codes, or even a funded account.
         </p>
 
         {/* SpinWinTrade Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           {/* Card 1 */}
           <SpinWinTradeCard
             backgroundImage="spin_win_trade_card_bg.svg"
@@ -52,7 +46,7 @@ export default function SpinWinTrade() {
           />
         </div>
 
-        <div style={{ marginTop: "56px" }}>
+        <div className="mt-10 sm:mt-14">
           <ViewFullPriceButton text="Spin the Wheel" />
         </div>
       </div>
