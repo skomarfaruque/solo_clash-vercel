@@ -260,12 +260,7 @@ export default function SpinningWheel2() {
           style={{ width: 44, height: 36 }}
         >
           <svg width="44" height="36" viewBox="0 0 44 36">
-            <polygon
-              points="0,0 44,0 22,36"
-              fill="#FB782D"
-              stroke="#FB782D"
-              strokeWidth="1"
-            />
+            <polygon points="0,0 44,0 22,36" fill="#ffb366" />
           </svg>
         </div>
       </div>
