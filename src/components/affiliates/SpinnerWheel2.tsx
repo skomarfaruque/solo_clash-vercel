@@ -47,11 +47,8 @@ export default function SpinningWheel2() {
   const [currentRotation, setCurrentRotation] = useState(0);
   const [result, setResult] = useState("");
   const [newItemText, setNewItemText] = useState("");
-  const [history, setHistory] = useState([]);
-  const [historyAsc, setHistoryAsc] = useState(true);
-  const [showHistoryModal, setShowHistoryModal] = useState(false);
 
-  function generateRandomColor(existingColors = []) {
+  function generateRandomColor(existingColors: string[] = []) {
     for (let attempt = 0; attempt < 24; attempt++) {
       const h = Math.floor(Math.random() * 360);
       const s = Math.floor(Math.random() * 18) + 72;
@@ -62,9 +59,13 @@ export default function SpinningWheel2() {
     return `hsl(${Math.floor(Math.random() * 360)},78%,68%)`;
   }
 
-  function getFittedFontSize(text, maxWidth, baseFontSize = 16) {
+  function getFittedFontSize(
+    text: string,
+    maxWidth: number,
+    baseFontSize: number = 16
+  ): number {
     if (!text) return baseFontSize;
-    const span = document.createElement("span");
+    const span: HTMLSpanElement = document.createElement("span");
     span.style.position = "absolute";
     span.style.visibility = "hidden";
     span.style.fontFamily = "'Outfit', system-ui, sans-serif";
@@ -72,8 +73,8 @@ export default function SpinningWheel2() {
     span.style.fontSize = baseFontSize + "px";
     span.textContent = text;
     document.body.appendChild(span);
-    let width = span.offsetWidth;
-    let fontSize = baseFontSize;
+    let width: number = span.offsetWidth;
+    let fontSize: number = baseFontSize;
     while (width > maxWidth && fontSize > 9) {
       fontSize -= 1;
       span.style.fontSize = fontSize + "px";
@@ -213,36 +214,23 @@ export default function SpinningWheel2() {
         setSpinning(false);
         setCurrentRotation(finalDeg % 360);
         setResult(winningText);
-        addHistory(winningText, new Date());
+
         drawRoulette(finalDeg);
       }
     }
     requestAnimationFrame(animate);
   }
 
-  function formatDate(date) {
-    const pad = (n) => (n < 10 ? "0" + n : String(n));
-    return `${date.getFullYear()}/${pad(date.getMonth() + 1)}/${pad(
-      date.getDate()
-    )} ${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(
-      date.getSeconds()
-    )}`;
-  }
-
-  function addHistory(text, date) {
-    setHistory((prev) => {
-      const next = [...prev, { text, date }];
-      if (next.length > 50) next.shift();
-      return next;
-    });
-  }
-
-  function toggleHistoryOrder(asc) {
-    setHistoryAsc(asc);
-  }
-
   return (
-    <section className="shadow-md p-6 flex-1 flex flex-col items-center">
+    <section
+      className="shadow-md p-6 flex-1 flex flex-col items-center mt-6"
+      style={{
+        backgroundImage: "url(/wheel_bg.svg)",
+        backgroundSize: "contain",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <div className="relative" style={{ width: 320, height: 320 }}>
         <div className="absolute inset-0 flex items-center justify-center">
           <div
