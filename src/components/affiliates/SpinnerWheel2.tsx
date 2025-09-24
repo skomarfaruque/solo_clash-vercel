@@ -20,23 +20,24 @@ export default function SpinningWheel2() {
     "#b7e4c7",
   ];
 
-  // Only allow Apple, Fig, and Cherry as winning values
+  // Casino-style dollar values for wheel
   const DEFAULT_VALUES = [
-    "Apple",
-    "Banana",
-    "Cherry",
-    "Dragonfruit",
-    "Elderberry",
-    "Fig",
-    "Grape",
-    "Honeydew",
-    "Kiwi",
-    "Lemon",
+    "$0",
+    "$1",
+    "$2",
+    "$5",
+    "$10",
+    "$20",
+    "$50",
+    "$100",
+    "$200",
+    "$500",
   ];
 
-  const WINNING_VALUES = ["Apple", "Fig", "Cherry"];
+  // Set winning values as a range among them (e.g., $10 and above)
+  const WINNING_VALUES = ["$1", "$20"];
 
-  const svgRef = useRef(null);
+  const svgRef = useRef<SVGSVGElement | null>(null);
   const [items, setItems] = useState(() =>
     DEFAULT_VALUES.map((val, i) => ({
       text: val,
@@ -173,12 +174,12 @@ export default function SpinningWheel2() {
     setResult("");
   }
 
-  function removeItem(idx) {
+  function removeItem(idx: number) {
     setItems((prev) => prev.filter((_, i) => i !== idx));
     setResult("");
   }
 
-  function easeOutQuint(t) {
+  function easeOutQuint(t: number) {
     return 1 - Math.pow(1 - t, 5);
   }
 
@@ -202,7 +203,7 @@ export default function SpinningWheel2() {
     const initialRotation = currentRotation % 360;
     const totalChange = finalDeg - initialRotation;
 
-    function animate(now) {
+    function animate(now: number) {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
       const eased = easeOutQuint(progress);
@@ -255,11 +256,16 @@ export default function SpinningWheel2() {
         />
 
         <div
-          className="absolute left-1/2 -top-3 transform -translate-x-1/2 z-10"
+          className="absolute left-1/2 -top-3 transform -translate-x-1/2 z-20"
           style={{ width: 44, height: 36 }}
         >
           <svg width="44" height="36" viewBox="0 0 44 36">
-            <polygon points="0,0 44,0 22,36" fill="#fff" />
+            <polygon
+              points="0,0 44,0 22,36"
+              fill="#FB782D"
+              stroke="#FB782D"
+              strokeWidth="1"
+            />
           </svg>
         </div>
       </div>
