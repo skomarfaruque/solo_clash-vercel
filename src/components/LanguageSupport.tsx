@@ -1,6 +1,8 @@
 "use client";
-import { get } from "http";
+
 import "./LanguageSupport.css";
+
+import { useEffect, useState } from "react";
 import getCookieLocale from "@/app/utils/get-cookie-lan";
 
 export default function LanguageSupport() {
@@ -12,9 +14,13 @@ export default function LanguageSupport() {
     { title: "French", code: "fr" },
     { title: "Spanish", code: "es" },
   ];
-  // get the value from cookie and set the button style accordingly
-  const currentLang = getCookieLocale() || "en";
-  console.log("Current Language:", currentLang);
+
+  // Use state and useEffect to avoid hydration mismatch
+  const [currentLang, setCurrentLang] = useState("en");
+  useEffect(() => {
+    const lang = getCookieLocale() || "en";
+    setCurrentLang(lang);
+  }, []);
 
   return (
     <div className="flex flex-col items-center justify-center pt-10">
