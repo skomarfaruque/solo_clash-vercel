@@ -1,3 +1,5 @@
+import SpinningWheel2 from "../affiliates/SpinnerWheel2";
+import SpinningWheel from "../affiliates/SpinningWheel";
 import StartNowButton from "../StartNowButton";
 
 export default function HeroSection() {
@@ -37,6 +39,7 @@ export default function HeroSection() {
           coins from the Lucky Wheel and events, spend them on discount codes,
           free tournament entries, or even funded accounts.
         </p>
+        <SpinningWheel2 />
       </div>
     </section>
   );
