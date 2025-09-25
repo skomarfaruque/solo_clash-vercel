@@ -61,6 +61,25 @@
         }
       ],
       "viewFullPricing": "Voir tous les tarifs"
+    },
+    "spinWinTradeSection": {
+      "heading": "Tournez. Gagnez. Tradez",
+      "description": "Tours quotidiens, récompenses instantanées - gagnez des Clash Coins, des inscriptions gratuites à des tournois, des codes de réduction ou même un compte financé.",
+      "cards": [
+        {
+          "title": "Tours Quotidiens",
+          "description": "Un tour gratuit chaque jour"
+        },
+        {
+          "title": "Récompenses Instantanées",
+          "description": "Pièces, réductions et plus"
+        },
+        {
+          "title": "Comptes Financé",
+          "description": "Gagnez des challenges complets"
+        }
+      ],
+      "button": "Tourner la Roue"
     }
   },
   "RulesPage": {

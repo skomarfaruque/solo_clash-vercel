@@ -61,6 +61,25 @@
         }
       ],
       "viewFullPricing": "Tüm fiyatları görüntüle"
+    },
+    "spinWinTradeSection": {
+      "heading": "Çevir. Kazan. Ticaret Yap",
+      "description": "Günlük çarklar, anında ödüller - Clash Coin, ücretsiz turnuva girişleri, indirim kodları veya hatta fonlu bir hesap kazanın.",
+      "cards": [
+        {
+          "title": "Günlük Çarklar",
+          "description": "Her gün ücretsiz çark"
+        },
+        {
+          "title": "Anında Ödüller",
+          "description": "Coinler, indirimler ve daha fazlası"
+        },
+        {
+          "title": "Fonlu Hesaplar",
+          "description": "Tüm görevleri tamamla, kazan"
+        }
+      ],
+      "button": "Çarkı Çevir"
     }
   },
   "RulesPage": {

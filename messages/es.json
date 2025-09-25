@@ -61,6 +61,25 @@
         }
       ],
       "viewFullPricing": "Ver precios completos"
+    },
+    "spinWinTradeSection": {
+      "heading": "Gira. Gana. Opera",
+      "description": "Giros diarios, recompensas instantáneas: gana Clash Coins, inscripciones gratuitas a torneos, códigos de descuento o incluso una cuenta financiada.",
+      "cards": [
+        {
+          "title": "Giros Diarios",
+          "description": "Giro gratis cada día"
+        },
+        {
+          "title": "Recompensas Instantáneas",
+          "description": "Monedas, descuentos y más"
+        },
+        {
+          "title": "Cuentas Financiadas",
+          "description": "Gana desafíos completos"
+        }
+      ],
+      "button": "Girar la Rueda"
     }
   },
   "RulesPage": {

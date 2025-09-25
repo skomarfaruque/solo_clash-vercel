@@ -61,6 +61,25 @@
         }
       ],
       "viewFullPricing": "View full pricing"
+    },
+    "spinWinTradeSection": {
+      "heading": "Spin. Win. Trade",
+      "description": "Daily spins, instant rewards - win Clash Coins, free tournament entries, discount codes, or even a funded account.",
+      "cards": [
+        {
+          "title": "Daily Spins",
+          "description": "Free spin every day"
+        },
+        {
+          "title": "Instant Rewards",
+          "description": "Coins, discounts & more"
+        },
+        {
+          "title": "Funded Accounts",
+          "description": "Win complete challenges"
+        }
+      ],
+      "button": "Spin the Wheel"
     }
   },
   "RulesPage": {

@@ -61,6 +61,25 @@
         }
       ],
       "viewFullPricing": "Ver preços completos"
+    },
+    "spinWinTradeSection": {
+      "heading": "Gire. Ganhe. Negocie",
+      "description": "Giros diários, recompensas instantâneas - ganhe Clash Coins, inscrições gratuitas em torneios, códigos de desconto ou até mesmo uma conta financiada.",
+      "cards": [
+        {
+          "title": "Giros Diários",
+          "description": "Giro grátis todos os dias"
+        },
+        {
+          "title": "Recompensas Instantâneas",
+          "description": "Moedas, descontos e mais"
+        },
+        {
+          "title": "Contas Financiadas",
+          "description": "Ganhe desafios completos"
+        }
+      ],
+      "button": "Girar a Roda"
     }
   },
   "RulesPage": {
