@@ -1,6 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+function getLocaleFromCookie() {
+  if (typeof document === "undefined") return "en";
+  const match = document.cookie.match(/(?:^|; )locale=([^;]*)/);
+  return match ? decodeURIComponent(match[1]) : "en";
+}
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -54,6 +59,23 @@ export default function Navbar() {
     "px-6 py-3 rounded-[58px] bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)] shadow-[0px_2px_12px_rgba(7,5,24,0.5)]";
   const inactiveClass = "text-[#B7B7B7] hover:text-white transition";
 
+  const languages = [
+    { title: "English", code: "en" },
+    { title: "Arabic", code: "ar" },
+    { title: "Turkish", code: "tr" },
+    { title: "Portuguese", code: "pt" },
+    { title: "French", code: "fr" },
+    { title: "Spanish", code: "es" },
+  ];
+
+  const [selectedLang, setSelectedLang] = useState("en");
+  useEffect(() => {
+    setSelectedLang(getLocaleFromCookie());
+  }, []);
+
+  const selectedLangObj =
+    languages.find((l) => l.code === selectedLang) || languages[0];
+
   return (
     <>
       <nav className="flex items-center justify-between bg-transparent text-white absolute left-1/2 transform -translate-x-1/2 max-w-screen-xl w-full h-[52px] px-2 sm:px-4">
@@ -71,23 +93,34 @@ export default function Navbar() {
               className="flex items-center gap-2 bg-neutral-900 h-[52px] px-4 py-1.5 rounded-full"
             >
               <Image
-                src="/en.png"
-                alt="English"
+                src={`/flags/en.png`}
+                alt={selectedLangObj.title}
                 width={26}
                 height={26}
                 className="rounded"
               />
-              English
+              {selectedLangObj.title}
               <span className="ml-1">▼</span>
             </button>
             {langOpen && (
-              <div className="absolute mt-2 w-32 bg-neutral-800 rounded-lg shadow-lg">
-                <button className="w-full px-4 py-2 text-left hover:bg-neutral-700">
-                  English
-                </button>
-                <button className="w-full px-4 py-2 text-left hover:bg-neutral-700">
-                  Spanish
-                </button>
+              <div className="absolute mt-2 w-32 bg-neutral-800 rounded-lg shadow-lg z-20">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    className={`w-full px-4 py-2 text-left hover:bg-neutral-700 ${
+                      selectedLang === lang.code
+                        ? "bg-neutral-700 font-bold"
+                        : ""
+                    }`}
+                    onClick={() => {
+                      document.cookie = `locale=${lang.code}; path=/; max-age=31536000`;
+                      setSelectedLang(lang.code);
+                      window.location.reload();
+                    }}
+                  >
+                    {lang.title}
+                  </button>
+                ))}
               </div>
             )}
           </div>
