@@ -1,4 +1,14 @@
 {
+  "accountPage": {
+    "heroSection": {
+      "profitSplit": "Divisão de Lucros 90/10 • Pagamentos Semanais",
+      "headline1": "Compita. Vença.",
+      "headline2": "Negocie capital financiado.",
+      "description": "Oferecemos aos traders ambiciosos a oportunidade de uma vida. Torneios semanais, rankings e giros diários que transformam desempenho em prêmios – tudo apoiado por ferramentas profissionais e regras justas e concisas.",
+      "startNow": "Comece Agora",
+      "seeAccountTypes": "Ver Tipos de Conta"
+    }
+  },
   "RulesPage": {
     "title": "বাংলা নিয়মাবলী"
   }

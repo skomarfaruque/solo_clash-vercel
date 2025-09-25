@@ -1,4 +1,14 @@
 {
+  "accountPage": {
+    "heroSection": {
+      "profitSplit": "90/10 Profit Split • Weekly Payouts",
+      "headline1": "Compete. Win.",
+      "headline2": "Trade funded capital.",
+      "description": "We give ambitious traders the opportunity of a lifetime. Weekly tournaments, leaderboards and daily spins that turn performance into prizes – all backed by pro-grade execution tools and fair, concise rules.",
+      "startNow": "Start Now",
+      "seeAccountTypes": "See Account Types"
+    }
+  },
   "RulesPage": {
     "title": "Trading rules"
   }

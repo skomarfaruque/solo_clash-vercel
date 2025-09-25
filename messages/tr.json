@@ -1,4 +1,14 @@
 {
+  "accountPage": {
+    "heroSection": {
+      "profitSplit": "90/10 Kar Paylaşımı • Haftalık Ödemeler",
+      "headline1": "Yarış. Kazan.",
+      "headline2": "Fonlu sermaye ile ticaret yap.",
+      "description": "Hırslı traderlara hayatlarının fırsatını sunuyoruz. Haftalık turnuvalar, liderlik tabloları ve performansı ödüllere dönüştüren günlük çarklar – hepsi profesyonel araçlar ve adil, net kurallarla desteklenir.",
+      "startNow": "Hemen Başla",
+      "seeAccountTypes": "Hesap Türlerini Gör"
+    }
+  },
   "RulesPage": {
     "title": "Ticaret kuralları"
   }

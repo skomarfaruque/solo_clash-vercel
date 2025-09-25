@@ -1,4 +1,14 @@
 {
+  "accountPage": {
+    "heroSection": {
+      "profitSplit": "División de ganancias 90/10 • Pagos semanales",
+      "headline1": "Compite. Gana.",
+      "headline2": "Opera con capital financiado.",
+      "description": "Damos a los traders ambiciosos la oportunidad de su vida. Torneos semanales, clasificaciones y giros diarios que convierten el rendimiento en premios, todo respaldado por herramientas profesionales y reglas justas y concisas.",
+      "startNow": "Comienza ahora",
+      "seeAccountTypes": "Ver tipos de cuenta"
+    }
+  },
   "RulesPage": {
     "title": "Reglas de trading"
   }

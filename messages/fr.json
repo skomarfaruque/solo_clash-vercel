@@ -1,4 +1,14 @@
 {
+  "accountPage": {
+    "heroSection": {
+      "profitSplit": "Répartition des profits 90/10 • Paiements hebdomadaires",
+      "headline1": "Compétition. Gagnez.",
+      "headline2": "Tradez un capital financé.",
+      "description": "Nous offrons aux traders ambitieux l'opportunité d'une vie. Tournois hebdomadaires, classements et tours quotidiens qui transforment la performance en prix – le tout soutenu par des outils professionnels et des règles justes et concises.",
+      "startNow": "Commencer maintenant",
+      "seeAccountTypes": "Voir les types de compte"
+    }
+  },
   "RulesPage": {
     "title": "Règles de trading"
   }
