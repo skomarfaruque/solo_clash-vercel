@@ -18,6 +18,27 @@
       "card2Desc": "Şeffaflık esaslı.",
       "card3Title": "Çok dilli destek",
       "card3Desc": "6 dilde içerik ve müşteri desteği."
+    },
+    "howItWorksSection": {
+      "badge": "Nasıl çalışır",
+      "heading": "Değerlendirmeden fonlu hesaba üç adımda.",
+      "steps": [
+        {
+          "step": "Adım 1",
+          "title": "Ne kadar fon istediğinizi seçin.",
+          "description": "Bir hesap boyutu seçin ve işlem yapmaya başlayın."
+        },
+        {
+          "step": "Adım 2",
+          "title": "Bunu hak ettiğinizi kanıtlayın",
+          "description": "Kar hedefine ulaşırken çekilme ve günlük kayıp kurallarına uyun."
+        },
+        {
+          "step": "Adım 3",
+          "title": "Fon alın",
+          "description": "Haftalık olarak çekim yapın ve işlemlerinizi büyütün."
+        }
+      ]
     }
   },
   "RulesPage": {

@@ -18,6 +18,27 @@
       "card2Desc": "Transparente por diseño.",
       "card3Title": "Soporte multilingüe",
       "card3Desc": "Contenido y atención al cliente en 6 idiomas."
+    },
+    "howItWorksSection": {
+      "badge": "Cómo funciona",
+      "heading": "De la evaluación a la cuenta financiada en tres pasos.",
+      "steps": [
+        {
+          "step": "Paso 1",
+          "title": "Elige cuánto financiamiento deseas.",
+          "description": "Elige el tamaño de la cuenta y comienza a operar."
+        },
+        {
+          "step": "Paso 2",
+          "title": "Demuestra que lo mereces",
+          "description": "Alcanza el objetivo de beneficio respetando las reglas de drawdown y pérdida diaria."
+        },
+        {
+          "step": "Paso 3",
+          "title": "Obtén financiación",
+          "description": "Retira semanalmente y escala tu trading."
+        }
+      ]
     }
   },
   "RulesPage": {

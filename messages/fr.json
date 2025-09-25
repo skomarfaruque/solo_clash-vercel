@@ -18,6 +18,27 @@
       "card2Desc": "Transparence par conception.",
       "card3Title": "Support multilingue",
       "card3Desc": "Contenu et service client en 6 langues."
+    },
+    "howItWorksSection": {
+      "badge": "Comment ça marche",
+      "heading": "De l'évaluation au compte financé en trois étapes.",
+      "steps": [
+        {
+          "step": "Étape 1",
+          "title": "Choisissez le montant du financement souhaité.",
+          "description": "Choisissez la taille du compte et commencez à trader."
+        },
+        {
+          "step": "Étape 2",
+          "title": "Prouvez que vous le méritez",
+          "description": "Atteignez l'objectif de profit tout en respectant les règles de drawdown et de perte quotidienne."
+        },
+        {
+          "step": "Étape 3",
+          "title": "Obtenez un financement",
+          "description": "Retirez chaque semaine et développez votre trading."
+        }
+      ]
     }
   },
   "RulesPage": {

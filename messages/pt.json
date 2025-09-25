@@ -18,6 +18,27 @@
       "card2Desc": "Transparente por natureza.",
       "card3Title": "Suporte multilíngue",
       "card3Desc": "Conteúdo e atendimento ao cliente em 6 idiomas."
+    },
+    "howItWorksSection": {
+      "badge": "Como funciona",
+      "heading": "Da avaliação à conta financiada em três etapas.",
+      "steps": [
+        {
+          "step": "Etapa 1",
+          "title": "Escolha quanto financiamento deseja.",
+          "description": "Escolha o tamanho da conta e comece a negociar."
+        },
+        {
+          "step": "Etapa 2",
+          "title": "Prove que você merece",
+          "description": "Atinja a meta de lucro respeitando as regras de drawdown e perda diária."
+        },
+        {
+          "step": "Etapa 3",
+          "title": "Seja financiado",
+          "description": "Saque semanalmente e escale sua negociação."
+        }
+      ]
     }
   },
   "RulesPage": {
