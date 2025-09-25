@@ -39,6 +39,28 @@
           "description": "Retirez chaque semaine et développez votre trading."
         }
       ]
+    },
+    "subscriptionsSection": {
+      "heading": "Comptes conçus pour un trading évolutif",
+      "description": "Choisissez le compte qui correspond à votre style - chaque plan inclut l'accès à Volumetrica (VolSys & VolBook).",
+      "plans": [
+        {
+          "step": "Basique",
+          "title": "Forfait Débutant",
+          "description": "Parfait pour les débutants souhaitant démarrer leur parcours de trading."
+        },
+        {
+          "step": "Pro",
+          "title": "Forfait Professionnel",
+          "description": "Fonctionnalités avancées pour les traders expérimentés ayant besoin de plus d'outils."
+        },
+        {
+          "step": "Élite",
+          "title": "Forfait Élite",
+          "description": "Accès premium avec toutes les fonctionnalités et un support prioritaire."
+        }
+      ],
+      "viewFullPricing": "Voir tous les tarifs"
     }
   },
   "RulesPage": {

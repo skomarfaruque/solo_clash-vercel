@@ -39,6 +39,28 @@
           "description": "Saque semanalmente e escale sua negociação."
         }
       ]
+    },
+    "subscriptionsSection": {
+      "heading": "Contas criadas para negociação escalável",
+      "description": "Escolha a conta que combina com seu estilo - todos os planos incluem acesso ao Volumetrica (VolSys & VolBook).",
+      "plans": [
+        {
+          "step": "Básico",
+          "title": "Plano Inicial",
+          "description": "Perfeito para iniciantes que desejam começar sua jornada de negociação."
+        },
+        {
+          "step": "Pro",
+          "title": "Plano Profissional",
+          "description": "Recursos avançados para traders experientes que precisam de mais ferramentas."
+        },
+        {
+          "step": "Elite",
+          "title": "Plano Elite",
+          "description": "Acesso premium com todos os recursos e suporte prioritário."
+        }
+      ],
+      "viewFullPricing": "Ver preços completos"
     }
   },
   "RulesPage": {

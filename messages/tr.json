@@ -39,6 +39,28 @@
           "description": "Haftalık olarak çekim yapın ve işlemlerinizi büyütün."
         }
       ]
+    },
+    "subscriptionsSection": {
+      "heading": "Ölçeklenebilir ticaret için oluşturulmuş hesaplar",
+      "description": "Tarzınıza uygun hesabı seçin - her plan Volumetrica'ya (VolSys & VolBook) erişim içerir.",
+      "plans": [
+        {
+          "step": "Temel",
+          "title": "Başlangıç Planı",
+          "description": "Ticaret yolculuğuna başlamak isteyen yeni başlayanlar için mükemmel."
+        },
+        {
+          "step": "Pro",
+          "title": "Profesyonel Plan",
+          "description": "Daha fazla araca ihtiyaç duyan deneyimli traderlar için gelişmiş özellikler."
+        },
+        {
+          "step": "Elit",
+          "title": "Elit Plan",
+          "description": "Tüm özelliklere ve öncelikli desteğe sahip premium erişim."
+        }
+      ],
+      "viewFullPricing": "Tüm fiyatları görüntüle"
     }
   },
   "RulesPage": {

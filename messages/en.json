@@ -39,6 +39,28 @@
           "description": "Withdraw weekly and scale your trading."
         }
       ]
+    },
+    "subscriptionsSection": {
+      "heading": "Accounts built for scalable trading",
+      "description": "Pick the account that matches your style - every plan includes access to Volumetrica (VolSys & VolBook).",
+      "plans": [
+        {
+          "step": "Basic",
+          "title": "Starter Plan",
+          "description": "Perfect for beginners looking to start their trading journey."
+        },
+        {
+          "step": "Pro",
+          "title": "Professional Plan",
+          "description": "Advanced features for experienced traders who need more tools."
+        },
+        {
+          "step": "Elite",
+          "title": "Elite Plan",
+          "description": "Premium access with all features and priority support."
+        }
+      ],
+      "viewFullPricing": "View full pricing"
     }
   },
   "RulesPage": {

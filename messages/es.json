@@ -39,6 +39,28 @@
           "description": "Retira semanalmente y escala tu trading."
         }
       ]
+    },
+    "subscriptionsSection": {
+      "heading": "Cuentas diseñadas para trading escalable",
+      "description": "Elige la cuenta que se adapte a tu estilo: todos los planes incluyen acceso a Volumetrica (VolSys & VolBook).",
+      "plans": [
+        {
+          "step": "Básico",
+          "title": "Plan Inicial",
+          "description": "Perfecto para principiantes que buscan comenzar su viaje de trading."
+        },
+        {
+          "step": "Pro",
+          "title": "Plan Profesional",
+          "description": "Funciones avanzadas para traders experimentados que necesitan más herramientas."
+        },
+        {
+          "step": "Elite",
+          "title": "Plan Elite",
+          "description": "Acceso premium con todas las funciones y soporte prioritario."
+        }
+      ],
+      "viewFullPricing": "Ver precios completos"
     }
   },
   "RulesPage": {
