@@ -62,6 +62,37 @@
       ],
       "viewFullPricing": "Ver preços completos"
     },
+
+    "faqSection": {
+      "heading": "Perguntas Frequentes",
+      "description": "Tudo o que você precisa saber para começar",
+      "faqs": [
+        {
+          "question": "Como faço para começar na plataforma?",
+          "answer": "Começar é fácil! Basta se inscrever, completar seu perfil e você terá acesso a todos os nossos recursos, incluindo giros diários, torneios e ferramentas de negociação."
+        },
+        {
+          "question": "O que são Clash Coins e como ganho elas?",
+          "answer": "Clash Coins são a moeda da nossa plataforma que você pode ganhar através de giros diários, completando desafios e participando de torneios. Use-as para entrar em torneios premium ou trocar por recompensas."
+        },
+        {
+          "question": "Com que frequência posso girar a roleta?",
+          "answer": "Você ganha um giro grátis a cada 24 horas! Membros premium ganham giros adicionais e melhores chances de recompensa. Verifique seu painel para ver quando seu próximo giro estará disponível."
+        },
+        {
+          "question": "Que tipo de recompensas posso ganhar?",
+          "answer": "Você pode ganhar Clash Coins, inscrições gratuitas em torneios, códigos de desconto, acesso exclusivo a eventos e até contas financiadas. As recompensas variam conforme seu nível de assinatura."
+        },
+        {
+          "question": "Como entro em contato com o suporte?",
+          "answer": "Nossa equipe de suporte está disponível 24/7 pelo chat do app, e-mail (support@platform.com) ou pelo nosso Discord. Normalmente respondemos em 2-4 horas."
+        },
+        {
+          "question": "Minhas informações estão seguras?",
+          "answer": "Com certeza! Usamos criptografia e medidas de segurança padrão do setor para proteger seus dados. Todas as transações são seguras e nunca armazenamos informações sensíveis de pagamento em nossos servidores."
+        }
+      ]
+    },
     "spinWinTradeSection": {
       "heading": "Gire. Ganhe. Negocie",
       "description": "Giros diários, recompensas instantâneas - ganhe Clash Coins, inscrições gratuitas em torneios, códigos de desconto ou até mesmo uma conta financiada.",

@@ -62,6 +62,37 @@
       ],
       "viewFullPricing": "Tüm fiyatları görüntüle"
     },
+
+    "faqSection": {
+      "heading": "Sıkça Sorulan Sorular",
+      "description": "Başlamak için bilmeniz gereken her şey",
+      "faqs": [
+        {
+          "question": "Platforma nasıl başlarım?",
+          "answer": "Başlamak çok kolay! Sadece kaydolun, profilinizi tamamlayın ve günlük çarklar, turnuvalar ve ticaret araçları dahil tüm özelliklerimize erişin."
+        },
+        {
+          "question": "Clash Coin nedir ve nasıl kazanılır?",
+          "answer": "Clash Coin, platformumuzun para birimidir ve günlük çarklar, görevler ve turnuvalara katılarak kazanabilirsiniz. Premium turnuvalara katılmak veya ödüllerle takas etmek için kullanın."
+        },
+        {
+          "question": "Çarkı ne sıklıkla çevirebilirim?",
+          "answer": "Her 24 saatte bir ücretsiz çark hakkınız var! Premium üyeler ek çark ve daha iyi ödül şansı elde eder. Bir sonraki çarkınızın ne zaman olacağını panelinizden görebilirsiniz."
+        },
+        {
+          "question": "Ne tür ödüller kazanabilirim?",
+          "answer": "Clash Coin, ücretsiz turnuva girişleri, indirim kodları, özel etkinliklere erişim ve hatta fonlu hesaplar kazanabilirsiniz. Ödüller üyelik seviyenize göre değişir."
+        },
+        {
+          "question": "Destek ile nasıl iletişime geçerim?",
+          "answer": "Destek ekibimiz 7/24 uygulama içi sohbet, e-posta (support@platform.com) veya Discord üzerinden hizmetinizde. Genellikle 2-4 saat içinde yanıt veriyoruz."
+        },
+        {
+          "question": "Hesap bilgilerim güvende mi?",
+          "answer": "Kesinlikle! Verilerinizi korumak için sektör standardı şifreleme ve güvenlik önlemleri kullanıyoruz. Tüm işlemler güvenli ve hassas ödeme bilgilerini sunucularımızda asla saklamıyoruz."
+        }
+      ]
+    },
     "spinWinTradeSection": {
       "heading": "Çevir. Kazan. Ticaret Yap",
       "description": "Günlük çarklar, anında ödüller - Clash Coin, ücretsiz turnuva girişleri, indirim kodları veya hatta fonlu bir hesap kazanın.",

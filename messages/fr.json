@@ -62,6 +62,36 @@
       ],
       "viewFullPricing": "Voir tous les tarifs"
     },
+    "faqSection": {
+      "heading": "Questions Fréquemment Posées",
+      "description": "Tout ce qu'il faut savoir pour commencer",
+      "faqs": [
+        {
+          "question": "Comment démarrer sur la plateforme ?",
+          "answer": "C'est facile ! Inscrivez-vous, complétez votre profil et vous aurez accès à toutes nos fonctionnalités, y compris les tours quotidiens, les tournois et les outils de trading."
+        },
+        {
+          "question": "Que sont les Clash Coins et comment les gagner ?",
+          "answer": "Les Clash Coins sont la monnaie de notre plateforme que vous pouvez gagner via les tours quotidiens, les défis et la participation aux tournois. Utilisez-les pour accéder à des tournois premium ou les échanger contre des récompenses."
+        },
+        {
+          "question": "À quelle fréquence puis-je tourner la roue ?",
+          "answer": "Vous obtenez un tour gratuit toutes les 24h ! Les membres premium ont des tours supplémentaires et de meilleures chances de récompense. Consultez votre tableau de bord pour voir quand votre prochain tour sera disponible."
+        },
+        {
+          "question": "Quels types de récompenses puis-je gagner ?",
+          "answer": "Vous pouvez gagner des Clash Coins, des inscriptions gratuites à des tournois, des codes de réduction, un accès exclusif à des événements et même des comptes de trading financés. Les récompenses varient selon votre niveau d'abonnement."
+        },
+        {
+          "question": "Comment contacter le support ?",
+          "answer": "Notre équipe support est disponible 24/7 via le chat, email (support@platform.com) ou Discord. Nous répondons généralement sous 2 à 4 heures."
+        },
+        {
+          "question": "Mes informations sont-elles sécurisées ?",
+          "answer": "Absolument ! Nous utilisons le chiffrement et des mesures de sécurité standard pour protéger vos données. Toutes les transactions sont sécurisées et nous ne stockons jamais d'informations de paiement sensibles sur nos serveurs."
+        }
+      ]
+    },
     "spinWinTradeSection": {
       "heading": "Tournez. Gagnez. Tradez",
       "description": "Tours quotidiens, récompenses instantanées - gagnez des Clash Coins, des inscriptions gratuites à des tournois, des codes de réduction ou même un compte financé.",
