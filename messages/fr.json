@@ -7,6 +7,17 @@
       "description": "Nous offrons aux traders ambitieux l'opportunité d'une vie. Tournois hebdomadaires, classements et tours quotidiens qui transforment la performance en prix – le tout soutenu par des outils professionnels et des règles justes et concises.",
       "startNow": "Commencer maintenant",
       "seeAccountTypes": "Voir les types de compte"
+    },
+    "featureSection": {
+      "badge": "POURQUOI NOUS CHOISIR",
+      "heading1": "Conçu pour les traders sérieux",
+      "heading2": "simple, équitable, rapide.",
+      "card1Title": "Répartition des profits 90/10",
+      "card1Desc": "Des paiements leaders du secteur qui récompensent la performance.",
+      "card2Title": "Règles de risque claires sans frais cachés",
+      "card2Desc": "Transparence par conception.",
+      "card3Title": "Support multilingue",
+      "card3Desc": "Contenu et service client en 6 langues."
     }
   },
   "RulesPage": {

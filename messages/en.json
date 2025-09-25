@@ -7,6 +7,17 @@
       "description": "We give ambitious traders the opportunity of a lifetime. Weekly tournaments, leaderboards and daily spins that turn performance into prizes – all backed by pro-grade execution tools and fair, concise rules.",
       "startNow": "Start Now",
       "seeAccountTypes": "See Account Types"
+    },
+    "featureSection": {
+      "badge": "WHY CHOOSE US",
+      "heading1": "Built for serious",
+      "heading2": "traders - simple, fair, fast.",
+      "card1Title": "90/10 Profit split",
+      "card1Desc": "Industry-leading payouts that reward performance.",
+      "card2Title": "Clear risk rules with no hidden fees",
+      "card2Desc": "Transparent by design.",
+      "card3Title": "Multi-language support",
+      "card3Desc": "Content & customer care in 6 languages."
     }
   },
   "RulesPage": {

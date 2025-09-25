@@ -7,9 +7,20 @@
       "description": "Oferecemos aos traders ambiciosos a oportunidade de uma vida. Torneios semanais, rankings e giros diários que transformam desempenho em prêmios – tudo apoiado por ferramentas profissionais e regras justas e concisas.",
       "startNow": "Comece Agora",
       "seeAccountTypes": "Ver Tipos de Conta"
+    },
+    "featureSection": {
+      "badge": "POR QUE NOS ESCOLHER",
+      "heading1": "Feito para traders sérios",
+      "heading2": "simples, justo, rápido.",
+      "card1Title": "Divisão de lucros 90/10",
+      "card1Desc": "Pagamentos líderes do setor que recompensam o desempenho.",
+      "card2Title": "Regras de risco claras sem taxas ocultas",
+      "card2Desc": "Transparente por natureza.",
+      "card3Title": "Suporte multilíngue",
+      "card3Desc": "Conteúdo e atendimento ao cliente em 6 idiomas."
     }
   },
   "RulesPage": {
-    "title": "বাংলা নিয়মাবলী"
+    "title": "Regras de Negociação"
   }
 }

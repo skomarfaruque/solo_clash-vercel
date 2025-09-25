@@ -7,6 +7,17 @@
       "description": "Hırslı traderlara hayatlarının fırsatını sunuyoruz. Haftalık turnuvalar, liderlik tabloları ve performansı ödüllere dönüştüren günlük çarklar – hepsi profesyonel araçlar ve adil, net kurallarla desteklenir.",
       "startNow": "Hemen Başla",
       "seeAccountTypes": "Hesap Türlerini Gör"
+    },
+    "featureSection": {
+      "badge": "NEDEN BİZİ SEÇMELİSİNİZ",
+      "heading1": "Ciddi traderlar için tasarlandı",
+      "heading2": "basit, adil, hızlı.",
+      "card1Title": "90/10 Kar paylaşımı",
+      "card1Desc": "Performansı ödüllendiren sektör lideri ödemeler.",
+      "card2Title": "Gizli ücret olmadan net risk kuralları",
+      "card2Desc": "Şeffaflık esaslı.",
+      "card3Title": "Çok dilli destek",
+      "card3Desc": "6 dilde içerik ve müşteri desteği."
     }
   },
   "RulesPage": {

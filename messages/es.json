@@ -7,6 +7,17 @@
       "description": "Damos a los traders ambiciosos la oportunidad de su vida. Torneos semanales, clasificaciones y giros diarios que convierten el rendimiento en premios, todo respaldado por herramientas profesionales y reglas justas y concisas.",
       "startNow": "Comienza ahora",
       "seeAccountTypes": "Ver tipos de cuenta"
+    },
+    "featureSection": {
+      "badge": "POR QUÉ ELEGIRNOS",
+      "heading1": "Hecho para traders serios",
+      "heading2": "simple, justo, rápido.",
+      "card1Title": "División de ganancias 90/10",
+      "card1Desc": "Pagos líderes en la industria que premian el rendimiento.",
+      "card2Title": "Reglas de riesgo claras sin tarifas ocultas",
+      "card2Desc": "Transparente por diseño.",
+      "card3Title": "Soporte multilingüe",
+      "card3Desc": "Contenido y atención al cliente en 6 idiomas."
     }
   },
   "RulesPage": {

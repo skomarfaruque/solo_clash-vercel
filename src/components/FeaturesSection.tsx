@@ -1,7 +1,9 @@
 import FeatureCard from "./FeatureCard";
 import HomeButton from "./HomeButton";
+import { useTranslations } from "next-intl";
 
 export default function FeaturesSection() {
+  const t = useTranslations();
   return (
     <section
       className="justify-center text-center px-4 sm:px-6 lg:px-20 py-10 sm:py-16 lg:py-20"
@@ -9,12 +11,13 @@ export default function FeaturesSection() {
     >
       <div className="max-w-[1320px] mx-auto">
         {/* Top Badge */}
-        <HomeButton>WHY CHOOSE US</HomeButton>
+        <HomeButton>{t("accountPage.featureSection.badge")}</HomeButton>
 
         {/* Heading */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 text-white">
-          Built for serious <br className="hidden md:block" />
-          traders - simple, fair, fast.
+          {t("accountPage.featureSection.heading1")}{" "}
+          <br className="hidden md:block" />
+          {t("accountPage.featureSection.heading2")}
         </h2>
 
         {/* Features Grid */}
@@ -22,22 +25,22 @@ export default function FeaturesSection() {
           {/* Card 1 */}
           <FeatureCard
             iconPath="/why_choose_icon_one.svg"
-            title="90/10 Profit split"
-            description="Industry-leading payouts that reward performance."
+            title={t("accountPage.featureSection.card1Title")}
+            description={t("accountPage.featureSection.card1Desc")}
           />
 
           {/* Card 2 */}
           <FeatureCard
             iconPath="/why_choose_icon_two.svg"
-            title="Clear risk rules with no hidden fees"
-            description="Transparent by design."
+            title={t("accountPage.featureSection.card2Title")}
+            description={t("accountPage.featureSection.card2Desc")}
           />
 
           {/* Card 3 */}
           <FeatureCard
             iconPath="/why_choose_icon_three.svg"
-            title="Multi-language support"
-            description="Content & customer care in 6 languages."
+            title={t("accountPage.featureSection.card3Title")}
+            description={t("accountPage.featureSection.card3Desc")}
           />
         </div>
       </div>
