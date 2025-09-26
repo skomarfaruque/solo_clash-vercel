@@ -216,5 +216,48 @@
       "title": "Rules & Guidelines | Clash Shop",
       "description": "Read the official rules and guidelines before participating in Clash Shop challenges."
     }
+  },
+  "footer": {
+    "links": {
+      "accounts": "Accounts",
+      "rules": "Rules",
+      "faq": "FAQ",
+      "getStarted": "Get Started"
+    },
+    "features": {
+      "clashShop": "Clash Shop",
+      "dailySpins": "Daily Spins"
+    },
+    "partners": {
+      "affiliates": "Affiliates",
+      "referralProgram": "Referral Program"
+    },
+    "support": {
+      "contactUs": "Contact Us",
+      "email": "support@soloclash.com",
+      "languages": "24/7 Support in 6 Languages"
+    },
+    "legal": {
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service",
+      "riskDisclosure": "Risk Disclosure",
+      "cookiesPolicy": "Cookies Policy"
+    },
+    "social": {
+      "youtube": "YouTube",
+      "twitch": "Twitch",
+      "instagram": "Instagram",
+      "tiktok": "TikTok"
+    },
+    "sections": {
+      "platform": "Platform",
+      "features": "Features",
+      "partners": "Partners",
+      "support": "Support"
+    },
+    "company": {
+      "description": "We give ambitious traders the opportunity of a lifetime. Weekly tournaments, leaderboards and daily spins that turn performance into prizes",
+      "copyright": "© 2024 Solo Clash. All rights reserved."
+    }
   }
 }

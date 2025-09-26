@@ -217,5 +217,48 @@
       "title": "Regras & Diretrizes | Clash Shop",
       "description": "Leia as regras e diretrizes oficiais antes de participar dos desafios do Clash Shop."
     }
+  },
+  "footer": {
+    "links": {
+      "accounts": "Contas",
+      "rules": "Regras",
+      "faq": "FAQ",
+      "getStarted": "Comece Agora"
+    },
+    "features": {
+      "clashShop": "Loja Clash",
+      "dailySpins": "Giros Diários"
+    },
+    "partners": {
+      "affiliates": "Afiliados",
+      "referralProgram": "Programa de Indicação"
+    },
+    "support": {
+      "contactUs": "Fale Conosco",
+      "email": "support@soloclash.com",
+      "languages": "Suporte 24/7 em 6 idiomas"
+    },
+    "legal": {
+      "privacyPolicy": "Política de Privacidade",
+      "termsOfService": "Termos de Serviço",
+      "riskDisclosure": "Divulgação de Riscos",
+      "cookiesPolicy": "Política de Cookies"
+    },
+    "social": {
+      "youtube": "YouTube",
+      "twitch": "Twitch",
+      "instagram": "Instagram",
+      "tiktok": "TikTok"
+    },
+    "sections": {
+      "platform": "Plataforma",
+      "features": "Recursos",
+      "partners": "Parceiros",
+      "support": "Suporte"
+    },
+    "company": {
+      "description": "Oferecemos aos traders ambiciosos a oportunidade de uma vida. Torneios semanais, rankings e giros diários que transformam desempenho em prêmios",
+      "copyright": "© 2024 Solo Clash. Todos os direitos reservados."
+    }
   }
 }

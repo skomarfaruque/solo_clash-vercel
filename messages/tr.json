@@ -217,5 +217,48 @@
         "priceRange": "$0 - $400"
       }
     ]
+  },
+  "footer": {
+    "links": {
+      "accounts": "Hesaplar",
+      "rules": "Kurallar",
+      "faq": "SSS",
+      "getStarted": "Hemen Başla"
+    },
+    "features": {
+      "clashShop": "Clash Mağazası",
+      "dailySpins": "Günlük Çarklar"
+    },
+    "partners": {
+      "affiliates": "Ortaklar",
+      "referralProgram": "Yönlendirme Programı"
+    },
+    "support": {
+      "contactUs": "Bize Ulaşın",
+      "email": "support@soloclash.com",
+      "languages": "6 Dilde 7/24 Destek"
+    },
+    "legal": {
+      "privacyPolicy": "Gizlilik Politikası",
+      "termsOfService": "Hizmet Şartları",
+      "riskDisclosure": "Risk Açıklaması",
+      "cookiesPolicy": "Çerez Politikası"
+    },
+    "social": {
+      "youtube": "YouTube",
+      "twitch": "Twitch",
+      "instagram": "Instagram",
+      "tiktok": "TikTok"
+    },
+    "sections": {
+      "platform": "Platform",
+      "features": "Özellikler",
+      "partners": "Ortaklar",
+      "support": "Destek"
+    },
+    "company": {
+      "description": "Hırslı traderlara hayatlarının fırsatını sunuyoruz. Haftalık turnuvalar, liderlik tabloları ve performansı ödüllere dönüştüren günlük çarklar",
+      "copyright": "© 2024 Solo Clash. Tüm hakları saklıdır."
+    }
   }
 }

@@ -216,5 +216,48 @@
         "priceRange": "$0 - $400"
       }
     ]
+  },
+  "footer": {
+    "links": {
+      "accounts": "Comptes",
+      "rules": "Règles",
+      "faq": "FAQ",
+      "getStarted": "Commencer Maintenant"
+    },
+    "features": {
+      "clashShop": "Boutique Clash",
+      "dailySpins": "Tours Quotidiens"
+    },
+    "partners": {
+      "affiliates": "Affiliés",
+      "referralProgram": "Programme de Parrainage"
+    },
+    "support": {
+      "contactUs": "Contactez-nous",
+      "email": "support@soloclash.com",
+      "languages": "Support 24/7 en 6 langues"
+    },
+    "legal": {
+      "privacyPolicy": "Politique de Confidentialité",
+      "termsOfService": "Conditions de Service",
+      "riskDisclosure": "Divulgation des Risques",
+      "cookiesPolicy": "Politique de Cookies"
+    },
+    "social": {
+      "youtube": "YouTube",
+      "twitch": "Twitch",
+      "instagram": "Instagram",
+      "tiktok": "TikTok"
+    },
+    "sections": {
+      "platform": "Plateforme",
+      "features": "Fonctionnalités",
+      "partners": "Partenaires",
+      "support": "Support"
+    },
+    "company": {
+      "description": "Nous offrons aux traders ambitieux l'opportunité d'une vie. Tournois hebdomadaires, classements et tours quotidiens qui transforment la performance en prix",
+      "copyright": "© 2024 Solo Clash. Tous droits réservés."
+    }
   }
 }

@@ -217,5 +217,48 @@
       "title": "القواعد والإرشادات | متجر كلاش",
       "description": "اقرأ القواعد والإرشادات الرسمية قبل المشاركة في تحديات متجر كلاش."
     }
+  },
+  "footer": {
+    "links": {
+      "accounts": "الحسابات",
+      "rules": "القواعد",
+      "faq": "الأسئلة الشائعة",
+      "getStarted": "ابدأ الآن"
+    },
+    "features": {
+      "clashShop": "متجر Clash",
+      "dailySpins": "اللفات اليومية"
+    },
+    "partners": {
+      "affiliates": "الشركاء",
+      "referralProgram": "برنامج الإحالة"
+    },
+    "support": {
+      "contactUs": "اتصل بنا",
+      "email": "support@soloclash.com",
+      "languages": "دعم 24/7 بـ 6 لغات"
+    },
+    "legal": {
+      "privacyPolicy": "سياسة الخصوصية",
+      "termsOfService": "شروط الخدمة",
+      "riskDisclosure": "إفصاح المخاطر",
+      "cookiesPolicy": "سياسة الكوكيز"
+    },
+    "social": {
+      "youtube": "يوتيوب",
+      "twitch": "تويتش",
+      "instagram": "إنستغرام",
+      "tiktok": "تيك توك"
+    },
+    "sections": {
+      "platform": "المنصة",
+      "features": "الميزات",
+      "partners": "الشركاء",
+      "support": "الدعم"
+    },
+    "company": {
+      "description": "نمنح المتداولين الطموحين فرصة العمر. بطولات أسبوعية ولوحات المتصدرين ولفات يومية تحول الأداء إلى جوائز",
+      "copyright": "© 2024 Solo Clash. جميع الحقوق محفوظة."
+    }
   }
 }
