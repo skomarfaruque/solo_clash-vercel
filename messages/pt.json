@@ -116,6 +116,41 @@
   "RulesPage": {
     "title": "Regras de Negociação"
   },
+  "contactSection": {
+    "badge": "CONTATO",
+    "heading": "Entre em Contato",
+    "description": "Tudo o que você precisa saber para começar",
+    "address": {
+      "line1": "2118 Thornridge Cir. Syracuse,",
+      "line2": "Connecticut 35624"
+    },
+    "hours": {
+      "label": "Horário",
+      "value": "Suporte 24/7 em 6 idiomas e chat ao vivo"
+    },
+    "email": {
+      "label": "E-mail",
+      "value": "support@soloclash.com"
+    },
+    "social": {
+      "youtube": "YouTube",
+      "twitter": "Twitter",
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn"
+    },
+    "form": {
+      "title": "Tem perguntas?",
+      "nameLabel": "Seu nome",
+      "namePlaceholder": "Nome completo",
+      "emailLabel": "Seu e-mail",
+      "emailPlaceholder": "Endereço de e-mail",
+      "numberLabel": "Seu número",
+      "numberPlaceholder": "Seu número de conta",
+      "messageLabel": "Sua mensagem",
+      "messagePlaceholder": "Digite sua mensagem",
+      "submit": "Enviar →"
+    }
+  },
   "navbar": {
     "account": "Conta",
     "rules": "Regras",

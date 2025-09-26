@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 function getLocaleFromCookie() {
   if (typeof document === "undefined") return "en";
@@ -71,9 +71,43 @@ export default function Navbar() {
   ];
 
   const [selectedLang, setSelectedLang] = useState("en");
+  // Separate refs for desktop and mobile dropdowns
+  const desktopLangDropdownRef = useRef<HTMLDivElement>(null);
+  const mobileLangDropdownRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     setSelectedLang(getLocaleFromCookie());
   }, []);
+
+  // Close desktop language dropdown when clicking outside
+  useEffect(() => {
+    if (!langOpen) return;
+    const handleClick = (e: MouseEvent) => {
+      if (
+        desktopLangDropdownRef.current &&
+        !desktopLangDropdownRef.current.contains(e.target as Node)
+      ) {
+        setLangOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [langOpen]);
+
+  // Close mobile language dropdown when clicking outside (when drawer is open)
+  useEffect(() => {
+    if (!drawerOpen || !langOpen) return;
+    const handleClick = (e: MouseEvent) => {
+      if (
+        mobileLangDropdownRef.current &&
+        !mobileLangDropdownRef.current.contains(e.target as Node)
+      ) {
+        setLangOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [drawerOpen, langOpen]);
 
   const selectedLangObj =
     languages.find((l) => l.code === selectedLang) || languages[0];
@@ -89,7 +123,7 @@ export default function Navbar() {
           </Link>
 
           {/* Language Dropdown */}
-          <div className="relative">
+          <div className="relative" ref={desktopLangDropdownRef}>
             <button
               onClick={() => setLangOpen(!langOpen)}
               className="flex items-center gap-2 bg-neutral-900 h-[52px] px-4 py-1.5 rounded-full"
@@ -102,7 +136,26 @@ export default function Navbar() {
                 className="rounded"
               />
               {selectedLangObj.title}
-              <span className="ml-1">▼</span>
+              <span className="ml-1">
+                <svg
+                  className="ml-1"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M4 6l4 4 4-4"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
             </button>
             {langOpen && (
               <div className="absolute mt-2 w-32 bg-neutral-800 rounded-lg shadow-lg z-20">
@@ -198,20 +251,40 @@ export default function Navbar() {
               <span className="block w-6 h-0.5 bg-white -rotate-45 -translate-y-1.5"></span>
             </button>
             {/* Mobile Language Dropdown */}
-            <div className="relative mb-4">
+            <div className="relative" ref={mobileLangDropdownRef}>
               <button
-                onClick={() => setLangOpen(!langOpen)}
-                className="flex items-center gap-2 bg-neutral-800 h-[40px] px-3 py-1.5 rounded-full w-full"
+                type="button"
+                onClick={() => setLangOpen((open) => !open)}
+                className="flex items-center gap-2 bg-neutral-900 h-[52px] px-4 py-1.5 rounded-full"
+                aria-haspopup="listbox"
+                aria-expanded={langOpen}
               >
                 <Image
-                  src={`/flags/${selectedLangObj.code}.png`}
+                  src={`/flags/en.png`}
                   alt={selectedLangObj.title}
-                  width={22}
-                  height={22}
+                  width={26}
+                  height={26}
                   className="rounded"
                 />
                 {selectedLangObj.title}
-                <span className="ml-1">▼</span>
+                <svg
+                  className="ml-1"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 22 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M6 9l5 5 5-5"
+                    stroke="currentColor"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
               </button>
               {langOpen && (
                 <div className="absolute mt-2 w-32 bg-neutral-800 rounded-lg shadow-lg z-20">

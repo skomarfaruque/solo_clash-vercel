@@ -116,6 +116,41 @@
   "RulesPage": {
     "title": "Ticaret kuralları"
   },
+  "contactSection": {
+    "badge": "İLETİŞİM",
+    "heading": "Bizimle İletişime Geçin",
+    "description": "Başlamak için bilmeniz gereken her şey",
+    "address": {
+      "line1": "2118 Thornridge Cir. Syracuse,",
+      "line2": "Connecticut 35624"
+    },
+    "hours": {
+      "label": "Çalışma Saatleri",
+      "value": "6 dilde 7/24 destek ve canlı sohbet"
+    },
+    "email": {
+      "label": "E-posta",
+      "value": "support@soloclash.com"
+    },
+    "social": {
+      "youtube": "YouTube",
+      "twitter": "Twitter",
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn"
+    },
+    "form": {
+      "title": "Sorularınız mı var?",
+      "nameLabel": "Adınız",
+      "namePlaceholder": "Tam adınız",
+      "emailLabel": "E-posta adresiniz",
+      "emailPlaceholder": "E-posta adresi",
+      "numberLabel": "Numaranız",
+      "numberPlaceholder": "Hesap numaranız",
+      "messageLabel": "Mesajınız",
+      "messagePlaceholder": "Mesajınızı girin",
+      "submit": "Gönder →"
+    }
+  },
   "navbar": {
     "account": "Hesap",
     "rules": "Kurallar",

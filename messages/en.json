@@ -115,6 +115,41 @@
   "RulesPage": {
     "title": "Trading rules"
   },
+  "contactSection": {
+    "badge": "CONTACT",
+    "heading": "Get in Touch",
+    "description": "Everything you need to know about getting started",
+    "address": {
+      "line1": "2118 Thornridge Cir. Syracuse,",
+      "line2": "Connecticut 35624"
+    },
+    "hours": {
+      "label": "Hours",
+      "value": "24/7 Support in 6 Languages and Live Chat"
+    },
+    "email": {
+      "label": "Email",
+      "value": "support@soloclash.com"
+    },
+    "social": {
+      "youtube": "YouTube",
+      "twitter": "Twitter",
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn"
+    },
+    "form": {
+      "title": "Have Questions?",
+      "nameLabel": "Your Name",
+      "namePlaceholder": "Full name",
+      "emailLabel": "Your Email",
+      "emailPlaceholder": "Email address",
+      "numberLabel": "Your Number",
+      "numberPlaceholder": "Your account number",
+      "messageLabel": "Your Message",
+      "messagePlaceholder": "Enter your message",
+      "submit": "Submit →"
+    }
+  },
   "navbar": {
     "account": "Account",
     "rules": "Rules",

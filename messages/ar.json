@@ -116,6 +116,41 @@
   "RulesPage": {
     "title": "قواعد التداول"
   },
+  "contactSection": {
+    "badge": "اتصل بنا",
+    "heading": "تواصل معنا",
+    "description": "كل ما تحتاج معرفته للبدء",
+    "address": {
+      "line1": "2118 ثورنريدج سيركل، سيراكيوز،",
+      "line2": "كونيتيكت 35624"
+    },
+    "hours": {
+      "label": "ساعات العمل",
+      "value": "دعم 24/7 بست لغات ودردشة مباشرة"
+    },
+    "email": {
+      "label": "البريد الإلكتروني",
+      "value": "support@soloclash.com"
+    },
+    "social": {
+      "youtube": "يوتيوب",
+      "twitter": "تويتر",
+      "instagram": "انستغرام",
+      "linkedin": "لينكدإن"
+    },
+    "form": {
+      "title": "هل لديك أسئلة؟",
+      "nameLabel": "اسمك",
+      "namePlaceholder": "الاسم الكامل",
+      "emailLabel": "بريدك الإلكتروني",
+      "emailPlaceholder": "عنوان البريد الإلكتروني",
+      "numberLabel": "رقمك",
+      "numberPlaceholder": "رقم حسابك",
+      "messageLabel": "رسالتك",
+      "messagePlaceholder": "أدخل رسالتك",
+      "submit": "إرسال →"
+    }
+  },
   "navbar": {
     "account": "الحساب",
     "rules": "القواعد",

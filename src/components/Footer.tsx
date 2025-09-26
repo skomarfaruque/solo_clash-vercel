@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer
-      className="text-white py-10 sm:py-14 md:py-16 px-4 sm:px-6 lg:px-20 pb-0"
+      className="text-white py-10 sm:py-14 md:py-16 px-4 sm:px-6 lg:px-20 !pb-0"
       style={{ backgroundColor: "#030303" }}
     >
       <div className="max-w-7xl mx-auto">

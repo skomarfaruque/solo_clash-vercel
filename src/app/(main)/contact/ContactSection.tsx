@@ -1,13 +1,14 @@
 import SvgButton2 from "@/components/buttons/svgButton2";
 import HomeButton from "@/components/HomeButton";
 import Image from "next/image";
-
+import { useTranslations } from "next-intl";
 export default function ContactSection() {
+  const t = useTranslations();
   return (
     <section className="justify-center text-center px-4 sm:px-6 lg:px-20">
-      <div className="flex flex-col lg:flex-row z-10 max-w-4xl mx-auto pt-[80px] lg:pt-[217px] gap-10 lg:gap-[52px]">
+      <div className="flex flex-col lg:flex-row z-10 max-w-4xl mx-auto pt-[150px] lg:pt-[217px] gap-10 lg:gap-[52px]">
         <div className="flex flex-1 flex-col items-center text-left">
-          <HomeButton>CONTACT</HomeButton>
+          <HomeButton>{t("contactSection.badge")}</HomeButton>
           <h3
             className="pt-6 font-bold leading-[110%]"
             style={{
@@ -22,10 +23,10 @@ export default function ContactSection() {
               backgroundClip: "text",
             }}
           >
-            Get in Touch
+            {t("contactSection.heading")}
           </h3>
           <p className="font-normal text-[18px] leading-[150%] text-gray-300">
-            Everything you need to know about getting started
+            {t("contactSection.description")}
           </p>
           <div className="flex flex-col gap-8 w-full max-w-md text-[#B7B7B7] mt-10 md:mt-[80px]">
             {/* Address */}
@@ -38,8 +39,8 @@ export default function ContactSection() {
                 className="w-[75px] h-[75px]"
               />
               <div className="text-sm leading-relaxed flex flex-1 flex-col justify-between items-start">
-                <span>2118 Thornridge Cir. Syracuse,</span>
-                <span>Connecticut 35624</span>
+                <span>{t("contactSection.address.line1")}</span>
+                <span>{t("contactSection.address.line2")}</span>
               </div>
             </div>
 
@@ -53,8 +54,8 @@ export default function ContactSection() {
                 className="w-[75px] h-[75px]"
               />
               <div className="text-sm leading-relaxed flex flex-1 flex-col justify-between items-start">
-                <span>Hours</span>
-                <span>24/7 Support in 6 Languages and Live Chat</span>
+                <span>{t("contactSection.hours.label")}</span>
+                <span>{t("contactSection.hours.value")}</span>
               </div>
             </div>
 
@@ -68,8 +69,8 @@ export default function ContactSection() {
                 className="w-[75px] h-[75px]"
               />
               <div className="text-sm leading-relaxed flex flex-1 flex-col justify-between items-start">
-                <span>Email</span>
-                <span>support@soloclash.com</span>
+                <span>{t("contactSection.email.label")}</span>
+                <span>{t("contactSection.email.value")}</span>
               </div>
             </div>
           </div>
@@ -81,7 +82,7 @@ export default function ContactSection() {
             >
               <Image
                 src="/icons/contacts/contact_youtube.png"
-                alt="YouTube"
+                alt={t("contactSection.social.youtube")}
                 width={40}
                 height={40}
                 className="w-[40px] h-[40px] hover:opacity-80 transition"
@@ -94,7 +95,7 @@ export default function ContactSection() {
             >
               <Image
                 src="/icons/contacts/contact_x.png"
-                alt="Twitter"
+                alt={t("contactSection.social.twitter")}
                 width={40}
                 height={40}
                 className="w-[40px] h-[40px] hover:opacity-80 transition"
@@ -107,7 +108,7 @@ export default function ContactSection() {
             >
               <Image
                 src="/icons/contacts/contact_ig.png"
-                alt="Instagram"
+                alt={t("contactSection.social.instagram")}
                 width={40}
                 height={40}
                 className="w-[40px] h-[40px] hover:opacity-80 transition"
@@ -120,7 +121,7 @@ export default function ContactSection() {
             >
               <Image
                 src="/icons/contacts/contact_linkedin.png"
-                alt="LinkedIn"
+                alt={t("contactSection.social.linkedin")}
                 width={40}
                 height={40}
                 className="w-[40px] h-[40px] hover:opacity-80 transition"
@@ -139,25 +140,29 @@ export default function ContactSection() {
           >
             {/* Title */}
             <h2 className="text-2xl font-bold text-center mb-[50px]">
-              Have Questions?
+              {t("contactSection.form.title")}
             </h2>
 
             <form className="space-y-6 text-left w-full">
               {/* Name + Email */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm">Your Name</label>
+                  <label className="text-sm">
+                    {t("contactSection.form.nameLabel")}
+                  </label>
                   <input
                     type="text"
-                    placeholder="Full name"
+                    placeholder={t("contactSection.form.namePlaceholder")}
                     className="w-full rounded-md bg-neutral-900 border border-neutral-800 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm">Your Email</label>
+                  <label className="text-sm">
+                    {t("contactSection.form.emailLabel")}
+                  </label>
                   <input
                     type="email"
-                    placeholder="Email address"
+                    placeholder={t("contactSection.form.emailPlaceholder")}
                     className="w-full rounded-md bg-neutral-900 border border-neutral-800 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
                   />
                 </div>
@@ -165,27 +170,31 @@ export default function ContactSection() {
 
               {/* Number */}
               <div className="flex flex-col gap-2">
-                <label className="text-sm">Your Number</label>
+                <label className="text-sm">
+                  {t("contactSection.form.numberLabel")}
+                </label>
                 <input
                   type="text"
-                  placeholder="Your account number"
+                  placeholder={t("contactSection.form.numberPlaceholder")}
                   className="w-full rounded-md bg-neutral-900 border border-neutral-800 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
                 />
               </div>
 
               {/* Message */}
               <div className="flex flex-col gap-2">
-                <label className="text-sm">Your Message</label>
+                <label className="text-sm">
+                  {t("contactSection.form.messageLabel")}
+                </label>
                 <textarea
                   rows={4}
-                  placeholder="Enter your message"
+                  placeholder={t("contactSection.form.messagePlaceholder")}
                   className="w-full rounded-md bg-neutral-900 border border-neutral-800 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
                 ></textarea>
               </div>
 
               {/* Button */}
               <div className="mt-8 md:mt-[52px]">
-                <SvgButton2 label="Submit →" />
+                <SvgButton2 label={t("contactSection.form.submit")} />
               </div>
             </form>
           </div>
