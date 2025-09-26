@@ -1,4 +1,3 @@
-
 import SpinningWheel2 from "../affiliates/SpinnerWheel2";
 import { useTranslations } from "next-intl";
 export default function HeroSection() {
