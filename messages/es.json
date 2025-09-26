@@ -181,5 +181,31 @@
       { "title": "Política de Reinicio", "tags": [] },
       { "title": "Límite de Pago", "tags": ["Legendario"] }
     ]
+  },
+  "howToEarnCoinsSection": {
+    "heading": "Cómo Ganar Monedas",
+    "description": "Múltiples formas de ganar Clash Coins y desbloquear recompensas.",
+    "cards": [
+      {
+        "title": "Posiciones en el Ranking",
+        "description": "Top 10 semanal gana 50-200 monedas",
+        "priceRange": "$0 - $100"
+      },
+      {
+        "title": "Puntos de Torneo",
+        "description": "Gana monedas según el rendimiento en torneos",
+        "priceRange": "$0 - $200"
+      },
+      {
+        "title": "Rueda de la Suerte",
+        "description": "Giro gratis diario con recompensas de monedas extra",
+        "priceRange": "$0 - $300"
+      },
+      {
+        "title": "Completar Desafíos",
+        "description": "Monedas extra por aprobar evaluaciones",
+        "priceRange": "$0 - $400"
+      }
+    ]
   }
 }

@@ -181,5 +181,31 @@
       { "title": "Sıfırlama Politikası", "tags": [] },
       { "title": "Ödeme Limiti", "tags": ["Efsanevi"] }
     ]
+  },
+  "howToEarnCoinsSection": {
+    "heading": "Nasıl Coin Kazanılır",
+    "description": "Clash Coin kazanmanın ve ödüllerin kilidini açmanın birden fazla yolu.",
+    "cards": [
+      {
+        "title": "Liderlik Tablosu Sıralamaları",
+        "description": "Haftalık ilk 10 sıralama 50-200 coin kazanır",
+        "priceRange": "$0 - $100"
+      },
+      {
+        "title": "Turnuva Puanları",
+        "description": "Turnuva performansına göre coin kazan",
+        "priceRange": "$0 - $200"
+      },
+      {
+        "title": "Şanslı Çark",
+        "description": "Her gün ücretsiz çark ve bonus coin ödülleri",
+        "priceRange": "$0 - $300"
+      },
+      {
+        "title": "Meydan Okuma Tamamlama",
+        "description": "Değerlendirmeleri geçene bonus coin",
+        "priceRange": "$0 - $400"
+      }
+    ]
   }
 }

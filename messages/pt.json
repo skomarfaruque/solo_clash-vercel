@@ -181,5 +181,31 @@
       { "title": "Política de Reset", "tags": [] },
       { "title": "Limite de Pagamento", "tags": ["Lendário"] }
     ]
+  },
+  "howToEarnCoinsSection": {
+    "heading": "Como Ganhar Moedas",
+    "description": "Várias formas de ganhar Clash Coins e desbloquear recompensas.",
+    "cards": [
+      {
+        "title": "Colocações no Ranking",
+        "description": "Top 10 semanal ganha 50-200 moedas",
+        "priceRange": "$0 - $100"
+      },
+      {
+        "title": "Pontos em Torneios",
+        "description": "Ganhe moedas conforme o desempenho em torneios",
+        "priceRange": "$0 - $200"
+      },
+      {
+        "title": "Roda da Sorte",
+        "description": "Giro diário grátis com bônus de moedas",
+        "priceRange": "$0 - $300"
+      },
+      {
+        "title": "Conclusão de Desafios",
+        "description": "Moedas bônus por passar avaliações",
+        "priceRange": "$0 - $400"
+      }
+    ]
   }
 }

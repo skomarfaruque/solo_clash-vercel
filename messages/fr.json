@@ -180,5 +180,31 @@
       { "title": "Politique de réinitialisation", "tags": [] },
       { "title": "Limite de paiement", "tags": ["Légendaire"] }
     ]
+  },
+  "howToEarnCoinsSection": {
+    "heading": "Comment Gagner des Pièces",
+    "description": "Plusieurs façons de gagner des Clash Coins et de débloquer des récompenses.",
+    "cards": [
+      {
+        "title": "Classements Hebdomadaires",
+        "description": "Top 10 hebdomadaire gagne 50-200 pièces",
+        "priceRange": "$0 - $100"
+      },
+      {
+        "title": "Points de Tournoi",
+        "description": "Gagnez des pièces selon la performance en tournoi",
+        "priceRange": "$0 - $200"
+      },
+      {
+        "title": "Roue Chanceuse",
+        "description": "Tour gratuit quotidien avec bonus de pièces",
+        "priceRange": "$0 - $300"
+      },
+      {
+        "title": "Défis Réussis",
+        "description": "Pièces bonus pour avoir réussi les évaluations",
+        "priceRange": "$0 - $400"
+      }
+    ]
   }
 }

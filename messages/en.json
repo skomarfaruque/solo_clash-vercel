@@ -180,5 +180,31 @@
       { "title": "Reset Policy", "tags": [] },
       { "title": "Payout Limit", "tags": ["Legendary"] }
     ]
+  },
+  "howToEarnCoinsSection": {
+    "heading": "How to Earn Coins",
+    "description": "Multiple ways to earn Clash Coins and unlock rewards.",
+    "cards": [
+      {
+        "title": "Leaderboard Placements",
+        "description": "Top 10 weekly rankings earn 50-200 coins",
+        "priceRange": "$0 - $100"
+      },
+      {
+        "title": "Tournament Points",
+        "description": "Earn coins based on tournament performance",
+        "priceRange": "$0 - $200"
+      },
+      {
+        "title": "Lucky Wheel",
+        "description": "Daily free spin with bonus coin rewards",
+        "priceRange": "$0 - $300"
+      },
+      {
+        "title": "Challenge Completion",
+        "description": "Bonus coins for passing evaluations",
+        "priceRange": "$0 - $400"
+      }
+    ]
   }
 }

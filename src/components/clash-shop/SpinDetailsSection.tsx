@@ -3,12 +3,11 @@ import { useTranslations } from "next-intl";
 
 export default function SpinDetailsSection() {
   const t = useTranslations();
-  type SpinDetailsCardType = {
+  interface SpinDetailsCardData {
     title: string;
     tags: string[];
-  };
-
-  const cards = t.raw("spinDetailsSection.cards") as SpinDetailsCardType[];
+  }
+  const cards: SpinDetailsCardData[] = t.raw("spinDetailsSection.cards");
   const iconPaths = [
     "/icons/spins/spin_details_1.png",
     "/icons/spins/spin_details_2.png",
@@ -23,9 +22,11 @@ export default function SpinDetailsSection() {
       className="justify-center text-center px-6 lg:px-20 py-20"
       style={{ backgroundColor: "#030303" }}
     >
-      <div>
-        <div>
-          {cards.map((card, idx: number) => (
+      <div className="max-w-[1320px] mx-auto">
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {}
+          {cards.map((card: SpinDetailsCardData, idx: number) => (
             <SpinDetailsCard
               key={idx}
               iconPath={iconPaths[idx]}
