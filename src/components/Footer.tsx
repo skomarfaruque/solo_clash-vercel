@@ -1,5 +1,25 @@
 import LanguageSupport from "./LanguageSupport";
 import Image from "next/image";
+import Link from "next/link";
+
+const links = [
+  { href: "/", label: "Accounts" },
+  { href: "/rules", label: "Rules" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/", label: "Get Started" },
+];
+
+const featuresLinks = [
+  { href: "/clash-shop", label: "Clash Shop" },
+  { href: "/clash-shop", label: "Daily Spins" },
+];
+
+const partnersLinks = [
+  { href: "/affiliates", label: "Affiliates" },
+  { href: "/affiliates", label: "Referral Program" },
+];
+
+const supportLinks = [{ href: "/support/contact", label: "Contact Us" }];
 
 export default function Footer() {
   return (
@@ -31,38 +51,16 @@ export default function Footer() {
             <div className="space-y-4">
               <h4 className="text-lg font-semibold">Platform</h4>
               <ul className="space-y-2">
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    Features
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    How It Works
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    Pricing
-                  </a>
-                </li>
+                {links.map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      href={link.href}
+                      className="text-gray-400 hover:text-white transition-colors text-sm"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -70,77 +68,16 @@ export default function Footer() {
             <div className="space-y-4">
               <h4 className="text-lg font-semibold">Features</h4>
               <ul className="space-y-2">
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    Help Center
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    Contact Us
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    FAQ
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    Community
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Support */}
-            <div className="space-y-4">
-              <h4 className="text-lg font-semibold">Support</h4>
-              <ul className="space-y-2">
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    24/7 Live Chat
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    Email Support
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    Phone Support
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    Knowledge Base
-                  </a>
-                </li>
+                {featuresLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      href={link.href}
+                      className="text-gray-400 hover:text-white transition-colors text-sm"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -148,38 +85,33 @@ export default function Footer() {
             <div className="space-y-4">
               <h4 className="text-lg font-semibold">Partners</h4>
               <ul className="space-y-2">
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    Terms of Service
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    Cookie Policy
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    Risk Disclosure
-                  </a>
-                </li>
+                {partnersLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      href={link.href}
+                      className="text-gray-400 hover:text-white transition-colors text-sm"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Support */}
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold">Support</h4>
+              <ul className="space-y-2">
+                {supportLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      href={link.href}
+                      className="text-gray-400 hover:text-white transition-colors text-sm"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -231,24 +163,24 @@ export default function Footer() {
           {/* First Row */}
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex space-x-6">
-              <a
+              <Link
                 href="/privacy"
                 className="text-gray-400 hover:text-white transition-colors text-sm"
               >
                 Privacy
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/terms"
                 className="text-gray-400 hover:text-white transition-colors text-sm"
               >
                 Terms
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/cookies"
                 className="text-gray-400 hover:text-white transition-colors text-sm"
               >
                 Cookies
-              </a>
+              </Link>
             </div>
             <div className="flex space-x-4">
               {/* YouTube Icon */}
