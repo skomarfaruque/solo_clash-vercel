@@ -115,5 +115,21 @@
   },
   "RulesPage": {
     "title": "Reglas de trading"
+  },
+  "navbar": {
+    "account": "Cuenta",
+    "rules": "Reglas",
+    "clashShop": "Tienda Clash",
+    "affiliates": "Afiliados",
+    "faq": "FAQ",
+    "contactUs": "Contáctanos",
+    "getFunded": "Obtener Financiación",
+    "closeMenu": "Cerrar menú",
+    "langEnglish": "Inglés",
+    "langArabic": "Árabe",
+    "langTurkish": "Turco",
+    "langPortuguese": "Portugués",
+    "langFrench": "Francés",
+    "langSpanish": "Español"
   }
 }

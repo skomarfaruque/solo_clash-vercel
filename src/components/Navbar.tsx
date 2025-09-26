@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 function getLocaleFromCookie() {
   if (typeof document === "undefined") return "en";
   const match = document.cookie.match(/(?:^|; )locale=([^;]*)/);
@@ -15,13 +16,14 @@ export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const pathname = usePathname();
 
+  const t = useTranslations();
   const navLinks = [
-    { href: "/", label: "Account" },
-    { href: "/rules", label: "Rules" },
-    { href: "/clash-shop", label: "Clash Shop" },
-    { href: "/affiliates", label: "Affiliates" },
-    { href: "/faq", label: "FAQ" },
-    { href: "/contact", label: "Contact Us" },
+    { href: "/", label: t("navbar.account") },
+    { href: "/rules", label: t("navbar.rules") },
+    { href: "/clash-shop", label: t("navbar.clashShop") },
+    { href: "/affiliates", label: t("navbar.affiliates") },
+    { href: "/faq", label: t("navbar.faq") },
+    { href: "/contact", label: t("navbar.contactUs") },
   ];
 
   const socialLinks = [
@@ -60,12 +62,12 @@ export default function Navbar() {
   const inactiveClass = "text-[#B7B7B7] hover:text-white transition";
 
   const languages = [
-    { title: "English", code: "en" },
-    { title: "Arabic", code: "ar" },
-    { title: "Turkish", code: "tr" },
-    { title: "Portuguese", code: "pt" },
-    { title: "French", code: "fr" },
-    { title: "Spanish", code: "es" },
+    { title: t("navbar.langEnglish"), code: "en" },
+    { title: t("navbar.langArabic"), code: "ar" },
+    { title: t("navbar.langTurkish"), code: "tr" },
+    { title: t("navbar.langPortuguese"), code: "pt" },
+    { title: t("navbar.langFrench"), code: "fr" },
+    { title: t("navbar.langSpanish"), code: "es" },
   ];
 
   const [selectedLang, setSelectedLang] = useState("en");
@@ -157,7 +159,7 @@ export default function Navbar() {
             href="/get-funded"
             className="bg-neutral-900 px-4 py-2 rounded-full font-medium h-[52px] flex items-center justify-center"
           >
-            Get Funded →
+            {t("navbar.getFunded")} →
           </Link>
 
           {/* Social Icons */}
@@ -190,7 +192,7 @@ export default function Navbar() {
             <button
               className="self-end mb-4 p-2 rounded focus:outline-none focus:ring-2 focus:ring-orange-500"
               onClick={() => setDrawerOpen(false)}
-              aria-label="Close menu"
+              aria-label={t("navbar.closeMenu")}
             >
               <span className="block w-6 h-0.5 bg-white mb-1 rotate-45 translate-y-1.5"></span>
               <span className="block w-6 h-0.5 bg-white -rotate-45 -translate-y-1.5"></span>
@@ -202,23 +204,34 @@ export default function Navbar() {
                 className="flex items-center gap-2 bg-neutral-800 h-[40px] px-3 py-1.5 rounded-full w-full"
               >
                 <Image
-                  src="/en.png"
-                  alt="English"
+                  src={`/flags/${selectedLangObj.code}.png`}
+                  alt={selectedLangObj.title}
                   width={22}
                   height={22}
                   className="rounded"
                 />
-                English
+                {selectedLangObj.title}
                 <span className="ml-1">▼</span>
               </button>
               {langOpen && (
                 <div className="absolute mt-2 w-32 bg-neutral-800 rounded-lg shadow-lg z-20">
-                  <button className="w-full px-4 py-2 text-left hover:bg-neutral-700">
-                    English
-                  </button>
-                  <button className="w-full px-4 py-2 text-left hover:bg-neutral-700">
-                    Spanish
-                  </button>
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      className={`w-full px-4 py-2 text-left hover:bg-neutral-700 ${
+                        selectedLang === lang.code
+                          ? "bg-neutral-700 font-bold"
+                          : ""
+                      }`}
+                      onClick={() => {
+                        document.cookie = `locale=${lang.code}; path=/; max-age=31536000`;
+                        setSelectedLang(lang.code);
+                        window.location.reload();
+                      }}
+                    >
+                      {lang.title}
+                    </button>
+                  ))}
                 </div>
               )}
             </div>
@@ -240,7 +253,7 @@ export default function Navbar() {
               className="bg-neutral-800 px-4 py-2 rounded-full font-medium h-[40px] flex items-center justify-center mt-4"
               onClick={() => setDrawerOpen(false)}
             >
-              Get Funded →
+              {t("navbar.getFunded")} →
             </Link>
             {/* Social Icons */}
             <div className="flex items-center gap-3 mt-4">

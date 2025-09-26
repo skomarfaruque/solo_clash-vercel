@@ -115,5 +115,21 @@
   },
   "RulesPage": {
     "title": "Regras de Negociação"
+  },
+  "navbar": {
+    "account": "Conta",
+    "rules": "Regras",
+    "clashShop": "Clash Shop",
+    "affiliates": "Afiliados",
+    "faq": "FAQ",
+    "contactUs": "Fale Conosco",
+    "getFunded": "Obter Financiamento",
+    "closeMenu": "Fechar menu",
+    "langEnglish": "Inglês",
+    "langArabic": "Árabe",
+    "langTurkish": "Turco",
+    "langPortuguese": "Português",
+    "langFrench": "Francês",
+    "langSpanish": "Espanhol"
   }
 }

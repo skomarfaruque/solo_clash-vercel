@@ -115,5 +115,21 @@
   },
   "RulesPage": {
     "title": "Ticaret kuralları"
+  },
+  "navbar": {
+    "account": "Hesap",
+    "rules": "Kurallar",
+    "clashShop": "Clash Mağazası",
+    "affiliates": "Ortaklar",
+    "faq": "SSS",
+    "contactUs": "Bize Ulaşın",
+    "getFunded": "Fon Al",
+    "closeMenu": "Menüyü Kapat",
+    "langEnglish": "İngilizce",
+    "langArabic": "Arapça",
+    "langTurkish": "Türkçe",
+    "langPortuguese": "Portekizce",
+    "langFrench": "Fransızca",
+    "langSpanish": "İspanyolca"
   }
 }

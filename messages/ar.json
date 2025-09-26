@@ -115,5 +115,21 @@
   },
   "RulesPage": {
     "title": "قواعد التداول"
+  },
+  "navbar": {
+    "account": "الحساب",
+    "rules": "القواعد",
+    "clashShop": "متجر كلاش",
+    "affiliates": "الشركاء",
+    "faq": "الأسئلة الشائعة",
+    "contactUs": "اتصل بنا",
+    "getFunded": "احصل على تمويل",
+    "closeMenu": "إغلاق القائمة",
+    "langEnglish": "الإنجليزية",
+    "langArabic": "العربية",
+    "langTurkish": "التركية",
+    "langPortuguese": "البرتغالية",
+    "langFrench": "الفرنسية",
+    "langSpanish": "الإسبانية"
   }
 }

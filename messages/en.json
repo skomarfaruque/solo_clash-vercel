@@ -114,5 +114,21 @@
   },
   "RulesPage": {
     "title": "Trading rules"
+  },
+  "navbar": {
+    "account": "Account",
+    "rules": "Rules",
+    "clashShop": "Clash Shop",
+    "affiliates": "Affiliates",
+    "faq": "FAQ",
+    "contactUs": "Contact Us",
+    "getFunded": "Get Funded",
+    "closeMenu": "Close menu",
+    "langEnglish": "English",
+    "langArabic": "Arabic",
+    "langTurkish": "Turkish",
+    "langPortuguese": "Portuguese",
+    "langFrench": "French",
+    "langSpanish": "Spanish"
   }
 }
