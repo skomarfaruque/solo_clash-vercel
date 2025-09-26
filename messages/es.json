@@ -171,5 +171,15 @@
     "langPortuguese": "Portugués",
     "langFrench": "Francés",
     "langSpanish": "Español"
+  },
+  "spinDetailsSection": {
+    "cards": [
+      { "title": "Período de Evaluación", "tags": [] },
+      { "title": "Drawdown de Fin de Día", "tags": [] },
+      { "title": "Consistencia de Beneficio", "tags": [] },
+      { "title": "Límite de Pérdida Diaria", "tags": [] },
+      { "title": "Política de Reinicio", "tags": [] },
+      { "title": "Límite de Pago", "tags": ["Legendario"] }
+    ]
   }
 }

@@ -170,5 +170,15 @@
     "langPortuguese": "Portuguese",
     "langFrench": "French",
     "langSpanish": "Spanish"
+  },
+  "spinDetailsSection": {
+    "cards": [
+      { "title": "Evaluation Period", "tags": [] },
+      { "title": "End-of-Day-Drawdown", "tags": [] },
+      { "title": "Profit Consistency", "tags": [] },
+      { "title": "Daily Loss Limit", "tags": [] },
+      { "title": "Reset Policy", "tags": [] },
+      { "title": "Payout Limit", "tags": ["Legendary"] }
+    ]
   }
 }

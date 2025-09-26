@@ -171,5 +171,15 @@
     "langPortuguese": "Portekizce",
     "langFrench": "Fransızca",
     "langSpanish": "İspanyolca"
+  },
+  "spinDetailsSection": {
+    "cards": [
+      { "title": "Değerlendirme Dönemi", "tags": [] },
+      { "title": "Gün Sonu Çekilme", "tags": [] },
+      { "title": "Kâr Tutarlılığı", "tags": [] },
+      { "title": "Günlük Kayıp Limiti", "tags": [] },
+      { "title": "Sıfırlama Politikası", "tags": [] },
+      { "title": "Ödeme Limiti", "tags": ["Efsanevi"] }
+    ]
   }
 }

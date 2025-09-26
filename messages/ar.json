@@ -171,5 +171,15 @@
     "langPortuguese": "البرتغالية",
     "langFrench": "الفرنسية",
     "langSpanish": "الإسبانية"
+  },
+  "spinDetailsSection": {
+    "cards": [
+      { "title": "فترة التقييم", "tags": [] },
+      { "title": "سحب نهاية اليوم", "tags": [] },
+      { "title": "اتساق الأرباح", "tags": [] },
+      { "title": "حد الخسارة اليومية", "tags": [] },
+      { "title": "سياسة إعادة التعيين", "tags": [] },
+      { "title": "حد الدفع", "tags": ["أسطوري"] }
+    ]
   }
 }

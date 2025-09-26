@@ -1,52 +1,34 @@
-import HomeButton from "../HomeButton";
 import SpinDetailsCard from "./SpinDetailsCard";
-
-const spinDetailsCards = [
-  {
-    iconPath: "/icons/spins/spin_details_1.png",
-    title: "Evaluation Period",
-    tags: [],
-  },
-  {
-    iconPath: "/icons/spins/spin_details_2.png",
-    title: "End-of-Day-Drawdown",
-    tags: [],
-  },
-  {
-    iconPath: "/icons/spins/spin_details_3.png",
-    title: "Profit Consistency",
-    tags: [],
-  },
-  {
-    iconPath: "/icons/spins/spin_details_4.png",
-    title: "Daily Loss Limit",
-    tags: [],
-  },
-  {
-    iconPath: "/icons/spins/spin_details_5.png",
-    title: "Reset Policy",
-    tags: [],
-  },
-  {
-    iconPath: "/icons/spins/spin_details_6.png",
-    title: "Payout Limit",
-    tags: ["Legendary"],
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function SpinDetailsSection() {
+  const t = useTranslations();
+  type SpinDetailsCardType = {
+    title: string;
+    tags: string[];
+  };
+
+  const cards = t.raw("spinDetailsSection.cards") as SpinDetailsCardType[];
+  const iconPaths = [
+    "/icons/spins/spin_details_1.png",
+    "/icons/spins/spin_details_2.png",
+    "/icons/spins/spin_details_3.png",
+    "/icons/spins/spin_details_4.png",
+    "/icons/spins/spin_details_5.png",
+    "/icons/spins/spin_details_6.png",
+  ];
+
   return (
     <section
       className="justify-center text-center px-6 lg:px-20 py-20"
       style={{ backgroundColor: "#030303" }}
     >
-      <div className="max-w-[1320px] mx-auto">
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {spinDetailsCards.map((card, idx) => (
+      <div>
+        <div>
+          {cards.map((card, idx: number) => (
             <SpinDetailsCard
               key={idx}
-              iconPath={card.iconPath}
+              iconPath={iconPaths[idx]}
               title={card.title}
               tags={card.tags}
             />

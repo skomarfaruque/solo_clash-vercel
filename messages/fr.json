@@ -170,5 +170,15 @@
     "langPortuguese": "Portugais",
     "langFrench": "Français",
     "langSpanish": "Espagnol"
+  },
+  "spinDetailsSection": {
+    "cards": [
+      { "title": "Période d'évaluation", "tags": [] },
+      { "title": "Drawdown de fin de journée", "tags": [] },
+      { "title": "Cohérence des profits", "tags": [] },
+      { "title": "Limite de perte quotidienne", "tags": [] },
+      { "title": "Politique de réinitialisation", "tags": [] },
+      { "title": "Limite de paiement", "tags": ["Légendaire"] }
+    ]
   }
 }

@@ -171,5 +171,15 @@
     "langPortuguese": "Português",
     "langFrench": "Francês",
     "langSpanish": "Espanhol"
+  },
+  "spinDetailsSection": {
+    "cards": [
+      { "title": "Período de Avaliação", "tags": [] },
+      { "title": "Drawdown de Fim de Dia", "tags": [] },
+      { "title": "Consistência de Lucro", "tags": [] },
+      { "title": "Limite de Perda Diária", "tags": [] },
+      { "title": "Política de Reset", "tags": [] },
+      { "title": "Limite de Pagamento", "tags": ["Lendário"] }
+    ]
   }
 }
