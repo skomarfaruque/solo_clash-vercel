@@ -28,6 +28,8 @@ export default function Banner({
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
+          paddingTop: "74px",
+          paddingBottom: "70px",
         }}
       >
         <div className="flex flex-col items-center justify-center text-center gap-8">

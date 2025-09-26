@@ -207,5 +207,15 @@
         "priceRange": "$0 - $400"
       }
     ]
+  },
+  "clashShopPage": {
+    "banner": {
+      "title": "¿Quieres una entrada garantizada al próximo torneo?",
+      "description": "Canjea un ticket gratuito ahora y asegura tu lugar en nuestra competencia semanal. Al continuar, confirmas que has leído, entendido y aceptas todas las reglas y políticas anteriores."
+    },
+    "metadata": {
+      "title": "Reglas y Directrices | Clash Shop",
+      "description": "Lee las reglas y directrices oficiales antes de participar en los desafíos de Clash Shop."
+    }
   }
 }

@@ -1,4 +1,14 @@
 {
+  "clashShopPage": {
+    "banner": {
+      "title": "Bir sonraki turnuvaya garantili giriş ister misiniz?",
+      "description": "Şimdi ücretsiz bir turnuva bileti alın ve haftalık yarışmamızda yerinizi garantileyin. Devam ederek yukarıdaki tüm kuralları ve politikaları okuduğunuzu, anladığınızı ve kabul ettiğinizi onaylamış olursunuz."
+    },
+    "metadata": {
+      "title": "Kurallar & Yönergeler | Clash Shop",
+      "description": "Clash Shop mücadelelerine katılmadan önce resmi kuralları ve yönergeleri okuyun."
+    }
+  },
   "accountPage": {
     "heroSection": {
       "profitSplit": "90/10 Kar Paylaşımı • Haftalık Ödemeler",

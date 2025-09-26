@@ -206,5 +206,15 @@
         "priceRange": "$0 - $400"
       }
     ]
+  },
+  "clashShopPage": {
+    "banner": {
+      "title": "Want a guaranteed entry to the next tournament?",
+      "description": "Redeem a free tournament ticket now and secure your spot in our weekly trading competition. By proceeding, you confirm that you have read, understood, and agree to abide by all trading rules and policies outlined above."
+    },
+    "metadata": {
+      "title": "Rules & Guidelines | Clash Shop",
+      "description": "Read the official rules and guidelines before participating in Clash Shop challenges."
+    }
   }
 }

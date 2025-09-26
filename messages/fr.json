@@ -1,4 +1,14 @@
 {
+  "clashShopPage": {
+    "banner": {
+      "title": "Vous voulez une entrée garantie au prochain tournoi ?",
+      "description": "Obtenez un ticket gratuit maintenant et assurez votre place à notre compétition hebdomadaire. En continuant, vous confirmez avoir lu, compris et accepté toutes les règles et politiques ci-dessus."
+    },
+    "metadata": {
+      "title": "Règles & Directives | Clash Shop",
+      "description": "Lisez les règles et directives officielles avant de participer aux défis du Clash Shop."
+    }
+  },
   "accountPage": {
     "heroSection": {
       "profitSplit": "Répartition des profits 90/10 • Paiements hebdomadaires",
