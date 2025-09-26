@@ -151,6 +151,11 @@
       "submit": "Gönder →"
     }
   },
+  "clashShopHero": {
+    "heading": "Clash Shop",
+    "subheading": "Ödüller, çarklar ve günlük kazançlar",
+    "description": "Günlük çarklar, turnuvalar ve traderlara özel hediyelerle dolu bir mağaza. Şanslı Çark ve etkinliklerden coin kazan, bunları indirim kodlarına, ücretsiz turnuva girişlerine veya fonlu hesaplara harca."
+  },
   "navbar": {
     "account": "Hesap",
     "rules": "Kurallar",

@@ -150,6 +150,11 @@
       "submit": "Submit →"
     }
   },
+  "clashShopHero": {
+    "heading": "Clash Shop",
+    "subheading": "Rewards, spins & daily wins",
+    "description": "Daily spins, tournaments, and a shop full of trader goodies. Earn coins from the Lucky Wheel and events, spend them on discount codes, free tournament entries, or even funded accounts."
+  },
   "navbar": {
     "account": "Account",
     "rules": "Rules",

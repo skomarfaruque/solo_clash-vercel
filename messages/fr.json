@@ -150,6 +150,11 @@
       "submit": "Envoyer →"
     }
   },
+  "clashShopHero": {
+    "heading": "Clash Shop",
+    "subheading": "Récompenses, spins et victoires quotidiennes",
+    "description": "Spins quotidiens, tournois et une boutique pleine de cadeaux pour traders. Gagnez des pièces à la Roue Chanceuse et lors d'événements, dépensez-les en codes de réduction, inscriptions gratuites à des tournois ou même comptes financés."
+  },
   "navbar": {
     "account": "Compte",
     "rules": "Règles",

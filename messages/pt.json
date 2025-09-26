@@ -151,6 +151,11 @@
       "submit": "Enviar →"
     }
   },
+  "clashShopHero": {
+    "heading": "Clash Shop",
+    "subheading": "Recompensas, giros e vitórias diárias",
+    "description": "Giros diários, torneios e uma loja cheia de brindes para traders. Ganhe moedas na Roda da Sorte e em eventos, gaste-as em códigos de desconto, inscrições gratuitas em torneios ou até contas financiadas."
+  },
   "navbar": {
     "account": "Conta",
     "rules": "Regras",
