@@ -3,7 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
+
 export default function SignupSection() {
+  const t = useTranslations("signupSection");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const searchParams = useSearchParams();
@@ -37,6 +40,7 @@ export default function SignupSection() {
     console.log("Form Submitted:", formData);
     // You can integrate API call here
   };
+
   return (
     <section
       className="justify-center text-center min-h-screen"
@@ -65,16 +69,16 @@ export default function SignupSection() {
 
             {/* Title */}
             <h1 className="text-2xl font-bold text-white text-center">
-              Welcome to Solo Clash
+              {t("welcomeTitle")}
             </h1>
             <p className="text-neutral-400 text-center mb-6">
-              Please enter your details
+              {t("welcomeSubtitle")}
             </p>
 
             {/* Email */}
             <div className="mb-4">
               <label className="block text-sm text-white mb-2">
-                Email Address <span className="text-red-500">*</span>
+                {t("emailLabel")} <span className="text-red-500">*</span>
               </label>
               <input
                 type="email"
@@ -86,7 +90,7 @@ export default function SignupSection() {
             {/* Username */}
             <div className="mb-4">
               <label className="block text-sm text-white mb-2">
-                Username <span className="text-red-500">*</span>
+                {t("usernameLabel")} <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -98,7 +102,7 @@ export default function SignupSection() {
             {/* Password */}
             <div className="mb-4">
               <label className="block text-sm text-white mb-2">
-                Password <span className="text-red-500">*</span>
+                {t("passwordLabel")} <span className="text-red-500">*</span>
               </label>
               <div className="relative">
                 <input
@@ -119,7 +123,8 @@ export default function SignupSection() {
             {/* Confirm Password */}
             <div className="mb-4">
               <label className="block text-sm text-white mb-2">
-                Confirm Password <span className="text-red-500">*</span>
+                {t("confirmPasswordLabel")}{" "}
+                <span className="text-red-500">*</span>
               </label>
               <div className="relative">
                 <input
@@ -144,43 +149,30 @@ export default function SignupSection() {
                   type="checkbox"
                   className="mt-1 rounded border-neutral-700 bg-neutral-800"
                 />
-                <span>
-                  I agree with the Privacy{" "}
-                  <a href="#" className="text-cyan-400 hover:underline">
-                    Policy
-                  </a>{" "}
-                  and{" "}
-                  <a href="#" className="text-cyan-400 hover:underline">
-                    Terms &amp; Conditions
-                  </a>
-                  .
-                </span>
+                <span>{t("privacyPolicy")}</span>
               </label>
               <label className="flex items-start gap-2">
                 <input
                   type="checkbox"
                   className="mt-1 rounded border-neutral-700 bg-neutral-800"
                 />
-                <span>
-                  I would like to subscribe to the Solo Clash Futures
-                  newsletter.
-                </span>
+                <span>{t("newsletter")}</span>
               </label>
             </div>
 
             {/* Submit */}
             <button className="w-full relative rounded-lg bg-gradient-to-r from-orange-500 to-orange-400 py-3 font-semibold text-black shadow-md hover:opacity-90 transition overflow-hidden">
-              <span className="relative z-10">SIGN UP</span>
+              <span className="relative z-10">{t("signUpButton")}</span>
               {/* glowing orange light effect */}
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-2 bg-orange-300 blur-2xl opacity-70" />
             </button>
 
             {/* Already have account */}
             <p className="mt-6 text-center text-sm text-neutral-400">
-              Have an account?{" "}
-              <a href="#" className="text-orange-400 hover:underline">
-                Sign In
-              </a>
+              {t("alreadyHaveAccount")}{" "}
+              <button className="text-orange-400 hover:underline">
+                {t("signIn")}
+              </button>
             </p>
           </div>
         )}
@@ -201,10 +193,10 @@ export default function SignupSection() {
 
             {/* Title */}
             <h1 className="text-2xl font-bold text-white text-center">
-              Before you Start
+              {t("beforeStartTitle")}
             </h1>
             <p className="text-neutral-400 text-center mb-6">
-              Please complete these fields to proceed
+              {t("beforeStartSubtitle")}
             </p>
 
             {/* Form */}
@@ -212,27 +204,29 @@ export default function SignupSection() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm mb-1">
-                    First Name<span className="text-red-500">*</span>
+                    {t("firstNameLabel")}
+                    <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleChange}
-                    placeholder="Jenny"
+                    placeholder={t("firstNamePlaceholder")}
                     className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
                   />
                 </div>
                 <div>
                   <label className="block text-sm mb-1">
-                    Last Name<span className="text-red-500">*</span>
+                    {t("lastNameLabel")}
+                    <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleChange}
-                    placeholder="Wilson"
+                    placeholder={t("lastNamePlaceholder")}
                     className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
                   />
                 </div>
@@ -240,28 +234,30 @@ export default function SignupSection() {
 
               <div>
                 <label className="block text-sm mb-1">
-                  Address line 1<span className="text-red-500">*</span>
+                  {t("address1Label")}
+                  <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
                   name="address1"
                   value={formData.address1}
                   onChange={handleChange}
-                  placeholder="2715 Ash Dr. San Jose"
+                  placeholder={t("address1Placeholder")}
                   className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
                 />
               </div>
 
               <div>
                 <label className="block text-sm mb-1">
-                  Address line 2<span className="text-red-500">*</span>
+                  {t("address2Label")}
+                  <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
                   name="address2"
                   value={formData.address2}
                   onChange={handleChange}
-                  placeholder="2715 Ash Dr. San Jose"
+                  placeholder={t("address2Placeholder")}
                   className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
                 />
               </div>
@@ -269,27 +265,29 @@ export default function SignupSection() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm mb-1">
-                    City<span className="text-red-500">*</span>
+                    {t("cityLabel")}
+                    <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
                     name="city"
                     value={formData.city}
                     onChange={handleChange}
-                    placeholder="United States"
+                    placeholder={t("cityPlaceholder")}
                     className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
                   />
                 </div>
                 <div>
                   <label className="block text-sm mb-1">
-                    Postcode<span className="text-red-500">*</span>
+                    {t("postcodeLabel")}
+                    <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
                     name="postcode"
                     value={formData.postcode}
                     onChange={handleChange}
-                    placeholder="2715"
+                    placeholder={t("postcodePlaceholder")}
                     className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
                   />
                 </div>
@@ -298,7 +296,8 @@ export default function SignupSection() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm mb-1">
-                    Country<span className="text-red-500">*</span>
+                    {t("countryLabel")}
+                    <span className="text-red-500">*</span>
                   </label>
                   <select
                     name="country"
@@ -306,19 +305,21 @@ export default function SignupSection() {
                     onChange={handleChange}
                     className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
                   >
-                    <option value="">Select an option</option>
-                    <option value="US">United States</option>
-                    <option value="CA">Canada</option>
+                    <option value="">{t("selectOption")}</option>
+                    <option value="US">{t("countryUS")}</option>
+                    <option value="CA">{t("countryCA")}</option>
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm mb-1">State</label>
+                  <label className="block text-sm mb-1">
+                    {t("stateLabel")}
+                  </label>
                   <input
                     type="text"
                     name="state"
                     value={formData.state}
                     onChange={handleChange}
-                    placeholder="Alaska"
+                    placeholder={t("statePlaceholder")}
                     className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
                   />
                 </div>
@@ -326,14 +327,15 @@ export default function SignupSection() {
 
               <div>
                 <label className="block text-sm mb-1">
-                  Date of Birth<span className="text-red-500">*</span>
+                  {t("dobLabel")}
+                  <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
                   name="dob"
                   value={formData.dob}
                   onChange={handleChange}
-                  placeholder="dd/mm/yyyy"
+                  placeholder={t("dobPlaceholder")}
                   className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
                 />
               </div>
@@ -347,8 +349,7 @@ export default function SignupSection() {
                   className="h-4 w-4 text-orange-500 rounded focus:ring-2 focus:ring-orange-500"
                 />
                 <label className="text-sm text-gray-300">
-                  I confirm that my name is correct and matches my government
-                  issued ID
+                  {t("confirmID")}
                 </label>
               </div>
 
@@ -356,7 +357,7 @@ export default function SignupSection() {
                 type="submit"
                 className="w-full py-3 rounded-lg bg-gradient-to-r from-orange-500 to-orange-400 text-black font-semibold shadow-lg hover:opacity-90 transition"
               >
-                SUBMIT
+                {t("submitButton")}
               </button>
             </form>
           </div>

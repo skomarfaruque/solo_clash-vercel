@@ -327,5 +327,32 @@
     "welcome": "Bem-vindo",
     "info": "Informação",
     "verification": "Verificação"
+  },
+  "signupSection": {
+    "welcomeTitle": "Bem-vindo ao Solo Clash",
+    "welcomeSubtitle": "Por favor, insira seus dados",
+    "emailLabel": "Endereço de Email",
+    "usernameLabel": "Nome de Usuário",
+    "passwordLabel": "Senha",
+    "confirmPasswordLabel": "Confirmar Senha",
+    "privacyPolicy": "Eu concordo com a Política de Privacidade e os Termos e Condições.",
+    "newsletter": "Gostaria de assinar o boletim informativo Solo Clash Futures.",
+    "signUpButton": "CADASTRAR",
+    "alreadyHaveAccount": "Já tem uma conta?",
+    "signIn": "Entrar",
+    "beforeStartTitle": "Antes de começar",
+    "beforeStartSubtitle": "Por favor, complete estes campos para continuar",
+    "firstNameLabel": "Primeiro Nome",
+    "lastNameLabel": "Último Nome",
+    "address1Label": "Endereço linha 1",
+    "address2Label": "Endereço linha 2",
+    "cityLabel": "Cidade",
+    "postcodeLabel": "Código Postal",
+    "countryLabel": "País",
+    "stateLabel": "Estado",
+    "dobLabel": "Data de Nascimento",
+    "confirmName": "Confirmo que meu nome está correto e corresponde ao meu documento de identidade emitido pelo governo",
+    "submitButton": "ENVIAR",
+    "verifyEmail": "Verifique seu email"
   }
 }

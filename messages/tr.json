@@ -327,5 +327,32 @@
     "welcome": "Hoş geldiniz",
     "info": "Bilgi",
     "verification": "Doğrulama"
+  },
+  "signupSection": {
+    "welcomeTitle": "Solo Clash'a Hoş Geldiniz",
+    "welcomeSubtitle": "Lütfen bilgilerinizi girin",
+    "emailLabel": "E-posta Adresi",
+    "usernameLabel": "Kullanıcı Adı",
+    "passwordLabel": "Şifre",
+    "confirmPasswordLabel": "Şifreyi Onayla",
+    "privacyPolicy": "Gizlilik Politikası ve Şartlar ve Koşulları kabul ediyorum.",
+    "newsletter": "Solo Clash Futures bültenine abone olmak istiyorum.",
+    "signUpButton": "KAYDOL",
+    "alreadyHaveAccount": "Hesabınız var mı?",
+    "signIn": "Giriş Yap",
+    "beforeStartTitle": "Başlamadan Önce",
+    "beforeStartSubtitle": "Devam etmek için lütfen bu alanları doldurun",
+    "firstNameLabel": "Ad",
+    "lastNameLabel": "Soyad",
+    "address1Label": "Adres satırı 1",
+    "address2Label": "Adres satırı 2",
+    "cityLabel": "Şehir",
+    "postcodeLabel": "Posta Kodu",
+    "countryLabel": "Ülke",
+    "stateLabel": "Eyalet",
+    "dobLabel": "Doğum Tarihi",
+    "confirmName": "Adımın doğru olduğunu ve hükümet tarafından verilen kimliğimle eşleştiğini onaylıyorum",
+    "submitButton": "GÖNDER",
+    "verifyEmail": "E-postanızı doğrulayın"
   }
 }
