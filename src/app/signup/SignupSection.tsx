@@ -82,7 +82,6 @@ export default function SignupSection() {
               </label>
               <input
                 type="email"
-                placeholder="example@email.com"
                 className="w-full rounded-lg bg-neutral-800 px-4 py-3 text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-orange-500"
               />
             </div>
@@ -94,7 +93,6 @@ export default function SignupSection() {
               </label>
               <input
                 type="text"
-                placeholder="example@email.com"
                 className="w-full rounded-lg bg-neutral-800 px-4 py-3 text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-orange-500"
               />
             </div>
@@ -107,7 +105,6 @@ export default function SignupSection() {
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
-                  placeholder="••••••••"
                   className="w-full rounded-lg bg-neutral-800 px-4 py-3 text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-orange-500"
                 />
                 <button
@@ -129,7 +126,6 @@ export default function SignupSection() {
               <div className="relative">
                 <input
                   type={showConfirm ? "text" : "password"}
-                  placeholder="••••••••"
                   className="w-full rounded-lg bg-neutral-800 px-4 py-3 text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-orange-500"
                 />
                 <button
@@ -212,7 +208,6 @@ export default function SignupSection() {
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleChange}
-                    placeholder={t("firstNamePlaceholder")}
                     className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
                   />
                 </div>
@@ -226,7 +221,6 @@ export default function SignupSection() {
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleChange}
-                    placeholder={t("lastNamePlaceholder")}
                     className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
                   />
                 </div>
@@ -242,7 +236,6 @@ export default function SignupSection() {
                   name="address1"
                   value={formData.address1}
                   onChange={handleChange}
-                  placeholder={t("address1Placeholder")}
                   className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
                 />
               </div>
@@ -257,7 +250,6 @@ export default function SignupSection() {
                   name="address2"
                   value={formData.address2}
                   onChange={handleChange}
-                  placeholder={t("address2Placeholder")}
                   className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
                 />
               </div>
@@ -273,7 +265,6 @@ export default function SignupSection() {
                     name="city"
                     value={formData.city}
                     onChange={handleChange}
-                    placeholder={t("cityPlaceholder")}
                     className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
                   />
                 </div>
@@ -287,7 +278,6 @@ export default function SignupSection() {
                     name="postcode"
                     value={formData.postcode}
                     onChange={handleChange}
-                    placeholder={t("postcodePlaceholder")}
                     className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
                   />
                 </div>
@@ -305,9 +295,9 @@ export default function SignupSection() {
                     onChange={handleChange}
                     className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
                   >
-                    <option value="">{t("selectOption")}</option>
-                    <option value="US">{t("countryUS")}</option>
-                    <option value="CA">{t("countryCA")}</option>
+                    <option value="">--Please Select--</option>
+                    <option value="US">USA</option>
+                    <option value="CA">Canada</option>
                   </select>
                 </div>
                 <div>
@@ -319,7 +309,6 @@ export default function SignupSection() {
                     name="state"
                     value={formData.state}
                     onChange={handleChange}
-                    placeholder={t("statePlaceholder")}
                     className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
                   />
                 </div>
@@ -335,7 +324,6 @@ export default function SignupSection() {
                   name="dob"
                   value={formData.dob}
                   onChange={handleChange}
-                  placeholder={t("dobPlaceholder")}
                   className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
                 />
               </div>
