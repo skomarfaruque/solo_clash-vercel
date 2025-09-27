@@ -120,6 +120,9 @@
         }
       ],
       "button": "Tourner la Roue"
+    },
+    "banner": {
+      "title": "Prêt à trader du capital réel?"
     }
   },
   "RulesPage": {

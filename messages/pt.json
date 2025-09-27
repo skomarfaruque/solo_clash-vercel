@@ -111,6 +111,9 @@
         }
       ],
       "button": "Girar a Roda"
+    },
+    "banner": {
+      "title": "Pronto para negociar capital real?"
     }
   },
   "RulesPage": {

@@ -5,8 +5,11 @@ import Subscriptions from "../../components/Subscriptions";
 import SpinWinTrade from "../../components/SpinWinTrade";
 import Faq from "../../components/Faq";
 import Banner from "../../components/Banner";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
+  const t = useTranslations("accountPage");
+
   return (
     <main
       className="text-white overflow-hidden"
@@ -18,7 +21,7 @@ export default function Home() {
       <Subscriptions />
       <SpinWinTrade />
       <Faq />
-      <Banner page="account" title="Ready to trade real capital?" />
+      <Banner page="account" title={t("banner.title")} />
     </main>
   );
 }

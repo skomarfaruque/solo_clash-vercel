@@ -111,6 +111,9 @@
         }
       ],
       "button": "Girar la Rueda"
+    },
+    "banner": {
+      "title": "¿Listo para operar con capital real?"
     }
   },
   "RulesPage": {
