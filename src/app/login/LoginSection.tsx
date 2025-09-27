@@ -7,7 +7,7 @@ export default function LoginSection() {
   const [showPassword, setShowPassword] = useState(false);
   return (
     <section
-      className="justify-center text-center min-h-screen"
+      className="justify-center text-center min-h-screen px-4 sm:px-0"
       style={{
         backgroundImage: "url('/login_bg.svg')",
         backgroundRepeat: "no-repeat",
@@ -16,9 +16,9 @@ export default function LoginSection() {
       }}
     >
       {/* Content container */}
-      <div className="z-10 max-w-4xl mx-auto pt-[307px]">
+      <div className="z-10 max-w-4xl mx-auto pt-[100px] sm:pt-[307px]">
         <div
-          className="w-[610px] rounded-2xl bg-gradient-to-b from-neutral-900 to-black p-8 shadow-xl justify-center mx-auto"
+          className="w-full sm:w-[610px] rounded-2xl bg-gradient-to-b from-neutral-900 to-black p-8 shadow-xl justify-center mx-auto"
           style={{
             backgroundImage: "url('/login_form_bg.svg')",
             backgroundRepeat: "no-repeat",
@@ -32,10 +32,10 @@ export default function LoginSection() {
           </div>
 
           {/* Title */}
-          <h1 className="text-2xl font-bold text-white text-center">
+          <h1 className="text-xl sm:text-2xl font-bold text-white text-center">
             Welcome Back!
           </h1>
-          <p className="text-neutral-400 text-center mb-6">
+          <p className="text-neutral-400 text-center mb-6 text-sm sm:text-base">
             Please enter your details
           </p>
 
@@ -73,7 +73,7 @@ export default function LoginSection() {
           </div>
 
           {/* Remember + Forgot */}
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between mb-6 gap-4 sm:gap-0">
             <label className="flex items-center gap-2 text-sm text-neutral-400">
               <input
                 type="checkbox"

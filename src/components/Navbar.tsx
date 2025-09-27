@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
+import LanguageSelector from "./LanguageSelector";
+
 function getLocaleFromCookie() {
   if (typeof document === "undefined") return "en";
   const match = document.cookie.match(/(?:^|; )locale=([^;]*)/);
@@ -123,62 +125,14 @@ export default function Navbar() {
           </Link>
 
           {/* Language Dropdown */}
-          <div className="relative" ref={desktopLangDropdownRef}>
-            <button
-              onClick={() => setLangOpen(!langOpen)}
-              className="flex items-center gap-2 bg-neutral-900 h-[52px] px-4 py-1.5 rounded-full"
-            >
-              <Image
-                src={`/flags/en.png`}
-                alt={selectedLangObj.title}
-                width={26}
-                height={26}
-                className="rounded"
-              />
-              {selectedLangObj.title}
-              <span className="ml-1">
-                <svg
-                  className="ml-1"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                  focusable="false"
-                >
-                  <path
-                    d="M4 6l4 4 4-4"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
-            </button>
-            {langOpen && (
-              <div className="absolute mt-2 w-32 bg-neutral-800 rounded-lg shadow-lg z-20">
-                {languages.map((lang) => (
-                  <button
-                    key={lang.code}
-                    className={`w-full px-4 py-2 text-left hover:bg-neutral-700 ${
-                      selectedLang === lang.code
-                        ? "bg-neutral-700 font-bold"
-                        : ""
-                    }`}
-                    onClick={() => {
-                      document.cookie = `locale=${lang.code}; path=/; max-age=31536000`;
-                      setSelectedLang(lang.code);
-                      window.location.reload();
-                    }}
-                  >
-                    {lang.title}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
+          <LanguageSelector
+            selectedLang={selectedLang}
+            onLanguageChange={(lang) => {
+              document.cookie = `locale=${lang}; path=/; max-age=31536000`;
+              setSelectedLang(lang);
+              window.location.reload();
+            }}
+          />
 
           {/* Links */}
           <div className="hidden md:flex items-center gap-6 text-sm ml-6">
