@@ -135,7 +135,7 @@ export default function Navbar() {
           />
 
           {/* Links */}
-          <div className="hidden md:flex items-center gap-6 text-sm ml-6">
+          <div className="hidden lg:flex items-center gap-6 text-sm ml-6">
             <div className="flex items-center gap-10">
               {navLinks.map(({ href, label }) => (
                 <Link
@@ -148,9 +148,10 @@ export default function Navbar() {
               ))}
             </div>
           </div>
+
           {/* Hamburger for mobile */}
           <button
-            className="md:hidden flex flex-col items-center justify-center ml-2 p-2 rounded focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="lg:hidden flex flex-col items-center justify-center ml-2 p-2 rounded focus:outline-none focus:ring-2 focus:ring-orange-500"
             onClick={() => setDrawerOpen(true)}
             aria-label="Open menu"
           >
@@ -161,7 +162,7 @@ export default function Navbar() {
         </div>
 
         {/* Right Section */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-4">
           <Link
             href="/get-funded"
             className="bg-neutral-900 px-4 py-2 rounded-full font-medium h-[52px] flex items-center justify-center"
