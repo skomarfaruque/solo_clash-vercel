@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -10,11 +11,12 @@ import LanguageSelector from "../components/LanguageSelector";
 export default function SignupNavbar() {
   const [selectedLang, setSelectedLang] = useState("en");
   const searchParams = useSearchParams();
+  const t = useTranslations("signupNavbar");
 
   const steps = [
-    { id: 1, label: "Welcome" },
-    { id: 2, label: "Info" },
-    { id: 3, label: "Verification" },
+    { id: 1, label: t("welcome") },
+    { id: 2, label: t("info") },
+    { id: 3, label: t("verification") },
   ];
 
   return (

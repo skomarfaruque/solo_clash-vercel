@@ -321,5 +321,10 @@
     "signIn": "SIGN IN",
     "newPlatform": "New on our platform?",
     "signUp": "Sign Up"
+  },
+  "signupNavbar": {
+    "welcome": "Welcome",
+    "info": "Info",
+    "verification": "Verification"
   }
 }

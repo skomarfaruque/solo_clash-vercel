@@ -322,5 +322,10 @@
     "signIn": "GİRİŞ YAP",
     "newPlatform": "Platformumuzda yeni misiniz?",
     "signUp": "Kaydol"
+  },
+  "signupNavbar": {
+    "welcome": "Hoş geldiniz",
+    "info": "Bilgi",
+    "verification": "Doğrulama"
   }
 }

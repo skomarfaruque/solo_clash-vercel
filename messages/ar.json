@@ -346,5 +346,10 @@
     "signIn": "تسجيل الدخول",
     "newPlatform": "جديد على منصتنا؟",
     "signUp": "اشتراك"
+  },
+  "signupNavbar": {
+    "welcome": "مرحبًا",
+    "info": "معلومات",
+    "verification": "التحقق"
   }
 }

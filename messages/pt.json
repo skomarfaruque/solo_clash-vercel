@@ -322,5 +322,10 @@
     "signIn": "ENTRAR",
     "newPlatform": "Novo na nossa plataforma?",
     "signUp": "Inscrever-se"
+  },
+  "signupNavbar": {
+    "welcome": "Bem-vindo",
+    "info": "Informação",
+    "verification": "Verificação"
   }
 }

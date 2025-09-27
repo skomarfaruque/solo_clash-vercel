@@ -345,5 +345,10 @@
     "signIn": "SE CONNECTER",
     "newPlatform": "Nouveau sur notre plateforme?",
     "signUp": "S'inscrire"
+  },
+  "signupNavbar": {
+    "welcome": "Bienvenue",
+    "info": "Info",
+    "verification": "Vérification"
   }
 }
