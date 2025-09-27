@@ -17,7 +17,7 @@ export default function SpinWinTrade() {
     >
       <div className="flex flex-col justify-center items-center gap-6 max-w-[1320px] mx-auto">
         {/* Heading */}
-        <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl leading-tight text-white max-w-full sm:max-w-xl self-center">
+        <h2 className="font-playfair font-bold text-3xl sm:text-4xl md:text-5xl leading-tight text-white max-w-full sm:max-w-xl self-center">
           {t("heading")}
         </h2>
 

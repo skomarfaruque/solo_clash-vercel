@@ -20,7 +20,7 @@ export default function HeroSection() {
           <span>{t("accountPage.heroSection.profitSplit")}</span>
         </div>
 
-        <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-4 sm:mb-6 text-white">
+        <h1 className="font-playfair text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-4 sm:mb-6 text-white">
           {t("accountPage.heroSection.headline1")} <br />
           <span className="bg-gradient-to-r from-blue-400 via-sky-500 to-orange-500 bg-clip-text text-transparent">
             {t("accountPage.heroSection.headline2")}

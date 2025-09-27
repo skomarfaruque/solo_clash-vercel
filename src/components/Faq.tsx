@@ -19,7 +19,7 @@ export default function Faq() {
     >
       <div className="flex flex-col justify-center items-center gap-6 w-full max-w-4xl mx-auto">
         {/* Heading */}
-        <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight text-white">
+        <h2 className="font-playfair font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight text-white">
           {t("heading")}
         </h2>
 

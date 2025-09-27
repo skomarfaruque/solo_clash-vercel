@@ -19,7 +19,7 @@ export default function HowItWorks() {
         {/* Top Badge */}
         <HomeButton>{t("badge")}</HomeButton>
         {/* Heading */}
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 text-white max-w-full sm:max-w-2xl">
+        <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 text-white max-w-full sm:max-w-2xl">
           {t("heading")}
         </h2>
         {/* How It Works Grid */}
