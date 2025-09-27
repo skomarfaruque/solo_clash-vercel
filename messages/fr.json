@@ -275,6 +275,56 @@
     "banner": {
       "title": "Vous voulez une entrée garantie au prochain tournoi ?",
       "description": "Obtenez un ticket gratuit pour le tournoi maintenant et assurez votre place dans notre compétition hebdomadaire de trading. En continuant, vous confirmez avoir lu, compris et accepté de respecter toutes les règles et politiques de trading décrites ci-dessus."
+    },
+    "faq1": {
+      "question": "Comment puis-je commencer à utiliser la plateforme ?",
+      "answer": "Commencer est facile ! Inscrivez-vous simplement pour un compte, complétez votre profil et vous aurez accès à toutes nos fonctionnalités, y compris les roues quotidiennes, les tournois et les outils de trading."
+    },
+    "faq2": {
+      "question": "Qu'est-ce que les Clash Coins et comment les gagner ?",
+      "answer": "Les Clash Coins sont la monnaie de notre plateforme que vous pouvez gagner grâce aux roues quotidiennes, en complétant des défis et en participant à des tournois. Utilisez-les pour entrer dans des tournois premium ou les échanger contre des récompenses."
+    },
+    "faq3": {
+      "question": "À quelle fréquence puis-je faire tourner la roue ?",
+      "answer": "Vous obtenez un tour gratuit toutes les 24 heures ! Les membres premium obtiennent des tours supplémentaires et de meilleures chances de récompense. Consultez votre tableau de bord pour voir quand votre prochain tour sera disponible."
+    },
+    "faq4": {
+      "question": "Quel type de récompenses puis-je gagner ?",
+      "answer": "Vous pouvez gagner des Clash Coins, des entrées gratuites à des tournois, des codes de réduction, un accès exclusif à des événements et même des comptes de trading financés. Les récompenses varient en fonction de votre niveau d'adhésion."
+    },
+    "faq5": {
+      "question": "Comment contacter le support ?",
+      "answer": "Notre équipe de support est disponible 24/7 via le chat intégré, par email à support@platform.com ou via notre serveur Discord communautaire. Nous répondons généralement sous 2 à 4 heures."
+    },
+    "faq6": {
+      "question": "Mes informations de compte sont-elles sécurisées ?",
+      "answer": "Absolument ! Nous utilisons un cryptage standard de l'industrie et des mesures de sécurité pour protéger vos données. Toutes les transactions sont sécurisées et nous ne stockons jamais d'informations de paiement sensibles sur nos serveurs."
+    }
+  },
+  "faqPageFaq": {
+    "faq1": {
+      "question": "Comment puis-je commencer à utiliser la plateforme ?",
+      "answer": "Commencer est facile ! Inscrivez-vous simplement pour un compte, complétez votre profil et vous aurez accès à toutes nos fonctionnalités, y compris les roues quotidiennes, les tournois et les outils de trading."
+    },
+    "faq2": {
+      "question": "Qu'est-ce que les Clash Coins et comment les gagner ?",
+      "answer": "Les Clash Coins sont la monnaie de notre plateforme que vous pouvez gagner grâce aux roues quotidiennes, en complétant des défis et en participant à des tournois. Utilisez-les pour entrer dans des tournois premium ou les échanger contre des récompenses."
+    },
+    "faq3": {
+      "question": "À quelle fréquence puis-je faire tourner la roue ?",
+      "answer": "Vous obtenez un tour gratuit toutes les 24 heures ! Les membres premium obtiennent des tours supplémentaires et de meilleures chances de récompense. Consultez votre tableau de bord pour voir quand votre prochain tour sera disponible."
+    },
+    "faq4": {
+      "question": "Quel type de récompenses puis-je gagner ?",
+      "answer": "Vous pouvez gagner des Clash Coins, des entrées gratuites à des tournois, des codes de réduction, un accès exclusif à des événements et même des comptes de trading financés. Les récompenses varient en fonction de votre niveau d'adhésion."
+    },
+    "faq5": {
+      "question": "Comment contacter le support ?",
+      "answer": "Notre équipe de support est disponible 24/7 via le chat intégré, par email à support@platform.com ou via notre serveur Discord communautaire. Nous répondons généralement sous 2 à 4 heures."
+    },
+    "faq6": {
+      "question": "Mes informations de compte sont-elles sécurisées ?",
+      "answer": "Absolument ! Nous utilisons un cryptage standard de l'industrie et des mesures de sécurité pour protéger vos données. Toutes les transactions sont sécurisées et nous ne stockons jamais d'informations de paiement sensibles sur nos serveurs."
     }
   },
   "faqHeroSection": {

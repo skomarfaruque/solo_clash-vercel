@@ -2,46 +2,43 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function FaqPageFaq() {
+  const t = useTranslations("faqPageFaq");
   const [openItem, setOpenItem] = useState<number | null>(null);
 
   const faqData = [
     {
-      question: "How do I get started with the platform?",
-      answer:
-        "Getting started is easy! Simply sign up for an account, complete your profile, and you'll have access to all our features including daily spins, tournaments, and trading tools.",
+      question: t("faq1.question"),
+      answer: t("faq1.answer"),
     },
     {
-      question: "What are Clash Coins and how do I earn them?",
-      answer:
-        "Clash Coins are our platform currency that you can earn through daily spins, completing challenges, and participating in tournaments. Use them to enter premium tournaments or exchange for rewards.",
+      question: t("faq2.question"),
+      answer: t("faq2.answer"),
     },
     {
-      question: "How often can I spin the wheel?",
-      answer:
-        "You get one free spin every 24 hours! Premium members get additional spins and better reward chances. Check your account dashboard to see when your next spin is available.",
+      question: t("faq3.question"),
+      answer: t("faq3.answer"),
     },
     {
-      question: "What kind of rewards can I win?",
-      answer:
-        "You can win Clash Coins, free tournament entries, discount codes, exclusive access to events, and even funded trading accounts. Rewards vary based on your membership level.",
+      question: t("faq4.question"),
+      answer: t("faq4.answer"),
     },
     {
-      question: "How do I contact support?",
-      answer:
-        "Our support team is available 24/7 through the in-app chat, email at support@platform.com, or through our community Discord server. We typically respond within 2-4 hours.",
+      question: t("faq5.question"),
+      answer: t("faq5.answer"),
     },
     {
-      question: "Is my account information secure?",
-      answer:
-        "Absolutely! We use industry-standard encryption and security measures to protect your data. All transactions are secured and we never store sensitive payment information on our servers.",
+      question: t("faq6.question"),
+      answer: t("faq6.answer"),
     },
   ];
 
   const toggleItem = (index: number) => {
     setOpenItem(openItem === index ? null : index);
   };
+
   return (
     <section
       className="justify-center text-center px-6 lg:px-20 py-20 flex items-center"

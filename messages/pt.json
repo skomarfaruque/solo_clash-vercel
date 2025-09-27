@@ -281,5 +281,31 @@
   "faqHeroSection": {
     "title": "Perguntas Frequentes",
     "description": "Tudo o que você precisa saber para começar"
+  },
+  "faqPageFaq": {
+    "faq1": {
+      "question": "Como faço para começar na plataforma?",
+      "answer": "Começar é fácil! Basta se inscrever, completar seu perfil e você terá acesso a todos os nossos recursos, incluindo giros diários, torneios e ferramentas de negociação."
+    },
+    "faq2": {
+      "question": "O que são Clash Coins e como ganho elas?",
+      "answer": "Clash Coins são a moeda da nossa plataforma que você pode ganhar através de giros diários, completando desafios e participando de torneios. Use-as para entrar em torneios premium ou trocar por recompensas."
+    },
+    "faq3": {
+      "question": "Com que frequência posso girar a roda?",
+      "answer": "Você ganha um giro grátis a cada 24 horas! Membros premium ganham giros adicionais e melhores chances de recompensa. Verifique seu painel para ver quando seu próximo giro estará disponível."
+    },
+    "faq4": {
+      "question": "Que tipo de recompensas posso ganhar?",
+      "answer": "Você pode ganhar Clash Coins, entradas gratuitas para torneios, códigos de desconto, acesso exclusivo a eventos e até contas de negociação financiadas. As recompensas variam de acordo com seu nível de associação."
+    },
+    "faq5": {
+      "question": "Como entro em contato com o suporte?",
+      "answer": "Nossa equipe de suporte está disponível 24/7 através do chat no aplicativo, e-mail em support@platform.com ou pelo nosso servidor Discord. Normalmente respondemos dentro de 2-4 horas."
+    },
+    "faq6": {
+      "question": "Minhas informações de conta estão seguras?",
+      "answer": "Com certeza! Usamos criptografia padrão do setor e medidas de segurança para proteger seus dados. Todas as transações são seguras e nunca armazenamos informações de pagamento sensíveis em nossos servidores."
+    }
   }
 }

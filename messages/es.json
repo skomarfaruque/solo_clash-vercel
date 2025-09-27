@@ -281,5 +281,31 @@
   "faqHeroSection": {
     "title": "Preguntas Frecuentes",
     "description": "Todo lo que necesitas saber para empezar"
+  },
+  "faqPageFaq": {
+    "faq1": {
+      "question": "¿Cómo empiezo a usar la plataforma?",
+      "answer": "¡Empezar es fácil! Simplemente regístrate para obtener una cuenta, completa tu perfil y tendrás acceso a todas nuestras funciones, incluidas las ruedas diarias, torneos y herramientas de trading."
+    },
+    "faq2": {
+      "question": "¿Qué son las Clash Coins y cómo las gano?",
+      "answer": "Las Clash Coins son la moneda de nuestra plataforma que puedes ganar a través de ruedas diarias, completando desafíos y participando en torneos. Úsalas para entrar en torneos premium o canjearlas por recompensas."
+    },
+    "faq3": {
+      "question": "¿Con qué frecuencia puedo girar la rueda?",
+      "answer": "¡Obtienes un giro gratis cada 24 horas! Los miembros premium obtienen giros adicionales y mejores oportunidades de recompensa. Consulta tu panel de cuenta para ver cuándo estará disponible tu próximo giro."
+    },
+    "faq4": {
+      "question": "¿Qué tipo de recompensas puedo ganar?",
+      "answer": "Puedes ganar Clash Coins, entradas gratuitas a torneos, códigos de descuento, acceso exclusivo a eventos e incluso cuentas de trading financiadas. Las recompensas varían según tu nivel de membresía."
+    },
+    "faq5": {
+      "question": "¿Cómo contacto con soporte?",
+      "answer": "Nuestro equipo de soporte está disponible 24/7 a través del chat en la aplicación, correo electrónico en support@platform.com o a través de nuestro servidor de Discord de la comunidad. Normalmente respondemos dentro de 2-4 horas."
+    },
+    "faq6": {
+      "question": "¿Está segura la información de mi cuenta?",
+      "answer": "¡Absolutamente! Usamos cifrado estándar de la industria y medidas de seguridad para proteger tus datos. Todas las transacciones están aseguradas y nunca almacenamos información de pago sensible en nuestros servidores."
+    }
   }
 }

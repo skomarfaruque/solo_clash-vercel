@@ -281,5 +281,31 @@
   "faqHeroSection": {
     "title": "Sıkça Sorulan Sorular",
     "description": "Başlamak için bilmeniz gereken her şey"
+  },
+  "faqPageFaq": {
+    "faq1": {
+      "question": "Platforma nasıl başlarım?",
+      "answer": "Başlamak kolay! Sadece bir hesap oluşturun, profilinizi tamamlayın ve günlük çarklar, turnuvalar ve ticaret araçları dahil tüm özelliklerimize erişim sağlayın."
+    },
+    "faq2": {
+      "question": "Clash Coins nedir ve nasıl kazanırım?",
+      "answer": "Clash Coins, günlük çarklar, görevleri tamamlayarak ve turnuvalara katılarak kazanabileceğiniz platform para birimimizdir. Bunları premium turnuvalara katılmak veya ödüllerle takas etmek için kullanın."
+    },
+    "faq3": {
+      "question": "Çarkı ne sıklıkla çevirebilirim?",
+      "answer": "Her 24 saatte bir ücretsiz bir çark çevirme hakkınız var! Premium üyeler ek çevirme hakları ve daha iyi ödül şansları elde eder. Bir sonraki çevirme hakkınızın ne zaman kullanılabilir olduğunu görmek için hesap panonuzu kontrol edin."
+    },
+    "faq4": {
+      "question": "Ne tür ödüller kazanabilirim?",
+      "answer": "Clash Coins, ücretsiz turnuva girişleri, indirim kodları, etkinliklere özel erişim ve hatta finanse edilen ticaret hesapları kazanabilirsiniz. Ödüller üyelik seviyenize bağlı olarak değişir."
+    },
+    "faq5": {
+      "question": "Destekle nasıl iletişime geçerim?",
+      "answer": "Destek ekibimiz, uygulama içi sohbet, support@platform.com adresine e-posta veya topluluk Discord sunucumuz aracılığıyla 7/24 hizmetinizdedir. Genellikle 2-4 saat içinde yanıt veririz."
+    },
+    "faq6": {
+      "question": "Hesap bilgilerim güvende mi?",
+      "answer": "Kesinlikle! Verilerinizi korumak için endüstri standardı şifreleme ve güvenlik önlemleri kullanıyoruz. Tüm işlemler güvence altındadır ve sunucularımızda hassas ödeme bilgilerini asla saklamayız."
+    }
   }
 }
