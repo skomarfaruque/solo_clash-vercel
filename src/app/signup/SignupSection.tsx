@@ -4,11 +4,14 @@ import { useState } from "react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export default function SignupSection() {
   const t = useTranslations("signupSection");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const searchParams = useSearchParams();
   const step = searchParams.get("step") || "1";
   const [formData, setFormData] = useState({
@@ -319,12 +322,12 @@ export default function SignupSection() {
                   {t("dobLabel")}
                   <span className="text-red-500">*</span>
                 </label>
-                <input
-                  type="text"
-                  name="dob"
-                  value={formData.dob}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                <DatePicker
+                  selected={selectedDate}
+                  onChange={(date: Date | null) => setSelectedDate(date)}
+                  dateFormat="dd/MM/yyyy"
+                  className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 text-white"
+                  placeholderText="Select your date of birth"
                 />
               </div>
 
