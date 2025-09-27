@@ -271,5 +271,11 @@
       "french": "Francés",
       "spanish": "Español"
     }
+  },
+  "faqPage": {
+    "banner": {
+      "title": "¿Quieres una entrada garantizada para el próximo torneo?",
+      "description": "Canjea un boleto gratuito para el torneo ahora y asegura tu lugar en nuestra competencia semanal de trading. Al continuar, confirmas que has leído, entendido y aceptas cumplir con todas las reglas y políticas de trading descritas anteriormente."
+    }
   }
 }

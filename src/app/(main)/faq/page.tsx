@@ -1,11 +1,6 @@
-import WhyChooseProgram from "@/components/affiliates/WhyChoosePrograms";
-
-import HowItWorksAffiliates from "../../../components/affiliates/HowItWorksAffiliates";
-
 import Banner from "../../../components/Banner";
+import { useTranslations } from "next-intl";
 
-import TiredRewards from "@/components/affiliates/TiredRewards";
-import CommissionSection from "@/components/affiliates/CommissionSection";
 import FaqHeroSection from "./FaqHeroSection";
 
 import FaqPageFaq from "@/components/faq/FaqPageFaq";
@@ -17,6 +12,8 @@ export const metadata = {
 };
 
 export default function FaqPage() {
+  const t = useTranslations("faqPage");
+
   return (
     <main
       className="text-white overflow-hidden"
@@ -29,8 +26,8 @@ export default function FaqPage() {
       <Banner
         page="clash-shop"
         bannerIconPath="/icons/spins/shop_banner_icon.png"
-        title="Want a guaranteed entry to the next tournament?"
-        description="Redeem a free tournament ticket now and secure your spot in our weekly trading competition.By proceeding, you confirm that you have read, understood, and agree to abide by all trading rules and policies outlined above."
+        title={t("banner.title")}
+        description={t("banner.description")}
       />
     </main>
   );

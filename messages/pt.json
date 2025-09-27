@@ -271,5 +271,11 @@
       "french": "Francês",
       "spanish": "Espanhol"
     }
+  },
+  "faqPage": {
+    "banner": {
+      "title": "Quer uma entrada garantida para o próximo torneio?",
+      "description": "Resgate um ingresso gratuito para o torneio agora e garanta sua vaga em nossa competição semanal de trading. Ao prosseguir, você confirma que leu, entendeu e concorda em cumprir todas as regras e políticas de trading descritas acima."
+    }
   }
 }
