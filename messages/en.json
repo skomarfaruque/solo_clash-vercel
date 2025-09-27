@@ -276,5 +276,9 @@
       "title": "Want a guaranteed entry to the next tournament?",
       "description": "Redeem a free tournament ticket now and secure your spot in our weekly trading competition. By proceeding, you confirm that you have read, understood, and agree to abide by all trading rules and policies outlined above."
     }
+  },
+  "faqHeroSection": {
+    "title": "Frequently Asked Questions",
+    "description": "Everything you need to know about getting started"
   }
 }

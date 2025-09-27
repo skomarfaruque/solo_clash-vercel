@@ -277,5 +277,9 @@
       "title": "Bir sonraki turnuvaya garantili giriş ister misiniz?",
       "description": "Şimdi ücretsiz bir turnuva bileti alın ve haftalık ticaret yarışmamızda yerinizi garantileyin. Devam ederek, yukarıda belirtilen tüm ticaret kurallarını ve politikalarını okuduğunuzu, anladığınızı ve bunlara uymayı kabul ettiğinizi onaylıyorsunuz."
     }
+  },
+  "faqHeroSection": {
+    "title": "Sıkça Sorulan Sorular",
+    "description": "Başlamak için bilmeniz gereken her şey"
   }
 }

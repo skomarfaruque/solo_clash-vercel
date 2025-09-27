@@ -276,5 +276,9 @@
       "title": "Vous voulez une entrée garantie au prochain tournoi ?",
       "description": "Obtenez un ticket gratuit pour le tournoi maintenant et assurez votre place dans notre compétition hebdomadaire de trading. En continuant, vous confirmez avoir lu, compris et accepté de respecter toutes les règles et politiques de trading décrites ci-dessus."
     }
+  },
+  "faqHeroSection": {
+    "title": "Questions Fréquemment Posées",
+    "description": "Tout ce que vous devez savoir pour commencer"
   }
 }

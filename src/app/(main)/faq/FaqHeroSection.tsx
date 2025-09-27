@@ -1,4 +1,8 @@
+import { useTranslations } from "next-intl";
+
 export default function FaqHeroSection() {
+  const t = useTranslations("faqHeroSection");
+
   return (
     <section className="justify-center text-center px-6 lg:px-20">
       <div className="relative z-10 max-w-4xl mx-auto pt-[217px]">
@@ -17,10 +21,10 @@ export default function FaqHeroSection() {
             backgroundClip: "text",
           }}
         >
-          Frequently Asked Questions
+          {t("title")}
         </p>
         <p className="mt-9 max-w-3xl mx-auto text-gray-300 text-sm md:text-base leading-relaxed w-[667px">
-          Everything you need to know about getting started
+          {t("description")}
         </p>
       </div>
     </section>
