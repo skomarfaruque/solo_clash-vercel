@@ -307,5 +307,20 @@
       "question": "Minhas informações de conta estão seguras?",
       "answer": "Com certeza! Usamos criptografia padrão do setor e medidas de segurança para proteger seus dados. Todas as transações são seguras e nunca armazenamos informações de pagamento sensíveis em nossos servidores."
     }
+  },
+  "login": {
+    "welcomeBack": "Bem-vindo de volta!",
+    "enterDetails": "Por favor, insira seus dados",
+    "emailAddress": "Endereço de e-mail",
+    "emailPlaceholder": "exemplo@email.com",
+    "password": "Senha",
+    "passwordPlaceholder": "••••••••",
+    "showPassword": "Mostrar Senha",
+    "hidePassword": "Ocultar Senha",
+    "rememberMe": "Lembre-se de mim",
+    "forgotPassword": "Esqueceu a senha?",
+    "signIn": "ENTRAR",
+    "newPlatform": "Novo na nossa plataforma?",
+    "signUp": "Inscrever-se"
   }
 }

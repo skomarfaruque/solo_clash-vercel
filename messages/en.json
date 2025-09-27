@@ -306,5 +306,20 @@
       "question": "Is my account information secure?",
       "answer": "Absolutely! We use industry-standard encryption and security measures to protect your data. All transactions are secured and we never store sensitive payment information on our servers."
     }
+  },
+  "login": {
+    "welcomeBack": "Welcome Back!",
+    "enterDetails": "Please enter your details",
+    "emailAddress": "Email Address",
+    "emailPlaceholder": "example@email.com",
+    "password": "Password",
+    "passwordPlaceholder": "••••••••",
+    "showPassword": "Show Password",
+    "hidePassword": "Hide Password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot Password?",
+    "signIn": "SIGN IN",
+    "newPlatform": "New on our platform?",
+    "signUp": "Sign Up"
   }
 }

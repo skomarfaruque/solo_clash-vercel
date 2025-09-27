@@ -307,5 +307,20 @@
       "question": "Hesap bilgilerim güvende mi?",
       "answer": "Kesinlikle! Verilerinizi korumak için endüstri standardı şifreleme ve güvenlik önlemleri kullanıyoruz. Tüm işlemler güvence altındadır ve sunucularımızda hassas ödeme bilgilerini asla saklamayız."
     }
+  },
+  "login": {
+    "welcomeBack": "Tekrar hoş geldiniz!",
+    "enterDetails": "Lütfen bilgilerinizi girin",
+    "emailAddress": "E-posta adresi",
+    "emailPlaceholder": "ornek@email.com",
+    "password": "Şifre",
+    "passwordPlaceholder": "••••••••",
+    "showPassword": "Şifreyi Göster",
+    "hidePassword": "Şifreyi Gizle",
+    "rememberMe": "Beni hatırla",
+    "forgotPassword": "Şifrenizi mi unuttunuz?",
+    "signIn": "GİRİŞ YAP",
+    "newPlatform": "Platformumuzda yeni misiniz?",
+    "signUp": "Kaydol"
   }
 }

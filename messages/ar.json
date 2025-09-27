@@ -331,5 +331,20 @@
   "faqHeroSection": {
     "title": "الأسئلة الشائعة",
     "description": "كل ما تحتاج إلى معرفته للبدء"
+  },
+  "login": {
+    "welcomeBack": "مرحبًا بعودتك!",
+    "enterDetails": "يرجى إدخال بياناتك",
+    "emailAddress": "عنوان البريد الإلكتروني",
+    "emailPlaceholder": "example@email.com",
+    "password": "كلمة المرور",
+    "passwordPlaceholder": "••••••••",
+    "showPassword": "إظهار كلمة المرور",
+    "hidePassword": "إخفاء كلمة المرور",
+    "rememberMe": "تذكرني",
+    "forgotPassword": "هل نسيت كلمة المرور؟",
+    "signIn": "تسجيل الدخول",
+    "newPlatform": "جديد على منصتنا؟",
+    "signUp": "اشتراك"
   }
 }
