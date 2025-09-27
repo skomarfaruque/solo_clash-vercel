@@ -116,7 +116,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="flex items-center justify-between bg-transparent text-white absolute left-1/2 transform -translate-x-1/2 max-w-screen-xl w-full h-[52px] px-2 sm:px-4">
+      <nav className="flex items-center justify-between bg-transparent text-white absolute left-1/2 transform -translate-x-1/2 max-w-screen-2xl w-full h-[52px] px-2 sm:px-4">
         {/* Left Section */}
         <div className="flex items-center gap-2 sm:gap-6">
           {/* Logo */}
@@ -136,7 +136,7 @@ export default function Navbar() {
 
           {/* Links */}
           <div className="hidden md:flex items-center gap-6 text-sm ml-6">
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-10">
               {navLinks.map(({ href, label }) => (
                 <Link
                   key={href}
