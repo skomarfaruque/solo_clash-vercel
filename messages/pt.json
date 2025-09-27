@@ -260,5 +260,16 @@
       "description": "Oferecemos aos traders ambiciosos a oportunidade de uma vida. Torneios semanais, rankings e giros diários que transformam desempenho em prêmios",
       "copyright": "© 2024 Solo Clash. Todos os direitos reservados."
     }
+  },
+  "languageSupport": {
+    "title": "Suporte Multilíngue",
+    "languages": {
+      "english": "Inglês",
+      "arabic": "Árabe",
+      "turkish": "Turco",
+      "portuguese": "Português",
+      "french": "Francês",
+      "spanish": "Espanhol"
+    }
   }
 }

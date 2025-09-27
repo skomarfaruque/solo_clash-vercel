@@ -259,5 +259,16 @@
       "description": "We give ambitious traders the opportunity of a lifetime. Weekly tournaments, leaderboards and daily spins that turn performance into prizes",
       "copyright": "© 2024 Solo Clash. All rights reserved."
     }
+  },
+  "languageSupport": {
+    "title": "Multi-Language Support",
+    "languages": {
+      "english": "English",
+      "arabic": "Arabic",
+      "turkish": "Turkish",
+      "portuguese": "Portuguese",
+      "french": "French",
+      "spanish": "Spanish"
+    }
   }
 }

@@ -4,15 +4,18 @@ import "./LanguageSupport.css";
 
 import { useEffect, useState } from "react";
 import getCookieLocale from "@/app/utils/get-cookie-lan";
+import { useTranslations } from "next-intl";
 
 export default function LanguageSupport() {
+  const t = useTranslations("languageSupport");
+
   const languages = [
-    { title: "English", code: "en" },
-    { title: "Arabic", code: "ar" },
-    { title: "Turkish", code: "tr" },
-    { title: "Portuguese", code: "pt" },
-    { title: "French", code: "fr" },
-    { title: "Spanish", code: "es" },
+    { title: t("languages.english"), code: "en" },
+    { title: t("languages.arabic"), code: "ar" },
+    { title: t("languages.turkish"), code: "tr" },
+    { title: t("languages.portuguese"), code: "pt" },
+    { title: t("languages.french"), code: "fr" },
+    { title: t("languages.spanish"), code: "es" },
   ];
 
   // Use state and useEffect to avoid hydration mismatch
@@ -27,9 +30,7 @@ export default function LanguageSupport() {
       {/* Title */}
       <div className="flex items-center space-x-2 mb-6">
         <span className="text-white text-lg">🌐</span>
-        <h2 className="text-white text-xl font-semibold">
-          Multi-Language Support
-        </h2>
+        <h2 className="text-white text-xl font-semibold">{t("title")}</h2>
       </div>
 
       {/* Buttons */}

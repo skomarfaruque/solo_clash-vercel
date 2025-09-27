@@ -260,5 +260,16 @@
       "description": "Hırslı traderlara hayatlarının fırsatını sunuyoruz. Haftalık turnuvalar, liderlik tabloları ve performansı ödüllere dönüştüren günlük çarklar",
       "copyright": "© 2024 Solo Clash. Tüm hakları saklıdır."
     }
+  },
+  "languageSupport": {
+    "title": "Çok Dilli Destek",
+    "languages": {
+      "english": "İngilizce",
+      "arabic": "Arapça",
+      "turkish": "Türkçe",
+      "portuguese": "Portekizce",
+      "french": "Fransızca",
+      "spanish": "İspanyolca"
+    }
   }
 }
