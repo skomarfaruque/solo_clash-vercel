@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-export default function Faq() {
+export default function FaqSection() {
   const [openItem, setOpenItem] = useState<number | null>(null);
   const t = useTranslations("accountPage.faqSection");
   const faqData = t.raw("faqs");

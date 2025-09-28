@@ -1,8 +1,8 @@
-import ViewFullPriceButton from "./ViewFullPriceButton";
+import ViewFullPriceButton from "../ViewFullPriceButton";
 import SpinWinTradeCard from "./SpinWinTradeCard";
 import { useTranslations } from "next-intl";
 
-export default function SpinWinTrade() {
+export default function SpinWinTradeSection() {
   const t = useTranslations("accountPage.spinWinTradeSection");
   const cards = t.raw("cards");
   const icons = [

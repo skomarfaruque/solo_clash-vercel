@@ -1,10 +1,10 @@
 import HeroSection from "@/components/account/HeroSection";
 import WhyChooseUsSection from "@/components/account/WhyChooseUsSection";
 import HowItWorksSection from "@/components/account/HowItWorksSection";
-import Subscriptions from "@/components/account/SubscriptionsSection";
-import SpinWinTrade from "../../components/SpinWinTrade";
-import Faq from "../../components/Faq";
-import Banner from "../../components/Banner";
+import SubscriptionsSection from "@/components/account/SubscriptionsSection";
+import SpinWinTradeSection from "@/components/account/SpinWinTradeSection";
+import FaqSection from "@/components/account/FaqSection";
+import Banner from "@/components/Banner";
 import { useTranslations } from "next-intl";
 
 export default function Home() {
@@ -18,9 +18,9 @@ export default function Home() {
       <HeroSection />
       <WhyChooseUsSection />
       <HowItWorksSection />
-      <Subscriptions />
-      <SpinWinTrade />
-      <Faq />
+      <SubscriptionsSection />
+      <SpinWinTradeSection />
+      <FaqSection />
       <Banner page="account" title={t("banner.title")} />
     </main>
   );
