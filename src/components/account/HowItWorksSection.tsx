@@ -1,8 +1,8 @@
 import HowItWorksCard from "./HowItWorksCard";
-import HomeButton from "./HomeButton";
+import HomeButton from "../HomeButton";
 import { useTranslations } from "next-intl";
 
-export default function HowItWorks() {
+export default function HowItWorksSection() {
   const t = useTranslations("accountPage.howItWorksSection");
   const steps = t.raw("steps");
   const images = [

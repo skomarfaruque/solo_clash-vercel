@@ -1,4 +1,4 @@
-import StartNowButton from "./StartNowButton";
+import StartNowButton from "../StartNowButton";
 import { useTranslations } from "next-intl";
 
 export default function HeroSection() {

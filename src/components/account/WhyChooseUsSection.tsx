@@ -1,8 +1,8 @@
-import FeatureCard from "./FeatureCard";
-import HomeButton from "./HomeButton";
+import FeatureCard from "./WhyChooseUsCard";
+import HomeButton from "../HomeButton";
 import { useTranslations } from "next-intl";
 
-export default function FeaturesSection() {
+export default function WhyChooseUsSection() {
   const t = useTranslations();
   return (
     <section

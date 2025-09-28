@@ -6,7 +6,7 @@ interface FeatureCardProps {
   readonly description: string;
 }
 
-export default function FeatureCard({
+export default function WhyChooseUsCard({
   iconPath,
   title,
   description,

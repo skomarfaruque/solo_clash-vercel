@@ -1,6 +1,6 @@
-import FeaturesSection from "../../components/FeaturesSection";
-import HeroSection from "../../components/HeroSection";
-import HowItWorks from "../../components/HowItWorks";
+import HeroSection from "@/components/account/HeroSection";
+import WhyChooseUsSection from "@/components/account/WhyChooseUsSection";
+import HowItWorksSection from "@/components/account/HowItWorksSection";
 import Subscriptions from "../../components/Subscriptions";
 import SpinWinTrade from "../../components/SpinWinTrade";
 import Faq from "../../components/Faq";
@@ -16,8 +16,8 @@ export default function Home() {
       style={{ backgroundColor: "#030303" }}
     >
       <HeroSection />
-      <FeaturesSection />
-      <HowItWorks />
+      <WhyChooseUsSection />
+      <HowItWorksSection />
       <Subscriptions />
       <SpinWinTrade />
       <Faq />

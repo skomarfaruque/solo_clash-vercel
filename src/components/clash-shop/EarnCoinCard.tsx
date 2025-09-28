@@ -46,7 +46,7 @@ export default function EarnCoinCard({
       </div>
 
       {/* Title */}
-      <h3 className="font-normal font-semibold text-[20px] leading-[150%] text-white text-center mb-4">
+      <h3 className="font-semibold text-[20px] leading-[150%] text-white text-center mb-4">
         {title}
       </h3>
 
