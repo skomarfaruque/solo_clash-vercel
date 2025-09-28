@@ -23,7 +23,7 @@ export default function HowItWorksSection() {
         {/* Heading */}
         <Heading>{t("heading")}</Heading>
         {/* How It Works Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 w-full max-w-6xl mt-[56px]">
           {Array.isArray(steps) &&
             steps.map((step, idx) => (
               <HowItWorksCard
