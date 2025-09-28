@@ -46,11 +46,7 @@ export default function WhyChooseProgram() {
         {/* Heading */}
         <Heading>{t("heading")}</Heading>
 
-        <p className="text-gray-400 text-base sm:text-lg leading-6 mt-4">
-          {t("description")}
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-6xl mt-[56px]">
           {spinDetailsCards.map((card, idx) => (
             <WhyChooseProgramCards
               key={idx}
