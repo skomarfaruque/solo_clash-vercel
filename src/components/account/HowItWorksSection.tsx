@@ -1,6 +1,8 @@
+import { useTranslations } from "next-intl";
+
 import HowItWorksCard from "./HowItWorksCard";
 import HomeButton from "../HomeButton";
-import { useTranslations } from "next-intl";
+import Heading from "../common/Heading";
 
 export default function HowItWorksSection() {
   const t = useTranslations("accountPage.howItWorksSection");
@@ -19,9 +21,7 @@ export default function HowItWorksSection() {
         {/* Top Badge */}
         <HomeButton>{t("badge")}</HomeButton>
         {/* Heading */}
-        <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 text-white max-w-full sm:max-w-2xl">
-          {t("heading")}
-        </h2>
+        <Heading>{t("heading")}</Heading>
         {/* How It Works Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           {Array.isArray(steps) &&

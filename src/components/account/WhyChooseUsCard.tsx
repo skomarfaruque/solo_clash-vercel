@@ -13,33 +13,22 @@ export default function WhyChooseUsCard({
 }: FeatureCardProps) {
   return (
     <div
-      className="bg-[#181818] rounded-2xl p-5 sm:p-8 flex flex-col items-center text-center h-full hover:scale-105 transition relative"
+      className="flex flex-col items-center justify-center rounded-2xl hover:scale-105 transition w-full max-w-[425px] h-[350px] sm:h-[415px] bg-cover bg-center bg-no-repeat px-4"
       style={{
-        width: "100%",
-        maxWidth: "425px",
-        height: "415px",
         backgroundImage: "url('/home_card_one.svg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
       }}
     >
-      <div
-        className="w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center absolute"
-        style={{ top: "70px" }}
-      >
+      <div className="w-20 h-20 sm:w-28 sm:h-28 flex items-center justify-center">
         <Image
           src={iconPath}
           alt={title}
           width={100}
           height={100}
-          className="h-20 w-20 sm:h-24 sm:w-24"
+          className="h-16 w-16 sm:h-24 sm:w-24"
         />
       </div>
-      <div
-        className="absolute left-1/2 -translate-x-1/2"
-        style={{ top: "200px", width: "80%", maxWidth: "320px" }}
-      >
-        <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2 text-white">
+      <div className="mt-4">
+        <h3 className="text-base sm:text-xl font-semibold mb-1 sm:mb-2 text-white">
           {title}
         </h3>
         <p

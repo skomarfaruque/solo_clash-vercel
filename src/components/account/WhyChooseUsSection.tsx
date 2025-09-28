@@ -1,6 +1,7 @@
 import FeatureCard from "./WhyChooseUsCard";
 import HomeButton from "../HomeButton";
 import { useTranslations } from "next-intl";
+import Heading from "../common/Heading";
 
 export default function WhyChooseUsSection() {
   const t = useTranslations();
@@ -9,19 +10,20 @@ export default function WhyChooseUsSection() {
       className="justify-center text-center px-4 sm:px-6 lg:px-20 py-10 sm:py-16 lg:py-20"
       style={{ backgroundColor: "#030303" }}
     >
-      <div className="max-w-[1320px] mx-auto">
+      <div className="flex flex-col justify-center items-center gap-6">
         {/* Top Badge */}
         <HomeButton>{t("accountPage.featureSection.badge")}</HomeButton>
 
         {/* Heading */}
-        <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 text-white">
+        <Heading>
+          {" "}
           {t("accountPage.featureSection.heading1")}{" "}
           <br className="hidden md:block" />
           {t("accountPage.featureSection.heading2")}
-        </h2>
+        </Heading>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mt-[56px] w-full max-w-6xl">
           {/* Card 1 */}
           <FeatureCard
             iconPath="/why_choose_icon_one.svg"

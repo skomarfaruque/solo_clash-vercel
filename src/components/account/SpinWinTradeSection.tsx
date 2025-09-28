@@ -1,3 +1,4 @@
+import Heading from "../common/Heading";
 import ViewFullPriceButton from "../ViewFullPriceButton";
 import SpinWinTradeCard from "./SpinWinTradeCard";
 import { useTranslations } from "next-intl";
@@ -17,9 +18,7 @@ export default function SpinWinTradeSection() {
     >
       <div className="flex flex-col justify-center items-center gap-6 max-w-[1320px] mx-auto">
         {/* Heading */}
-        <h2 className="font-playfair font-bold text-3xl sm:text-4xl md:text-5xl leading-tight text-white max-w-full sm:max-w-xl self-center">
-          {t("heading")}
-        </h2>
+        <Heading>{t("heading")}</Heading>
 
         {/* Description */}
         <p className="font-normal text-base sm:text-lg leading-6 text-center mb-8 text-[#B7B7B7] max-w-full sm:max-w-2xl self-center">

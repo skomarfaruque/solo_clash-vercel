@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import Heading from "../common/Heading";
 
 export default function FaqSection() {
   const [openItem, setOpenItem] = useState<number | null>(null);
@@ -19,9 +20,7 @@ export default function FaqSection() {
     >
       <div className="flex flex-col justify-center items-center gap-6 w-full max-w-4xl mx-auto">
         {/* Heading */}
-        <h2 className="font-playfair font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight text-white">
-          {t("heading")}
-        </h2>
+        <Heading>{t("heading")}</Heading>
 
         {/* Description */}
         <p

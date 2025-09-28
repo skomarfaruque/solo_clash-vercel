@@ -1,6 +1,7 @@
 import ViewFullPriceButton from "../ViewFullPriceButton";
 import { useTranslations } from "next-intl";
 import SubscriptionSectionCard from "./SubscriptionSectionCard";
+import Heading from "../common/Heading";
 
 export default function SubscriptionsSection() {
   const t = useTranslations("accountPage.subscriptionsSection");
@@ -17,9 +18,7 @@ export default function SubscriptionsSection() {
     >
       <div className="flex flex-col justify-center items-center gap-6">
         {/* Heading */}
-        <h2 className="font-playfair font-bold text-3xl sm:text-4xl md:text-5xl leading-tight text-white max-w-full sm:max-w-xl">
-          {t("heading")}
-        </h2>
+        <Heading>{t("heading")}</Heading>
 
         {/* Description */}
         <p className="font-normal text-base sm:text-lg leading-6 text-center mb-8 text-[#B7B7B7] max-w-full sm:max-w-2xl">
