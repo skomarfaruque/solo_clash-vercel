@@ -6,6 +6,7 @@ import SpinWinTradeSection from "@/components/account/SpinWinTradeSection";
 import FaqSection from "@/components/account/FaqSection";
 import Banner from "@/components/Banner";
 import { useTranslations } from "next-intl";
+import SubscriptionsSectionNew from "@/components/account/SubscriptionsSectionNew";
 
 export default function Home() {
   const t = useTranslations("accountPage");
@@ -18,7 +19,7 @@ export default function Home() {
       <HeroSection />
       <WhyChooseUsSection />
       <HowItWorksSection />
-      <SubscriptionsSection />
+      <SubscriptionsSectionNew />
       <SpinWinTradeSection />
       <FaqSection />
       <Banner page="account" title={t("banner.title")} />
