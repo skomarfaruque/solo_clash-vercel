@@ -361,5 +361,9 @@
   "whyChoosePrograms": {
     "heading": "Por que escolher nossos programas?",
     "description": "Nossos programas são projetados para ajudá-lo a ter sucesso com suporte e recursos incomparáveis."
+  },
+  "tiredRewards": {
+    "heading": "Recompensas em Níveis",
+    "description": "Desbloqueie recompensas exclusivas à medida que avança em nosso programa."
   }
 }

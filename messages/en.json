@@ -360,5 +360,9 @@
   "whyChoosePrograms": {
     "heading": "Why Choose Our Programs?",
     "description": "Our programs are designed to help you succeed with unmatched support and resources."
+  },
+  "tiredRewards": {
+    "heading": "Tired Rewards",
+    "description": "Unlock exclusive rewards as you progress through our program."
   }
 }

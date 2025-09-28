@@ -1,4 +1,7 @@
+import { useTranslations } from "next-intl";
+
 import TiredRewardCards from "./TiredRewardCards";
+import Heading from "../common/Heading";
 
 const spinDetailsCards = [
   {
@@ -39,6 +42,8 @@ const spinDetailsCards = [
   },
 ];
 export default function TiredRewards() {
+  const t = useTranslations("tiredRewards");
+
   return (
     <section
       className="justify-center text-center px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16 lg:py-20"
@@ -46,21 +51,18 @@ export default function TiredRewards() {
     >
       <div className="flex flex-col justify-center items-center gap-6 w-full max-w-6xl mx-auto">
         {/* Heading */}
-        <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight text-white max-w-2xl mx-auto">
-          Tiered Rewards Earn More as You Grow
-        </h2>
+        <Heading>{t("heading")}</Heading>
 
         {/* Description */}
         <p
-          className="font-normal text-base sm:text-lg leading-6 text-center mb-8 max-w-xl mx-auto"
+          className="text-gray-400 text-base sm:text-lg leading-6 mt-4 max-w-xl mx-auto"
           style={{ color: "#B7B7B7" }}
         >
-          Advance through our partner levels and unlock increasingly valuable
-          rewards.
+          {t("description")}
         </p>
 
         {/* SpinWinTrade Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-6xl mt-[56px]">
           {spinDetailsCards.map((card, idx) => (
             <TiredRewardCards
               key={idx}

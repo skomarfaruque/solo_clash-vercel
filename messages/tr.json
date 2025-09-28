@@ -358,5 +358,9 @@
   "whyChoosePrograms": {
     "heading": "Neden Programlarımızı Seçmelisiniz?",
     "description": "Programlarımız, benzersiz destek ve kaynaklarla başarılı olmanıza yardımcı olmak için tasarlanmıştır."
+  },
+  "tiredRewards": {
+    "heading": "Kademeli Ödüller",
+    "description": "Programımızda ilerledikçe özel ödüllerin kilidini açın."
   }
 }
