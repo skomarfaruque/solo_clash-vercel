@@ -357,5 +357,9 @@
     "confirmName": "Confirmo que mi nombre es correcto y coincide con mi identificación emitida por el gobierno",
     "submitButton": "ENVIAR",
     "verifyEmail": "Verifica tu correo electrónico"
+  },
+  "whyChoosePrograms": {
+    "heading": "¿Por qué elegir nuestros programas?",
+    "description": "Nuestros programas están diseñados para ayudarte a tener éxito con un apoyo y recursos incomparables."
   }
 }

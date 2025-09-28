@@ -1,5 +1,8 @@
+import Head from "next/head";
 import TiredRewardCards from "./TiredRewardCards";
 import WhyChooseProgramCards from "./WhyChooseProgramCards";
+import { useTranslations } from "next-intl";
+import Heading from "../common/Heading";
 
 const spinDetailsCards = [
   {
@@ -32,6 +35,8 @@ const spinDetailsCards = [
   },
 ];
 export default function WhyChooseProgram() {
+  const t = useTranslations("whyChoosePrograms");
+
   return (
     <section
       className="justify-center text-center px-6 lg:px-20 py-20"
@@ -39,9 +44,11 @@ export default function WhyChooseProgram() {
     >
       <div className="flex flex-col justify-center items-center gap-6">
         {/* Heading */}
-        <h2 className="font-bold text-5xl leading-tight text-white">
-          Why Choose Our Affiliate Program
-        </h2>
+        <Heading>{t("heading")}</Heading>
+
+        <p className="text-gray-400 text-base sm:text-lg leading-6 mt-4">
+          {t("description")}
+        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {spinDetailsCards.map((card, idx) => (

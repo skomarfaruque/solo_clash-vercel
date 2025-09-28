@@ -354,5 +354,9 @@
     "confirmName": "Adımın doğru olduğunu ve hükümet tarafından verilen kimliğimle eşleştiğini onaylıyorum",
     "submitButton": "GÖNDER",
     "verifyEmail": "E-postanızı doğrulayın"
+  },
+  "whyChoosePrograms": {
+    "heading": "Neden Programlarımızı Seçmelisiniz?",
+    "description": "Programlarımız, benzersiz destek ve kaynaklarla başarılı olmanıza yardımcı olmak için tasarlanmıştır."
   }
 }

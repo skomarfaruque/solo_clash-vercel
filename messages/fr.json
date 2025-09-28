@@ -380,5 +380,9 @@
     "confirmName": "Je confirme que mon nom est correct et correspond à ma pièce d'identité officielle",
     "submitButton": "SOUMETTRE",
     "verifyEmail": "Vérifiez votre e-mail"
+  },
+  "whyChoosePrograms": {
+    "heading": "Pourquoi choisir nos programmes?",
+    "description": "Nos programmes sont conçus pour vous aider à réussir avec un soutien et des ressources inégalés."
   }
 }

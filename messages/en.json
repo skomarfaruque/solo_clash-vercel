@@ -356,5 +356,9 @@
     "confirmName": "I confirm that my name is correct and matches my government issued ID",
     "submitButton": "SUBMIT",
     "verifyEmail": "Verify your email"
+  },
+  "whyChoosePrograms": {
+    "heading": "Why Choose Our Programs?",
+    "description": "Our programs are designed to help you succeed with unmatched support and resources."
   }
 }
