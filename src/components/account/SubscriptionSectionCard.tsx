@@ -1,5 +1,5 @@
-import SubscriptionButton from "./SubscriptionButton";
-import SubscriptionActiveButton from "./SubscriptionActiveButton";
+import SubscriptionButton from "../SubscriptionButton";
+import SubscriptionActiveButton from "../SubscriptionActiveButton";
 
 interface SubscriptionCardProps {
   readonly backgroundImage: string;
@@ -9,7 +9,7 @@ interface SubscriptionCardProps {
   readonly isActive: boolean;
 }
 
-export default function SubscriptionCard({
+export default function SubscriptionSectionCard({
   backgroundImage,
   step,
   title,

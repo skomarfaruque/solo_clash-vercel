@@ -1,8 +1,8 @@
-import SubscriptionCard from "../SubscriptionCard";
 import ViewFullPriceButton from "../ViewFullPriceButton";
 import { useTranslations } from "next-intl";
+import SubscriptionSectionCard from "./SubscriptionSectionCard";
 
-export default function Subscriptions() {
+export default function SubscriptionsSection() {
   const t = useTranslations("accountPage.subscriptionsSection");
   const plans = t.raw("plans");
   const images = [
@@ -30,7 +30,7 @@ export default function Subscriptions() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           {Array.isArray(plans) &&
             plans.map((plan, idx) => (
-              <SubscriptionCard
+              <SubscriptionSectionCard
                 key={plan.title}
                 backgroundImage={images[idx]}
                 step={plan.step}
