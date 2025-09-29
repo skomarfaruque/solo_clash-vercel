@@ -19,9 +19,9 @@ export default function SubscriptionSectionCardNew({
 }: SubscriptionCardProps) {
   return (
     <div
-      className="rounded-2xl hover:scale-105 transition relative w-full max-w-[323px] h-[498px] sm:h-[498px] bg-cover bg-center bg-no-repeat"
+      className="rounded-2xl hover:scale-105 transition relative w-full max-w-[323px] h-[498px] sm:h-[498px] bg-cover bg-center bg-no-repeat hover:!bg-[url('/new_subscription_bg-active.svg')]"
       style={{
-        backgroundImage: `url('/${backgroundImage}')`,
+        backgroundImage: `url('/new_subscription_bg.svg')`,
       }}
     >
       <div className="border-b border-[rgba(255,255,255,0.06)] flex px-8 pt-8 pb-6 flex-col items-start">
