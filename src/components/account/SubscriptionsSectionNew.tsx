@@ -5,14 +5,15 @@ import SubscriptionSectionCard from "./SubscriptionSectionCard";
 import Heading from "../common/Heading";
 import CurrencySelector from "../CurrencySelector";
 import { useState } from "react";
+import SubscriptionSectionCardNew from "./SubscriptionSectionCardNew";
 
 export default function SubscriptionsSectionNew() {
   const t = useTranslations("accountPage.subscriptionsSection");
   const plans = t.raw("plans");
   const images = [
-    "subscription_bg.svg",
-    "subscription_active_bg.svg",
-    "subscription_bg.svg",
+    "new_subscription_bg.svg",
+    "new_subscription_bg-active.svg",
+    "new_subscription_bg.svg",
   ];
   const [selectedCurrency, setSelectedCurrency] = useState("usd");
   const handleCurrencyChange = (currency: string) => {
@@ -45,7 +46,7 @@ export default function SubscriptionsSectionNew() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 w-full max-w-6xl">
           {Array.isArray(plans) &&
             plans.map((plan, idx) => (
-              <SubscriptionSectionCard
+              <SubscriptionSectionCardNew
                 key={plan.title}
                 backgroundImage={images[idx]}
                 step={plan.step}

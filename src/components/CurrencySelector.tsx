@@ -120,7 +120,7 @@ export default function CurrencySelector({
         </span>
       </button>
       {currOpen && (
-        <div className="absolute mt-2 w-32 bg-neutral-800 rounded-lg shadow-lg z-20">
+        <div className="absolute mt-2 w-32 bg-neutral-800 rounded-lg shadow-lg z-20 max-h-64 overflow-y-auto">
           {currencies.map((curr) => (
             <button
               key={curr.code}

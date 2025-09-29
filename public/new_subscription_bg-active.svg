@@ -1,0 +1,28 @@
+<svg width="323" height="498" viewBox="0 0 323 498" fill="none" xmlns="http://www.w3.org/2000/svg">
+<foreignObject x="-34" y="-34" width="391" height="566"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(17px);clip-path:url(#bgblur_1_2468_1294_clip_path);height:100%;width:100%"></div></foreignObject><g data-figma-bg-blur-radius="34">
+<g clip-path="url(#clip0_2468_1294)">
+<path d="M0 24C0 10.7452 10.7452 0 24 0H299C312.255 0 323 10.7452 323 24V474C323 487.255 312.255 498 299 498H24C10.7452 498 0 487.255 0 474V24Z" fill="url(#paint0_linear_2468_1294)"/>
+<path d="M91 -1L46.7601 0.802906C25.85 1.65505 15.395 2.08113 8.77274 8.68009C2.15047 15.2791 1.68753 25.7325 0.761662 46.6395L-2 109" stroke="url(#paint1_linear_2468_1294)" stroke-width="4"/>
+<path d="M232 500L276.239 498.164C297.149 497.297 307.605 496.863 314.222 490.259C320.84 483.654 321.294 473.2 322.204 452.291L325 388" stroke="url(#paint2_linear_2468_1294)" stroke-width="4"/>
+</g>
+<path d="M24 0.5H299C311.979 0.5 322.5 11.0213 322.5 24V474C322.5 486.979 311.979 497.5 299 497.5H24C11.0213 497.5 0.5 486.979 0.5 474V24C0.500007 11.0213 11.0213 0.5 24 0.5Z" stroke="#FB782D" stroke-opacity="0.3"/>
+</g>
+<defs>
+<clipPath id="bgblur_1_2468_1294_clip_path" transform="translate(34 34)"><path d="M0 24C0 10.7452 10.7452 0 24 0H299C312.255 0 323 10.7452 323 24V474C323 487.255 312.255 498 299 498H24C10.7452 498 0 487.255 0 474V24Z"/>
+</clipPath><linearGradient id="paint0_linear_2468_1294" x1="287.428" y1="312.846" x2="-68.1041" y2="144.027" gradientUnits="userSpaceOnUse">
+<stop offset="0.2216"/>
+<stop offset="1" stop-color="#1F1E1E"/>
+</linearGradient>
+<linearGradient id="paint1_linear_2468_1294" x1="-14.625" y1="-29.9291" x2="71.0372" y2="24.45" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FB782D" stop-opacity="0.8"/>
+<stop offset="1" stop-color="#FB782D" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint2_linear_2468_1294" x1="337.625" y1="529.455" x2="251.083" y2="475.498" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FB782D" stop-opacity="0.8"/>
+<stop offset="1" stop-color="#FB782D" stop-opacity="0"/>
+</linearGradient>
+<clipPath id="clip0_2468_1294">
+<path d="M0 24C0 10.7452 10.7452 0 24 0H299C312.255 0 323 10.7452 323 24V474C323 487.255 312.255 498 299 498H24C10.7452 498 0 487.255 0 474V24Z" fill="white"/>
+</clipPath>
+</defs>
+</svg>
