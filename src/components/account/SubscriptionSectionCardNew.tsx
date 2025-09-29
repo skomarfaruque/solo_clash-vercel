@@ -19,7 +19,7 @@ export default function SubscriptionSectionCardNew({
 }: SubscriptionCardProps) {
   return (
     <div
-      className="rounded-2xl hover:scale-105 transition relative w-full max-w-[424px] h-[420px] sm:h-[498px] bg-cover bg-center bg-no-repeat"
+      className="rounded-2xl hover:scale-105 transition relative w-full max-w-[323px] h-[498px] sm:h-[498px] bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: `url('/${backgroundImage}')`,
       }}

@@ -56,11 +56,6 @@ export default function SubscriptionsSectionNew() {
               />
             ))}
         </div>
-
-        {/* View Full Price Button */}
-        <div className="mt-10 sm:mt-14">
-          <ViewFullPriceButton text={t("viewFullPricing")} />
-        </div>
       </div>
     </section>
   );
