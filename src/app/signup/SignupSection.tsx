@@ -86,7 +86,7 @@ export default function SignupSection() {
               </label>
               <input
                 type="email"
-                className="w-full rounded-lg bg-neutral-800 px-4 py-3 text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-orange-500"
+                className="w-full rounded-lg bg-neutral-800 px-4 py-3 text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-orange-500 custom-input"
               />
             </div>
 
@@ -97,7 +97,7 @@ export default function SignupSection() {
               </label>
               <input
                 type="text"
-                className="w-full rounded-lg bg-neutral-800 px-4 py-3 text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-orange-500"
+                className="w-full rounded-lg bg-neutral-800 px-4 py-3 text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-orange-500 custom-input"
               />
             </div>
 
@@ -109,7 +109,7 @@ export default function SignupSection() {
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
-                  className="w-full rounded-lg bg-neutral-800 px-4 py-3 text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-orange-500"
+                  className="w-full rounded-lg bg-neutral-800 px-4 py-3 text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-orange-500 custom-input"
                 />
                 <button
                   type="button"
@@ -130,7 +130,7 @@ export default function SignupSection() {
               <div className="relative">
                 <input
                   type={showConfirm ? "text" : "password"}
-                  className="w-full rounded-lg bg-neutral-800 px-4 py-3 text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-orange-500"
+                  className="w-full rounded-lg bg-neutral-800 px-4 py-3 text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-orange-500 custom-input"
                 />
                 <button
                   type="button"
@@ -341,7 +341,7 @@ export default function SignupSection() {
                   className="h-4 w-4 text-orange-500 rounded focus:ring-2 focus:ring-orange-500"
                 />
                 <label className="text-sm text-gray-300">
-                  {t("confirmID")}
+                  {t("confirmName")}
                 </label>
               </div>
 
