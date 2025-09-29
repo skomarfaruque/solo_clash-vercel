@@ -47,7 +47,7 @@ export default function SignupSection() {
 
   return (
     <section
-      className="justify-center text-center min-h-screen"
+      className="justify-center text-center min-h-screen flex items-center"
       style={{
         backgroundImage: "url('/login_bg.svg')",
         backgroundRepeat: "no-repeat",
@@ -355,8 +355,27 @@ export default function SignupSection() {
           </div>
         )}
         {step !== "1" && step !== "2" && (
-          <div className="w-full max-w-md rounded-2xl bg-gradient-to-b from-neutral-900 to-black p-8 shadow-xl">
-            Verify your email
+          <div className="w-full max-w-md ">
+            <Image
+              src="/icons/signup_login/envelope.png"
+              alt="Envelope Icon"
+              width={100}
+              height={100}
+              className="mx-auto mb-6"
+            />
+            <h1 className="text-2xl font-bold text-white text-center mb-4">
+              Verify your email address
+            </h1>
+            <p className="text-gray-400 text-sm text-center">
+              We’ve sent an email to example@gmail.com containing instructions
+              on how to verify your email address.
+            </p>
+            <p className="text-gray-400 text-sm text-center">
+              Not received the email we can sent?{" "}
+              <a href="#" className="text-[#2BB6DD]">
+                Resend it
+              </a>
+            </p>
           </div>
         )}
       </div>
