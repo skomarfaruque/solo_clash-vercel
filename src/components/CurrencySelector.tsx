@@ -128,7 +128,7 @@ export default function CurrencySelector({
                 onCurrencySelect(curr.code);
                 setCurrOpen(false);
               }}
-              className={`w-full px-4 py-2 text-left hover:bg-neutral-700 ${
+              className={`w-full px-4 py-2 text-left hover:bg-neutral-700 cursor-pointer ${
                 selectedCurrency === curr.code ? "bg-neutral-700 font-bold" : ""
               }`}
             >
