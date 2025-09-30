@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface SpinWinTradeCardProps {
   readonly backgroundImage: string;
   readonly icon: string;
@@ -23,10 +25,12 @@ export default function SpinWinTradeCard({
     >
       {/* Icon in the middle */}
       <div className="flex justify-center items-center mb-4 sm:mb-6">
-        <img
+        <Image
           src={`/${icon}`}
           alt={title}
-          className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain"
+          width={100} // Adjust width as per your design
+          height={100} // Adjust height as per your design
+          className="object-contain sm:w-20 sm:h-20 md:w-24 md:h-24"
         />
       </div>
 
