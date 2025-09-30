@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 
 import Heading from "../common/Heading";
 import CurrencySelector from "../CurrencySelector";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SubscriptionSectionCardNew from "./SubscriptionSectionCardNew";
 
 export default function SubscriptionsSectionNew() {
@@ -16,12 +16,21 @@ export default function SubscriptionsSectionNew() {
     "new_subscription_bg.svg",
   ];
   const [selectedCurrency, setSelectedCurrency] = useState("usd");
+
+  useEffect(() => {
+    // Check if a currency is already set in cookies
+    const match = document.cookie.match(new RegExp("(^| )currency=([^;]+)"));
+    if (match) {
+      setSelectedCurrency(match[2]);
+    }
+  }, []);
   const handleCurrencyChange = (currency: string) => {
     console.log(`Currency changed to: ${currency}`);
     // Implement any additional logic needed when currency changes
     document.cookie = `currency=${currency}; path=/; max-age=31536000`;
     setSelectedCurrency(currency);
   };
+
   return (
     <section
       className="justify-center text-center px-4 sm:px-6 lg:px-20 py-10 sm:py-16 lg:py-20"
