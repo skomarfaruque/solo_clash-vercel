@@ -1,7 +1,7 @@
 "use client";
-import ViewFullPriceButton from "../ViewFullPriceButton";
+
 import { useTranslations } from "next-intl";
-import SubscriptionSectionCard from "./SubscriptionSectionCard";
+
 import Heading from "../common/Heading";
 import CurrencySelector from "../CurrencySelector";
 import { useState } from "react";

@@ -1,7 +1,6 @@
 import HeroSection from "@/components/account/HeroSection";
 import WhyChooseUsSection from "@/components/account/WhyChooseUsSection";
 import HowItWorksSection from "@/components/account/HowItWorksSection";
-import SubscriptionsSection from "@/components/account/SubscriptionsSection";
 import SpinWinTradeSection from "@/components/account/SpinWinTradeSection";
 import FaqSection from "@/components/account/FaqSection";
 import Banner from "@/components/Banner";

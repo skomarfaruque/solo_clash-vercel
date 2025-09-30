@@ -6,6 +6,7 @@ import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import "./SignupSection.css";
 
 export default function SignupSection() {
   const t = useTranslations("signupSection");
@@ -46,7 +47,7 @@ export default function SignupSection() {
 
   return (
     <section
-      className="justify-center text-center min-h-screen"
+      className="justify-center text-center min-h-screen flex items-center"
       style={{
         backgroundImage: "url('/login_bg.svg')",
         backgroundRepeat: "no-repeat",
@@ -85,7 +86,7 @@ export default function SignupSection() {
               </label>
               <input
                 type="email"
-                className="w-full rounded-lg bg-neutral-800 px-4 py-3 text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-orange-500"
+                className="w-full rounded-lg bg-neutral-800 px-4 py-3 text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-orange-500 custom-input"
               />
             </div>
 
@@ -96,7 +97,7 @@ export default function SignupSection() {
               </label>
               <input
                 type="text"
-                className="w-full rounded-lg bg-neutral-800 px-4 py-3 text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-orange-500"
+                className="w-full rounded-lg bg-neutral-800 px-4 py-3 text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-orange-500 custom-input"
               />
             </div>
 
@@ -108,7 +109,7 @@ export default function SignupSection() {
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
-                  className="w-full rounded-lg bg-neutral-800 px-4 py-3 text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-orange-500"
+                  className="w-full rounded-lg bg-neutral-800 px-4 py-3 text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-orange-500 custom-input"
                 />
                 <button
                   type="button"
@@ -129,7 +130,7 @@ export default function SignupSection() {
               <div className="relative">
                 <input
                   type={showConfirm ? "text" : "password"}
-                  className="w-full rounded-lg bg-neutral-800 px-4 py-3 text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-orange-500"
+                  className="w-full rounded-lg bg-neutral-800 px-4 py-3 text-white placeholder-neutral-500 outline-none focus:ring-2 focus:ring-orange-500 custom-input"
                 />
                 <button
                   type="button"
@@ -211,7 +212,7 @@ export default function SignupSection() {
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 custom-input"
                   />
                 </div>
                 <div>
@@ -224,7 +225,7 @@ export default function SignupSection() {
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 custom-input"
                   />
                 </div>
               </div>
@@ -239,7 +240,7 @@ export default function SignupSection() {
                   name="address1"
                   value={formData.address1}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 custom-input"
                 />
               </div>
 
@@ -253,7 +254,7 @@ export default function SignupSection() {
                   name="address2"
                   value={formData.address2}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 custom-input"
                 />
               </div>
 
@@ -268,7 +269,7 @@ export default function SignupSection() {
                     name="city"
                     value={formData.city}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 custom-input"
                   />
                 </div>
                 <div>
@@ -281,7 +282,7 @@ export default function SignupSection() {
                     name="postcode"
                     value={formData.postcode}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 custom-input"
                   />
                 </div>
               </div>
@@ -296,7 +297,7 @@ export default function SignupSection() {
                     name="country"
                     value={formData.country}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 custom-input"
                   >
                     <option value="">--Please Select--</option>
                     <option value="US">USA</option>
@@ -312,7 +313,7 @@ export default function SignupSection() {
                     name="state"
                     value={formData.state}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 custom-input"
                   />
                 </div>
               </div>
@@ -326,7 +327,7 @@ export default function SignupSection() {
                   selected={selectedDate}
                   onChange={(date: Date | null) => setSelectedDate(date)}
                   dateFormat="dd/MM/yyyy"
-                  className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 text-white"
+                  className="w-full px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-white custom-input"
                   placeholderText="Select your date of birth"
                 />
               </div>
@@ -340,7 +341,7 @@ export default function SignupSection() {
                   className="h-4 w-4 text-orange-500 rounded focus:ring-2 focus:ring-orange-500"
                 />
                 <label className="text-sm text-gray-300">
-                  {t("confirmID")}
+                  {t("confirmName")}
                 </label>
               </div>
 
@@ -354,8 +355,27 @@ export default function SignupSection() {
           </div>
         )}
         {step !== "1" && step !== "2" && (
-          <div className="w-full max-w-md rounded-2xl bg-gradient-to-b from-neutral-900 to-black p-8 shadow-xl">
-            Verify your email
+          <div className="w-full max-w-md ">
+            <Image
+              src="/icons/signup_login/envelope.png"
+              alt="Envelope Icon"
+              width={100}
+              height={100}
+              className="mx-auto mb-6"
+            />
+            <h1 className="text-2xl font-bold text-white text-center mb-4">
+              Verify your email address
+            </h1>
+            <p className="text-gray-400 text-sm text-center">
+              We’ve sent an email to example@gmail.com containing instructions
+              on how to verify your email address.
+            </p>
+            <p className="text-gray-400 text-sm text-center">
+              Not received the email we can sent?{" "}
+              <a href="#" className="text-[#2BB6DD]">
+                Resend it
+              </a>
+            </p>
           </div>
         )}
       </div>

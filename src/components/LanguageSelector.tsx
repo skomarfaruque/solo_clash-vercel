@@ -54,7 +54,7 @@ export default function LanguageSelector({
         className="flex items-center gap-2 bg-neutral-900 h-[52px] px-4 py-1.5 rounded-full"
       >
         <Image
-          src={`/flags/en.png`}
+          src={`/flags/${selectedLang}.png`}
           alt={selectedLangObj.title}
           width={26}
           height={26}
