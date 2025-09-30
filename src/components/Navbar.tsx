@@ -37,23 +37,23 @@ export default function Navbar() {
       height: 42,
     },
     {
-      href: "https://instagram.com",
+      href: "https://www.instagram.com/soloclashofficial",
       src: "/instagram.png",
       alt: "instagram",
       width: 52,
       height: 52,
     },
     {
-      href: "https://tiktok.com",
+      href: "hhttps://www.tiktok.com/@soloclashofficial",
       src: "/tiktok.png",
       alt: "tiktok",
       width: 52,
       height: 52,
     },
     {
-      href: "https://twitter.com",
-      src: "/twitter.png",
-      alt: "twitter",
+      href: "https://www.twitch.tv/soloclashofficial",
+      src: "/twitch.png",
+      alt: "twitch",
       width: 52,
       height: 42,
     },
@@ -173,7 +173,7 @@ export default function Navbar() {
           {/* Social Icons */}
           <div className="flex items-center gap-3">
             {socialLinks.map(({ href, src, alt, width, height }) => (
-              <Link key={href} href={href}>
+              <Link key={href} href={href} target="_blank" rel="noopener noreferrer">
                 <Image src={src} alt={alt} width={width} height={height} />
               </Link>
             ))}
@@ -286,7 +286,7 @@ export default function Navbar() {
             {/* Social Icons */}
             <div className="flex items-center gap-3 mt-4">
               {socialLinks.map(({ href, src, alt, width, height }) => (
-                <Link key={href} href={href}>
+                <Link key={href} href={href} target="_blank" rel="noopener noreferrer">
                   <Image src={src} alt={alt} width={width} height={height} />
                 </Link>
               ))}
