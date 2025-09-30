@@ -173,7 +173,12 @@ export default function Navbar() {
           {/* Social Icons */}
           <div className="flex items-center gap-3">
             {socialLinks.map(({ href, src, alt, width, height }) => (
-              <Link key={href} href={href} target="_blank" rel="noopener noreferrer">
+              <Link
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Image src={src} alt={alt} width={width} height={height} />
               </Link>
             ))}
@@ -286,7 +291,12 @@ export default function Navbar() {
             {/* Social Icons */}
             <div className="flex items-center gap-3 mt-4">
               {socialLinks.map(({ href, src, alt, width, height }) => (
-                <Link key={href} href={href} target="_blank" rel="noopener noreferrer">
+                <Link
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Image src={src} alt={alt} width={width} height={height} />
                 </Link>
               ))}
