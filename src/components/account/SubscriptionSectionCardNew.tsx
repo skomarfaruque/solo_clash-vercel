@@ -3,20 +3,27 @@ import SubscriptionActiveButton from "../SubscriptionActiveButton";
 import SubscriptionCss from "../buttons/SubscriptionCss";
 
 interface SubscriptionCardProps {
-  readonly backgroundImage: string;
-  readonly step: string;
-  readonly title: string;
-  readonly description: string;
-  readonly isActive: boolean;
+  readonly selectedCurrency: string;
 }
 
 export default function SubscriptionSectionCardNew({
-  backgroundImage,
-  step,
-  title,
-  description,
-  isActive,
+  selectedCurrency,
 }: SubscriptionCardProps) {
+  const currencyIcon = (() => {
+    switch (selectedCurrency) {
+      case "usd":
+        return "$";
+      case "eur":
+        return "€";
+      case "try":
+        return "₺";
+      default:
+        return "$";
+    }
+  })();
+
+  console.log(currencyIcon); // Temporary usage to resolve 'never used' error
+
   return (
     <div
       className="rounded-2xl hover:scale-105 transition relative w-full max-w-full sm:max-w-[323px] h-[498px] sm:h-[498px] bg-cover bg-center bg-no-repeat hover:!bg-[url('/new_subscription_bg-active.svg')]"
@@ -25,7 +32,7 @@ export default function SubscriptionSectionCardNew({
       }}
     >
       <div className="border-b border-[rgba(255,255,255,0.06)] flex px-8 pt-8 pb-6 flex-col items-start">
-        <h2 className="text-3xl font-bold text-cyan-400">$50K</h2>
+        <h2 className="text-3xl font-bold text-cyan-400">{currencyIcon}50K</h2>
         <p className="text-sm text-gray-400 mt-1">Buying Power</p>
       </div>
 
@@ -36,7 +43,7 @@ export default function SubscriptionSectionCardNew({
           className="font-normal text-xs sm:text-sm leading-6"
           style={{ color: "#B7B7B7" }}
         >
-          USD
+          {selectedCurrency}
         </sup>
       </p>
 

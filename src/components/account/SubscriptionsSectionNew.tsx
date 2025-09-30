@@ -57,11 +57,7 @@ export default function SubscriptionsSectionNew() {
             plans.map((plan, idx) => (
               <SubscriptionSectionCardNew
                 key={plan.title}
-                backgroundImage={images[idx]}
-                step={plan.step}
-                title={plan.title}
-                description={plan.description}
-                isActive={idx === 1}
+                selectedCurrency={selectedCurrency}
               />
             ))}
         </div>
