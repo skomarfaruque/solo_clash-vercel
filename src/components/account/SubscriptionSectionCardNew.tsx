@@ -22,8 +22,6 @@ export default function SubscriptionSectionCardNew({
     }
   })();
 
-  console.log(currencyIcon); // Temporary usage to resolve 'never used' error
-
   return (
     <div
       className="rounded-2xl hover:scale-105 transition relative w-full max-w-full sm:max-w-[323px] h-[498px] sm:h-[498px] bg-cover bg-center bg-no-repeat hover:!bg-[url('/new_subscription_bg-active.svg')]"
