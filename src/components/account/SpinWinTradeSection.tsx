@@ -16,17 +16,17 @@ export default function SpinWinTradeSection() {
       className="justify-center text-center px-4 sm:px-6 lg:px-20 py-10 sm:py-16 lg:py-20"
       style={{ backgroundColor: "#030303" }}
     >
-      <div className="flex flex-col justify-center items-center gap-6 max-w-[1320px] mx-auto">
+      <div className="flex flex-col justify-center items-center gap-6">
         {/* Heading */}
         <Heading>{t("heading")}</Heading>
 
         {/* Description */}
-        <p className="font-normal text-base sm:text-lg leading-6 text-center mb-8 text-[#B7B7B7] max-w-full sm:max-w-2xl self-center">
+        <p className="font-normal text-base sm:text-lg leading-6 text-center text-[#B7B7B7] max-w-full sm:max-w-2xl self-center">
           {t("description")}
         </p>
 
         {/* SpinWinTrade Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 w-full max-w-6xl mt-[56px]">
           {Array.isArray(cards) &&
             cards.map((card, idx) => (
               <SpinWinTradeCard
