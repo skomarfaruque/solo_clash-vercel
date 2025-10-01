@@ -52,7 +52,7 @@ export default function LanguageSelector({
     <div className={`relative ${className}`} ref={dropdownRef}>
       <button
         onClick={() => setLangOpen(!langOpen)}
-        className="flex items-center gap-2 bg-neutral-900 h-[52px] px-4 py-1.5 rounded-full"
+        className="flex items-center gap-2 bg-neutral-900 h-[52px] px-4 py-1.5 rounded-full hover:cursor-pointer"
       >
         <Image
           src={`/flags/${selectedLang}.png`}

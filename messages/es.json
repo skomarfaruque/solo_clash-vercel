@@ -367,5 +367,26 @@
   "tiredRewards": {
     "heading": "Recompensas por Niveles",
     "description": "Desbloquea recompensas exclusivas a medida que avanzas en nuestro programa."
+  },
+  "affiliatesHeroSection": {
+    "heading1": "Conviértete en socio con nuestro",
+    "heading2": "Programa de Afiliados",
+    "description": "Gana comisiones, desbloquea descuentos y asciende a niveles exclusivos de socios. Nuestra herramienta de informes de afiliados hace que el seguimiento y los pagos sean sencillos. Recompensamos el crecimiento con comisiones más altas y créditos en la cuenta."
+  },
+  "howItWorksAffiliates": {
+    "heading": "Cómo Funciona",
+    "description": "Tres pasos simples para comenzar a ganar con Solo Clash.",
+    "step1": {
+      "title": "Regístrate para obtener tu enlace de referencia único y código de descuento",
+      "description": "Comienza de inmediato con tu panel de afiliados personalizado y herramientas de seguimiento."
+    },
+    "step2": {
+      "title": "Comparte tu enlace y haz crecer tu red",
+      "description": "Promociona Solo Clash a tu audiencia a través de contenido, redes sociales y participación comunitaria."
+    },
+    "step3": {
+      "title": "Gana comisiones y desbloquea recompensas al alcanzar hitos de referencia",
+      "description": "Mira crecer tus ganancias mientras desbloqueas beneficios exclusivos y tasas de comisión más altas."
+    }
   }
 }

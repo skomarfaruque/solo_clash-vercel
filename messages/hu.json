@@ -366,5 +366,26 @@
   "tiredRewards": {
     "heading": "Fáradt jutalmak",
     "description": "Fedezz fel exkluzív jutalmakat, ahogy haladsz programunkban."
+  },
+  "affiliatesHeroSection": {
+    "heading1": "Legyen partnerünk a",
+    "heading2": "Partnerprogramunkkal",
+    "description": "Keressen jutalékokat, oldja fel a kedvezményeket, és lépjen fel exkluzív partneri szintekre. Partnerjelentési eszközünk egyszerűvé teszi a nyomon követést és a kifizetéseket. A növekedést magasabb jutalékokkal és számlajóváírásokkal jutalmazzuk."
+  },
+  "howItWorksAffiliates": {
+    "heading": "Hogyan működik",
+    "description": "Három egyszerű lépés, hogy elkezdj pénzt keresni a Solo Clash-sel.",
+    "step1": {
+      "title": "Regisztrálj, hogy megkapd egyedi ajánlói linkedet és kedvezménykódodat",
+      "description": "Kezdj el azonnal a személyre szabott partneri irányítópultoddal és nyomon követési eszközeiddel."
+    },
+    "step2": {
+      "title": "Oszd meg a linkedet és növeld a hálózatodat",
+      "description": "Népszerűsítsd a Solo Clash-t a közönséged számára tartalom, közösségi média és közösségi részvétel révén."
+    },
+    "step3": {
+      "title": "Keress jutalékokat és oldj fel jutalmakat, amikor elérsz ajánlói mérföldköveket",
+      "description": "Nézd, ahogy a bevételeid növekednek, miközben exkluzív előnyöket és magasabb jutalékokat oldasz fel."
+    }
   }
 }

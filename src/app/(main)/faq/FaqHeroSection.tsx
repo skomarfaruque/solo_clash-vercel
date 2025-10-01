@@ -7,7 +7,7 @@ export default function FaqHeroSection() {
     <section className="justify-center text-center px-6 lg:px-20">
       <div className="relative z-10 max-w-4xl mx-auto pt-[217px]">
         <p
-          className="text-center"
+          className="text-center font-playfair"
           style={{
             fontWeight: 700,
             fontSize: "55px",

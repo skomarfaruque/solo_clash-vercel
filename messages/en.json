@@ -366,5 +366,26 @@
   "tiredRewards": {
     "heading": "Tired Rewards",
     "description": "Unlock exclusive rewards as you progress through our program."
+  },
+  "affiliatesHeroSection": {
+    "heading1": "Become a Partner with our",
+    "heading2": "Affiliate Program",
+    "description": "Earn commissions, unlock discounts, and climb exclusive partner tiers. Our affiliate reporting tool makes tracking and payouts seamless. We reward growth with higher commissions and account credits."
+  },
+  "howItWorksAffiliates": {
+    "heading": "How It Works",
+    "description": "Three simple steps to start earning with Solo Clash.",
+    "step1": {
+      "title": "Sign up to get your unique referral link and discount code",
+      "description": "Get started instantly with your personalized affiliate dashboard and tracking tools."
+    },
+    "step2": {
+      "title": "Share your link and grow your network",
+      "description": "Promote Solo Clash to your audience through content, social media, and community engagement."
+    },
+    "step3": {
+      "title": "Earn commissions and unlock rewards as you hit referral milestones",
+      "description": "Watch your earnings grow while unlocking exclusive perks and higher commission rates."
+    }
   }
 }

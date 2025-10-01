@@ -366,5 +366,26 @@
   "tiredRewards": {
     "heading": "Kademeli Ödüller",
     "description": "Programımızda ilerledikçe özel ödüllerin kilidini açın."
+  },
+  "affiliatesHeroSection": {
+    "heading1": "Ortak olun",
+    "heading2": "Ortaklık Programımızla",
+    "description": "Komisyon kazanın, indirimlerin kilidini açın ve özel ortaklık seviyelerine yükselin. Ortaklık raporlama aracımız, takibi ve ödemeleri sorunsuz hale getirir. Büyümeyi daha yüksek komisyonlar ve hesap kredileriyle ödüllendiriyoruz."
+  },
+  "howItWorksAffiliates": {
+    "heading": "Nasıl Çalışır",
+    "description": "Solo Clash ile kazanmaya başlamak için üç basit adım.",
+    "step1": {
+      "title": "Benzersiz yönlendirme bağlantınızı ve indirim kodunuzu almak için kaydolun",
+      "description": "Kişiselleştirilmiş ortaklık kontrol paneliniz ve izleme araçlarınızla hemen başlayın."
+    },
+    "step2": {
+      "title": "Bağlantınızı paylaşın ve ağınızı büyütün",
+      "description": "Solo Clash'ı kitlenize içerik, sosyal medya ve topluluk katılımı yoluyla tanıtın."
+    },
+    "step3": {
+      "title": "Yönlendirme kilometre taşlarına ulaştıkça komisyon kazanın ve ödülleri açın",
+      "description": "Kazançlarınızın büyümesini izlerken özel ayrıcalıkların ve daha yüksek komisyon oranlarının kilidini açın."
+    }
   }
 }
