@@ -24,6 +24,7 @@ export default function LanguageSelector({
     { title: t("navbar.langPortuguese"), code: "pt" },
     { title: t("navbar.langFrench"), code: "fr" },
     { title: t("navbar.langSpanish"), code: "es" },
+    { title: t("navbar.langHungarian"), code: "hu" },
   ];
 
   const [langOpen, setLangOpen] = useState(false);

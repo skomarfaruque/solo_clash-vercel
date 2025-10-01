@@ -1,0 +1,370 @@
+{
+  "accountPage": {
+    "heroSection": {
+      "profitSplit": "90/10 Nyereségmegosztás • Heti kifizetések",
+      "headline1": "Versenyezz. Nyerj.",
+      "headline2": "Kereskedj finanszírozott tőkével.",
+      "description": "Ambiciózus kereskedőknek kínálunk életre szóló lehetőséget. Heti versenyek, ranglisták és napi pörgetések, amelyek a teljesítményt díjakká alakítják – mindezt professzionális végrehajtási eszközökkel és tisztességes, tömör szabályokkal támogatva.",
+      "startNow": "Kezdj most",
+      "seeAccountTypes": "Nézd meg a számlatípusokat"
+    },
+    "featureSection": {
+      "badge": "MIÉRT VÁLASSZ MINKET",
+      "heading1": "Komoly kereskedőknek",
+      "heading2": "egyszerű, tisztességes, gyors.",
+      "card1Title": "90/10 Nyereségmegosztás",
+      "card1Desc": "Iparágvezető kifizetések, amelyek jutalmazzák a teljesítményt.",
+      "card2Title": "Világos kockázati szabályok rejtett díjak nélkül",
+      "card2Desc": "Átláthatóság a tervezésben.",
+      "card3Title": "Többnyelvű támogatás",
+      "card3Desc": "Tartalom és ügyfélszolgálat 6 nyelven."
+    },
+    "howItWorksSection": {
+      "badge": "Hogyan működik",
+      "heading": "Az értékeléstől a finanszírozott számláig három lépésben.",
+      "steps": [
+        {
+          "step": "1. lépés",
+          "title": "Válaszd ki, mekkora finanszírozást szeretnél.",
+          "description": "Válassz egy számlaméretet, és kezdj el kereskedni."
+        },
+        {
+          "step": "2. lépés",
+          "title": "Bizonyítsd be, hogy megérdemled",
+          "description": "Érd el a profitcélt, miközben betartod a lehívási és napi veszteségi szabályokat."
+        },
+        {
+          "step": "3. lépés",
+          "title": "Kapj finanszírozást",
+          "description": "Vonj vissza hetente, és növeld a kereskedésedet."
+        }
+      ]
+    },
+    "subscriptionsSection": {
+      "heading": "Számlák skálázható kereskedéshez",
+      "description": "Válaszd ki a stílusodhoz illő számlát – minden csomag tartalmazza a Volumetrica (VolSys & VolBook) hozzáférést.",
+      "plans": [
+        {
+          "step": "Alap",
+          "title": "Kezdő csomag",
+          "description": "Tökéletes kezdőknek, akik el akarják kezdeni kereskedési útjukat."
+        },
+        {
+          "step": "Profi",
+          "title": "Professzionális csomag",
+          "description": "Haladó funkciók tapasztalt kereskedőknek, akik több eszközt igényelnek."
+        },
+        {
+          "step": "Elit",
+          "title": "Elit csomag",
+          "description": "Prémium hozzáférés minden funkcióval és prioritásos támogatással."
+        }
+      ],
+      "viewFullPricing": "Teljes árak megtekintése"
+    },
+    "spinWinTradeSection": {
+      "heading": "Pörgesd. Nyerj. Kereskedj",
+      "description": "Napi pörgetések, azonnali nyeremények – nyerj Clash Coinokat, ingyenes versenybelépőket, kedvezménykódokat vagy akár finanszírozott számlát.",
+      "cards": [
+        {
+          "title": "Napi pörgetések",
+          "description": "Ingyenes pörgetés minden nap"
+        },
+        {
+          "title": "Azonnali nyeremények",
+          "description": "Érmék, kedvezmények és még sok más"
+        },
+        {
+          "title": "Finanszírozott számlák",
+          "description": "Teljesítsd a kihívásokat, és nyerj"
+        }
+      ],
+      "button": "Pörgesd a kereket"
+    },
+    "faqSection": {
+      "heading": "Gyakran Ismételt Kérdések",
+      "description": "Minden, amit tudnod kell a kezdéshez",
+      "faqs": [
+        {
+          "question": "Hogyan kezdhetem el a platform használatát?",
+          "answer": "A kezdés egyszerű! Csak regisztrálj egy fiókot, töltsd ki a profilodat, és hozzáférhetsz minden funkciónkhoz, beleértve a napi pörgetéseket, versenyeket és kereskedési eszközöket."
+        },
+        {
+          "question": "Mik azok a Clash Coinok, és hogyan szerezhetem meg őket?",
+          "answer": "A Clash Coinok a platformunk valutája, amelyeket napi pörgetésekkel, kihívások teljesítésével és versenyeken való részvétellel szerezhetsz meg. Használd őket prémium versenyekre való belépéshez vagy nyereményekre való beváltáshoz."
+        },
+        {
+          "question": "Milyen gyakran pörgethetem a kereket?",
+          "answer": "Minden 24 órában egy ingyenes pörgetést kapsz! A prémium tagok további pörgetéseket és jobb nyerési esélyeket kapnak. Nézd meg a fiókod irányítópultját, hogy lásd, mikor érhető el a következő pörgetésed."
+        },
+        {
+          "question": "Milyen nyereményeket nyerhetek?",
+          "answer": "Nyerhetsz Clash Coinokat, ingyenes versenybelépőket, kedvezménykódokat, exkluzív eseményekhez való hozzáférést és akár finanszírozott kereskedési számlákat is. A nyeremények a tagsági szintedtől függően változnak."
+        },
+        {
+          "question": "Hogyan léphetek kapcsolatba az ügyfélszolgálattal?",
+          "answer": "Ügyfélszolgálatunk 24/7 elérhető az alkalmazáson belüli csevegésen, az support@platform.com e-mail címen vagy a közösségi Discord szerverünkön keresztül. Általában 2-4 órán belül válaszolunk."
+        },
+        {
+          "question": "Biztonságosak az adataim?",
+          "answer": "Abszolút! Iparági szabványú titkosítást és biztonsági intézkedéseket használunk az adatok védelme érdekében. Minden tranzakció biztonságos, és soha nem tárolunk érzékeny fizetési információkat a szervereinken."
+        }
+      ]
+    },
+    "banner": {
+      "title": "Készen állsz, hogy valódi tőkével kereskedj?"
+    }
+  },
+  "RulesPage": {
+    "title": "Kereskedési szabályok"
+  },
+  "contactSection": {
+    "badge": "KAPCSOLAT",
+    "heading": "Lépj kapcsolatba velünk",
+    "description": "Minden, amit tudnod kell a kezdéshez",
+    "address": {
+      "line1": "2118 Thornridge Cir. Syracuse,",
+      "line2": "Connecticut 35624"
+    },
+    "hours": {
+      "label": "Nyitvatartás",
+      "value": "24/7 Támogatás 6 nyelven és Élő Csevegés"
+    },
+    "email": {
+      "label": "Email",
+      "value": "support@soloclash.com"
+    },
+    "social": {
+      "youtube": "YouTube",
+      "twitter": "Twitter",
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn"
+    },
+    "form": {
+      "title": "Kérdéseid vannak?",
+      "nameLabel": "Neved",
+      "namePlaceholder": "Teljes név",
+      "emailLabel": "Email címed",
+      "emailPlaceholder": "Email cím",
+      "numberLabel": "Számod",
+      "numberPlaceholder": "Fiók számod",
+      "messageLabel": "Üzeneted",
+      "messagePlaceholder": "Írd be az üzeneted",
+      "submit": "Küldés →"
+    }
+  },
+  "clashShopHero": {
+    "heading": "Clash Bolt",
+    "subheading": "Jutalmak, pörgetések és napi nyeremények",
+    "description": "Napi pörgetések, versenyek és egy bolt tele kereskedői finomságokkal. Szerezz érméket a Lucky Wheelből és az eseményekből, és költsd el őket kedvezménykódokra, ingyenes versenybelépőkre vagy akár finanszírozott számlákra."
+  },
+  "navbar": {
+    "account": "Fiók",
+    "rules": "Szabályok",
+    "clashShop": "Clash Bolt",
+    "affiliates": "Partnerek",
+    "faq": "GYIK",
+    "contactUs": "Kapcsolat",
+    "getFunded": "Finanszírozás",
+    "closeMenu": "Menü bezárása",
+    "langEnglish": "Angol",
+    "langArabic": "Arab",
+    "langTurkish": "Török",
+    "langPortuguese": "Portugál",
+    "langFrench": "Francia",
+    "langSpanish": "Spanyol",
+    "langHungarian": "Magyar"
+  },
+  "spinDetailsSection": {
+    "cards": [
+      { "title": "50 Clash érme", "tags": [] },
+      { "title": "Ingyenes versenybelépő", "tags": [] },
+      { "title": "10% Kedvezménykódok", "tags": [] },
+      { "title": "100 Bónuszérme", "tags": [] },
+      { "title": "50k Számla", "tags": [] },
+      { "title": "100k Számla", "tags": ["Legendás"] }
+    ]
+  },
+  "howToEarnCoinsSection": {
+    "heading": "Hogyan szerezz érméket",
+    "description": "Többféle módon szerezhetsz Clash érme és oldhatsz fel jutalmakat.",
+    "cards": [
+      {
+        "title": "Ranglista helyezések",
+        "description": "A heti top 10-es rangsor 50-200 érmét ér",
+        "priceRange": "$0 - $100"
+      },
+      {
+        "title": "Verseny pontok",
+        "description": "Érmék szerzése a versenyeken nyújtott teljesítmény alapján",
+        "priceRange": "$0 - $200"
+      },
+      {
+        "title": "Szerencsekerék",
+        "description": "Napi ingyenes pörgetés bónusz érme jutalmakkal",
+        "priceRange": "$0 - $300"
+      },
+      {
+        "title": "Kihívás teljesítése",
+        "description": "Bónusz érmék az értékelések teljesítéséért",
+        "priceRange": "$0 - $400"
+      }
+    ]
+  },
+  "clashShopPage": {
+    "banner": {
+      "title": "Szeretnél garantált belépőt a következő versenyre?",
+      "description": "Váltsd be ingyenes versenyjegyed most, és biztosítsd helyed heti kereskedési versenyünkön. A folytatással megerősíted, hogy elolvastad, megértetted, és egyetértesz az összes kereskedési szabály és irányelv betartásával, amelyeket fentebb ismertetünk."
+    },
+    "metadata": {
+      "title": "Szabályok és Irányelvek | Clash Bolt",
+      "description": "Olvasd el a hivatalos szabályokat és irányelveket, mielőtt részt vennél a Clash Bolt kihívásaiban."
+    }
+  },
+  "footer": {
+    "links": {
+      "accounts": "Számlák",
+      "rules": "Szabályok",
+      "faq": "GYIK",
+      "getStarted": "Kezdj el"
+    },
+    "features": {
+      "clashShop": "Clash Bolt",
+      "dailySpins": "Napi Pörgetések"
+    },
+    "partners": {
+      "affiliates": "Partnerek",
+      "referralProgram": "Ajánló Program"
+    },
+    "support": {
+      "contactUs": "Kapcsolat",
+      "email": "support@soloclash.com",
+      "languages": "24/7 Támogatás 6 Nyelven"
+    },
+    "legal": {
+      "privacyPolicy": "Adatvédelmi Irányelvek",
+      "termsOfService": "Szolgáltatási Feltételek",
+      "riskDisclosure": "Kockázatfeltárás",
+      "cookiesPolicy": "Cookie Szabályzat"
+    },
+    "social": {
+      "youtube": "YouTube",
+      "twitch": "Twitch",
+      "instagram": "Instagram",
+      "tiktok": "TikTok"
+    },
+    "sections": {
+      "platform": "Platform",
+      "features": "Funkciók",
+      "partners": "Partnerek",
+      "support": "Támogatás"
+    },
+    "company": {
+      "description": "Ambiciózus kereskedőknek kínálunk életre szóló lehetőséget. Heti versenyek, ranglisták és napi pörgetések, amelyek a teljesítményt díjakká alakítják",
+      "copyright": "© 2024 Solo Clash. Minden jog fenntartva."
+    }
+  },
+  "languageSupport": {
+    "title": "Többnyelvű Támogatás",
+    "languages": {
+      "english": "Angol",
+      "arabic": "Arab",
+      "turkish": "Török",
+      "portuguese": "Portugál",
+      "french": "Francia",
+      "spanish": "Spanyol",
+      "hungarian": "Magyar"
+    }
+  },
+  "faqPage": {
+    "banner": {
+      "title": "Szeretnél garantált belépőt a következő versenyre?",
+      "description": "Váltsd be ingyenes versenyjegyed most, és biztosítsd helyed heti kereskedési versenyünkön. A folytatással megerősíted, hogy elolvastad, megértetted, és egyetértesz az összes kereskedési szabály és irányelv betartásával, amelyeket fentebb ismertetünk."
+    }
+  },
+  "faqHeroSection": {
+    "title": "Gyakran Ismételt Kérdések",
+    "description": "Minden, amit tudnod kell a kezdéshez"
+  },
+  "faqPageFaq": {
+    "faq1": {
+      "question": "Hogyan kezdhetem el a platform használatát?",
+      "answer": "A kezdés egyszerű! Csak regisztrálj egy fiókot, töltsd ki a profilodat, és hozzáférhetsz minden funkciónkhoz, beleértve a napi pörgetéseket, versenyeket és kereskedési eszközöket."
+    },
+    "faq2": {
+      "question": "Mik azok a Clash Coinok, és hogyan szerezhetem meg őket?",
+      "answer": "A Clash Coinok a platformunk valutája, amelyeket napi pörgetésekkel, kihívások teljesítésével és versenyeken való részvétellel szerezhetsz meg. Használd őket prémium versenyekre való belépéshez vagy nyereményekre való beváltáshoz."
+    },
+    "faq3": {
+      "question": "Milyen gyakran pörgethetem a kereket?",
+      "answer": "Minden 24 órában egy ingyenes pörgetést kapsz! A prémium tagok további pörgetéseket és jobb nyerési esélyeket kapnak. Nézd meg a fiókod irányítópultját, hogy lásd, mikor érhető el a következő pörgetésed."
+    },
+    "faq4": {
+      "question": "Milyen nyereményeket nyerhetek?",
+      "answer": "Nyerhetsz Clash Coinokat, ingyenes versenybelépőket, kedvezménykódokat, exkluzív eseményekhez való hozzáférést és akár finanszírozott kereskedési számlákat is. A nyeremények a tagsági szintedtől függően változnak."
+    },
+    "faq5": {
+      "question": "Hogyan léphetek kapcsolatba az ügyfélszolgálattal?",
+      "answer": "Ügyfélszolgálatunk 24/7 elérhető az alkalmazáson belüli csevegésen, az support@platform.com e-mail címen vagy a közösségi Discord szerverünkön keresztül. Általában 2-4 órán belül válaszolunk."
+    },
+    "faq6": {
+      "question": "Biztonságosak az adataim?",
+      "answer": "Abszolút! Iparági szabványú titkosítást és biztonsági intézkedéseket használunk az adatok védelme érdekében. Minden tranzakció biztonságos, és soha nem tárolunk érzékeny fizetési információkat a szervereinken."
+    }
+  },
+  "login": {
+    "welcomeBack": "Üdvözöljük újra!",
+    "enterDetails": "Kérjük, adja meg adatait",
+    "emailAddress": "Email cím",
+    "emailPlaceholder": "példa@email.com",
+    "password": "Jelszó",
+    "passwordPlaceholder": "••••••••",
+    "showPassword": "Jelszó megjelenítése",
+    "hidePassword": "Jelszó elrejtése",
+    "rememberMe": "Emlékezz rám",
+    "forgotPassword": "Elfelejtetted a jelszavad?",
+    "signIn": "BEJELENTKEZÉS",
+    "newPlatform": "Új vagy a platformunkon?",
+    "signUp": "Regisztráció"
+  },
+  "signupNavbar": {
+    "welcome": "Üdvözöljük",
+    "info": "Információ",
+    "verification": "Ellenőrzés"
+  },
+  "signupSection": {
+    "welcomeTitle": "Üdvözöljük a Solo Clash-nél",
+    "welcomeSubtitle": "Kérjük, adja meg adatait",
+    "emailLabel": "Email cím",
+    "usernameLabel": "Felhasználónév",
+    "passwordLabel": "Jelszó",
+    "confirmPasswordLabel": "Jelszó megerősítése",
+    "privacyPolicy": "Egyetértek az Adatvédelmi Irányelvekkel és a Felhasználási Feltételekkel.",
+    "newsletter": "Szeretnék feliratkozni a Solo Clash Futures hírlevelére.",
+    "signUpButton": "REGISZTRÁCIÓ",
+    "alreadyHaveAccount": "Már van fiókod?",
+    "signIn": "Jelentkezz be",
+    "beforeStartTitle": "Kezdés előtt",
+    "beforeStartSubtitle": "Kérjük, töltse ki ezeket a mezőket a folytatáshoz",
+    "firstNameLabel": "Keresztnév",
+    "lastNameLabel": "Vezetéknév",
+    "address1Label": "Cím 1",
+    "address2Label": "Cím 2",
+    "cityLabel": "Város",
+    "postcodeLabel": "Irányítószám",
+    "countryLabel": "Ország",
+    "stateLabel": "Állam",
+    "dobLabel": "Születési dátum",
+    "confirmName": "Megerősítem, hogy a nevem helyes, és megfelel a hivatalos személyazonosító okmányomon szereplő névnek",
+    "submitButton": "KÜLDÉS",
+    "verifyEmail": "E-mail címének ellenőrzése"
+  },
+  "whyChoosePrograms": {
+    "heading": "Miért válaszd programjainkat?",
+    "description": "Programjaink úgy lettek tervezve, hogy segítsenek a sikerben, páratlan támogatással és erőforrásokkal."
+  },
+  "tiredRewards": {
+    "heading": "Fáradt jutalmak",
+    "description": "Fedezz fel exkluzív jutalmakat, ahogy haladsz programunkban."
+  }
+}

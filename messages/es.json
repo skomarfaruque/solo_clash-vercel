@@ -173,7 +173,8 @@
     "langTurkish": "Turco",
     "langPortuguese": "Portugués",
     "langFrench": "Francés",
-    "langSpanish": "Español"
+    "langSpanish": "Español",
+    "langHungarian": "Húngaro"
   },
   "spinDetailsSection": {
     "cards": [
@@ -272,7 +273,8 @@
       "turkish": "Turco",
       "portuguese": "Portugués",
       "french": "Francés",
-      "spanish": "Español"
+      "spanish": "Español",
+      "hungarian": "Húngaro"
     }
   },
   "faqPage": {
