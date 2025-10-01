@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -8,6 +9,7 @@ import LanguageSelector from "../components/LanguageSelector";
 import { usePathname } from "next/navigation";
 
 export default function AccountNavBar() {
+  const t = useTranslations("accountNavbar");
   const [selectedLang, setSelectedLang] = useState("en");
   const pathname = usePathname();
   const activeClass =
@@ -21,7 +23,7 @@ export default function AccountNavBar() {
         <Link href="/" className="flex items-center gap-2">
           <Image src="/logo.svg" alt="SOLO CLASH" width={65} height={52} />
         </Link>
-        <span
+        <h1
           className="text-white font-bold text-lg ml-4"
           style={{
             fontWeight: 500,
@@ -30,8 +32,8 @@ export default function AccountNavBar() {
             letterSpacing: "0.005em",
           }}
         >
-          Your challenge
-        </span>
+          {t("yourChallenge")}
+        </h1>
       </div>
 
       {/* Language Selector */}
@@ -48,7 +50,7 @@ export default function AccountNavBar() {
           href="/login"
           className={pathname === "/account" ? activeClass : inactiveClass}
         >
-          Login
+          {t("login")}
         </Link>
       </div>
     </nav>

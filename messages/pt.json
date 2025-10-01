@@ -388,5 +388,9 @@
       "title": "Ganhe comissões e desbloqueie recompensas ao atingir marcos de indicação",
       "description": "Veja seus ganhos crescerem enquanto desbloqueia vantagens exclusivas e taxas de comissão mais altas."
     }
+  },
+  "accountNavbar": {
+    "yourChallenge": "Seu desafio",
+    "login": "Entrar"
   }
 }

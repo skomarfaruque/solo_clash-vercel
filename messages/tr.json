@@ -387,5 +387,9 @@
       "title": "Yönlendirme kilometre taşlarına ulaştıkça komisyon kazanın ve ödülleri açın",
       "description": "Kazançlarınızın büyümesini izlerken özel ayrıcalıkların ve daha yüksek komisyon oranlarının kilidini açın."
     }
+  },
+  "accountNavbar": {
+    "yourChallenge": "Senin meydan okuman",
+    "login": "Giriş yap"
   }
 }
