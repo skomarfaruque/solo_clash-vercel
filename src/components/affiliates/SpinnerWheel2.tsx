@@ -265,16 +265,16 @@ export default function SpinningWheel2() {
       </div>
 
       <button
-        className="mt-4 px-10 py-3 rounded-lg font-bold text-white shadow-md bg-gradient-to-r from-blue-500 to-sky-400 hover:scale-105 transition-transform disabled:opacity-60"
+        className="mt-4 px-10 py-3 rounded-lg font-bold text-white shadow-md bg-gradient-to-r from-blue-500 to-sky-400 hover:scale-105 transition-transform disabled:opacity-60 hover:cursor-pointer"
         onClick={spinRoulette}
         disabled={spinning || items.length === 0}
       >
         Spin
       </button>
 
-      <div className="result mt-4 inline-block rounded-lg px-6 py-3 bg-white shadow-lg text-green-600 font-bold">
+      {/* <div className="result mt-4 inline-block rounded-lg px-6 py-3 bg-white shadow-lg text-green-600 font-bold">
         {result || "\u00A0"}
-      </div>
+      </div> */}
     </section>
   );
 }
