@@ -1,5 +1,3 @@
-import StartNowButton from "../StartNowButton";
-
 export default function HeroSection() {
   return (
     <section className="justify-center text-center px-6 lg:px-20">
