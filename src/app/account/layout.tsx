@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import LoginNavbar from "../LoginNavbar";
+import AccountNavBar from "../AccountNavbar";
 
 export const metadata: Metadata = {
   title: "Login - SoloClash",
@@ -15,10 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {" "}
         {/* Navigation Header */}
         <header className="absolute top-10 w-full z-50">
-          <LoginNavbar />
+          <AccountNavBar />
         </header>
         {/* Main content */}
         {children}

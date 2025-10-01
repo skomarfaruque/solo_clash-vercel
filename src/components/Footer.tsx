@@ -7,7 +7,7 @@ export default function Footer() {
   const t = useTranslations("footer");
 
   const links = [
-    { href: "/", label: t("links.accounts") },
+    { href: "/account", label: t("links.accounts") },
     { href: "/rules", label: t("links.rules") },
     { href: "/faq", label: t("links.faq") },
     { href: "/", label: t("links.getStarted") },
