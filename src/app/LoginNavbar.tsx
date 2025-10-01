@@ -1,13 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
 import LanguageSelector from "../components/LanguageSelector";
+import getLocaleFromCookie from "@/utils/getLocaleFromCookie";
 
 export default function LoginNavbar() {
   const [selectedLang, setSelectedLang] = useState("en");
+  useEffect(() => {
+    setSelectedLang(getLocaleFromCookie());
+  }, []);
 
   return (
     <nav className="flex items-center justify-between bg-transparent text-white absolute left-1/2 transform -translate-x-1/2 max-w-screen-xl w-full h-[52px]">

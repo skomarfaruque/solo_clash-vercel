@@ -3,12 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import LanguageSelector from "./LanguageSelector";
-
-function getLocaleFromCookie() {
-  if (typeof document === "undefined") return "en";
-  const match = document.cookie.match(/(?:^|; )locale=([^;]*)/);
-  return match ? decodeURIComponent(match[1]) : "en";
-}
+import getLocaleFromCookie from "../utils/getLocaleFromCookie";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -189,16 +184,16 @@ export default function Navbar() {
       {drawerOpen && (
         <div className="fixed inset-0 z-50 flex">
           {/* Overlay */}
-          <div
+          <button
             className="absolute inset-0 bg-black bg-opacity-60"
             onClick={() => setDrawerOpen(false)}
             tabIndex={0}
             aria-label="Close menu"
-            role="button"
-            onKeyDown={(e) =>
-              (e.key === "Escape" || e.key === "Enter" || e.key === " ") &&
-              setDrawerOpen(false)
-            }
+            onKeyDown={(e) => {
+              if (e.key === "Escape" || e.key === "Enter" || e.key === " ") {
+                setDrawerOpen(false);
+              }
+            }}
           />
           {/* Drawer */}
           <div className="relative bg-neutral-900 w-4/5 max-w-xs h-full p-6 flex flex-col gap-6 shadow-2xl animate-slide-in-left">

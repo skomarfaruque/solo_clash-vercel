@@ -1,17 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 
 import Image from "next/image";
 import Link from "next/link";
 import LanguageSelector from "../components/LanguageSelector";
 import { usePathname } from "next/navigation";
+import getLocaleFromCookie from "@/utils/getLocaleFromCookie";
 
 export default function AccountNavBar() {
   const t = useTranslations("accountNavbar");
   const [selectedLang, setSelectedLang] = useState("en");
   const pathname = usePathname();
+
+  useEffect(() => {
+    setSelectedLang(getLocaleFromCookie());
+  }, []);
+
   const activeClass =
     "px-6 py-3 rounded-[58px] bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)] shadow-[0px_2px_12px_rgba(7,5,24,0.5)]";
   const inactiveClass = "text-[#B7B7B7] hover:text-white transition";
