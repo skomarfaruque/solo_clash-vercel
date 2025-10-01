@@ -16,7 +16,9 @@ export default function PaymentSection() {
       <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 bg-gradient-to-br from-neutral-900 to-black rounded-3xl p-8">
         {/* LEFT SIDE */}
         <div>
-          <h2 className="text-xl font-semibold mb-6">Trading Combine</h2>
+          <h2 className="text-xl font-semibold mb-6 border-b border-[rgba(255,255,255,0.1)]">
+            Trading Combine
+          </h2>
 
           <div className="space-y-2 text-sm text-gray-300 mb-6">
             <div className="flex justify-between">
@@ -115,6 +117,7 @@ export default function PaymentSection() {
             <div>
               <label className="text-sm block mb-1">Card Number</label>
               <input
+                id="card-number"
                 type="text"
                 placeholder="00 00 00 00 00 00 00 00"
                 className="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500"
@@ -124,6 +127,7 @@ export default function PaymentSection() {
               <div>
                 <label className="text-sm block mb-1">Expiration Date</label>
                 <input
+                  id="expiration-date"
                   type="text"
                   placeholder="MM/YY"
                   className="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500"
@@ -132,6 +136,7 @@ export default function PaymentSection() {
               <div>
                 <label className="text-sm block mb-1">CVV</label>
                 <input
+                  id="cvv"
                   type="text"
                   placeholder="CVV"
                   className="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500"
