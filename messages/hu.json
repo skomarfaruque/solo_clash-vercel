@@ -366,5 +366,10 @@
   "tiredRewards": {
     "heading": "Fáradt jutalmak",
     "description": "Fedezz fel exkluzív jutalmakat, ahogy haladsz programunkban."
+  },
+  "affiliatesHeroSection": {
+    "heading1": "Legyen partnerünk a",
+    "heading2": "Partnerprogramunkkal",
+    "description": "Keressen jutalékokat, oldja fel a kedvezményeket, és lépjen fel exkluzív partneri szintekre. Partnerjelentési eszközünk egyszerűvé teszi a nyomon követést és a kifizetéseket. A növekedést magasabb jutalékokkal és számlajóváírásokkal jutalmazzuk."
   }
 }

@@ -367,5 +367,10 @@
   "tiredRewards": {
     "heading": "Recompensas em Níveis",
     "description": "Desbloqueie recompensas exclusivas à medida que avança em nosso programa."
+  },
+  "affiliatesHeroSection": {
+    "heading1": "Torne-se um Parceiro com nosso",
+    "heading2": "Programa de Afiliados",
+    "description": "Ganhe comissões, desbloqueie descontos e suba em níveis exclusivos de parceiros. Nossa ferramenta de relatórios de afiliados torna o rastreamento e os pagamentos simples. Recompensamos o crescimento com comissões mais altas e créditos de conta."
   }
 }

@@ -366,5 +366,10 @@
   "tiredRewards": {
     "heading": "Kademeli Ödüller",
     "description": "Programımızda ilerledikçe özel ödüllerin kilidini açın."
+  },
+  "affiliatesHeroSection": {
+    "heading1": "Ortak olun",
+    "heading2": "Ortaklık Programımızla",
+    "description": "Komisyon kazanın, indirimlerin kilidini açın ve özel ortaklık seviyelerine yükselin. Ortaklık raporlama aracımız, takibi ve ödemeleri sorunsuz hale getirir. Büyümeyi daha yüksek komisyonlar ve hesap kredileriyle ödüllendiriyoruz."
   }
 }

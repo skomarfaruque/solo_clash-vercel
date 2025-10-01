@@ -1,4 +1,8 @@
+import { useTranslations } from "next-intl";
+
 export default function HeroSection() {
+  const t = useTranslations("affiliatesHeroSection");
+
   return (
     <section className="justify-center text-center px-6 lg:px-20">
       <div className="relative z-10 max-w-4xl mx-auto pt-[217px]">
@@ -11,7 +15,7 @@ export default function HeroSection() {
             letterSpacing: "0.005em",
           }}
         >
-          Become a Partner with our
+          {t("heading1")}
         </h2>
         <p
           className="text-center"
@@ -28,12 +32,10 @@ export default function HeroSection() {
             backgroundClip: "text",
           }}
         >
-          Affiliate Program
+          {t("heading2")}
         </p>
         <p className="mt-9 max-w-3xl mx-auto text-gray-300 text-sm md:text-base leading-relaxed w-[667px">
-          Earn commissions, unlock discounts, and climb exclusive partner tiers.
-          Our affiliate reporting tool makes tracking and payouts seamless. We
-          reward growth with higher commissions and account credits.
+          {t("description")}
         </p>
       </div>
     </section>

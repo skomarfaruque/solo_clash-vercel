@@ -366,5 +366,10 @@
   "tiredRewards": {
     "heading": "Tired Rewards",
     "description": "Unlock exclusive rewards as you progress through our program."
+  },
+  "affiliatesHeroSection": {
+    "heading1": "Become a Partner with our",
+    "heading2": "Affiliate Program",
+    "description": "Earn commissions, unlock discounts, and climb exclusive partner tiers. Our affiliate reporting tool makes tracking and payouts seamless. We reward growth with higher commissions and account credits."
   }
 }
