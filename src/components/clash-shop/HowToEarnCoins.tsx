@@ -1,3 +1,4 @@
+import Heading from "../common/Heading";
 import EarnCoinCard from "./EarnCoinCard";
 import { useTranslations } from "next-intl";
 export default function HowToEarnCoins() {
@@ -23,9 +24,7 @@ export default function HowToEarnCoins() {
     >
       <div className="flex flex-col justify-center items-center gap-6 w-full max-w-[1320px] mx-auto">
         {/* Heading */}
-        <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight text-white max-w-xl mx-auto">
-          {section.heading}
-        </h2>
+        <Heading>{section.heading}</Heading>
 
         {/* Description */}
         <p

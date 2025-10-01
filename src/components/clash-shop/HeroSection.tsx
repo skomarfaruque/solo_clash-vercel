@@ -1,23 +1,15 @@
 import SpinningWheel2 from "../affiliates/SpinnerWheel2";
 import { useTranslations } from "next-intl";
+import Heading from "../common/Heading";
 export default function HeroSection() {
   const t = useTranslations();
   return (
     <section className="justify-center text-center px-6 lg:px-20">
       <div className="relative z-10 max-w-4xl mx-auto pt-[217px]">
-        <h2
-          className="mb-4"
-          style={{
-            fontWeight: 700,
-            fontSize: "55px",
-            lineHeight: "110%",
-            letterSpacing: "0.005em",
-          }}
-        >
-          {t("clashShopHero.heading")}
-        </h2>
+        <Heading className="mb-4">{t("clashShopHero.heading")}</Heading>
+
         <p
-          className="text-center"
+          className="text-center font-playfair"
           style={{
             fontWeight: 700,
             fontSize: "55px",
