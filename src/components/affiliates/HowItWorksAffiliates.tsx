@@ -1,25 +1,26 @@
+import { useTranslations } from "next-intl";
+
 export default function HowItWorksAffiliates() {
+  const t = useTranslations("howItWorksAffiliates");
+
   const steps = [
     {
       number: "1",
-      title: "Sign up to get your unique referral link and discount code",
-      description:
-        "Get started instantly with your personalized affiliate dashboard and tracking tools.",
+      title: t("step1.title"),
+      description: t("step1.description"),
     },
     {
       number: "2",
-      title: "Share your link and grow your network",
-      description:
-        "Promote Solo Clash to your audience through content, social media, and community engagement.",
+      title: t("step2.title"),
+      description: t("step2.description"),
     },
     {
       number: "3",
-      title:
-        "Earn commissions and unlock rewards as you hit referral milestones",
-      description:
-        "Watch your earnings grow while unlocking exclusive perks and higher commission rates.",
+      title: t("step3.title"),
+      description: t("step3.description"),
     },
   ];
+
   return (
     <section
       className="justify-center text-center px-6 lg:px-20 py-30"
@@ -31,10 +32,10 @@ export default function HowItWorksAffiliates() {
           className="text-3xl md:text-4xl font-bold text-white"
           style={{ width: "680px" }}
         >
-          How It Works
+          {t("heading")}
         </h2>
         <p className="max-w-3xl mx-auto text-gray-300 text-sm md:text-base leading-relaxed w-[667px">
-          Three simple steps to start earning with Solo Clash.
+          {t("description")}
         </p>
         <div className="relative mx-auto max-w-5xl">
           {/* Vertical Timeline Line: only till last circle */}
@@ -44,11 +45,11 @@ export default function HowItWorksAffiliates() {
           />
 
           <div className="space-y-24">
-            {steps.map((step, i) => {
-              const isRight = i % 2 === 0;
+            {steps.map((step) => {
+              const isRight = parseInt(step.number) % 2 === 1;
               return (
                 <div
-                  key={i}
+                  key={step.number}
                   className={`relative flex flex-col items-center text-center md:flex-row md:items-start md:text-inherit ${
                     isRight ? "md:justify-end" : "md:justify-start"
                   }`}
@@ -67,7 +68,7 @@ export default function HowItWorksAffiliates() {
                     <p className="mt-2 text-gray-400">{step.description}</p>
                   </div>
                   {/* Number Circle for desktop */}
-                  {i === 0 ? (
+                  {parseInt(step.number) === 1 ? (
                     <div
                       className="hidden md:flex absolute left-1/2 top-0 items-center justify-center text-white text-lg font-semibold"
                       style={{
