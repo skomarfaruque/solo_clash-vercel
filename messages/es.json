@@ -177,12 +177,12 @@
   },
   "spinDetailsSection": {
     "cards": [
-      { "title": "Período de Evaluación", "tags": [] },
-      { "title": "Drawdown de Fin de Día", "tags": [] },
-      { "title": "Consistencia de Beneficio", "tags": [] },
-      { "title": "Límite de Pérdida Diaria", "tags": [] },
-      { "title": "Política de Reinicio", "tags": [] },
-      { "title": "Límite de Pago", "tags": ["Legendario"] }
+      { "title": "50 Monedas Clash", "tags": [] },
+      { "title": "Entrada Gratuita al Torneo", "tags": [] },
+      { "title": "Códigos de Descuento del 10%", "tags": [] },
+      { "title": "100 Monedas de Bonificación", "tags": [] },
+      { "title": "Cuenta de 50k", "tags": [] },
+      { "title": "Cuenta de 100k", "tags": ["Legendario"] }
     ]
   },
   "howToEarnCoinsSection": {

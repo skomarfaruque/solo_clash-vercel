@@ -176,12 +176,12 @@
   },
   "spinDetailsSection": {
     "cards": [
-      { "title": "Evaluation Period", "tags": [] },
-      { "title": "End-of-Day-Drawdown", "tags": [] },
-      { "title": "Profit Consistency", "tags": [] },
-      { "title": "Daily Loss Limit", "tags": [] },
-      { "title": "Reset Policy", "tags": [] },
-      { "title": "Payout Limit", "tags": ["Legendary"] }
+      { "title": "50 Clash coins", "tags": [] },
+      { "title": "Free Tournament Entry", "tags": [] },
+      { "title": "10% Discount Codes", "tags": [] },
+      { "title": "100 Bonus Coins", "tags": [] },
+      { "title": "50k Account", "tags": [] },
+      { "title": "100k Account", "tags": ["Legendary"] }
     ]
   },
   "howToEarnCoinsSection": {

@@ -177,12 +177,12 @@
   },
   "spinDetailsSection": {
     "cards": [
-      { "title": "فترة التقييم", "tags": [] },
-      { "title": "سحب نهاية اليوم", "tags": [] },
-      { "title": "اتساق الأرباح", "tags": [] },
-      { "title": "حد الخسارة اليومية", "tags": [] },
-      { "title": "سياسة إعادة التعيين", "tags": [] },
-      { "title": "حد الدفع", "tags": ["أسطوري"] }
+      { "title": "50 Clash Coins", "tags": [] },
+      { "title": "دخول مجاني للبطولة", "tags": [] },
+      { "title": "أكواد خصم 10%", "tags": [] },
+      { "title": "100 عملة إضافية", "tags": [] },
+      { "title": "حساب 50k", "tags": [] },
+      { "title": "حساب 100k", "tags": ["أسطوري"] }
     ]
   },
   "howToEarnCoinsSection": {

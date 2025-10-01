@@ -186,12 +186,12 @@
   },
   "spinDetailsSection": {
     "cards": [
-      { "title": "Période d'évaluation", "tags": [] },
-      { "title": "Drawdown de fin de journée", "tags": [] },
-      { "title": "Cohérence des profits", "tags": [] },
-      { "title": "Limite de perte quotidienne", "tags": [] },
-      { "title": "Politique de réinitialisation", "tags": [] },
-      { "title": "Limite de paiement", "tags": ["Légendaire"] }
+      { "title": "50 Pièces Clash", "tags": [] },
+      { "title": "Entrée Gratuite au Tournoi", "tags": [] },
+      { "title": "Codes de Réduction de 10%", "tags": [] },
+      { "title": "100 Pièces Bonus", "tags": [] },
+      { "title": "Compte 50k", "tags": [] },
+      { "title": "Compte 100k", "tags": ["Légendaire"] }
     ]
   },
   "howToEarnCoinsSection": {
