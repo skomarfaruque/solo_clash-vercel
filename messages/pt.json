@@ -392,5 +392,12 @@
   "accountNavbar": {
     "yourChallenge": "Seu desafio",
     "login": "Entrar"
+  },
+  "chooseAccount": {
+    "chooseYourAccount": "Escolha Sua Conta",
+    "platforms": "Plataformas",
+    "accountSize": "Tamanho da Conta",
+    "profitSplit": "Divisão de Lucros",
+    "continue": "Continuar"
   }
 }

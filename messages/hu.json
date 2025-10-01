@@ -391,5 +391,12 @@
   "accountNavbar": {
     "yourChallenge": "A kihívásod",
     "login": "Bejelentkezés"
+  },
+  "chooseAccount": {
+    "chooseYourAccount": "Válassza ki a fiókját",
+    "platforms": "Platformok",
+    "accountSize": "Fiók Mérete",
+    "profitSplit": "Nyereség Megosztása",
+    "continue": "Folytatás"
   }
 }

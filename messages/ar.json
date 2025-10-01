@@ -416,5 +416,12 @@
   "accountNavbar": {
     "yourChallenge": "تحديك",
     "login": "تسجيل الدخول"
+  },
+  "chooseAccount": {
+    "chooseYourAccount": "اختر حسابك",
+    "platforms": "المنصات",
+    "accountSize": "حجم الحساب",
+    "profitSplit": "تقسيم الأرباح",
+    "continue": "استمر"
   }
 }

@@ -1,13 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 
 export default function LoginSection() {
-  const t = useTranslations("login");
-  const [showPassword, setShowPassword] = useState(false);
+  const t = useTranslations("chooseAccount");
   const [platform, setPlatform] = useState("VolSys");
   const [accountSize, setAccountSize] = useState("$100,000");
   const [profitSplit, setProfitSplit] = useState("90/10");
@@ -35,12 +32,12 @@ export default function LoginSection() {
         <div className="flex flex-col justify-between h-full">
           <div>
             <h2 className="text-center text-2xl font-semibold mb-8">
-              Choose Your Account
+              {t("chooseYourAccount")}
             </h2>
 
             {/* Platforms */}
             <div className="flex flex-col mb-8 text-left gap-6">
-              <h3 className="font-medium">Platforms</h3>
+              <h3 className="font-medium">{t("platforms")}</h3>
               <div className="flex gap-3">
                 {["VolSys", "VolBook"].map((item) => (
                   <button
@@ -60,7 +57,7 @@ export default function LoginSection() {
 
             {/* Account Size */}
             <div className="flex flex-col mb-8 text-left gap-6">
-              <h3 className="font-medium">Account Size</h3>
+              <h3 className="font-medium">{t("accountSize")}</h3>
               <div className="flex gap-3">
                 {["$50,000", "$100,000", "$150,000"].map((item) => (
                   <button
@@ -80,7 +77,7 @@ export default function LoginSection() {
 
             {/* Profit Split */}
             <div className="flex flex-col mb-8 text-left gap-6">
-              <h3 className="font-medium">Profit Split</h3>
+              <h3 className="font-medium">{t("profitSplit")}</h3>
               <div className="flex gap-3">
                 <button
                   onClick={() => setProfitSplit("90/10")}
@@ -98,8 +95,8 @@ export default function LoginSection() {
 
           {/* Continue Button */}
           <div className="flex justify-end">
-            <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-orange-400 to-orange-600 text-black font-semibold shadow-lg hover:brightness-110 transition-all hover:cursor-pointer">
-              CONTINUE
+            <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-orange-400 to-orange-600 text-black font-semibold shadow-lg hover:brightness-110 transition-all">
+              {t("continue")}
             </button>
           </div>
         </div>
