@@ -31,7 +31,7 @@ export default function SpinDetailsCard({
           className="w-[40px] h-[40px]"
           style={{ width: "40px", height: "40px" }}
         />
-        <h3 className="font-normal text-[24px] leading-[150%] text-white flex flex-col items-start gap-4">
+        <h3 className="font-normal text-[24px] leading-[150%] text-white flex flex-col items-start gap-4 text-left">
           {title}
           {tags.length > 0 && (
             <span
