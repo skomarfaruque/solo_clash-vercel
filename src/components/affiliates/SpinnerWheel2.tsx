@@ -22,7 +22,7 @@ export default function SpinningWheel2() {
 
   // Casino-style dollar values for wheel
   const DEFAULT_VALUES = [
-    "$0",
+    "ZERO",
     "$1",
     "$2",
     "$5",
@@ -30,8 +30,7 @@ export default function SpinningWheel2() {
     "$20",
     "$50",
     "$100",
-    "$200",
-    "$500",
+    "JACKPOT",
   ];
 
   // Set winning values as a range among them (e.g., $10 and above)

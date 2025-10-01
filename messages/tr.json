@@ -187,12 +187,12 @@
   },
   "spinDetailsSection": {
     "cards": [
-      { "title": "Değerlendirme Dönemi", "tags": [] },
-      { "title": "Gün Sonu Çekilme", "tags": [] },
-      { "title": "Kâr Tutarlılığı", "tags": [] },
-      { "title": "Günlük Kayıp Limiti", "tags": [] },
-      { "title": "Sıfırlama Politikası", "tags": [] },
-      { "title": "Ödeme Limiti", "tags": ["Efsanevi"] }
+      { "title": "50 Çatışma Parası", "tags": [] },
+      { "title": "Ücretsiz Turnuva Girişi", "tags": [] },
+      { "title": "%10 İndirim Kodları", "tags": [] },
+      { "title": "100 Bonus Parası", "tags": [] },
+      { "title": "50k Hesap", "tags": [] },
+      { "title": "100k Hesap", "tags": ["Efsanevi"] }
     ]
   },
   "howToEarnCoinsSection": {
