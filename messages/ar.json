@@ -173,7 +173,8 @@
     "langTurkish": "التركية",
     "langPortuguese": "البرتغالية",
     "langFrench": "الفرنسية",
-    "langSpanish": "الإسبانية"
+    "langSpanish": "الإسبانية",
+    "langHungarian": "المجرية"
   },
   "spinDetailsSection": {
     "cards": [
@@ -272,7 +273,8 @@
       "turkish": "التركية",
       "portuguese": "البرتغالية",
       "french": "الفرنسية",
-      "spanish": "الإسبانية"
+      "spanish": "الإسبانية",
+      "hungarian": "المجرية"
     }
   },
   "faqPage": {

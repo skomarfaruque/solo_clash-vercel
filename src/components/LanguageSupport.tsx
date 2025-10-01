@@ -16,6 +16,7 @@ export default function LanguageSupport() {
     { title: t("languages.portuguese"), code: "pt" },
     { title: t("languages.french"), code: "fr" },
     { title: t("languages.spanish"), code: "es" },
+    { title: t("languages.hungarian"), code: "hu" },
   ];
 
   // Use state and useEffect to avoid hydration mismatch
