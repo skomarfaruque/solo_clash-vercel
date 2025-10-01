@@ -410,5 +410,16 @@
       "title": "Gagnez des commissions et débloquez des récompenses en atteignant des étapes de parrainage",
       "description": "Regardez vos gains augmenter tout en débloquant des avantages exclusifs et des taux de commission plus élevés."
     }
+  },
+  "accountNavbar": {
+    "yourChallenge": "Votre défi",
+    "login": "Connexion"
+  },
+  "chooseAccount": {
+    "chooseYourAccount": "Choisissez Votre Compte",
+    "platforms": "Plateformes",
+    "accountSize": "Taille du Compte",
+    "profitSplit": "Répartition des Profits",
+    "continue": "Continuer"
   }
 }

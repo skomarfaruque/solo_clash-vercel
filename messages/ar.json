@@ -412,5 +412,16 @@
       "title": "اكسب العمولات وافتح المكافآت عند تحقيق معالم الإحالة",
       "description": "شاهد أرباحك تنمو أثناء فتح الامتيازات الحصرية ومعدلات العمولة الأعلى."
     }
+  },
+  "accountNavbar": {
+    "yourChallenge": "تحديك",
+    "login": "تسجيل الدخول"
+  },
+  "chooseAccount": {
+    "chooseYourAccount": "اختر حسابك",
+    "platforms": "المنصات",
+    "accountSize": "حجم الحساب",
+    "profitSplit": "تقسيم الأرباح",
+    "continue": "استمر"
   }
 }

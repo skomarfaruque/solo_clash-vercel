@@ -388,5 +388,16 @@
       "title": "Gana comisiones y desbloquea recompensas al alcanzar hitos de referencia",
       "description": "Mira crecer tus ganancias mientras desbloqueas beneficios exclusivos y tasas de comisión más altas."
     }
+  },
+  "accountNavbar": {
+    "yourChallenge": "Tu desafío",
+    "login": "Iniciar sesión"
+  },
+  "chooseAccount": {
+    "chooseYourAccount": "Elige Tu Cuenta",
+    "platforms": "Plataformas",
+    "accountSize": "Tamaño de la Cuenta",
+    "profitSplit": "División de Ganancias",
+    "continue": "Continuar"
   }
 }

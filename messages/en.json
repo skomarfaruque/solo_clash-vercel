@@ -387,5 +387,16 @@
       "title": "Earn commissions and unlock rewards as you hit referral milestones",
       "description": "Watch your earnings grow while unlocking exclusive perks and higher commission rates."
     }
+  },
+  "accountNavbar": {
+    "yourChallenge": "Your challenge",
+    "login": "Login"
+  },
+  "chooseAccount": {
+    "chooseYourAccount": "Choose Your Account",
+    "platforms": "Platforms",
+    "accountSize": "Account Size",
+    "profitSplit": "Profit Split",
+    "continue": "Continue"
   }
 }

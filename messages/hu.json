@@ -387,5 +387,16 @@
       "title": "Keress jutalékokat és oldj fel jutalmakat, amikor elérsz ajánlói mérföldköveket",
       "description": "Nézd, ahogy a bevételeid növekednek, miközben exkluzív előnyöket és magasabb jutalékokat oldasz fel."
     }
+  },
+  "accountNavbar": {
+    "yourChallenge": "A kihívásod",
+    "login": "Bejelentkezés"
+  },
+  "chooseAccount": {
+    "chooseYourAccount": "Válassza ki a fiókját",
+    "platforms": "Platformok",
+    "accountSize": "Fiók Mérete",
+    "profitSplit": "Nyereség Megosztása",
+    "continue": "Folytatás"
   }
 }

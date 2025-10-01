@@ -387,5 +387,16 @@
       "title": "Yönlendirme kilometre taşlarına ulaştıkça komisyon kazanın ve ödülleri açın",
       "description": "Kazançlarınızın büyümesini izlerken özel ayrıcalıkların ve daha yüksek komisyon oranlarının kilidini açın."
     }
+  },
+  "accountNavbar": {
+    "yourChallenge": "Senin meydan okuman",
+    "login": "Giriş yap"
+  },
+  "chooseAccount": {
+    "chooseYourAccount": "Hesabınızı Seçin",
+    "platforms": "Platformlar",
+    "accountSize": "Hesap Boyutu",
+    "profitSplit": "Kar Paylaşımı",
+    "continue": "Devam et"
   }
 }
