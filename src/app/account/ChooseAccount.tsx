@@ -1,10 +1,13 @@
 "use client";
 
+import SvgButton2 from "@/components/buttons/svgButton2";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function LoginSection() {
   const t = useTranslations("chooseAccount");
+  const router = useRouter();
   const [platform, setPlatform] = useState("VolSys");
   const [accountSize, setAccountSize] = useState("$100,000");
   const [profitSplit, setProfitSplit] = useState("90/10");
@@ -95,9 +98,10 @@ export default function LoginSection() {
 
           {/* Continue Button */}
           <div className="flex justify-end">
-            <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-orange-400 to-orange-600 text-black font-semibold shadow-lg hover:brightness-110 transition-all">
-              {t("continue")}
-            </button>
+            <SvgButton2
+              label={t("continue")}
+              textStyle="font-medium text-base"
+            />
           </div>
         </div>
       </div>

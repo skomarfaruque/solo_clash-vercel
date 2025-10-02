@@ -54,7 +54,11 @@ export default function AccountNavBar() {
         />
         <Link
           href="/login"
-          className={pathname === "/account" ? activeClass : inactiveClass}
+          className={
+            pathname === "/payment" || pathname === "/account"
+              ? activeClass
+              : inactiveClass
+          }
         >
           {t("login")}
         </Link>
