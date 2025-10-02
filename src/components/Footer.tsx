@@ -43,7 +43,7 @@ export default function Footer() {
     {
       href: "https://www.twitch.tv/soloclashofficial",
       label: t("social.twitch"),
-      icon: "/footer/chat.png",
+      icon: "/footer/twitch.png",
     },
     {
       href: "https://www.instagram.com/soloclashofficial/",
