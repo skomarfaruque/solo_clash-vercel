@@ -10,7 +10,7 @@ export default function PaymentSection() {
   const [checked3, setChecked3] = useState(false);
 
   return (
-    <section className="justify-center text-center min-h-screen px-4 sm:px-0 items-center flex py-20">
+    <section className="justify-center text-center min-h-screen px-4 sm:px-0 items-center flex py-30">
       {/* Content container */}
 
       <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 bg-gradient-to-br from-neutral-900 to-black rounded-3xl p-8">
@@ -107,7 +107,7 @@ export default function PaymentSection() {
           </div>
 
           <div className="flex gap-2 mb-6 text-left">
-            <div>
+            <div className="flex flex-col w-full">
               <label className="text-sm block mb-1 text-[#B7B7B7]">
                 Have a promo code?
               </label>
@@ -124,7 +124,7 @@ export default function PaymentSection() {
             </div>
           </div>
 
-          <div className="space-y-4 mb-6">
+          <div className="space-y-4 mb-6 text-left">
             <div>
               <label className="text-sm block mb-1">Card Number</label>
               <input
@@ -156,7 +156,9 @@ export default function PaymentSection() {
             </div>
           </div>
 
-          <h3 className="text-lg font-semibold mb-3">Billing Address</h3>
+          <h3 className="text-lg font-semibold mb-3 text-left">
+            Billing Address
+          </h3>
           <div className="space-y-4 mb-6">
             <input
               type="text"
@@ -194,7 +196,7 @@ export default function PaymentSection() {
               onChange={() => setChecked3(!checked3)}
               className="mt-1 w-4 h-4 accent-orange-500"
             />
-            <span>
+            <span className="text-left">
               I understand this is a monthly recurring membership and that I
               will be billed automatically each month using the method selected
               above, regardless of if I reset this account & until I cancel the
