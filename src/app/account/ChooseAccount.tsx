@@ -101,6 +101,9 @@ export default function LoginSection() {
             <SvgButton2
               label={t("continue")}
               textStyle="font-medium text-base"
+              onClick={() => {
+                router.push("/payment");
+              }}
             />
           </div>
         </div>

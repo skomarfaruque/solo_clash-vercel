@@ -17,21 +17,21 @@ export default function PaymentSection() {
       <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 bg-gradient-to-br from-neutral-900 to-black rounded-3xl p-8">
         {/* LEFT SIDE */}
         <div>
-          <h2 className="text-xl font-semibold mb-6 text-left">
+          <h2 className="text-2xl font-semibold mb-6 text-left">
             Trading Combine
           </h2>
 
-          <div className="space-y-8 text-sm text-gray-300 mb-6 border-b border-t border-[rgba(255,255,255,0.1)] pt-8 pb-8">
+          <div className="space-y-8 text-gray-300 mb-6 border-b border-t border-[rgba(255,255,255,0.1)] pt-8 pb-8 text-lg">
             <div className="flex justify-between">
-              <span>Account Type</span>
+              <span className="text-[#B7B7B7]">Account Type</span>
               <span className="font-medium text-white">Elite Challenge</span>
             </div>
             <div className="flex justify-between">
-              <span>Account Size</span>
+              <span className="text-[#B7B7B7]">Account Size</span>
               <span className="font-medium text-white">$100,000</span>
             </div>
             <div className="flex justify-between">
-              <span>Platform</span>
+              <span className="text-[#B7B7B7]">Platform</span>
               <span className="font-medium text-white">Volumetrica</span>
             </div>
           </div>
@@ -44,7 +44,7 @@ export default function PaymentSection() {
             <p className="text-white font-medium mb-2 text-left">
               Membership Rebilling:
             </p>
-            <p className="text-left">
+            <p className="text-left text-[#B7B7B7]">
               Your Solo Clash Trading Combine® membership operates on a 30-day
               cycle. Due to this, Rebill dates may vary each month. Your account
               will remain active with the membership renewing each month, until
@@ -88,11 +88,11 @@ export default function PaymentSection() {
 
         {/* RIGHT SIDE */}
         <div>
-          <h2 className="text-xl font-semibold mb-6 text-left">
+          <h2 className="text-2xl font-semibold mb-6 text-left">
             Coupons and Payment
           </h2>
 
-          <div className="space-y-8 text-sm border-t border-[rgba(255,255,255,0.1)] pt-8">
+          <div className="space-y-8 text-lg border-t border-[rgba(255,255,255,0.1)] pt-8">
             <div className="flex justify-between">
               <span>Subtotal:</span>
               <span>USD $45</span>
@@ -125,7 +125,7 @@ export default function PaymentSection() {
             </div>
           </div>
 
-          <div className="space-y-4 mb-6 text-left">
+          <div className="space-y-4 mb-6 text-left text-[16px]">
             <div>
               <label className="text-sm block mb-1">Card Number</label>
               <input
@@ -190,7 +190,7 @@ export default function PaymentSection() {
             </div>
           </div>
 
-          <label className="flex items-start gap-3 text-sm mb-6">
+          <label className="flex items-start gap-3 text-sm">
             <input
               type="checkbox"
               checked={checked3}
@@ -204,11 +204,12 @@ export default function PaymentSection() {
               membership.
             </span>
           </label>
-
-          <SvgButton2
-            label="Pay UAD $60.00"
-            textStyle="font-medium text-base"
-          />
+          <div className="flex items-center justify-center mt-[88px]">
+            <SvgButton2
+              label="Pay UAD $60.00"
+              textStyle="font-medium text-base"
+            />
+          </div>
         </div>
       </div>
     </section>

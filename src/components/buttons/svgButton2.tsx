@@ -4,18 +4,21 @@ import Image from "next/image";
 interface SvgButton2Props {
   readonly label?: string;
   readonly textStyle?: string;
+  readonly onClick?: () => void;
   readonly fullWidth?: boolean;
 }
 
 export default function SvgButton2({
   label = "Submit →",
   textStyle = "",
+  onClick,
   fullWidth = false,
 }: SvgButton2Props) {
   const width = fullWidth ? "100%" : "fit-content";
   return (
     <button
-      className={`relative h-[60px] flex items-center justify-center text-black font-semibold text-xl focus:outline-none transition-transform duration-200 hover:scale-105 overflow-hidden cursor-pointer px-[70px]`}
+      onClick={onClick}
+      className={`relative h-[50px] flex items-center justify-center text-black font-semibold text-xl focus:outline-none transition-transform duration-200 hover:scale-105 overflow-hidden cursor-pointer px-[70px]`}
       style={{
         background: "linear-gradient(94.79deg, #F37E2C 0.24%, #FFA362 100.24%)",
         border: "1px solid rgba(225, 225, 225, 0.3)",
