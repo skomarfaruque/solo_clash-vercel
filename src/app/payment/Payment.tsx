@@ -91,7 +91,7 @@ export default function PaymentSection() {
             Coupons and Payment
           </h2>
 
-          <div className="space-y-8 text-sm mb-6 border-t border-[rgba(255,255,255,0.1)] pt-8 pb-8">
+          <div className="space-y-8 text-sm border-t border-[rgba(255,255,255,0.1)] pt-8">
             <div className="flex justify-between">
               <span>Subtotal:</span>
               <span>USD $45</span>
@@ -106,15 +106,22 @@ export default function PaymentSection() {
             </div>
           </div>
 
-          <div className="flex gap-2 mb-6">
-            <input
-              type="text"
-              placeholder="Enter promo code"
-              className="flex-1 bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500"
-            />
-            <button className="bg-orange-600 hover:bg-orange-500 px-4 py-2 rounded-lg text-sm font-medium">
-              Apply
-            </button>
+          <div className="flex gap-2 mb-6 text-left">
+            <div>
+              <label className="text-sm block mb-1 text-[#B7B7B7]">
+                Have a promo code?
+              </label>
+              <div className="flex gap-4">
+                <input
+                  type="text"
+                  placeholder="Enter promo code"
+                  className="flex-1 bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500"
+                />
+                <button className="bg-orange-600 hover:bg-orange-500 px-4 py-2 rounded-lg text-sm font-medium">
+                  Apply
+                </button>
+              </div>
+            </div>
           </div>
 
           <div className="space-y-4 mb-6">
