@@ -160,6 +160,7 @@ export default function PaymentSection() {
           <h3 className="text-lg font-semibold mb-3 text-left">
             Billing Address
           </h3>
+
           <div className="space-y-4 mb-6">
             <input
               type="text"
