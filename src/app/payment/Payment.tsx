@@ -1,5 +1,6 @@
 "use client";
 
+import SvgButton2 from "@/components/buttons/svgButton2";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 
@@ -117,7 +118,7 @@ export default function PaymentSection() {
                   placeholder="Enter promo code"
                   className="flex-1 bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
                 />
-                <button className="bg-orange-600 hover:bg-orange-500 px-4 py-2 rounded-lg text-sm font-medium">
+                <button className="bg-[rgba(251,120,45,0.1)] rounded-[12px] hover:bg-orange-500 px-4 py-2 text-sm font-medium text-[#FB782D] hover:text-white hover:opacity-80 transition hover:cursor-pointer">
                   Apply
                 </button>
               </div>
@@ -204,9 +205,10 @@ export default function PaymentSection() {
             </span>
           </label>
 
-          <button className="w-full py-3 rounded-xl bg-gradient-to-r from-orange-400 to-orange-600 text-black font-semibold shadow-lg hover:brightness-110 transition-all">
-            PAY $60.00
-          </button>
+          <SvgButton2
+            label="Pay UAD $60.00"
+            textStyle="font-medium text-base"
+          />
         </div>
       </div>
     </section>

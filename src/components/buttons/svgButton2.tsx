@@ -2,9 +2,13 @@ import React from "react";
 
 interface SvgButton2Props {
   readonly label?: string;
+  readonly textStyle?: string;
 }
 
-export default function SvgButton2({ label = "Submit →" }: SvgButton2Props) {
+export default function SvgButton2({
+  label = "Submit →",
+  textStyle = "",
+}: SvgButton2Props) {
   return (
     <button
       className="relative w-full max-w-[546px] h-[60px] flex items-center justify-center text-black font-semibold text-xl focus:outline-none transition-transform duration-200 hover:scale-105 overflow-hidden cursor-pointer"
@@ -14,7 +18,7 @@ export default function SvgButton2({ label = "Submit →" }: SvgButton2Props) {
         borderRadius: 32,
       }}
     >
-      <span className="z-10">{label}</span>
+      <span className={`z-10 ${textStyle}`}>{label}</span>
       <img
         src="/faltu.png"
         alt="icon"
