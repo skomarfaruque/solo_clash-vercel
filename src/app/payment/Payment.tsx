@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 export default function PaymentSection() {
-  const t = useTranslations("chooseAccount");
+  const t = useTranslations("payment");
   const [checked1, setChecked1] = useState(false);
   const [checked2, setChecked2] = useState(false);
   const [checked3, setChecked3] = useState(false);
@@ -18,40 +18,40 @@ export default function PaymentSection() {
         {/* LEFT SIDE */}
         <div>
           <h2 className="text-2xl font-semibold mb-6 text-left">
-            Trading Combine
+            {t("tradingCombine")}
           </h2>
 
           <div className="space-y-8 text-gray-300 mb-6 border-b border-t border-[rgba(255,255,255,0.1)] pt-8 pb-8 text-lg">
             <div className="flex justify-between">
-              <span className="text-[#B7B7B7]">Account Type</span>
-              <span className="font-medium text-white">Elite Challenge</span>
+              <span className="text-[#B7B7B7]">{t("accountType")}</span>
+              <span className="font-medium text-white">
+                {t("eliteChallenge")}
+              </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-[#B7B7B7]">Account Size</span>
-              <span className="font-medium text-white">$100,000</span>
+              <span className="text-[#B7B7B7]">{t("accountSize")}</span>
+              <span className="font-medium text-white">
+                {t("accountSizeValue")}
+              </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-[#B7B7B7]">Platform</span>
-              <span className="font-medium text-white">Volumetrica</span>
+              <span className="text-[#B7B7B7]">{t("platform")}</span>
+              <span className="font-medium text-white">
+                {t("platformValue")}
+              </span>
             </div>
           </div>
 
           <h3 className="text-lg font-semibold mb-8 mt-8 text-left">
-            Trading Combine Account Rebill Agreement
+            {t("rebillAgreementTitle")}
           </h3>
 
           <div className="bg-neutral-800 rounded-xl p-4 text-sm text-gray-300 mb-5 max-h-[187px] overflow-y-auto">
             <p className="text-white font-medium mb-2 text-left">
-              Membership Rebilling:
+              {t("membershipRebilling")}
             </p>
             <p className="text-left text-[#B7B7B7]">
-              Your Solo Clash Trading Combine® membership operates on a 30-day
-              cycle. Due to this, Rebill dates may vary each month. Your account
-              will remain active with the membership renewing each month, until
-              you earn funding or cancel the account. If you exceed our 1 Rule,
-              the Maximum Loss Limit, your account will remain active but
-              ineligible for funding and will still be subject to rebilling
-              after the 30-day cycle.
+              {t("membershipRebillingDetails")}
             </p>
           </div>
 
@@ -63,11 +63,7 @@ export default function PaymentSection() {
                 onChange={() => setChecked1(!checked1)}
                 className="mt-1 w-4 h-4 accent-orange-500"
               />
-              <span className="text-left">
-                I’ve read the Rebill Agreement and understand my membership
-                starts immediately and renews every 30 days until I cancel or
-                earn funding.
-              </span>
+              <span className="text-left">{t("rebillAgreementCheckbox1")}</span>
             </label>
 
             <label className="flex items-start gap-3">
@@ -77,11 +73,7 @@ export default function PaymentSection() {
                 onChange={() => setChecked2(!checked2)}
                 className="mt-1 w-4 h-4 accent-orange-500"
               />
-              <span className="text-left">
-                I acknowledge that unwarranted or excessive chargebacks or
-                disputes may prompt a compliance review, potentially leading to
-                account restrictions, including the loss of trading privileges.
-              </span>
+              <span className="text-left">{t("rebillAgreementCheckbox2")}</span>
             </label>
           </div>
         </div>
@@ -89,37 +81,37 @@ export default function PaymentSection() {
         {/* RIGHT SIDE */}
         <div>
           <h2 className="text-2xl font-semibold mb-6 text-left">
-            Coupons and Payment
+            {t("couponsAndPayment")}
           </h2>
 
           <div className="space-y-8 text-lg border-t border-[rgba(255,255,255,0.1)] pt-8">
             <div className="flex justify-between">
-              <span>Subtotal:</span>
-              <span>USD $45</span>
+              <span>{t("subtotal")}</span>
+              <span>{t("subtotalValue")}</span>
             </div>
             <div className="flex justify-between">
-              <span>VAT:</span>
-              <span>25%</span>
+              <span>{t("vat")}</span>
+              <span>{t("vatValue")}</span>
             </div>
             <div className="flex justify-between font-semibold text-lg">
-              <span>Total:</span>
-              <span>USD $60.22</span>
+              <span>{t("total")}</span>
+              <span>{t("totalValue")}</span>
             </div>
           </div>
 
           <div className="flex gap-2 mb-6 text-left">
             <div className="flex flex-col w-full">
               <label className="text-sm block mb-1 text-[#B7B7B7]">
-                Have a promo code?
+                {t("promoCodeLabel")}
               </label>
               <div className="flex gap-4">
                 <input
                   type="text"
-                  placeholder="Enter promo code"
+                  placeholder={t("promoCodePlaceholder")}
                   className="flex-1 bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
                 />
                 <button className="bg-[rgba(251,120,45,0.1)] rounded-[12px] hover:bg-orange-500 px-4 py-2 text-sm font-medium text-[#FB782D] hover:text-white hover:opacity-80 transition hover:cursor-pointer">
-                  Apply
+                  {t("applyButton")}
                 </button>
               </div>
             </div>
@@ -127,30 +119,34 @@ export default function PaymentSection() {
 
           <div className="space-y-4 mb-6 text-left text-[16px]">
             <div>
-              <label className="text-sm block mb-1">Card Number</label>
+              <label className="text-sm block mb-1">
+                {t("cardNumberLabel")}
+              </label>
               <input
                 id="card-number"
                 type="text"
-                placeholder="00 00 00 00 00 00 00 00"
+                placeholder={t("cardNumberPlaceholder")}
                 className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
               />
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="text-sm block mb-1">Expiration Date</label>
+                <label className="text-sm block mb-1">
+                  {t("expirationDateLabel")}
+                </label>
                 <input
                   id="expiration-date"
                   type="text"
-                  placeholder="MM/YY"
+                  placeholder={t("expirationDatePlaceholder")}
                   className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
                 />
               </div>
               <div>
-                <label className="text-sm block mb-1">CVV</label>
+                <label className="text-sm block mb-1">{t("cvvLabel")}</label>
                 <input
                   id="cvv"
                   type="text"
-                  placeholder="CVV"
+                  placeholder={t("cvvPlaceholder")}
                   className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
                 />
               </div>
@@ -158,34 +154,34 @@ export default function PaymentSection() {
           </div>
 
           <h3 className="text-lg font-semibold mb-3 text-left">
-            Billing Address
+            {t("billingAddress")}
           </h3>
 
           <div className="space-y-4 mb-6">
             <input
               type="text"
-              placeholder="Street Address"
+              placeholder={t("streetAddressPlaceholder")}
               className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
             />
             <div className="grid grid-cols-2 gap-3">
               <input
                 type="text"
-                placeholder="City"
+                placeholder={t("cityPlaceholder")}
                 className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
               />
               <select className="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-gray-400">
-                <option>Choose a country</option>
+                <option>{t("countryPlaceholder")}</option>
               </select>
             </div>
             <div className="grid grid-cols-2 gap-3">
               <input
                 type="text"
-                placeholder="State / Region"
+                placeholder={t("statePlaceholder")}
                 className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
               />
               <input
                 type="text"
-                placeholder="Area Code"
+                placeholder={t("areaCodePlaceholder")}
                 className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
               />
             </div>
@@ -199,15 +195,12 @@ export default function PaymentSection() {
               className="mt-1 w-4 h-4 accent-orange-500"
             />
             <span className="text-left">
-              I understand this is a monthly recurring membership and that I
-              will be billed automatically each month using the method selected
-              above, regardless of if I reset this account & until I cancel the
-              membership.
+              {t("recurringMembershipCheckbox")}
             </span>
           </label>
           <div className="flex items-center justify-center mt-[88px]">
             <SvgButton2
-              label="Pay UAD $60.00"
+              label={t("payButton", { amount: "60.00" })}
               textStyle="font-medium text-base"
             />
           </div>
