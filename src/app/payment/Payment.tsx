@@ -16,11 +16,11 @@ export default function PaymentSection() {
       <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 bg-gradient-to-br from-neutral-900 to-black rounded-3xl p-8">
         {/* LEFT SIDE */}
         <div>
-          <h2 className="text-xl font-semibold mb-6 border-b border-[rgba(255,255,255,0.1)]">
+          <h2 className="text-xl font-semibold mb-6 text-left">
             Trading Combine
           </h2>
 
-          <div className="space-y-2 text-sm text-gray-300 mb-6">
+          <div className="space-y-8 text-sm text-gray-300 mb-6 border-b border-t border-[rgba(255,255,255,0.1)] pt-8 pb-8">
             <div className="flex justify-between">
               <span>Account Type</span>
               <span className="font-medium text-white">Elite Challenge</span>
@@ -35,13 +35,15 @@ export default function PaymentSection() {
             </div>
           </div>
 
-          <h3 className="text-lg font-semibold mb-3">
+          <h3 className="text-lg font-semibold mb-8 mt-8 text-left">
             Trading Combine Account Rebill Agreement
           </h3>
 
-          <div className="bg-neutral-800 rounded-xl p-4 text-sm text-gray-300 mb-5">
-            <p className="text-white font-medium mb-2">Membership Rebilling:</p>
-            <p>
+          <div className="bg-neutral-800 rounded-xl p-4 text-sm text-gray-300 mb-5 max-h-[187px] overflow-y-auto">
+            <p className="text-white font-medium mb-2 text-left">
+              Membership Rebilling:
+            </p>
+            <p className="text-left">
               Your Solo Clash Trading Combine® membership operates on a 30-day
               cycle. Due to this, Rebill dates may vary each month. Your account
               will remain active with the membership renewing each month, until
@@ -60,7 +62,7 @@ export default function PaymentSection() {
                 onChange={() => setChecked1(!checked1)}
                 className="mt-1 w-4 h-4 accent-orange-500"
               />
-              <span>
+              <span className="text-left">
                 I’ve read the Rebill Agreement and understand my membership
                 starts immediately and renews every 30 days until I cancel or
                 earn funding.
@@ -74,7 +76,7 @@ export default function PaymentSection() {
                 onChange={() => setChecked2(!checked2)}
                 className="mt-1 w-4 h-4 accent-orange-500"
               />
-              <span>
+              <span className="text-left">
                 I acknowledge that unwarranted or excessive chargebacks or
                 disputes may prompt a compliance review, potentially leading to
                 account restrictions, including the loss of trading privileges.
@@ -85,9 +87,11 @@ export default function PaymentSection() {
 
         {/* RIGHT SIDE */}
         <div>
-          <h2 className="text-xl font-semibold mb-6">Coupons and Payment</h2>
+          <h2 className="text-xl font-semibold mb-6 text-left">
+            Coupons and Payment
+          </h2>
 
-          <div className="space-y-2 text-sm mb-6">
+          <div className="space-y-8 text-sm mb-6 border-t border-[rgba(255,255,255,0.1)] pt-8 pb-8">
             <div className="flex justify-between">
               <span>Subtotal:</span>
               <span>USD $45</span>
