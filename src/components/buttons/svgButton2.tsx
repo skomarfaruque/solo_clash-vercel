@@ -24,6 +24,7 @@ export default function SvgButton2({
         border: "1px solid rgba(225, 225, 225, 0.3)",
         borderRadius: 12,
         width: width,
+        boxShadow: "-1px 3px 21px 0px rgba(255, 163, 98, 0.5)", // <-- added shadow here
       }}
     >
       <span className={`z-10 ${textStyle}`}>{label}</span>
