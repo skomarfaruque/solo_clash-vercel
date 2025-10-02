@@ -115,7 +115,7 @@ export default function PaymentSection() {
                 <input
                   type="text"
                   placeholder="Enter promo code"
-                  className="flex-1 bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500"
+                  className="flex-1 bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
                 />
                 <button className="bg-orange-600 hover:bg-orange-500 px-4 py-2 rounded-lg text-sm font-medium">
                   Apply
@@ -131,7 +131,7 @@ export default function PaymentSection() {
                 id="card-number"
                 type="text"
                 placeholder="00 00 00 00 00 00 00 00"
-                className="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500"
+                className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
               />
             </div>
             <div className="grid grid-cols-2 gap-3">
@@ -141,7 +141,7 @@ export default function PaymentSection() {
                   id="expiration-date"
                   type="text"
                   placeholder="MM/YY"
-                  className="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500"
+                  className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
                 />
               </div>
               <div>
@@ -150,7 +150,7 @@ export default function PaymentSection() {
                   id="cvv"
                   type="text"
                   placeholder="CVV"
-                  className="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500"
+                  className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
                 />
               </div>
             </div>
@@ -163,13 +163,13 @@ export default function PaymentSection() {
             <input
               type="text"
               placeholder="Street Address"
-              className="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500"
+              className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
             />
             <div className="grid grid-cols-2 gap-3">
               <input
                 type="text"
                 placeholder="City"
-                className="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500"
+                className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
               />
               <select className="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-gray-400">
                 <option>Choose a country</option>
@@ -179,12 +179,12 @@ export default function PaymentSection() {
               <input
                 type="text"
                 placeholder="State / Region"
-                className="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500"
+                className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
               />
               <input
                 type="text"
                 placeholder="Area Code"
-                className="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500"
+                className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
               />
             </div>
           </div>
