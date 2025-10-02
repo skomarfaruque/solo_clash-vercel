@@ -194,7 +194,7 @@ export default function ContactSection() {
 
               {/* Button */}
               <div className="mt-8 md:mt-[52px]">
-                <SvgButton2 label={t("contactSection.form.submit")} />
+                <SvgButton2 label={t("contactSection.form.submit")} fullWidth />
               </div>
             </form>
           </div>

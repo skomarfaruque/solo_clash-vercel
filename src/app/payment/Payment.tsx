@@ -1,5 +1,6 @@
 "use client";
 
+import SvgButton2 from "@/components/buttons/svgButton2";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 
@@ -16,21 +17,21 @@ export default function PaymentSection() {
       <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 bg-gradient-to-br from-neutral-900 to-black rounded-3xl p-8">
         {/* LEFT SIDE */}
         <div>
-          <h2 className="text-xl font-semibold mb-6 text-left">
+          <h2 className="text-2xl font-semibold mb-6 text-left">
             Trading Combine
           </h2>
 
-          <div className="space-y-8 text-sm text-gray-300 mb-6 border-b border-t border-[rgba(255,255,255,0.1)] pt-8 pb-8">
+          <div className="space-y-8 text-gray-300 mb-6 border-b border-t border-[rgba(255,255,255,0.1)] pt-8 pb-8 text-lg">
             <div className="flex justify-between">
-              <span>Account Type</span>
+              <span className="text-[#B7B7B7]">Account Type</span>
               <span className="font-medium text-white">Elite Challenge</span>
             </div>
             <div className="flex justify-between">
-              <span>Account Size</span>
+              <span className="text-[#B7B7B7]">Account Size</span>
               <span className="font-medium text-white">$100,000</span>
             </div>
             <div className="flex justify-between">
-              <span>Platform</span>
+              <span className="text-[#B7B7B7]">Platform</span>
               <span className="font-medium text-white">Volumetrica</span>
             </div>
           </div>
@@ -43,7 +44,7 @@ export default function PaymentSection() {
             <p className="text-white font-medium mb-2 text-left">
               Membership Rebilling:
             </p>
-            <p className="text-left">
+            <p className="text-left text-[#B7B7B7]">
               Your Solo Clash Trading Combine® membership operates on a 30-day
               cycle. Due to this, Rebill dates may vary each month. Your account
               will remain active with the membership renewing each month, until
@@ -87,11 +88,11 @@ export default function PaymentSection() {
 
         {/* RIGHT SIDE */}
         <div>
-          <h2 className="text-xl font-semibold mb-6 text-left">
+          <h2 className="text-2xl font-semibold mb-6 text-left">
             Coupons and Payment
           </h2>
 
-          <div className="space-y-8 text-sm border-t border-[rgba(255,255,255,0.1)] pt-8">
+          <div className="space-y-8 text-lg border-t border-[rgba(255,255,255,0.1)] pt-8">
             <div className="flex justify-between">
               <span>Subtotal:</span>
               <span>USD $45</span>
@@ -115,23 +116,23 @@ export default function PaymentSection() {
                 <input
                   type="text"
                   placeholder="Enter promo code"
-                  className="flex-1 bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500"
+                  className="flex-1 bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
                 />
-                <button className="bg-orange-600 hover:bg-orange-500 px-4 py-2 rounded-lg text-sm font-medium">
+                <button className="bg-[rgba(251,120,45,0.1)] rounded-[12px] hover:bg-orange-500 px-4 py-2 text-sm font-medium text-[#FB782D] hover:text-white hover:opacity-80 transition hover:cursor-pointer">
                   Apply
                 </button>
               </div>
             </div>
           </div>
 
-          <div className="space-y-4 mb-6 text-left">
+          <div className="space-y-4 mb-6 text-left text-[16px]">
             <div>
               <label className="text-sm block mb-1">Card Number</label>
               <input
                 id="card-number"
                 type="text"
                 placeholder="00 00 00 00 00 00 00 00"
-                className="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500"
+                className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
               />
             </div>
             <div className="grid grid-cols-2 gap-3">
@@ -141,7 +142,7 @@ export default function PaymentSection() {
                   id="expiration-date"
                   type="text"
                   placeholder="MM/YY"
-                  className="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500"
+                  className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
                 />
               </div>
               <div>
@@ -150,7 +151,7 @@ export default function PaymentSection() {
                   id="cvv"
                   type="text"
                   placeholder="CVV"
-                  className="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500"
+                  className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
                 />
               </div>
             </div>
@@ -159,17 +160,18 @@ export default function PaymentSection() {
           <h3 className="text-lg font-semibold mb-3 text-left">
             Billing Address
           </h3>
+
           <div className="space-y-4 mb-6">
             <input
               type="text"
               placeholder="Street Address"
-              className="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500"
+              className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
             />
             <div className="grid grid-cols-2 gap-3">
               <input
                 type="text"
                 placeholder="City"
-                className="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500"
+                className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
               />
               <select className="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-gray-400">
                 <option>Choose a country</option>
@@ -179,17 +181,17 @@ export default function PaymentSection() {
               <input
                 type="text"
                 placeholder="State / Region"
-                className="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500"
+                className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
               />
               <input
                 type="text"
                 placeholder="Area Code"
-                className="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500"
+                className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
               />
             </div>
           </div>
 
-          <label className="flex items-start gap-3 text-sm mb-6">
+          <label className="flex items-start gap-3 text-sm">
             <input
               type="checkbox"
               checked={checked3}
@@ -203,10 +205,12 @@ export default function PaymentSection() {
               membership.
             </span>
           </label>
-
-          <button className="w-full py-3 rounded-xl bg-gradient-to-r from-orange-400 to-orange-600 text-black font-semibold shadow-lg hover:brightness-110 transition-all">
-            PAY $60.00
-          </button>
+          <div className="flex items-center justify-center mt-[88px]">
+            <SvgButton2
+              label="Pay UAD $60.00"
+              textStyle="font-medium text-base"
+            />
+          </div>
         </div>
       </div>
     </section>
