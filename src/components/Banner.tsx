@@ -2,6 +2,7 @@ import BannerButton from "./BannerButton";
 import BannerRulesButton from "./BannerRulesButton";
 import Image from "next/image";
 import WhiteButton from "./buttons/WhiteButton";
+import { useTranslations } from "next-intl";
 
 export default function Banner({
   page,
@@ -14,6 +15,8 @@ export default function Banner({
   description?: string | null;
   bannerIconPath?: string | null;
 }>) {
+  const t = useTranslations("bannerDetails");
+
   return (
     <section
       className="flex items-center justify-center py-20 px-6 lg:px-20"
@@ -55,14 +58,14 @@ export default function Banner({
             </p>
           )}
           {/* Banner Button */}
-          {page === "account" && <BannerButton text="Get Started" />}
+          {page === "account" && <BannerButton text={t("getStarted")} />}
 
           {/* BannerRulesButton for rules page */}
-          {page === "rules" && <BannerRulesButton text="Start Challenge" />}
+          {page === "rules" && <BannerRulesButton text={t("startChallenge")} />}
 
-          {/* BannerRulesButton for rules page */}
+          {/* BannerRulesButton for clash-shop page */}
           {page === "clash-shop" && (
-            <WhiteButton text="Redeem Free Ticket Now" iconPath="/trophy.png" />
+            <WhiteButton text={t("redeemTicket")} iconPath="/trophy.png" />
           )}
         </div>
       </div>

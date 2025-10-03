@@ -460,5 +460,11 @@
     "areaCodePlaceholder": "Area Code",
     "recurringMembershipCheckbox": "I understand this is a monthly recurring membership and that I will be billed automatically each month using the method selected above, regardless of if I reset this account & until I cancel the membership.",
     "payButton": "Pay USD ${{amount}}"
+  },
+  "bannerDetails": {
+    "defaultTitle": "Bienvenue à Solo Clash",
+    "getStarted": "Commencer",
+    "startChallenge": "Commencer le défi",
+    "redeemTicket": "Échanger un billet gratuit maintenant"
   }
 }
