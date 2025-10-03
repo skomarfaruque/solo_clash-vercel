@@ -1,5 +1,8 @@
+"use client";
+import { useRouter } from "next/navigation";
+import BlackButton from "../buttons/BlackButton";
 import Heading from "../common/Heading";
-import ViewFullPriceButton from "../ViewFullPriceButton";
+
 import SpinWinTradeCard from "./SpinWinTradeCard";
 import { useTranslations } from "next-intl";
 
@@ -11,6 +14,7 @@ export default function SpinWinTradeSection() {
     "spin_card_icon_two.svg",
     "spin_card_icon_three.svg",
   ];
+  const router = useRouter();
   return (
     <section
       className="justify-center text-center px-4 sm:px-6 lg:px-20 py-10 sm:py-16 lg:py-20"
@@ -40,7 +44,11 @@ export default function SpinWinTradeSection() {
         </div>
 
         <div className="mt-10 sm:mt-14">
-          <ViewFullPriceButton text={t("button")} />
+          <BlackButton
+            text={t("button")}
+            iconPath="/arrow_right_white.png"
+            onClick={() => router.push("/clash-shop")}
+          />
         </div>
       </div>
     </section>

@@ -2,17 +2,20 @@ import Image from "next/image";
 export default function BlackButton({
   text,
   iconPath,
+  onClick,
 }: {
-  text: string;
-  iconPath?: string;
+  readonly text: string;
+  readonly iconPath?: string;
+  readonly onClick?: () => void;
 }) {
   return (
     <button
+      onClick={onClick}
       className="
         flex items-center justify-center
         px-7 py-3.5 gap-2 w-full
         rounded-full text-white cursor-pointer
-        border"
+        border focus:outline-none transition-transform duration-200 hover:scale-105"
       style={{
         background: "rgba(255, 255, 255, 0.11)",
         border: "1px solid rgba(255, 255, 255, 0.06)",
