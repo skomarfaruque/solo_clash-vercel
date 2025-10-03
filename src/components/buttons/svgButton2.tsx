@@ -6,6 +6,8 @@ interface SvgButton2Props {
   readonly textStyle?: string;
   readonly onClick?: () => void;
   readonly fullWidth?: boolean;
+  readonly iconSrc?: string; // New prop for icon source
+  readonly radius?: number;
 }
 
 export default function SvgButton2({
@@ -13,6 +15,8 @@ export default function SvgButton2({
   textStyle = "",
   onClick,
   fullWidth = false,
+  iconSrc = "",
+  radius = 12,
 }: SvgButton2Props) {
   const width = fullWidth ? "100%" : "fit-content";
   return (
@@ -22,12 +26,15 @@ export default function SvgButton2({
       style={{
         background: "linear-gradient(94.79deg, #F37E2C 0.24%, #FFA362 100.24%)",
         border: "1px solid rgba(225, 225, 225, 0.3)",
-        borderRadius: 12,
+        borderRadius: radius,
         width: width,
         boxShadow: "-1px 3px 21px 0px rgba(255, 163, 98, 0.5)", // <-- added shadow here
       }}
     >
-      <span className={`z-10 ${textStyle}`}>{label}</span>
+      <span className={`z-10 ${textStyle} flex items-center gap-2`}>
+        {label}
+        {iconSrc && <Image src={iconSrc} alt="icon" width={20} height={20} />}
+      </span>
       <Image
         src="/faltu.png"
         alt="icon"

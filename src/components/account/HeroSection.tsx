@@ -1,4 +1,7 @@
-import StartNowButton from "../StartNowButton";
+"use client";
+import router from "next/router";
+import SvgButton2 from "../buttons/svgButton2";
+
 import { useTranslations } from "next-intl";
 
 export default function HeroSection() {
@@ -32,9 +35,14 @@ export default function HeroSection() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-4">
-          <StartNowButton>
-            {t("accountPage.heroSection.startNow")}
-          </StartNowButton>
+          <SvgButton2
+            label={t("accountPage.heroSection.startNow")}
+            iconSrc="/arrow_right.png"
+            onClick={() => {
+              router.push("/account");
+            }}
+            radius={100}
+          />
           <span className="text-gray-300 hover:text-white transition cursor-pointer">
             {t("accountPage.heroSection.seeAccountTypes")}
           </span>

@@ -200,7 +200,7 @@ export default function PaymentSection() {
           </label>
           <div className="flex items-center justify-center mt-[88px]">
             <SvgButton2
-              label={t("payButton", { amount: "60.00" })}
+              label="Pay USD $60.00"
               textStyle="font-medium text-base"
             />
           </div>
