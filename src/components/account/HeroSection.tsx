@@ -1,11 +1,12 @@
 "use client";
-import router from "next/router";
+import { useRouter } from "next/navigation";
 import SvgButton2 from "../buttons/svgButton2";
 
 import { useTranslations } from "next-intl";
 
 export default function HeroSection() {
   const t = useTranslations();
+  const router = useRouter(); // Use the hook here
   return (
     <section
       className="justify-center text-center px-4 sm:px-6 lg:px-20 min-h-[70vh]"
@@ -42,6 +43,7 @@ export default function HeroSection() {
               router.push("/account");
             }}
             radius={100}
+            padding="20px"
           />
           <span className="text-gray-300 hover:text-white transition cursor-pointer">
             {t("accountPage.heroSection.seeAccountTypes")}
