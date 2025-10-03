@@ -1,10 +1,13 @@
+"use client";
+import { useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 import FeatureCard from "./WhyChooseUsCard";
 import HomeButton from "../HomeButton";
-import { useTranslations } from "next-intl";
 import Heading from "../common/Heading";
 
 export default function WhyChooseUsSection() {
   const t = useTranslations();
+  const router = useRouter();
   return (
     <section
       className="justify-center text-center px-4 sm:px-6 lg:px-20 py-10 sm:py-16 lg:py-20"
@@ -12,7 +15,9 @@ export default function WhyChooseUsSection() {
     >
       <div className="flex flex-col justify-center items-center gap-6">
         {/* Top Badge */}
-        <HomeButton>{t("accountPage.featureSection.badge")}</HomeButton>
+        <HomeButton onClick={() => router.push("/account")}>
+          {t("accountPage.featureSection.badge")}
+        </HomeButton>
 
         {/* Heading */}
         <Heading>
