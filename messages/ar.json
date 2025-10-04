@@ -461,5 +461,11 @@
     "areaCodePlaceholder": "رمز المنطقة",
     "recurringMembershipCheckbox": "أفهم أن هذه عضوية شهرية متكررة وأنه سيتم خصم الرسوم تلقائيًا كل شهر باستخدام الطريقة المحددة أعلاه، بغض النظر عما إذا قمت بإعادة تعيين هذا الحساب وحتى ألغي العضوية.",
     "payButton": "ادفع USD ${{amount}}"
+  },
+  "bannerDetails": {
+    "defaultTitle": "مرحبًا بك في Solo Clash",
+    "getStarted": "ابدأ الآن",
+    "startChallenge": "ابدأ التحدي",
+    "redeemTicket": "استرد التذكرة المجانية الآن"
   }
 }
