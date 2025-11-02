@@ -119,16 +119,6 @@ export default function Navbar() {
             <Image src="/logo.svg" alt="SOLO CLASH" width={65} height={52} />
           </Link>
 
-          {/* Language Dropdown */}
-          <LanguageSelector
-            selectedLang={selectedLang}
-            onLanguageChange={(lang) => {
-              document.cookie = `locale=${lang}; path=/; max-age=31536000`;
-              setSelectedLang(lang);
-              window.location.reload();
-            }}
-          />
-
           {/* Links */}
           <div className="hidden lg:flex items-center gap-6 text-sm ml-6">
             <div className="flex items-center gap-10">
@@ -158,6 +148,15 @@ export default function Navbar() {
 
         {/* Right Section */}
         <div className="hidden lg:flex items-center gap-4">
+          {/* Language Dropdown */}
+          <LanguageSelector
+            selectedLang={selectedLang}
+            onLanguageChange={(lang) => {
+              document.cookie = `locale=${lang}; path=/; max-age=31536000`;
+              setSelectedLang(lang);
+              window.location.reload();
+            }}
+          />
           <Link
             href="/get-funded"
             className="bg-neutral-900 px-4 py-2 rounded-full font-medium h-[52px] flex items-center justify-center"
@@ -166,7 +165,7 @@ export default function Navbar() {
           </Link>
 
           {/* Social Icons */}
-          <div className="flex items-center gap-3">
+          {/* <div className="flex items-center gap-3">
             {socialLinks.map(({ href, src, alt, width, height }) => (
               <Link
                 key={href}
@@ -177,7 +176,7 @@ export default function Navbar() {
                 <Image src={src} alt={alt} width={width} height={height} />
               </Link>
             ))}
-          </div>
+          </div> */}
         </div>
       </nav>
       {/* Responsive Drawer Menu */}
