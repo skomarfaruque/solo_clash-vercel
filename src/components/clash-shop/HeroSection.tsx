@@ -1,6 +1,7 @@
 import SpinningWheel2 from "../affiliates/SpinnerWheel2";
 import { useTranslations } from "next-intl";
 import Heading from "../common/Heading";
+import NewWheel from "../affiliates/newwheel";
 export default function HeroSection() {
   const t = useTranslations();
   return (
@@ -28,7 +29,8 @@ export default function HeroSection() {
         <p className="mt-6 max-w-3xl mx-auto text-gray-300 text-sm md:text-base leading-relaxed">
           {t("clashShopHero.description")}
         </p>
-        <SpinningWheel2 />
+        {/* <SpinningWheel2 /> */}
+        <NewWheel />
       </div>
     </section>
   );
