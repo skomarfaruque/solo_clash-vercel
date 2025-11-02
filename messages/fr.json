@@ -121,6 +121,9 @@
       ],
       "button": "Tourner la Roue"
     },
+    "tradePlatform": {
+      "heading": "Tradez avec nos plateformes préférées"
+    },
     "banner": {
       "title": "Prêt à trader du capital réel?"
     }

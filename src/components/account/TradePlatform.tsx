@@ -9,6 +9,7 @@ import { useTranslations } from "next-intl";
 
 export default function TradePlatform() {
   const t = useTranslations("accountPage.spinWinTradeSection");
+  const tPlatform = useTranslations("accountPage.tradePlatform");
   const cards = t.raw("cards");
   const icons = [
     "spin_card_icon_one.svg",
@@ -43,7 +44,7 @@ export default function TradePlatform() {
     >
       <div className="flex flex-col justify-center items-center gap-6">
         {/* Heading */}
-        <Heading>Trade with our favorite platforms</Heading>
+        <Heading>{tPlatform("heading")}</Heading>
 
         <TradePlatformCard brands={brands} />
       </div>

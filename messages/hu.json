@@ -81,6 +81,9 @@
       ],
       "button": "Pörgesd a kereket"
     },
+    "tradePlatform": {
+      "heading": "Kereskedj a kedvenc platformjainkkal"
+    },
     "faqSection": {
       "heading": "Gyakran Ismételt Kérdések",
       "description": "Minden, amit tudnod kell a kezdéshez",
