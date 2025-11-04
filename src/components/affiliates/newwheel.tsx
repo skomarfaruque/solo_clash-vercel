@@ -135,6 +135,7 @@ export default function NewWheel() {
             const iconRadius = radius * 0.65;
             const iconX = centerX + iconRadius * Math.cos(iconAngle);
             const iconY = centerY + iconRadius * Math.sin(iconAngle);
+            const iconRotation = ((index + 0.5) * 360) / segments.length;
 
             return (
               <g key={index}>
@@ -150,6 +151,7 @@ export default function NewWheel() {
                   y={iconY - 25}
                   width="50"
                   height="50"
+                  transform={`rotate(${iconRotation}, ${iconX}, ${iconY})`}
                 />
               </g>
             );
