@@ -61,7 +61,7 @@ export default function LanguageSelector({
           height={26}
           className="rounded"
         />
-        {selectedLangObj.title}
+        {selectedLangObj.code}
         <span className="ml-1">
           <svg
             className="ml-1"

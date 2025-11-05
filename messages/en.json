@@ -81,6 +81,9 @@
       ],
       "button": "Spin the Wheel"
     },
+    "tradePlatform": {
+      "heading": "Trade with our favorite platforms"
+    },
     "faqSection": {
       "heading": "Frequently Asked Questions",
       "description": "Everything you need to know about getting started",
