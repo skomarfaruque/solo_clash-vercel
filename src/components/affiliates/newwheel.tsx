@@ -21,12 +21,86 @@ export default function NewWheel() {
 
   const segmentAngle = 360 / segments.length; // 60 degrees per segment
 
-  const spinWheel = () => {
+  // Define which segments can be winners (indices)
+  // Example: [0, 2, 5] means only segments 0, 2, and 5 can win
+  const allowedWinners = [0, 5]; // Change this array to control which segments can win
+
+  // Method to calculate rotation to land on a specific segment
+  const getRotationForSegment = (
+    targetSegmentIndex: number,
+    currentRotation: number
+  ) => {
+    // The detection logic:
+    // adjustedRotation = (360 - normalizedRotation) % 360
+    // segmentIndex = floor(adjustedRotation / 60)
+    //
+    // For segment 0: adjustedRotation should be 0-60
+    // For segment 1: adjustedRotation should be 60-120
+    // For segment 2: adjustedRotation should be 120-180
+    // etc.
+
+    // We want adjustedRotation to be in the middle of the segment range
+    const targetAdjustedRotation =
+      targetSegmentIndex * segmentAngle + segmentAngle / 2;
+
+    // Since: adjustedRotation = (360 - normalizedRotation) % 360
+    // Therefore: normalizedRotation = (360 - adjustedRotation) % 360
+    let targetNormalizedRotation = (360 - targetAdjustedRotation) % 360;
+    if (targetNormalizedRotation === 0) targetNormalizedRotation = 360;
+
+    // Calculate how much we need to rotate from current position
+    const currentNormalized = currentRotation % 360;
+
+    // Add multiple full rotations for visual effect (at least 4 full spins = 1440 degrees)
+    const baseRotations = 1440; // 4 full rotations
+
+    // Calculate the rotation needed: we want to end at targetNormalizedRotation
+    const rotationNeeded =
+      baseRotations +
+      ((targetNormalizedRotation - currentNormalized + 360) % 360);
+
+    console.log(
+      `🎯 Target segment ${targetSegmentIndex}: current=${currentNormalized.toFixed(
+        2
+      )}, target=${targetNormalizedRotation}, rotation=${rotationNeeded}`
+    );
+
+    return rotationNeeded;
+  };
+
+  const spinWheel = (predefinedWinner?: number) => {
     if (isSpinning) return;
 
     setIsSpinning(true);
-    const randomRotation = Math.floor(Math.random() * 360) + 1440; // At least 4 full rotations
+
+    let randomRotation;
+    if (
+      predefinedWinner !== undefined &&
+      predefinedWinner >= 0 &&
+      predefinedWinner < segments.length
+    ) {
+      // Use predefined winner
+      randomRotation = getRotationForSegment(predefinedWinner, rotation);
+    } else {
+      // Randomly select a winner from the allowedWinners array
+      const randomIndex = Math.floor(Math.random() * allowedWinners.length);
+      const randomWinner = allowedWinners[randomIndex];
+      console.log(
+        "🎲 Selected winner from array:",
+        randomWinner,
+        "from",
+        allowedWinners
+      );
+      randomRotation = getRotationForSegment(randomWinner, rotation);
+    }
+
     const newRotation = rotation + randomRotation;
+    console.log(
+      "🔄 Total rotation:",
+      newRotation,
+      "Additional rotation:",
+      randomRotation
+    );
     setRotation(newRotation);
 
     setTimeout(() => {
@@ -51,6 +125,15 @@ export default function NewWheel() {
       const segmentIndex =
         Math.floor(adjustedRotation / segmentAngle) % segments.length;
       const winnerValue = segments[segmentIndex];
+
+      console.log(
+        "📊 Detection - Normalized:",
+        normalizedRotation.toFixed(2),
+        "Adjusted:",
+        adjustedRotation.toFixed(2),
+        "Index:",
+        segmentIndex
+      );
 
       setWinner(winnerValue);
       console.log("🎯 Winner:", winnerValue);
@@ -180,7 +263,7 @@ export default function NewWheel() {
       </div>
 
       <button
-        onClick={spinWheel}
+        onClick={() => spinWheel()} // Random winner
         disabled={isSpinning}
         className="px-8 py-3 bg-gradient-to-r from-[#F37E2C] to-[#FFA362] text-black font-semibold text-lg rounded-xl hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
       >

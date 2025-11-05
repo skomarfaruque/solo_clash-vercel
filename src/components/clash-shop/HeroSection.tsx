@@ -30,7 +30,9 @@ export default function HeroSection() {
           {t("clashShopHero.description")}
         </p>
         {/* <SpinningWheel2 /> */}
-        <NewWheel />
+        <div className="mt-[79px]">
+          <NewWheel />
+        </div>
       </div>
     </section>
   );
