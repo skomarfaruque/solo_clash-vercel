@@ -7,13 +7,37 @@ interface ApiResponse<T> {
   error?: string;
 }
 
-interface LoginResponse {
-  token: string;
+interface LoginResponseData {
   user: {
     id: string;
     email: string;
-    name?: string;
+    user_name: string;
+    first_name?: string;
+    last_name?: string;
+    is_news_letter: boolean;
+    address_line_1?: string;
+    address_line_2?: string;
+    city?: string;
+    post_code?: string;
+    country_id?: string | null;
+    state?: string;
+    date_of_birth?: string;
+    roleId?: string | null;
+    status: string;
+    createdAt: string;
+    updatedAt: string;
+    deletedAt?: string | null;
+    role?: string | null;
   };
+  access_token: string;
+  refresh_token: string;
+}
+
+interface LoginResponse {
+  success: boolean;
+  message: string;
+  data: LoginResponseData;
+  timestamp: string;
 }
 
 class ApiClient {
@@ -98,6 +122,67 @@ class ApiClient {
 
 const apiClient = new ApiClient(API_BASE_URL);
 
+interface RefreshTokenResponse {
+  success: boolean;
+  message: string;
+  data: {
+    access_token: string;
+    refresh_token: string;
+  };
+  timestamp: string;
+}
+
+/**
+ * Refresh the access token using the refresh token
+ */
+export const refreshAccessToken = async (): Promise<string | null> => {
+  try {
+    const refreshToken = localStorage.getItem("adminRefreshToken");
+
+    if (!refreshToken) {
+      console.error("No refresh token available");
+      return null;
+    }
+
+    const response = await fetch(`${API_BASE_URL}/auth/refresh`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        refresh_token: refreshToken,
+      }),
+    });
+
+    const data = (await response.json()) as RefreshTokenResponse;
+
+    if (data.success && data.data?.access_token) {
+      // Store new tokens
+      localStorage.setItem("adminToken", data.data.access_token);
+      localStorage.setItem("adminRefreshToken", data.data.refresh_token);
+
+      // Update cookies
+      const expiryDate = new Date();
+      expiryDate.setTime(expiryDate.getTime() + 24 * 60 * 60 * 1000);
+      document.cookie = `adminToken=${
+        data.data.access_token
+      }; expires=${expiryDate.toUTCString()}; path=/`;
+      document.cookie = `adminRefreshToken=${
+        data.data.refresh_token
+      }; expires=${expiryDate.toUTCString()}; path=/`;
+
+      console.log("Token refreshed successfully");
+      return data.data.access_token;
+    } else {
+      console.error("Failed to refresh token:", data.message);
+      return null;
+    }
+  } catch (error) {
+    console.error("Error refreshing token:", error);
+    return null;
+  }
+};
+
 export const authApi = {
   login: async (email: string, password: string) => {
     return apiClient.post<LoginResponse>("/auth/login", {
@@ -107,5 +192,5 @@ export const authApi = {
   },
 };
 
-export type { ApiResponse, LoginResponse };
+export type { ApiResponse, LoginResponse, RefreshTokenResponse };
 export default apiClient;
