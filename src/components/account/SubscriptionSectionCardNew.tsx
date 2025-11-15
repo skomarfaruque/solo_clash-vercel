@@ -51,30 +51,42 @@ export default function SubscriptionSectionCardNew({
       </div>
 
       {/* Monthly price */}
-      <p className="text-xl font-semibold border-b border-[rgba(255,255,255,0.06)] flex px-8 pt-[20px] pb-[20px]">
-        {currencyIcon}
-        {subscription?.monthly_price || "45"}
-        /mo{" "}
-        <sup
-          className="font-normal text-xs sm:text-sm leading-6"
-          style={{ color: "#B7B7B7" }}
-        >
-          {selectedCurrency}
-        </sup>
-      </p>
+      <div className="border-b border-[rgba(255,255,255,0.06)] flex justify-between items-center px-8 pt-[20px] pb-[20px]">
+        <p className="text-xs text-gray-500 lg:hidden">Monthly Price</p>
+        <p className="text-xl font-semibold flex lg:block">
+          {currencyIcon}
+          {subscription?.monthly_price || "45"}
+          /mo{" "}
+          <sup
+            className="font-normal text-xs sm:text-sm leading-6"
+            style={{ color: "#B7B7B7" }}
+          >
+            {selectedCurrency}
+          </sup>
+        </p>
+      </div>
 
       {/* Details */}
-      <p className="border-b border-[rgba(255,255,255,0.06)] flex px-8 pt-[20px] pb-[20px]">
-        {currencyIcon}
-        {subscription?.profit_target || "3,000"}
-      </p>
-      <p className="border-b border-[rgba(255,255,255,0.06)] flex px-8 pt-[20px] pb-[20px]">
-        {subscription?.maximum_position || "5"} Contracts
-      </p>
-      <p className="flex px-8 pt-[20px] pb-[20px]">
-        {currencyIcon}
-        {subscription?.maximum_loss_limit || "2,000"}
-      </p>
+      <div className="border-b border-[rgba(255,255,255,0.06)] flex justify-between items-center px-8 pt-[20px] pb-[20px]">
+        <p className="text-xs text-gray-500 lg:hidden">Min Profit</p>
+        <p className="lg:block">
+          {currencyIcon}
+          {subscription?.profit_target || "3,000"}
+        </p>
+      </div>
+      <div className="border-b border-[rgba(255,255,255,0.06)] flex justify-between items-center px-8 pt-[20px] pb-[20px]">
+        <p className="text-xs text-gray-500 lg:hidden">Max Contracts</p>
+        <p className="lg:block">
+          {subscription?.maximum_position || "5"} Contracts
+        </p>
+      </div>
+      <div className="flex justify-between items-center px-8 pt-[20px] pb-[20px]">
+        <p className="text-xs text-gray-500 lg:hidden">Max Loss</p>
+        <p className="lg:block">
+          {currencyIcon}
+          {subscription?.maximum_loss_limit || "2,000"}
+        </p>
+      </div>
 
       {/* Button */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
