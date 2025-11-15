@@ -3,23 +3,30 @@
 import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 
-interface Country {
+interface WheelItem {
   id: number;
-  name: string;
-  code: string;
+  item_name: string;
+  value: string;
+  Image_Icon_url: string;
+  will_select: boolean;
   created_at: string;
   updated_at: string;
   deleted_at: string | null;
 }
 
-export default function AdminCountries() {
-  const [countries, setCountries] = useState<Country[]>([]);
+export default function AdminWheelItems() {
+  const [wheelItems, setWheelItems] = useState<WheelItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
   const [formLoading, setFormLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [deleteMessage, setDeleteMessage] = useState("");
-  const [countryName, setCountryName] = useState("");
+  const [editingId, setEditingId] = useState<number | null>(null);
+  const [formData, setFormData] = useState({
+    item_name: "",
+    value: "",
+    will_select: "no",
+  });
   const [deleteConfirmation, setDeleteConfirmation] = useState<{
     show: boolean;
     id: number | null;
@@ -31,11 +38,11 @@ export default function AdminCountries() {
   });
   const router = useRouter();
 
-  const fetchCountries = useCallback(async () => {
+  const fetchWheelItems = useCallback(async () => {
     try {
       const token = localStorage.getItem("adminToken");
       const response = await fetch(
-        "https://solo-clash-backend.vercel.app/api/v1/country",
+        "https://solo-clash-backend.vercel.app/api/v1/wheel-items",
         {
           method: "GET",
           headers: {
@@ -45,7 +52,6 @@ export default function AdminCountries() {
         }
       );
 
-      // Handle 401 Unauthorized
       if (response.status === 401) {
         const { refreshAccessToken } = await import("@/utils/api");
         const newToken = await refreshAccessToken();
@@ -56,7 +62,7 @@ export default function AdminCountries() {
         }
 
         const retryResponse = await fetch(
-          "https://solo-clash-backend.vercel.app/api/v1/country",
+          "https://solo-clash-backend.vercel.app/api/v1/wheel-items",
           {
             method: "GET",
             headers: {
@@ -68,35 +74,35 @@ export default function AdminCountries() {
 
         const data = await retryResponse.json();
         if (data.success && data.data?.items) {
-          setCountries(data.data.items);
+          setWheelItems(data.data.items);
         } else {
-          console.error("Failed to fetch countries:", data.message);
+          console.error("Failed to fetch wheel items:", data.message);
         }
       } else {
         const data = await response.json();
         if (data.success && data.data?.items) {
-          setCountries(data.data.items);
+          setWheelItems(data.data.items);
         } else {
-          console.error("Failed to fetch countries:", data.message);
+          console.error("Failed to fetch wheel items:", data.message);
         }
       }
     } catch (err) {
-      console.error("Error fetching countries:", err);
+      console.error("Error fetching wheel items:", err);
     } finally {
       setLoading(false);
     }
   }, [router]);
 
   useEffect(() => {
-    fetchCountries();
-  }, [fetchCountries]);
+    fetchWheelItems();
+  }, [fetchWheelItems]);
 
-  const handleDeleteCountry = (id: number) => {
-    const country = countries.find((c) => c.id === id);
+  const handleDeleteWheelItem = (id: number) => {
+    const item = wheelItems.find((w) => w.id === id);
     setDeleteConfirmation({
       show: true,
       id,
-      name: country?.name || "Country",
+      name: item?.item_name || "Wheel Item",
     });
   };
 
@@ -107,7 +113,7 @@ export default function AdminCountries() {
       const token = localStorage.getItem("adminToken");
 
       const response = await fetch(
-        `https://solo-clash-backend.vercel.app/api/v1/country/${deleteConfirmation.id}`,
+        `https://solo-clash-backend.vercel.app/api/v1/wheel-items/${deleteConfirmation.id}`,
         {
           method: "DELETE",
           headers: {
@@ -120,62 +126,93 @@ export default function AdminCountries() {
       const data = await response.json();
 
       if (data.success) {
-        await fetchCountries();
+        await fetchWheelItems();
         setDeleteMessage(`✓ ${deleteConfirmation.name} deleted successfully!`);
         setTimeout(() => setDeleteMessage(""), 4000);
       } else {
-        alert(data.message || "Failed to delete country");
+        alert(data.message || "Failed to delete wheel item");
       }
     } catch (err) {
-      console.error("Error deleting country:", err);
-      alert("An error occurred while deleting country");
+      console.error("Error deleting wheel item:", err);
+      alert("An error occurred while deleting wheel item");
     } finally {
       setDeleteConfirmation({ show: false, id: null, name: "" });
     }
   };
 
-  const handleAddCountry = async (e: React.FormEvent<HTMLFormElement>) => {
+  const cancelDelete = () => {
+    setDeleteConfirmation({ show: false, id: null, name: "" });
+  };
+
+  const handleEditWheelItem = (item: WheelItem) => {
+    setEditingId(item.id);
+    setFormData({
+      item_name: item.item_name,
+      value: item.value,
+      will_select: item.will_select ? "yes" : "no",
+    });
+    setShowForm(true);
+  };
+
+  const handleCancelForm = () => {
+    setShowForm(false);
+    setEditingId(null);
+    setFormData({
+      item_name: "",
+      value: "",
+      will_select: "no",
+    });
+  };
+
+  const handleAddWheelItem = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormLoading(true);
 
     try {
       const token = localStorage.getItem("adminToken");
+      const isEditing = editingId !== null;
+      const url = isEditing
+        ? `https://solo-clash-backend.vercel.app/api/v1/wheel-items/${editingId}`
+        : "https://solo-clash-backend.vercel.app/api/v1/wheel-items";
 
-      const response = await fetch(
-        "https://solo-clash-backend.vercel.app/api/v1/country",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify({
-            name: countryName,
-          }),
-        }
-      );
+      const response = await fetch(url, {
+        method: isEditing ? "PATCH" : "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          item_name: formData.item_name,
+          value: formData.value,
+          will_select: formData.will_select === "yes",
+        }),
+      });
 
       const data = await response.json();
 
       if (data.success) {
-        setCountryName("");
+        setFormData({
+          item_name: "",
+          value: "",
+          will_select: "no",
+        });
         setShowForm(false);
-        setSuccessMessage(`✓ ${countryName} added successfully!`);
+        setEditingId(null);
+        const message = isEditing ? "updated" : "added";
+        setSuccessMessage(`✓ ${formData.item_name} ${message} successfully!`);
         setTimeout(() => setSuccessMessage(""), 4000);
-        await fetchCountries();
+        await fetchWheelItems();
       } else {
-        alert(data.message || "Failed to add country");
+        alert(
+          data.message || `Failed to ${isEditing ? "update" : "add"} wheel item`
+        );
       }
     } catch (err) {
-      console.error("Error adding country:", err);
-      alert("An error occurred while adding country");
+      console.error("Error saving wheel item:", err);
+      alert("An error occurred while saving wheel item");
     } finally {
       setFormLoading(false);
     }
-  };
-
-  const cancelDelete = () => {
-    setDeleteConfirmation({ show: false, id: null, name: "" });
   };
 
   if (loading) {
@@ -275,7 +312,13 @@ export default function AdminCountries() {
                   marginBottom: "16px",
                 }}
               >
-                <div style={{ fontSize: "32px" }}>⚠️</div>
+                <div
+                  style={{
+                    fontSize: "32px",
+                  }}
+                >
+                  ⚠️
+                </div>
                 <h3
                   style={{
                     color: "#FFFFFF",
@@ -284,7 +327,7 @@ export default function AdminCountries() {
                     margin: 0,
                   }}
                 >
-                  Delete Country?
+                  Delete Wheel Item?
                 </h3>
               </div>
 
@@ -399,7 +442,7 @@ export default function AdminCountries() {
           }
         `}</style>
 
-        {/* Countries Section */}
+        {/* Wheel Items Section */}
         <div
           style={{
             background: "#1a1a1a",
@@ -424,10 +467,16 @@ export default function AdminCountries() {
                 margin: 0,
               }}
             >
-              Countries List
+              Wheel Items
             </h3>
             <button
-              onClick={() => setShowForm(!showForm)}
+              onClick={() => {
+                if (showForm) {
+                  handleCancelForm();
+                } else {
+                  setShowForm(true);
+                }
+              }}
               style={{
                 padding: "10px 16px",
                 backgroundColor: "#2BB6DD",
@@ -446,55 +495,131 @@ export default function AdminCountries() {
                 (e.currentTarget as HTMLButtonElement).style.opacity = "1";
               }}
             >
-              {showForm ? "Cancel" : "+ Add New Country"}
+              {showForm ? "Cancel" : "+ Add New Wheel Item"}
             </button>
           </div>
 
-          {/* Add Country Form */}
+          {/* Add Wheel Item Form */}
           {showForm && (
             <form
-              onSubmit={handleAddCountry}
+              onSubmit={handleAddWheelItem}
               style={{
                 background: "#2a2a2a",
                 padding: "20px",
                 borderRadius: "8px",
                 marginBottom: "24px",
                 border: "1px solid rgba(255, 255, 255, 0.1)",
-                display: "flex",
-                gap: "12px",
-                alignItems: "flex-end",
               }}
             >
-              <div style={{ flex: 1 }}>
-                <label
-                  style={{
-                    display: "block",
-                    marginBottom: "8px",
-                    color: "#FFFFFF",
-                    fontSize: "14px",
-                    fontWeight: 500,
-                  }}
-                >
-                  Country Name
-                </label>
-                <input
-                  type="text"
-                  value={countryName}
-                  onChange={(e) => setCountryName(e.target.value)}
-                  placeholder="Enter country name"
-                  required
-                  style={{
-                    width: "100%",
-                    padding: "10px",
-                    backgroundColor: "#1a1a1a",
-                    color: "#FFFFFF",
-                    border: "1px solid rgba(255, 255, 255, 0.2)",
-                    borderRadius: "6px",
-                    fontSize: "14px",
-                    outline: "none",
-                    boxSizing: "border-box",
-                  }}
-                />
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+                  gap: "16px",
+                  marginBottom: "16px",
+                }}
+              >
+                <div>
+                  <label
+                    style={{
+                      display: "block",
+                      marginBottom: "8px",
+                      color: "#FFFFFF",
+                      fontSize: "14px",
+                      fontWeight: 500,
+                    }}
+                  >
+                    Item Name
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.item_name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, item_name: e.target.value })
+                    }
+                    placeholder="Enter item name"
+                    required
+                    style={{
+                      width: "100%",
+                      padding: "10px",
+                      backgroundColor: "#1a1a1a",
+                      color: "#FFFFFF",
+                      border: "1px solid rgba(255, 255, 255, 0.2)",
+                      borderRadius: "6px",
+                      fontSize: "14px",
+                      outline: "none",
+                      boxSizing: "border-box",
+                    }}
+                  />
+                </div>
+
+                <div>
+                  <label
+                    style={{
+                      display: "block",
+                      marginBottom: "8px",
+                      color: "#FFFFFF",
+                      fontSize: "14px",
+                      fontWeight: 500,
+                    }}
+                  >
+                    Value
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.value}
+                    onChange={(e) =>
+                      setFormData({ ...formData, value: e.target.value })
+                    }
+                    placeholder="Enter value (e.g., 58%)"
+                    required
+                    style={{
+                      width: "100%",
+                      padding: "10px",
+                      backgroundColor: "#1a1a1a",
+                      color: "#FFFFFF",
+                      border: "1px solid rgba(255, 255, 255, 0.2)",
+                      borderRadius: "6px",
+                      fontSize: "14px",
+                      outline: "none",
+                      boxSizing: "border-box",
+                    }}
+                  />
+                </div>
+
+                <div>
+                  <label
+                    style={{
+                      display: "block",
+                      marginBottom: "8px",
+                      color: "#FFFFFF",
+                      fontSize: "14px",
+                      fontWeight: 500,
+                    }}
+                  >
+                    Will Select
+                  </label>
+                  <select
+                    value={formData.will_select}
+                    onChange={(e) =>
+                      setFormData({ ...formData, will_select: e.target.value })
+                    }
+                    style={{
+                      width: "100%",
+                      padding: "10px",
+                      backgroundColor: "#1a1a1a",
+                      color: "#FFFFFF",
+                      border: "1px solid rgba(255, 255, 255, 0.2)",
+                      borderRadius: "6px",
+                      fontSize: "14px",
+                      outline: "none",
+                      boxSizing: "border-box",
+                    }}
+                  >
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                  </select>
+                </div>
               </div>
 
               <button
@@ -511,7 +636,6 @@ export default function AdminCountries() {
                   cursor: formLoading ? "not-allowed" : "pointer",
                   opacity: formLoading ? 0.6 : 1,
                   transition: "opacity 0.3s ease",
-                  whiteSpace: "nowrap",
                 }}
                 onMouseEnter={(e) => {
                   if (!formLoading) {
@@ -525,13 +649,17 @@ export default function AdminCountries() {
                   }
                 }}
               >
-                {formLoading ? "Adding..." : "Add Country"}
+                {editingId
+                  ? formLoading
+                    ? "Updating..."
+                    : "Update Wheel Item"
+                  : formLoading
+                  ? "Adding..."
+                  : "Add Wheel Item"}
               </button>
             </form>
           )}
-
-          {/* Countries Table */}
-          {countries.length > 0 ? (
+          {wheelItems.length > 0 ? (
             <div style={{ overflowX: "auto" }}>
               <table
                 style={{
@@ -554,7 +682,7 @@ export default function AdminCountries() {
                         fontSize: "14px",
                       }}
                     >
-                      ID
+                      Item Name
                     </th>
                     <th
                       style={{
@@ -564,7 +692,7 @@ export default function AdminCountries() {
                         fontSize: "14px",
                       }}
                     >
-                      Country Name
+                      Value
                     </th>
                     <th
                       style={{
@@ -574,17 +702,7 @@ export default function AdminCountries() {
                         fontSize: "14px",
                       }}
                     >
-                      Country Code
-                    </th>
-                    <th
-                      style={{
-                        textAlign: "left",
-                        padding: "12px",
-                        fontWeight: 600,
-                        fontSize: "14px",
-                      }}
-                    >
-                      Created Date
+                      Will Select
                     </th>
                     <th
                       style={{
@@ -599,66 +717,91 @@ export default function AdminCountries() {
                   </tr>
                 </thead>
                 <tbody>
-                  {countries.map((country) => (
+                  {wheelItems.map((item) => (
                     <tr
-                      key={country.id}
+                      key={item.id}
                       style={{
                         borderBottom: "1px solid rgba(255, 255, 255, 0.05)",
                       }}
                     >
                       <td style={{ padding: "12px", fontSize: "14px" }}>
-                        {country.id}
+                        {item.item_name}
                       </td>
                       <td style={{ padding: "12px", fontSize: "14px" }}>
-                        {country.name}
+                        {item.value}
                       </td>
-                      <td
-                        style={{
-                          padding: "12px",
-                          fontSize: "14px",
-                          backgroundColor: "rgba(43, 182, 221, 0.1)",
-                          borderRadius: "4px",
-                          fontWeight: 500,
-                        }}
-                      >
-                        {country.code}
-                      </td>
-                      <td
-                        style={{
-                          padding: "12px",
-                          fontSize: "14px",
-                          color: "rgba(255, 255, 255, 0.7)",
-                        }}
-                      >
-                        {new Date(country.created_at).toLocaleDateString()}
-                      </td>
-                      <td style={{ padding: "12px" }}>
-                        <button
-                          onClick={() => handleDeleteCountry(country.id)}
+                      <td style={{ padding: "12px", fontSize: "14px" }}>
+                        <span
                           style={{
-                            padding: "6px 12px",
-                            backgroundColor: "#ff4444",
-                            color: "#FFFFFF",
-                            border: "none",
+                            backgroundColor: item.will_select
+                              ? "rgba(43, 182, 221, 0.2)"
+                              : "rgba(255, 107, 107, 0.2)",
+                            color: item.will_select ? "#2BB6DD" : "#ff6b6b",
+                            padding: "4px 8px",
                             borderRadius: "4px",
                             fontSize: "12px",
                             fontWeight: 600,
-                            cursor: "pointer",
-                            transition: "background-color 0.3s ease",
-                          }}
-                          onMouseEnter={(e) => {
-                            (
-                              e.currentTarget as HTMLButtonElement
-                            ).style.backgroundColor = "#cc0000";
-                          }}
-                          onMouseLeave={(e) => {
-                            (
-                              e.currentTarget as HTMLButtonElement
-                            ).style.backgroundColor = "#ff4444";
+                            textTransform: "capitalize",
                           }}
                         >
-                          Delete
-                        </button>
+                          {item.will_select ? "Yes" : "No"}
+                        </span>
+                      </td>
+                      <td style={{ padding: "12px" }}>
+                        <div style={{ display: "flex", gap: "8px" }}>
+                          <button
+                            onClick={() => handleEditWheelItem(item)}
+                            style={{
+                              padding: "6px 12px",
+                              backgroundColor: "#2BB6DD",
+                              color: "#030303",
+                              border: "none",
+                              borderRadius: "4px",
+                              fontSize: "12px",
+                              fontWeight: 600,
+                              cursor: "pointer",
+                              transition: "background-color 0.3s ease",
+                            }}
+                            onMouseEnter={(e) => {
+                              (
+                                e.currentTarget as HTMLButtonElement
+                              ).style.backgroundColor = "#1a9fb5";
+                            }}
+                            onMouseLeave={(e) => {
+                              (
+                                e.currentTarget as HTMLButtonElement
+                              ).style.backgroundColor = "#2BB6DD";
+                            }}
+                          >
+                            Edit
+                          </button>
+                          <button
+                            onClick={() => handleDeleteWheelItem(item.id)}
+                            style={{
+                              padding: "6px 12px",
+                              backgroundColor: "#ff4444",
+                              color: "#FFFFFF",
+                              border: "none",
+                              borderRadius: "4px",
+                              fontSize: "12px",
+                              fontWeight: 600,
+                              cursor: "pointer",
+                              transition: "background-color 0.3s ease",
+                            }}
+                            onMouseEnter={(e) => {
+                              (
+                                e.currentTarget as HTMLButtonElement
+                              ).style.backgroundColor = "#cc0000";
+                            }}
+                            onMouseLeave={(e) => {
+                              (
+                                e.currentTarget as HTMLButtonElement
+                              ).style.backgroundColor = "#ff4444";
+                            }}
+                          >
+                            Delete
+                          </button>
+                        </div>
                       </td>
                     </tr>
                   ))}
@@ -673,7 +816,9 @@ export default function AdminCountries() {
                 color: "rgba(255, 255, 255, 0.5)",
               }}
             >
-              <p style={{ margin: 0, fontSize: "14px" }}>No countries found.</p>
+              <p style={{ margin: 0, fontSize: "14px" }}>
+                No wheel items found.
+              </p>
             </div>
           )}
         </div>

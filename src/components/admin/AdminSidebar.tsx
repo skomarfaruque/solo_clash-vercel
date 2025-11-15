@@ -17,8 +17,8 @@ const NAV_ITEMS: NavItem[] = [
     icon: "📊",
   },
   {
-    label: "Subscriptions",
-    href: "/admin/dashboard/subscriptions",
+    label: "Subscription Plans",
+    href: "/admin/dashboard/plans",
     icon: "🎫",
   },
   {
@@ -30,6 +30,11 @@ const NAV_ITEMS: NavItem[] = [
     label: "Users",
     href: "/admin/dashboard/users",
     icon: "👥",
+  },
+  {
+    label: "Wheel Items",
+    href: "/admin/dashboard/wheel-items",
+    icon: "🎡",
   },
   {
     label: "Reports",
