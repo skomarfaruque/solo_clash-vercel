@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import AdminSidebar from "@/components/admin/AdminSidebar";
 
 export const metadata: Metadata = {
   title: "Admin Dashboard",
@@ -10,5 +11,10 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <div style={{ display: "flex", minHeight: "100vh" }}>
+      <AdminSidebar />
+      <main style={{ flex: 1, overflowY: "auto" }}>{children}</main>
+    </div>
+  );
 }

@@ -28,24 +28,37 @@ export default function AdminLoginSection() {
       // Call API
       const response = await authApi.login(email, password);
 
-      // Store token in localStorage
-      if (response.token) {
-        localStorage.setItem("adminToken", response.token);
+      console.log("Login response:", response);
 
-        // Store token in cookie with proper formatting
-        const expiryDate = new Date();
-        expiryDate.setTime(expiryDate.getTime() + 24 * 60 * 60 * 1000); // 24 hours
-        document.cookie = `adminToken=${
-          response.token
-        }; expires=${expiryDate.toUTCString()}; path=/`;
+      // Extract tokens and user data from the response structure
+      const accessToken = response.data?.access_token;
+      const refreshToken = response.data?.refresh_token;
+      const user = response.data?.user;
+
+      if (!accessToken) {
+        setError("No token received from server. Please try again.");
+        return;
       }
+
+      // Store tokens in localStorage
+      localStorage.setItem("adminToken", accessToken);
+      localStorage.setItem("adminRefreshToken", refreshToken);
+      console.log("Tokens stored in localStorage");
+
+      // Store tokens in cookies with proper formatting
+      const expiryDate = new Date();
+      expiryDate.setTime(expiryDate.getTime() + 24 * 60 * 60 * 1000); // 24 hours
+      document.cookie = `adminToken=${accessToken}; expires=${expiryDate.toUTCString()}; path=/`;
+      document.cookie = `adminRefreshToken=${refreshToken}; expires=${expiryDate.toUTCString()}; path=/`;
+      console.log("Tokens stored in cookies");
 
       // Store user data
-      if (response.user) {
-        localStorage.setItem("adminUser", JSON.stringify(response.user));
+      if (user) {
+        localStorage.setItem("adminUser", JSON.stringify(user));
+        console.log("User data stored:", user);
       }
 
-      // Small delay to ensure cookie is set before redirect
+      // Small delay to ensure cookies are set before redirect
       await new Promise((resolve) => setTimeout(resolve, 100));
 
       // Redirect to dashboard
