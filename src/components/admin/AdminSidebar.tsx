@@ -32,6 +32,11 @@ const NAV_ITEMS: NavItem[] = [
     icon: "👥",
   },
   {
+    label: "Wheel Items",
+    href: "/admin/dashboard/wheel-items",
+    icon: "🎡",
+  },
+  {
     label: "Reports",
     href: "/admin/dashboard/reports",
     icon: "📈",
