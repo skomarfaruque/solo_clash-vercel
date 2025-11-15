@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
@@ -8,11 +8,19 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./SignupSection.css";
 
+interface Country {
+  id: number;
+  name: string;
+  code: string;
+}
+
 export default function SignupSection() {
   const t = useTranslations("signupSection");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [countries, setCountries] = useState<Country[]>([]);
+  const [loadingCountries, setLoadingCountries] = useState(true);
   const searchParams = useSearchParams();
   const step = searchParams.get("step") || "1";
   const [formData, setFormData] = useState({
@@ -27,6 +35,39 @@ export default function SignupSection() {
     dob: "",
     confirm: false,
   });
+
+  // Fetch countries on component mount
+  useEffect(() => {
+    const fetchCountries = async () => {
+      try {
+        const token = localStorage.getItem("adminToken");
+        const response = await fetch(
+          "https://solo-clash-backend.vercel.app/api/v1/country",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              ...(token && { Authorization: `Bearer ${token}` }),
+            },
+          }
+        );
+
+        const data = await response.json();
+
+        if (data.success && data.data?.items) {
+          setCountries(data.data.items);
+        } else {
+          console.error("Failed to fetch countries:", data.message);
+        }
+      } catch (err) {
+        console.error("Error fetching countries:", err);
+      } finally {
+        setLoadingCountries(false);
+      }
+    };
+
+    fetchCountries();
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -298,10 +339,18 @@ export default function SignupSection() {
                     value={formData.country}
                     onChange={handleChange}
                     className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 custom-input"
+                    disabled={loadingCountries}
                   >
-                    <option value="">--Please Select--</option>
-                    <option value="US">USA</option>
-                    <option value="CA">Canada</option>
+                    <option value="">
+                      {loadingCountries
+                        ? "Loading countries..."
+                        : "--Please Select--"}
+                    </option>
+                    {countries.map((country) => (
+                      <option key={country.id} value={country.id}>
+                        {country.name}
+                      </option>
+                    ))}
                   </select>
                 </div>
                 <div>
