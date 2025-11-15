@@ -17,7 +17,15 @@ interface WheelItem {
 export default function AdminWheelItems() {
   const [wheelItems, setWheelItems] = useState<WheelItem[]>([]);
   const [loading, setLoading] = useState(true);
+  const [showForm, setShowForm] = useState(false);
+  const [formLoading, setFormLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
   const [deleteMessage, setDeleteMessage] = useState("");
+  const [formData, setFormData] = useState({
+    item_name: "",
+    value: "",
+    will_select: "no",
+  });
   const [deleteConfirmation, setDeleteConfirmation] = useState<{
     show: boolean;
     id: number | null;
@@ -135,6 +143,52 @@ export default function AdminWheelItems() {
     setDeleteConfirmation({ show: false, id: null, name: "" });
   };
 
+  const handleAddWheelItem = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormLoading(true);
+
+    try {
+      const token = localStorage.getItem("adminToken");
+
+      const response = await fetch(
+        "https://solo-clash-backend.vercel.app/api/v1/wheel-items",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            item_name: formData.item_name,
+            value: formData.value,
+            will_select: formData.will_select === "yes",
+          }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (data.success) {
+        setFormData({
+          item_name: "",
+          value: "",
+          will_select: "no",
+        });
+        setShowForm(false);
+        setSuccessMessage(`✓ ${formData.item_name} added successfully!`);
+        setTimeout(() => setSuccessMessage(""), 4000);
+        await fetchWheelItems();
+      } else {
+        alert(data.message || "Failed to add wheel item");
+      }
+    } catch (err) {
+      console.error("Error adding wheel item:", err);
+      alert("An error occurred while adding wheel item");
+    } finally {
+      setFormLoading(false);
+    }
+  };
+
   if (loading) {
     return (
       <div
@@ -150,6 +204,28 @@ export default function AdminWheelItems() {
     <div className="min-h-screen" style={{ backgroundColor: "#030303" }}>
       {/* Main Content */}
       <main style={{ padding: "24px" }}>
+        {/* Success Toast */}
+        {successMessage && (
+          <div
+            style={{
+              position: "fixed",
+              top: "20px",
+              right: "20px",
+              backgroundColor: "#2BB6DD",
+              color: "#030303",
+              padding: "16px 24px",
+              borderRadius: "8px",
+              fontWeight: 600,
+              fontSize: "14px",
+              boxShadow: "0 4px 12px rgba(43, 182, 221, 0.3)",
+              animation: "slideIn 0.3s ease-out",
+              zIndex: 1000,
+            }}
+          >
+            {successMessage}
+          </div>
+        )}
+
         {/* Delete Toast */}
         {deleteMessage && (
           <div
@@ -367,9 +443,184 @@ export default function AdminWheelItems() {
             >
               Wheel Items
             </h3>
+            <button
+              onClick={() => setShowForm(!showForm)}
+              style={{
+                padding: "10px 16px",
+                backgroundColor: "#2BB6DD",
+                color: "#030303",
+                border: "none",
+                borderRadius: "8px",
+                fontSize: "14px",
+                fontWeight: 600,
+                cursor: "pointer",
+                transition: "opacity 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.opacity = "0.8";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.opacity = "1";
+              }}
+            >
+              {showForm ? "Cancel" : "+ Add New Wheel Item"}
+            </button>
           </div>
 
-          {/* Wheel Items Table */}
+          {/* Add Wheel Item Form */}
+          {showForm && (
+            <form
+              onSubmit={handleAddWheelItem}
+              style={{
+                background: "#2a2a2a",
+                padding: "20px",
+                borderRadius: "8px",
+                marginBottom: "24px",
+                border: "1px solid rgba(255, 255, 255, 0.1)",
+              }}
+            >
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+                  gap: "16px",
+                  marginBottom: "16px",
+                }}
+              >
+                <div>
+                  <label
+                    style={{
+                      display: "block",
+                      marginBottom: "8px",
+                      color: "#FFFFFF",
+                      fontSize: "14px",
+                      fontWeight: 500,
+                    }}
+                  >
+                    Item Name
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.item_name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, item_name: e.target.value })
+                    }
+                    placeholder="Enter item name"
+                    required
+                    style={{
+                      width: "100%",
+                      padding: "10px",
+                      backgroundColor: "#1a1a1a",
+                      color: "#FFFFFF",
+                      border: "1px solid rgba(255, 255, 255, 0.2)",
+                      borderRadius: "6px",
+                      fontSize: "14px",
+                      outline: "none",
+                      boxSizing: "border-box",
+                    }}
+                  />
+                </div>
+
+                <div>
+                  <label
+                    style={{
+                      display: "block",
+                      marginBottom: "8px",
+                      color: "#FFFFFF",
+                      fontSize: "14px",
+                      fontWeight: 500,
+                    }}
+                  >
+                    Value
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.value}
+                    onChange={(e) =>
+                      setFormData({ ...formData, value: e.target.value })
+                    }
+                    placeholder="Enter value (e.g., 58%)"
+                    required
+                    style={{
+                      width: "100%",
+                      padding: "10px",
+                      backgroundColor: "#1a1a1a",
+                      color: "#FFFFFF",
+                      border: "1px solid rgba(255, 255, 255, 0.2)",
+                      borderRadius: "6px",
+                      fontSize: "14px",
+                      outline: "none",
+                      boxSizing: "border-box",
+                    }}
+                  />
+                </div>
+
+                <div>
+                  <label
+                    style={{
+                      display: "block",
+                      marginBottom: "8px",
+                      color: "#FFFFFF",
+                      fontSize: "14px",
+                      fontWeight: 500,
+                    }}
+                  >
+                    Will Select
+                  </label>
+                  <select
+                    value={formData.will_select}
+                    onChange={(e) =>
+                      setFormData({ ...formData, will_select: e.target.value })
+                    }
+                    style={{
+                      width: "100%",
+                      padding: "10px",
+                      backgroundColor: "#1a1a1a",
+                      color: "#FFFFFF",
+                      border: "1px solid rgba(255, 255, 255, 0.2)",
+                      borderRadius: "6px",
+                      fontSize: "14px",
+                      outline: "none",
+                      boxSizing: "border-box",
+                    }}
+                  >
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                  </select>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                disabled={formLoading}
+                style={{
+                  padding: "10px 20px",
+                  backgroundColor: "#2BB6DD",
+                  color: "#030303",
+                  border: "none",
+                  borderRadius: "6px",
+                  fontSize: "14px",
+                  fontWeight: 600,
+                  cursor: formLoading ? "not-allowed" : "pointer",
+                  opacity: formLoading ? 0.6 : 1,
+                  transition: "opacity 0.3s ease",
+                }}
+                onMouseEnter={(e) => {
+                  if (!formLoading) {
+                    (e.currentTarget as HTMLButtonElement).style.opacity =
+                      "0.8";
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!formLoading) {
+                    (e.currentTarget as HTMLButtonElement).style.opacity = "1";
+                  }
+                }}
+              >
+                {formLoading ? "Adding..." : "Add Wheel Item"}
+              </button>
+            </form>
+          )}
           {wheelItems.length > 0 ? (
             <div style={{ overflowX: "auto" }}>
               <table
