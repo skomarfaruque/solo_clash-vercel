@@ -10,11 +10,6 @@ import SubscriptionSectionCardNew from "./SubscriptionSectionCardNew";
 export default function SubscriptionsSectionNew() {
   const t = useTranslations("accountPage.subscriptionsSection");
   const plans = t.raw("plans");
-  const images = [
-    "new_subscription_bg.svg",
-    "new_subscription_bg-active.svg",
-    "new_subscription_bg.svg",
-  ];
   const [selectedCurrency, setSelectedCurrency] = useState("usd");
 
   useEffect(() => {
@@ -51,15 +46,43 @@ export default function SubscriptionsSectionNew() {
           onCurrencySelect={(currency) => handleCurrencyChange(currency)}
         />
 
-        {/* Subscriptions Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 w-full max-w-6xl">
-          {Array.isArray(plans) &&
-            plans.map((plan, idx) => (
-              <SubscriptionSectionCardNew
-                key={plan.title}
-                selectedCurrency={selectedCurrency}
-              />
+        {/* Labels and Subscriptions Container */}
+        <div className="flex gap-8 w-full max-w-7xl">
+          {/* Label Buttons - Left Side */}
+          <div className="flex flex-col gap-4 justify-start flex-shrink-0 mt-[130px]">
+            {[
+              "Monthly Price:",
+              "Profit Target:",
+              "Maximum Position Size:",
+              "Maximum Loss Limit:",
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className="flex items-center rounded-[12px] h-[48px] px-3 py-3"
+                style={{
+                  background:
+                    "linear-gradient(306.21deg, #01090B 39.33%, #07252D 99.95%)",
+                  backdropFilter: "blur(17px)",
+                  boxSizing: "border-box",
+                }}
+              >
+                <span className="text-sm font-medium text-gray-300">
+                  {item}
+                </span>
+              </div>
             ))}
+          </div>
+
+          {/* Subscriptions Grid - Right Side */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 w-full">
+            {Array.isArray(plans) &&
+              plans.map((plan) => (
+                <SubscriptionSectionCardNew
+                  key={plan.title}
+                  selectedCurrency={selectedCurrency}
+                />
+              ))}
+          </div>
         </div>
       </div>
     </section>
