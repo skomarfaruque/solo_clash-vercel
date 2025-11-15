@@ -538,7 +538,8 @@ export default function AdminCountries() {
                 }}
                 onMouseEnter={(e) => {
                   if (!formLoading) {
-                    (e.currentTarget as HTMLButtonElement).style.opacity = "0.8";
+                    (e.currentTarget as HTMLButtonElement).style.opacity =
+                      "0.8";
                   }
                 }}
                 onMouseLeave={(e) => {
