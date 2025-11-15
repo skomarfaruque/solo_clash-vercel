@@ -22,6 +22,11 @@ const NAV_ITEMS: NavItem[] = [
     icon: "🎫",
   },
   {
+    label: "Countries",
+    href: "/admin/dashboard/countries",
+    icon: "🌍",
+  },
+  {
     label: "Users",
     href: "/admin/dashboard/users",
     icon: "👥",
