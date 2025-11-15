@@ -17,8 +17,8 @@ const NAV_ITEMS: NavItem[] = [
     icon: "📊",
   },
   {
-    label: "Subscriptions",
-    href: "/admin/dashboard/subscriptions",
+    label: "Subscription Plans",
+    href: "/admin/dashboard/plans",
     icon: "🎫",
   },
   {

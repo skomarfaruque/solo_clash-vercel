@@ -2,13 +2,6 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
-
-interface User {
-  id: string;
-  email: string;
-  name?: string;
-}
 
 interface Subscription {
   id: number;
@@ -27,7 +20,6 @@ interface Subscription {
 }
 
 export default function AdminDashboard() {
-  const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const [subscriptions, setSubscriptions] = useState<Subscription[]>([]);
   const [showForm, setShowForm] = useState(false);
@@ -119,18 +111,6 @@ export default function AdminDashboard() {
   }, [router]);
 
   useEffect(() => {
-    // Check if user data is available
-    const userStr = localStorage.getItem("adminUser");
-
-    if (userStr) {
-      try {
-        const userData = JSON.parse(userStr);
-        setUser(userData);
-      } catch (err) {
-        console.error("Failed to parse user data:", err);
-      }
-    }
-
     // Fetch subscriptions
     fetchSubscriptions();
   }, [fetchSubscriptions]);
@@ -247,19 +227,6 @@ export default function AdminDashboard() {
     setDeleteConfirmation({ show: false, id: null, name: "" });
   };
 
-  const handleLogout = () => {
-    // Clear localStorage
-    localStorage.removeItem("adminToken");
-    localStorage.removeItem("adminUser");
-
-    // Clear cookie
-    document.cookie =
-      "adminToken=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
-
-    // Redirect to login
-    router.push("/admin");
-  };
-
   if (loading) {
     return (
       <div
@@ -273,63 +240,6 @@ export default function AdminDashboard() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#030303" }}>
-      {/* Header/Navbar */}
-      <header
-        style={{
-          backgroundColor: "#1a1a1a",
-          borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
-          padding: "16px 24px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <div className="flex items-center gap-3">
-          <Image
-            src="/logo.svg"
-            alt="Logo"
-            width={40}
-            height={40}
-            className="w-10 h-10"
-          />
-          <h1 style={{ color: "#FFFFFF", fontSize: "24px", fontWeight: 600 }}>
-            Admin Dashboard
-          </h1>
-        </div>
-
-        <div className="flex items-center gap-4">
-          <div style={{ color: "#FFFFFF" }}>
-            <p style={{ fontSize: "14px", margin: 0 }}>
-              Welcome, {user?.name || user?.email}
-            </p>
-          </div>
-          <button
-            onClick={handleLogout}
-            style={{
-              padding: "8px 16px",
-              backgroundColor: "#ff4444",
-              color: "#FFFFFF",
-              border: "none",
-              borderRadius: "6px",
-              fontSize: "14px",
-              fontWeight: 500,
-              cursor: "pointer",
-              transition: "background-color 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLButtonElement).style.backgroundColor =
-                "#cc0000";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLButtonElement).style.backgroundColor =
-                "#ff4444";
-            }}
-          >
-            Logout
-          </button>
-        </div>
-      </header>
-
       {/* Main Content */}
       <main style={{ padding: "24px" }}>
         {/* Success Toast */}

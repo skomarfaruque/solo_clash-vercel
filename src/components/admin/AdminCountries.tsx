@@ -191,29 +191,6 @@ export default function AdminCountries() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#030303" }}>
-      {/* Header */}
-      <header
-        style={{
-          backgroundColor: "#1a1a1a",
-          borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
-          padding: "16px 24px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <h1
-          style={{
-            color: "#FFFFFF",
-            fontSize: "24px",
-            fontWeight: 600,
-            margin: 0,
-          }}
-        >
-          Countries Management
-        </h1>
-      </header>
-
       {/* Main Content */}
       <main style={{ padding: "24px" }}>
         {/* Success Toast */}
