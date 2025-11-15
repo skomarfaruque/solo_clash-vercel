@@ -7,18 +7,76 @@ import CurrencySelector from "../CurrencySelector";
 import { useEffect, useState } from "react";
 import SubscriptionSectionCardNew from "./SubscriptionSectionCardNew";
 
-export default function SubscriptionsSectionNew() {
+interface Subscription {
+  id: number;
+  program_id: number;
+  program_name: string;
+  subscription_name: string;
+  subscription_value: number;
+  monthly_price: number;
+  profit_target: number;
+  maximum_position: number;
+  maximum_loss_limit: number;
+  amount: number;
+}
+
+interface SubscriptionsSectionNewProps {
+  subscriptions?: Subscription[];
+}
+
+export default function SubscriptionsSectionNew({
+  subscriptions: initialSubscriptions = [],
+}: SubscriptionsSectionNewProps = {}) {
   const t = useTranslations("accountPage.subscriptionsSection");
-  const plans = t.raw("plans");
   const [selectedCurrency, setSelectedCurrency] = useState("usd");
+  const [subscriptions, setSubscriptions] =
+    useState<Subscription[]>(initialSubscriptions);
 
   useEffect(() => {
+    const fetchSubscriptions = async () => {
+      try {
+        const token = localStorage.getItem("adminToken");
+        console.log("Fetching subscriptions from client...");
+
+        const response = await fetch(
+          "https://solo-clash-backend.vercel.app/api/v1/subscriptions",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              ...(token && { Authorization: `Bearer ${token}` }),
+            },
+          }
+        );
+
+        console.log("Response status:", response.status);
+
+        const data = await response.json();
+
+        console.log("Response data:", data);
+
+        if (data.success && data.data?.items) {
+          console.log("Subscriptions found:", data.data.items.length);
+          setSubscriptions(data.data.items);
+        } else {
+          console.log("No subscriptions in response");
+        }
+      } catch (error) {
+        console.error("Error fetching subscriptions:", error);
+      }
+    };
+
+    fetchSubscriptions();
+  }, []);
+
+  useEffect(() => {
+    console.log("Current subscriptions:", subscriptions);
     // Check if a currency is already set in cookies
     const match = document.cookie.match(new RegExp("(^| )currency=([^;]+)"));
     if (match) {
       setSelectedCurrency(match[2]);
     }
-  }, []);
+  }, [subscriptions]);
   const handleCurrencyChange = (currency: string) => {
     console.log(`Currency changed to: ${currency}`);
     // Implement any additional logic needed when currency changes
@@ -75,13 +133,19 @@ export default function SubscriptionsSectionNew() {
 
           {/* Subscriptions Grid - Right Side */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 w-full">
-            {Array.isArray(plans) &&
-              plans.map((plan) => (
+            {Array.isArray(subscriptions) && subscriptions.length > 0 ? (
+              subscriptions.map((subscription) => (
                 <SubscriptionSectionCardNew
-                  key={plan.title}
+                  key={subscription.id}
                   selectedCurrency={selectedCurrency}
+                  subscription={subscription}
                 />
-              ))}
+              ))
+            ) : (
+              <p className="text-gray-400 col-span-full">
+                No subscriptions available
+              </p>
+            )}
           </div>
         </div>
       </div>

@@ -1,13 +1,26 @@
-import SubscriptionButton from "../SubscriptionButton";
-import SubscriptionActiveButton from "../SubscriptionActiveButton";
 import SubscriptionCss from "../buttons/SubscriptionCss";
+
+interface Subscription {
+  id: number;
+  program_id: number;
+  program_name: string;
+  subscription_name: string;
+  subscription_value: number;
+  monthly_price: number;
+  profit_target: number;
+  maximum_position: number;
+  maximum_loss_limit: number;
+  amount: number;
+}
 
 interface SubscriptionCardProps {
   readonly selectedCurrency: string;
+  readonly subscription?: Subscription;
 }
 
 export default function SubscriptionSectionCardNew({
   selectedCurrency,
+  subscription,
 }: SubscriptionCardProps) {
   const currencyIcon = (() => {
     switch (selectedCurrency) {
@@ -30,13 +43,18 @@ export default function SubscriptionSectionCardNew({
       }}
     >
       <div className="border-b border-[rgba(255,255,255,0.06)] flex px-8 pt-8 pb-6 flex-col items-start">
-        <h2 className="text-3xl font-bold text-cyan-400">{currencyIcon}50K</h2>
+        <h2 className="text-3xl font-bold text-cyan-400">
+          {currencyIcon}
+          {subscription?.subscription_value || "50K"}
+        </h2>
         <p className="text-sm text-gray-400 mt-1">Buying Power</p>
       </div>
 
       {/* Monthly price */}
       <p className="text-xl font-semibold border-b border-[rgba(255,255,255,0.06)] flex px-8 pt-[20px] pb-[20px]">
-        $45/mo{" "}
+        {currencyIcon}
+        {subscription?.monthly_price || "45"}
+        /mo{" "}
         <sup
           className="font-normal text-xs sm:text-sm leading-6"
           style={{ color: "#B7B7B7" }}
@@ -47,12 +65,16 @@ export default function SubscriptionSectionCardNew({
 
       {/* Details */}
       <p className="border-b border-[rgba(255,255,255,0.06)] flex px-8 pt-[20px] pb-[20px]">
-        $3,000
+        {currencyIcon}
+        {subscription?.profit_target || "3,000"}
       </p>
       <p className="border-b border-[rgba(255,255,255,0.06)] flex px-8 pt-[20px] pb-[20px]">
-        5 Contracts
+        {subscription?.maximum_position || "5"} Contracts
       </p>
-      <p className="flex px-8 pt-[20px] pb-[20px]">$2,000</p>
+      <p className="flex px-8 pt-[20px] pb-[20px]">
+        {currencyIcon}
+        {subscription?.maximum_loss_limit || "2,000"}
+      </p>
 
       {/* Button */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
