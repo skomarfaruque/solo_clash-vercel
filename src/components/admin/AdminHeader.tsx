@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 interface User {
@@ -56,22 +57,13 @@ export default function AdminHeader() {
       }}
     >
       <div className="flex items-center gap-3">
-        <div
-          style={{
-            width: "40px",
-            height: "40px",
-            backgroundColor: "#2BB6DD",
-            borderRadius: "8px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: "18px",
-            fontWeight: "bold",
-            color: "#030303",
-          }}
-        >
-          SC
-        </div>
+        <Image
+          src="/logo.svg"
+          alt="Logo"
+          width={40}
+          height={40}
+          className="w-10 h-10"
+        />
         <h1
           style={{
             color: "#FFFFFF",
