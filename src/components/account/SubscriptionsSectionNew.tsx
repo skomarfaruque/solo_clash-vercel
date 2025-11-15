@@ -106,8 +106,8 @@ export default function SubscriptionsSectionNew({
 
         {/* Labels and Subscriptions Container */}
         <div className="flex gap-8 w-full max-w-7xl">
-          {/* Label Buttons - Left Side */}
-          <div className="flex flex-col gap-4 justify-start flex-shrink-0 mt-[130px]">
+          {/* Label Buttons - Left Side (Hidden on Mobile) */}
+          <div className="hidden lg:flex flex-col gap-4 justify-start flex-shrink-0 mt-[130px]">
             {[
               "Monthly Price:",
               "Profit Target:",
