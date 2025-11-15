@@ -21,6 +21,7 @@ export default function AdminWheelItems() {
   const [formLoading, setFormLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [deleteMessage, setDeleteMessage] = useState("");
+  const [editingId, setEditingId] = useState<number | null>(null);
   const [formData, setFormData] = useState({
     item_name: "",
     value: "",
@@ -143,28 +144,49 @@ export default function AdminWheelItems() {
     setDeleteConfirmation({ show: false, id: null, name: "" });
   };
 
+  const handleEditWheelItem = (item: WheelItem) => {
+    setEditingId(item.id);
+    setFormData({
+      item_name: item.item_name,
+      value: item.value,
+      will_select: item.will_select ? "yes" : "no",
+    });
+    setShowForm(true);
+  };
+
+  const handleCancelForm = () => {
+    setShowForm(false);
+    setEditingId(null);
+    setFormData({
+      item_name: "",
+      value: "",
+      will_select: "no",
+    });
+  };
+
   const handleAddWheelItem = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormLoading(true);
 
     try {
       const token = localStorage.getItem("adminToken");
+      const isEditing = editingId !== null;
+      const url = isEditing
+        ? `https://solo-clash-backend.vercel.app/api/v1/wheel-items/${editingId}`
+        : "https://solo-clash-backend.vercel.app/api/v1/wheel-items";
 
-      const response = await fetch(
-        "https://solo-clash-backend.vercel.app/api/v1/wheel-items",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify({
-            item_name: formData.item_name,
-            value: formData.value,
-            will_select: formData.will_select === "yes",
-          }),
-        }
-      );
+      const response = await fetch(url, {
+        method: isEditing ? "PATCH" : "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          item_name: formData.item_name,
+          value: formData.value,
+          will_select: formData.will_select === "yes",
+        }),
+      });
 
       const data = await response.json();
 
@@ -175,15 +197,19 @@ export default function AdminWheelItems() {
           will_select: "no",
         });
         setShowForm(false);
-        setSuccessMessage(`✓ ${formData.item_name} added successfully!`);
+        setEditingId(null);
+        const message = isEditing ? "updated" : "added";
+        setSuccessMessage(`✓ ${formData.item_name} ${message} successfully!`);
         setTimeout(() => setSuccessMessage(""), 4000);
         await fetchWheelItems();
       } else {
-        alert(data.message || "Failed to add wheel item");
+        alert(
+          data.message || `Failed to ${isEditing ? "update" : "add"} wheel item`
+        );
       }
     } catch (err) {
-      console.error("Error adding wheel item:", err);
-      alert("An error occurred while adding wheel item");
+      console.error("Error saving wheel item:", err);
+      alert("An error occurred while saving wheel item");
     } finally {
       setFormLoading(false);
     }
@@ -444,7 +470,13 @@ export default function AdminWheelItems() {
               Wheel Items
             </h3>
             <button
-              onClick={() => setShowForm(!showForm)}
+              onClick={() => {
+                if (showForm) {
+                  handleCancelForm();
+                } else {
+                  setShowForm(true);
+                }
+              }}
               style={{
                 padding: "10px 16px",
                 backgroundColor: "#2BB6DD",
@@ -617,7 +649,13 @@ export default function AdminWheelItems() {
                   }
                 }}
               >
-                {formLoading ? "Adding..." : "Add Wheel Item"}
+                {editingId
+                  ? formLoading
+                    ? "Updating..."
+                    : "Update Wheel Item"
+                  : formLoading
+                  ? "Adding..."
+                  : "Add Wheel Item"}
               </button>
             </form>
           )}
@@ -710,32 +748,60 @@ export default function AdminWheelItems() {
                         </span>
                       </td>
                       <td style={{ padding: "12px" }}>
-                        <button
-                          onClick={() => handleDeleteWheelItem(item.id)}
-                          style={{
-                            padding: "6px 12px",
-                            backgroundColor: "#ff4444",
-                            color: "#FFFFFF",
-                            border: "none",
-                            borderRadius: "4px",
-                            fontSize: "12px",
-                            fontWeight: 600,
-                            cursor: "pointer",
-                            transition: "background-color 0.3s ease",
-                          }}
-                          onMouseEnter={(e) => {
-                            (
-                              e.currentTarget as HTMLButtonElement
-                            ).style.backgroundColor = "#cc0000";
-                          }}
-                          onMouseLeave={(e) => {
-                            (
-                              e.currentTarget as HTMLButtonElement
-                            ).style.backgroundColor = "#ff4444";
-                          }}
-                        >
-                          Delete
-                        </button>
+                        <div style={{ display: "flex", gap: "8px" }}>
+                          <button
+                            onClick={() => handleEditWheelItem(item)}
+                            style={{
+                              padding: "6px 12px",
+                              backgroundColor: "#2BB6DD",
+                              color: "#030303",
+                              border: "none",
+                              borderRadius: "4px",
+                              fontSize: "12px",
+                              fontWeight: 600,
+                              cursor: "pointer",
+                              transition: "background-color 0.3s ease",
+                            }}
+                            onMouseEnter={(e) => {
+                              (
+                                e.currentTarget as HTMLButtonElement
+                              ).style.backgroundColor = "#1a9fb5";
+                            }}
+                            onMouseLeave={(e) => {
+                              (
+                                e.currentTarget as HTMLButtonElement
+                              ).style.backgroundColor = "#2BB6DD";
+                            }}
+                          >
+                            Edit
+                          </button>
+                          <button
+                            onClick={() => handleDeleteWheelItem(item.id)}
+                            style={{
+                              padding: "6px 12px",
+                              backgroundColor: "#ff4444",
+                              color: "#FFFFFF",
+                              border: "none",
+                              borderRadius: "4px",
+                              fontSize: "12px",
+                              fontWeight: 600,
+                              cursor: "pointer",
+                              transition: "background-color 0.3s ease",
+                            }}
+                            onMouseEnter={(e) => {
+                              (
+                                e.currentTarget as HTMLButtonElement
+                              ).style.backgroundColor = "#cc0000";
+                            }}
+                            onMouseLeave={(e) => {
+                              (
+                                e.currentTarget as HTMLButtonElement
+                              ).style.backgroundColor = "#ff4444";
+                            }}
+                          >
+                            Delete
+                          </button>
+                        </div>
                       </td>
                     </tr>
                   ))}
