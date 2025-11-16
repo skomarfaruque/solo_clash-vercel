@@ -2,13 +2,33 @@
 
 import SvgButton2 from "@/components/buttons/svgButton2";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 export default function PaymentSection() {
   const t = useTranslations("payment");
   const [checked1, setChecked1] = useState(false);
   const [checked2, setChecked2] = useState(false);
   const [checked3, setChecked3] = useState(false);
+  const [subscriptionName, setSubscriptionName] = useState("N/A");
+  const [subscriptionValue, setSubscriptionValue] = useState("N/A");
+  const [monthlyPrice, setMonthlyPrice] = useState("N/A");
+  const searchParams = useSearchParams();
+  const platformValue = searchParams.get("platform") || "N/A";
+
+  useEffect(() => {
+    const savedSubscription = localStorage.getItem("selectedSubscription");
+    if (savedSubscription) {
+      const parsedSubscription = JSON.parse(savedSubscription);
+      setSubscriptionName(parsedSubscription.subscription_name || "N/A");
+      setSubscriptionValue(
+        parsedSubscription.subscription_value
+          ? `$${parsedSubscription.subscription_value.toLocaleString()}`
+          : "N/A"
+      );
+      setMonthlyPrice(parsedSubscription?.monthly_price || "N/A");
+    }
+  }, []);
 
   return (
     <section className="justify-center text-center min-h-screen px-4 sm:px-0 items-center flex py-30">
@@ -24,21 +44,17 @@ export default function PaymentSection() {
           <div className="space-y-8 text-gray-300 mb-6 border-b border-t border-[rgba(255,255,255,0.1)] pt-8 pb-8 text-lg">
             <div className="flex justify-between">
               <span className="text-[#B7B7B7]">{t("accountType")}</span>
-              <span className="font-medium text-white">
-                {t("eliteChallenge")}
-              </span>
+              <span className="font-medium text-white">{subscriptionName}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-[#B7B7B7]">{t("accountSize")}</span>
               <span className="font-medium text-white">
-                {t("accountSizeValue")}
+                {subscriptionValue}
               </span>
             </div>
             <div className="flex justify-between">
               <span className="text-[#B7B7B7]">{t("platform")}</span>
-              <span className="font-medium text-white">
-                {t("platformValue")}
-              </span>
+              <span className="font-medium text-white">{platformValue}</span>
             </div>
           </div>
 
@@ -87,7 +103,7 @@ export default function PaymentSection() {
           <div className="space-y-8 text-lg border-t border-[rgba(255,255,255,0.1)] pt-8">
             <div className="flex justify-between">
               <span>{t("subtotal")}</span>
-              <span>{t("subtotalValue")}</span>
+              <span>${monthlyPrice}</span>
             </div>
             <div className="flex justify-between">
               <span>{t("vat")}</span>

@@ -206,7 +206,10 @@ export default function ChooseAccount() {
               label={t("continue")}
               textStyle="font-medium text-sm sm:text-base"
               onClick={() => {
-                router.push("/payment");
+                const queryParams = new URLSearchParams({
+                  platform,
+                });
+                router.push(`/payment?${queryParams.toString()}`);
               }}
             />
           </div>
