@@ -19,13 +19,22 @@ interface Subscription {
   deleted_at: string | null;
 }
 
+interface Program {
+  id: string;
+  name: string;
+}
+
 export default function AdminDashboard() {
   const [loading, setLoading] = useState(true);
+  const [programs, setPrograms] = useState<Program[]>([]);
+  const [loadingPrograms, setLoadingPrograms] = useState(true);
   const [subscriptions, setSubscriptions] = useState<Subscription[]>([]);
   const [showForm, setShowForm] = useState(false);
   const [formLoading, setFormLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [deleteMessage, setDeleteMessage] = useState("");
+  const [programSearch, setProgramSearch] = useState("");
+  const [showProgramDropdown, setShowProgramDropdown] = useState(false);
   const [deleteConfirmation, setDeleteConfirmation] = useState<{
     show: boolean;
     id: number | null;
@@ -47,6 +56,79 @@ export default function AdminDashboard() {
     amount: "",
   });
   const router = useRouter();
+
+  const filteredPrograms = programs.filter(
+    (program) =>
+      program.name.toLowerCase().includes(programSearch.toLowerCase()) ||
+      program.id.toLowerCase().includes(programSearch.toLowerCase())
+  );
+
+  const fetchPrograms = useCallback(async () => {
+    try {
+      const token = localStorage.getItem("adminToken");
+      const response = await fetch(
+        "https://solo-clash-backend.vercel.app/api/v1/program",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      if (response.status === 401) {
+        const { refreshAccessToken } = await import("@/utils/api");
+        const newToken = await refreshAccessToken();
+
+        if (!newToken) {
+          router.push("/admin");
+          return;
+        }
+
+        const retryResponse = await fetch(
+          "https://solo-clash-backend.vercel.app/api/v1/program",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${newToken}`,
+            },
+          }
+        );
+
+        const data = await retryResponse.json();
+        console.log("Programs API response:", data);
+        if (Array.isArray(data)) {
+          setPrograms(data);
+        } else if (data.data && Array.isArray(data.data)) {
+          setPrograms(data.data);
+        } else {
+          console.error(
+            "Failed to fetch programs - unexpected response:",
+            data
+          );
+        }
+      } else {
+        const data = await response.json();
+        console.log("Programs API response:", data);
+        if (Array.isArray(data)) {
+          setPrograms(data);
+        } else if (data.data && Array.isArray(data.data)) {
+          setPrograms(data.data);
+        } else {
+          console.error(
+            "Failed to fetch programs - unexpected response:",
+            data
+          );
+        }
+      }
+    } catch (err) {
+      console.error("Error fetching programs:", err);
+    } finally {
+      setLoadingPrograms(false);
+    }
+  }, [router]);
 
   const fetchSubscriptions = useCallback(async () => {
     try {
@@ -111,9 +193,10 @@ export default function AdminDashboard() {
   }, [router]);
 
   useEffect(() => {
-    // Fetch subscriptions
+    // Fetch programs and subscriptions
+    fetchPrograms();
     fetchSubscriptions();
-  }, [fetchSubscriptions]);
+  }, [fetchPrograms, fetchSubscriptions]);
 
   const handleAddSubscription = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -536,27 +619,141 @@ export default function AdminDashboard() {
                   >
                     Program ID
                   </label>
-                  <input
-                    type="text"
-                    value={formData.program_id}
-                    onChange={(e) =>
-                      setFormData({ ...formData, program_id: e.target.value })
-                    }
-                    placeholder="Enter program ID"
-                    required
+                  <div style={{ position: "relative" }}>
+                    <input
+                      type="text"
+                      value={
+                        showProgramDropdown
+                          ? programSearch
+                          : programs.find((p) => p.id === formData.program_id)
+                              ?.name || ""
+                      }
+                      onChange={(e) => {
+                        setProgramSearch(e.target.value);
+                        setShowProgramDropdown(true);
+                      }}
+                      onFocus={() => setShowProgramDropdown(true)}
+                      placeholder={
+                        loadingPrograms
+                          ? "Loading programs..."
+                          : "Search or select program"
+                      }
+                      disabled={loadingPrograms}
+                      required
+                      style={{
+                        width: "100%",
+                        padding: "10px",
+                        backgroundColor: "#1a1a1a",
+                        color: "#FFFFFF",
+                        border: "1px solid rgba(255, 255, 255, 0.2)",
+                        borderRadius: "6px",
+                        fontSize: "14px",
+                        outline: "none",
+                        boxSizing: "border-box",
+                        cursor: loadingPrograms ? "not-allowed" : "pointer",
+                      }}
+                    />
+                    {showProgramDropdown && !loadingPrograms && (
+                      <div
+                        style={{
+                          position: "absolute",
+                          top: "100%",
+                          left: 0,
+                          right: 0,
+                          backgroundColor: "#1a1a1a",
+                          border: "1px solid rgba(43, 182, 221, 0.3)",
+                          borderTop: "none",
+                          borderRadius: "0 0 6px 6px",
+                          maxHeight: "200px",
+                          overflowY: "auto",
+                          zIndex: 100,
+                          marginTop: "-1px",
+                        }}
+                      >
+                        {filteredPrograms.length > 0 ? (
+                          filteredPrograms.map((program) => (
+                            <div
+                              key={program.id}
+                              onClick={() => {
+                                setFormData({
+                                  ...formData,
+                                  program_id: program.id,
+                                });
+                                setProgramSearch("");
+                                setShowProgramDropdown(false);
+                              }}
+                              style={{
+                                padding: "10px 12px",
+                                cursor: "pointer",
+                                borderBottom:
+                                  "1px solid rgba(255, 255, 255, 0.1)",
+                                color: "#FFFFFF",
+                                fontSize: "14px",
+                                transition: "background-color 0.2s ease",
+                                backgroundColor:
+                                  program.id === formData.program_id
+                                    ? "rgba(43, 182, 221, 0.2)"
+                                    : "transparent",
+                              }}
+                              onMouseEnter={(e) => {
+                                if (program.id !== formData.program_id) {
+                                  (
+                                    e.currentTarget as HTMLDivElement
+                                  ).style.backgroundColor =
+                                    "rgba(255, 255, 255, 0.1)";
+                                }
+                              }}
+                              onMouseLeave={(e) => {
+                                if (program.id !== formData.program_id) {
+                                  (
+                                    e.currentTarget as HTMLDivElement
+                                  ).style.backgroundColor = "transparent";
+                                }
+                              }}
+                            >
+                              <div style={{ fontWeight: 600 }}>
+                                {program.name}
+                              </div>
+                              <div
+                                style={{
+                                  fontSize: "12px",
+                                  color: "rgba(255, 255, 255, 0.6)",
+                                }}
+                              >
+                                ID: {program.id}
+                              </div>
+                            </div>
+                          ))
+                        ) : (
+                          <div
+                            style={{
+                              padding: "10px 12px",
+                              color: "rgba(255, 255, 255, 0.5)",
+                              fontSize: "14px",
+                              textAlign: "center",
+                            }}
+                          >
+                            No programs found
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                </div>
+                {/* Close dropdown when clicking outside */}
+                {showProgramDropdown && (
+                  <div
+                    onClick={() => setShowProgramDropdown(false)}
                     style={{
-                      width: "100%",
-                      padding: "10px",
-                      backgroundColor: "#1a1a1a",
-                      color: "#FFFFFF",
-                      border: "1px solid rgba(255, 255, 255, 0.2)",
-                      borderRadius: "6px",
-                      fontSize: "14px",
-                      outline: "none",
-                      boxSizing: "border-box",
+                      position: "fixed",
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      zIndex: 50,
                     }}
                   />
-                </div>
+                )}
 
                 <div>
                   <label

@@ -31,15 +31,17 @@ export default function SubscriptionsSectionNew({
   const [selectedCurrency, setSelectedCurrency] = useState("usd");
   const [subscriptions, setSubscriptions] =
     useState<Subscription[]>(initialSubscriptions);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchSubscriptions = async () => {
       try {
+        setIsLoading(true);
         const token = localStorage.getItem("adminToken");
         console.log("Fetching subscriptions from client...");
 
         const response = await fetch(
-          "https://solo-clash-backend.vercel.app/api/v1/subscriptions",
+          "https://solo-clash-backend.vercel.app/api/v1/subscriptions?limit=3",
           {
             method: "GET",
             headers: {
@@ -63,6 +65,8 @@ export default function SubscriptionsSectionNew({
         }
       } catch (error) {
         console.error("Error fetching subscriptions:", error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -133,7 +137,41 @@ export default function SubscriptionsSectionNew({
 
           {/* Subscriptions Grid - Right Side */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 w-full">
-            {Array.isArray(subscriptions) && subscriptions.length > 0 ? (
+            {isLoading ? (
+              // Show 3 loading skeleton cards
+              Array.from({ length: 3 }).map((_, idx) => (
+                <div
+                  key={`skeleton-${idx}`}
+                  className="rounded-[12px] overflow-hidden"
+                  style={{
+                    background:
+                      "linear-gradient(306.21deg, #01090B 39.33%, #07252D 99.95%)",
+                    backdropFilter: "blur(17px)",
+                    boxSizing: "border-box",
+                  }}
+                >
+                  <div className="p-6 space-y-4">
+                    {/* Title skeleton */}
+                    <div className="h-6 bg-gray-700 rounded animate-pulse w-3/4"></div>
+
+                    {/* Value skeleton */}
+                    <div className="h-8 bg-gray-700 rounded animate-pulse w-1/2"></div>
+
+                    {/* Details skeleton */}
+                    <div className="space-y-2 pt-2">
+                      <div className="h-4 bg-gray-700 rounded animate-pulse w-full"></div>
+                      <div className="h-4 bg-gray-700 rounded animate-pulse w-5/6"></div>
+                      <div className="h-4 bg-gray-700 rounded animate-pulse w-4/5"></div>
+                    </div>
+
+                    {/* Button skeleton */}
+                    <div className="pt-4">
+                      <div className="h-10 bg-gray-700 rounded animate-pulse w-full"></div>
+                    </div>
+                  </div>
+                </div>
+              ))
+            ) : Array.isArray(subscriptions) && subscriptions.length > 0 ? (
               subscriptions.map((subscription) => (
                 <SubscriptionSectionCardNew
                   key={subscription.id}

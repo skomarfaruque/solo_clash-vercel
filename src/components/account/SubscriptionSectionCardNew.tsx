@@ -1,4 +1,5 @@
 import SubscriptionCss from "../buttons/SubscriptionCss";
+import { useRouter } from "next/navigation";
 
 interface Subscription {
   id: number;
@@ -22,6 +23,30 @@ export default function SubscriptionSectionCardNew({
   selectedCurrency,
   subscription,
 }: SubscriptionCardProps) {
+  const router = useRouter();
+
+  const handleSelectClick = () => {
+    // Save subscription data to localStorage
+    if (subscription) {
+      localStorage.setItem(
+        "selectedSubscription",
+        JSON.stringify(subscription)
+      );
+      console.log("Subscription saved to localStorage:", subscription);
+    }
+
+    // Check if user is logged in
+    const userToken = localStorage.getItem("adminToken");
+
+    if (userToken) {
+      // User is logged in, redirect to account page
+      router.push("/account");
+    } else {
+      // User is not logged in, redirect to signin page
+      router.push("/login");
+    }
+  };
+
   const currencyIcon = (() => {
     switch (selectedCurrency) {
       case "usd":
@@ -90,7 +115,9 @@ export default function SubscriptionSectionCardNew({
 
       {/* Button */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <SubscriptionCss className="w-[259px] px-8">Select</SubscriptionCss>
+        <button onClick={handleSelectClick}>
+          <SubscriptionCss className="w-[259px] px-8">Select</SubscriptionCss>
+        </button>
       </div>
     </div>
   );

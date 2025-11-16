@@ -23,6 +23,7 @@ export default function SignupSection() {
   const [loadingCountries, setLoadingCountries] = useState(true);
   const [registering, setRegistering] = useState(false);
   const [agreedToPrivacy, setAgreedToPrivacy] = useState(false);
+  const [confirmName, setConfirmName] = useState(false);
   const [toast, setToast] = useState<{
     show: boolean;
     message: string;
@@ -374,28 +375,30 @@ export default function SignupSection() {
             </div>
 
             {/* Checkboxes */}
-            <div className="space-y-3 mb-6 text-sm text-neutral-400">
-              <label className="flex items-start gap-2 cursor-pointer">
+            <div className="space-y-3 mb-6">
+              <div className="flex items-center space-x-2">
                 <input
                   type="checkbox"
                   checked={agreedToPrivacy}
                   onChange={(e) => setAgreedToPrivacy(e.target.checked)}
-                  className="mt-1 rounded border-neutral-700 bg-neutral-800"
+                  className="h-4 w-4 text-orange-500 rounded focus:ring-2 focus:ring-orange-500"
                 />
-                <span>
+                <label className="text-sm text-gray-300">
                   {t("privacyPolicy")} <span className="text-red-500">*</span>
-                </span>
-              </label>
-              <label className="flex items-start gap-2 cursor-pointer">
+                </label>
+              </div>
+              <div className="flex items-center space-x-2">
                 <input
                   type="checkbox"
                   name="is_news_letter"
                   checked={formData.is_news_letter}
                   onChange={handleChange}
-                  className="mt-1 rounded border-neutral-700 bg-neutral-800"
+                  className="h-4 w-4 text-orange-500 rounded focus:ring-2 focus:ring-orange-500"
                 />
-                <span>{t("newsletter")}</span>
-              </label>
+                <label className="text-sm text-gray-300">
+                  {t("newsletter")}
+                </label>
+              </div>
             </div>
 
             {/* Submit */}
@@ -587,8 +590,9 @@ export default function SignupSection() {
                 <input
                   type="checkbox"
                   name="confirm"
+                  checked={confirmName}
+                  onChange={(e) => setConfirmName(e.target.checked)}
                   className="h-4 w-4 text-orange-500 rounded focus:ring-2 focus:ring-orange-500"
-                  disabled
                 />
                 <label className="text-sm text-gray-300">
                   {t("confirmName")}
@@ -597,7 +601,7 @@ export default function SignupSection() {
 
               <button
                 type="submit"
-                disabled={registering}
+                disabled={registering || !confirmName}
                 className="w-full py-3 rounded-lg bg-gradient-to-r from-orange-500 to-orange-400 text-black font-semibold shadow-lg hover:opacity-90 transition disabled:opacity-60 cursor-pointer"
               >
                 {registering ? "Registering..." : t("submitButton")}

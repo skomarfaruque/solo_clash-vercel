@@ -3,14 +3,91 @@
 import SvgButton2 from "@/components/buttons/svgButton2";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function LoginSection() {
+interface Subscription {
+  id: number;
+  program_id: number;
+  program_name: string;
+  subscription_name: string;
+  subscription_value: number;
+  monthly_price: number;
+  profit_target: number;
+  maximum_position: number;
+  maximum_loss_limit: number;
+  amount: number;
+}
+
+export default function ChooseAccount() {
   const t = useTranslations("chooseAccount");
   const router = useRouter();
   const [platform, setPlatform] = useState("VolSys");
   const [accountSize, setAccountSize] = useState("$100,000");
   const [profitSplit, setProfitSplit] = useState("90/10");
+  const [subscriptions, setSubscriptions] = useState<Subscription[]>([]);
+  const [selectedSubscriptionId, setSelectedSubscriptionId] = useState<
+    number | null
+  >(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchSubscriptions = async () => {
+      try {
+        setLoading(true);
+        const token = localStorage.getItem("adminToken");
+        const response = await fetch(
+          "https://solo-clash-backend.vercel.app/api/v1/subscriptions?limit=3",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              ...(token && { Authorization: `Bearer ${token}` }),
+            },
+          }
+        );
+
+        const data = await response.json();
+        console.log("Subscriptions API response:", data);
+
+        if (data.success && data.data?.items) {
+          setSubscriptions(data.data.items);
+
+          // Get selected subscription from localStorage
+          const savedSubscription = localStorage.getItem(
+            "selectedSubscription"
+          );
+          if (savedSubscription) {
+            const parsed = JSON.parse(savedSubscription);
+            console.log("Selected subscription from localStorage:", parsed);
+
+            // Find matching subscription by subscription_value
+            const matchedSubscription = data.data.items.find(
+              (sub: Subscription) =>
+                sub.subscription_value === parsed.subscription_value
+            );
+
+            if (matchedSubscription) {
+              setAccountSize(
+                `$${matchedSubscription.subscription_value.toLocaleString()}`
+              );
+              setSelectedSubscriptionId(matchedSubscription.id);
+            }
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching subscriptions:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchSubscriptions();
+  }, []);
+
+  // Generate account size options from fetched subscriptions
+  const accountSizeOptions = subscriptions.map(
+    (sub) => `$${sub.subscription_value.toLocaleString()}`
+  );
 
   return (
     <section
@@ -65,20 +142,41 @@ export default function LoginSection() {
               <h3 className="font-medium text-sm sm:text-base md:text-lg">
                 {t("accountSize")}
               </h3>
-              <div className="flex gap-2 sm:gap-3">
-                {["$50,000", "$100,000", "$150,000"].map((item) => (
-                  <button
-                    key={item}
-                    onClick={() => setAccountSize(item)}
-                    className={`px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium hover:cursor-pointer ${
-                      accountSize === item
-                        ? "bg-white text-black"
-                        : "bg-neutral-800 text-gray-400"
-                    }`}
-                  >
-                    {item}
-                  </button>
-                ))}
+              <div className="flex gap-2 sm:gap-3 flex-wrap">
+                {loading ? (
+                  // Show skeleton loaders
+                  Array.from({ length: 3 }).map((_, idx) => (
+                    <div
+                      key={`skeleton-${idx}`}
+                      className="px-3 sm:px-4 py-2 rounded-lg bg-neutral-800 animate-pulse"
+                      style={{ minWidth: "100px", height: "32px" }}
+                    ></div>
+                  ))
+                ) : subscriptions.length > 0 ? (
+                  subscriptions.map((subscription) => {
+                    const displayValue = `$${subscription.subscription_value.toLocaleString()}`;
+                    return (
+                      <button
+                        key={subscription.id}
+                        onClick={() => {
+                          setAccountSize(displayValue);
+                          setSelectedSubscriptionId(subscription.id);
+                        }}
+                        className={`px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium hover:cursor-pointer ${
+                          accountSize === displayValue
+                            ? "bg-white text-black"
+                            : "bg-neutral-800 text-gray-400"
+                        }`}
+                      >
+                        {displayValue}
+                      </button>
+                    );
+                  })
+                ) : (
+                  <div className="text-gray-400">
+                    No account sizes available
+                  </div>
+                )}
               </div>
             </div>
 
@@ -108,7 +206,10 @@ export default function LoginSection() {
               label={t("continue")}
               textStyle="font-medium text-sm sm:text-base"
               onClick={() => {
-                router.push("/payment");
+                const queryParams = new URLSearchParams({
+                  platform,
+                });
+                router.push(`/payment?${queryParams.toString()}`);
               }}
             />
           </div>
