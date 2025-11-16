@@ -23,6 +23,7 @@ export default function SignupSection() {
   const [loadingCountries, setLoadingCountries] = useState(true);
   const [registering, setRegistering] = useState(false);
   const [agreedToPrivacy, setAgreedToPrivacy] = useState(false);
+  const [confirmName, setConfirmName] = useState(false);
   const [toast, setToast] = useState<{
     show: boolean;
     message: string;
@@ -587,8 +588,9 @@ export default function SignupSection() {
                 <input
                   type="checkbox"
                   name="confirm"
+                  checked={confirmName}
+                  onChange={(e) => setConfirmName(e.target.checked)}
                   className="h-4 w-4 text-orange-500 rounded focus:ring-2 focus:ring-orange-500"
-                  disabled
                 />
                 <label className="text-sm text-gray-300">
                   {t("confirmName")}
@@ -597,7 +599,7 @@ export default function SignupSection() {
 
               <button
                 type="submit"
-                disabled={registering}
+                disabled={registering || !confirmName}
                 className="w-full py-3 rounded-lg bg-gradient-to-r from-orange-500 to-orange-400 text-black font-semibold shadow-lg hover:opacity-90 transition disabled:opacity-60 cursor-pointer"
               >
                 {registering ? "Registering..." : t("submitButton")}
