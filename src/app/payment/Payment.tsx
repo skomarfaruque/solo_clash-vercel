@@ -13,6 +13,7 @@ export default function PaymentSection() {
   const [subscriptionName, setSubscriptionName] = useState("N/A");
   const [subscriptionValue, setSubscriptionValue] = useState("N/A");
   const [monthlyPrice, setMonthlyPrice] = useState("N/A");
+  const vat = 25;
   const searchParams = useSearchParams();
   const platformValue = searchParams.get("platform") || "N/A";
 
@@ -107,7 +108,7 @@ export default function PaymentSection() {
             </div>
             <div className="flex justify-between">
               <span>{t("vat")}</span>
-              <span>{t("vatValue")}</span>
+              <span>{vat}%</span>
             </div>
             <div className="flex justify-between font-semibold text-lg">
               <span>{t("total")}</span>
