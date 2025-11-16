@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-export default function LoginSection() {
+export default function ChooseAccount() {
   const t = useTranslations("chooseAccount");
   const router = useRouter();
   const [platform, setPlatform] = useState("VolSys");

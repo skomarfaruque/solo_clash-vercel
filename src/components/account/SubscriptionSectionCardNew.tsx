@@ -26,6 +26,15 @@ export default function SubscriptionSectionCardNew({
   const router = useRouter();
 
   const handleSelectClick = () => {
+    // Save subscription data to localStorage
+    if (subscription) {
+      localStorage.setItem(
+        "selectedSubscription",
+        JSON.stringify(subscription)
+      );
+      console.log("Subscription saved to localStorage:", subscription);
+    }
+
     // Check if user is logged in
     const userToken = localStorage.getItem("adminToken");
 
