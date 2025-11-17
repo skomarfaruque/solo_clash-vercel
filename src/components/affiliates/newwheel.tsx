@@ -1,29 +1,70 @@
 // create a new wheel component for affiliates page
 
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
+
+interface WheelItem {
+  id: number;
+  item_name: string;
+  value: string;
+  Image_Icon_url: string;
+  will_select: boolean;
+  created_at: string;
+  updated_at: string;
+  deleted_at: string | null;
+}
+
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL; // Fetch base URL from environment variables
 
 export default function NewWheel() {
   const [rotation, setRotation] = useState(0);
   const [isSpinning, setIsSpinning] = useState(false);
   const [winner, setWinner] = useState<string | null>(null);
+  const [wheelItems, setWheelItems] = useState<WheelItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [segments, setSegments] = useState<string[]>([]);
+  const [allowedWinners, setAllowedWinners] = useState<number[]>([]);
 
-  // Define 6 wheel segments with dummy values
-  const segments = [
-    "50 Clash Coins",
-    "Free Tournament Entry",
-    "10% Discount Code",
-    "100 Bonus Coins",
-    "50k Account",
-    "Try Again",
-  ];
+  const segmentAngle = segments.length > 0 ? 360 / segments.length : 60;
 
-  const segmentAngle = 360 / segments.length; // 60 degrees per segment
+  // Method to save wheel history to API
+  const saveWheelHistory = async (
+    wheelItemId: number,
+    wheelItemValue: string
+  ) => {
+    try {
+      const token = localStorage.getItem("adminToken");
+      const user = localStorage.getItem("adminUser");
+      const userId = user ? JSON.parse(user).id : null;
 
-  // Define which segments can be winners (indices)
-  // Example: [0, 2, 5] means only segments 0, 2, and 5 can win
-  const allowedWinners = [0, 5]; // Change this array to control which segments can win
+      const payload = {
+        environment: navigator.userAgent,
+        user_id: userId,
+        wheel_item_id: wheelItemId,
+        wheel_item_value: wheelItemValue,
+        spining_datetime: new Date().toISOString(),
+      };
+
+      const response = await fetch(`${BASE_URL}/wheel-history`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          ...(token && { Authorization: `Bearer ${token}` }),
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to save wheel history");
+      }
+
+      const data = await response.json();
+      console.log("Wheel history saved:", data);
+    } catch (error) {
+      console.error("Error saving wheel history:", error);
+    }
+  };
 
   // Method to calculate rotation to land on a specific segment
   const getRotationForSegment = (
@@ -59,12 +100,6 @@ export default function NewWheel() {
       baseRotations +
       ((targetNormalizedRotation - currentNormalized + 360) % 360);
 
-    console.log(
-      `🎯 Target segment ${targetSegmentIndex}: current=${currentNormalized.toFixed(
-        2
-      )}, target=${targetNormalizedRotation}, rotation=${rotationNeeded}`
-    );
-
     return rotationNeeded;
   };
 
@@ -85,12 +120,7 @@ export default function NewWheel() {
       // Randomly select a winner from the allowedWinners array
       const randomIndex = Math.floor(Math.random() * allowedWinners.length);
       const randomWinner = allowedWinners[randomIndex];
-      console.log(
-        "🎲 Selected winner from array:",
-        randomWinner,
-        "from",
-        allowedWinners
-      );
+
       randomRotation = getRotationForSegment(randomWinner, rotation);
     }
 
@@ -126,33 +156,70 @@ export default function NewWheel() {
         Math.floor(adjustedRotation / segmentAngle) % segments.length;
       const winnerValue = segments[segmentIndex];
 
-      console.log(
-        "📊 Detection - Normalized:",
-        normalizedRotation.toFixed(2),
-        "Adjusted:",
-        adjustedRotation.toFixed(2),
-        "Index:",
-        segmentIndex
-      );
-
       setWinner(winnerValue);
-      console.log("🎯 Winner:", winnerValue);
-      console.log("Segment Index:", segmentIndex);
-      console.log("Final Rotation:", normalizedRotation.toFixed(2), "degrees");
-      console.log("Adjusted Angle:", adjustedRotation.toFixed(2), "degrees");
+
+      // Call API to save wheel history
+      if (wheelItems.length > 0 && wheelItems[segmentIndex]) {
+        const winnerItem = wheelItems[segmentIndex];
+        // Use the wheel item's value
+        saveWheelHistory(winnerItem.id, winnerItem.value);
+      }
     }, 4000); // 4 seconds for the spin animation
   };
+
+  useEffect(() => {
+    const fetchWheelItems = async () => {
+      try {
+        setLoading(true);
+        const token = localStorage.getItem("adminToken");
+        const response = await fetch(`${BASE_URL}/wheel-items`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            ...(token && { Authorization: `Bearer ${token}` }),
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch wheel items");
+        }
+
+        const { data } = await response.json();
+        setWheelItems(data.items);
+
+        // Extract segments from API response
+        const segmentsArray = data.items.map((item: WheelItem) => item.value);
+        setSegments(segmentsArray);
+
+        // Extract allowed winners based on will_select
+        const allowedWinnerIndices = data.items
+          .map((item: WheelItem, index: number) =>
+            item.will_select ? index : -1
+          )
+          .filter((index: number) => index !== -1);
+        setAllowedWinners(allowedWinnerIndices);
+      } catch (error) {
+        console.error("Error fetching wheel items:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchWheelItems();
+  }, []);
 
   return (
     <div className="flex flex-col items-center gap-6">
       {/* Arrow indicator */}
-      <Image
-        src="/new_wheel_arrow.png"
-        alt="Arrow"
-        width={58}
-        height={58}
-        className="mb-[-87px] z-10"
-      />
+      {!loading && (
+        <Image
+          src="/new_wheel_arrow.png"
+          alt="Arrow"
+          width={58}
+          height={58}
+          className="mb-[-87px] z-10"
+        />
+      )}
 
       <div
         className="relative flex items-center justify-center"
@@ -165,101 +232,116 @@ export default function NewWheel() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Wheel with SVG segments */}
-        <svg
-          width="355"
-          height="355"
-          viewBox="0 0 355 355"
-          className="absolute"
-          style={{
-            transform: `rotate(${rotation}deg)`,
-            transition: isSpinning
-              ? "transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99)"
-              : "none",
-          }}
-        >
-          {segments.map((segment, index) => {
-            const colors = [
-              "#2E9CFF",
-              "#960095",
-              "#FFE62E",
-              "#E74C49",
-              "#FF82B9",
-              "#72F775",
-            ];
-            const icons = [
-              "/icons/spins/medium/dollar.png",
-              "/icons/spins/medium/cup.png",
-              "/icons/spins/medium/ticket.png",
-              "/icons/spins/medium/king.png",
-              "/icons/spins/medium/percentage.png",
-              "/icons/spins/medium/gift.png",
-            ];
-            const startAngle =
-              ((index * 360) / segments.length - 90) * (Math.PI / 180);
-            const endAngle =
-              (((index + 1) * 360) / segments.length - 90) * (Math.PI / 180);
-            const radius = 177.5;
-            const centerX = 177.5;
-            const centerY = 177.5;
-
-            const x1 = centerX + radius * Math.cos(startAngle);
-            const y1 = centerY + radius * Math.sin(startAngle);
-            const x2 = centerX + radius * Math.cos(endAngle);
-            const y2 = centerY + radius * Math.sin(endAngle);
-
-            const largeArcFlag = 0;
-
-            const pathData = `M ${centerX} ${centerY} L ${x1} ${y1} A ${radius} ${radius} 0 ${largeArcFlag} 1 ${x2} ${y2} Z`;
-
-            // Calculate icon position
-            const iconAngle =
-              (((index + 0.5) * 360) / segments.length - 90) * (Math.PI / 180);
-            const iconRadius = radius * 0.65;
-            const iconX = centerX + iconRadius * Math.cos(iconAngle);
-            const iconY = centerY + iconRadius * Math.sin(iconAngle);
-            const iconRotation = ((index + 0.5) * 360) / segments.length;
-
-            return (
-              <g key={index}>
-                <path
-                  d={pathData}
-                  fill={colors[index]}
-                  stroke="#ffffff"
-                  strokeWidth="4"
-                />
-                <image
-                  href={icons[index]}
-                  x={iconX - 25}
-                  y={iconY - 25}
-                  width="50"
-                  height="50"
-                  transform={`rotate(${iconRotation}, ${iconX}, ${iconY})`}
-                />
-              </g>
-            );
-          })}
-
-          {/* Center circle */}
-          <circle cx="177.5" cy="177.5" r="40" fill="#1E90FF" />
-          <circle
-            cx="177.5"
-            cy="177.5"
-            r="40"
-            fill="none"
-            stroke="#FFF"
-            strokeWidth="3"
+        {loading ? (
+          // Skeleton loader
+          <div
+            className="absolute animate-pulse"
+            style={{
+              width: "355px",
+              height: "355px",
+              backgroundColor: "#2a2a2a",
+              borderRadius: "50%",
+              border: "4px solid #3a3a3a",
+            }}
           />
-          <text
-            x="177.5"
-            y="177.5"
-            fill="#FFF"
-            fontSize="18"
-            fontWeight="bold"
-            textAnchor="middle"
-            dominantBaseline="middle"
-          ></text>
-        </svg>
+        ) : (
+          // Wheel with SVG segments
+          <svg
+            width="355"
+            height="355"
+            viewBox="0 0 355 355"
+            className="absolute"
+            style={{
+              transform: `rotate(${rotation}deg)`,
+              transition: isSpinning
+                ? "transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99)"
+                : "none",
+            }}
+          >
+            {segments.map((segment, index) => {
+              const colors = [
+                "#2E9CFF",
+                "#960095",
+                "#FFE62E",
+                "#E74C49",
+                "#FF82B9",
+                "#72F775",
+              ];
+              const icons = [
+                "/icons/spins/medium/dollar.png",
+                "/icons/spins/medium/cup.png",
+                "/icons/spins/medium/ticket.png",
+                "/icons/spins/medium/king.png",
+                "/icons/spins/medium/percentage.png",
+                "/icons/spins/medium/gift.png",
+              ];
+              const startAngle =
+                ((index * 360) / segments.length - 90) * (Math.PI / 180);
+              const endAngle =
+                (((index + 1) * 360) / segments.length - 90) * (Math.PI / 180);
+              const radius = 177.5;
+              const centerX = 177.5;
+              const centerY = 177.5;
+
+              const x1 = centerX + radius * Math.cos(startAngle);
+              const y1 = centerY + radius * Math.sin(startAngle);
+              const x2 = centerX + radius * Math.cos(endAngle);
+              const y2 = centerY + radius * Math.sin(endAngle);
+
+              const largeArcFlag = 0;
+
+              const pathData = `M ${centerX} ${centerY} L ${x1} ${y1} A ${radius} ${radius} 0 ${largeArcFlag} 1 ${x2} ${y2} Z`;
+
+              // Calculate icon position
+              const iconAngle =
+                (((index + 0.5) * 360) / segments.length - 90) *
+                (Math.PI / 180);
+              const iconRadius = radius * 0.65;
+              const iconX = centerX + iconRadius * Math.cos(iconAngle);
+              const iconY = centerY + iconRadius * Math.sin(iconAngle);
+              const iconRotation = ((index + 0.5) * 360) / segments.length;
+
+              return (
+                <g key={index}>
+                  <path
+                    d={pathData}
+                    fill={colors[index]}
+                    stroke="#ffffff"
+                    strokeWidth="4"
+                  />
+                  <image
+                    href={icons[index]}
+                    x={iconX - 25}
+                    y={iconY - 25}
+                    width="50"
+                    height="50"
+                    transform={`rotate(${iconRotation}, ${iconX}, ${iconY})`}
+                  />
+                </g>
+              );
+            })}
+
+            {/* Center circle */}
+            <circle cx="177.5" cy="177.5" r="40" fill="#1E90FF" />
+            <circle
+              cx="177.5"
+              cy="177.5"
+              r="40"
+              fill="none"
+              stroke="#FFF"
+              strokeWidth="3"
+            />
+            <text
+              x="177.5"
+              y="177.5"
+              fill="#FFF"
+              fontSize="18"
+              fontWeight="bold"
+              textAnchor="middle"
+              dominantBaseline="middle"
+            ></text>
+          </svg>
+        )}
       </div>
 
       <button
@@ -277,6 +359,8 @@ export default function NewWheel() {
           <p className="text-xl font-bold text-[#F37E2C]">{winner}</p>
         </div>
       )}
+
+      {/* Wheel Items List - Fetched from /wheel-items API */}
     </div>
   );
 }
