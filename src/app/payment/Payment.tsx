@@ -50,7 +50,7 @@ export default function PaymentSection() {
             <div className="flex justify-between">
               <span className="text-[#B7B7B7]">{t("accountSize")}</span>
               <span className="font-medium text-white">
-                {subscriptionValue}
+                {Number(subscriptionValue.replace(/[^0-9.-]+/g, "")) / 1000}k
               </span>
             </div>
             <div className="flex justify-between">

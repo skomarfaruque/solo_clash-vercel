@@ -70,9 +70,13 @@ export default function SubscriptionSectionCardNew({
       <div className="border-b border-[rgba(255,255,255,0.06)] flex px-8 pt-8 pb-6 flex-col items-start">
         <h2 className="text-3xl font-bold text-cyan-400">
           {currencyIcon}
-          {subscription?.subscription_value || "50K"}
+          {subscription?.subscription_value
+            ? `${subscription.subscription_value / 1000}K`
+            : "50K"}
         </h2>
-        <p className="text-sm text-gray-400 mt-1">Buying Power</p>
+        <p className="text-sm text-gray-400 mt-1">
+          {subscription?.subscription_name || "Buying Power"}
+        </p>
       </div>
 
       {/* Monthly price */}

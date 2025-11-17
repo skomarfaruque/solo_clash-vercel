@@ -155,6 +155,12 @@ export default function ChooseAccount() {
                 ) : subscriptions.length > 0 ? (
                   subscriptions.map((subscription) => {
                     const displayValue = `$${subscription.subscription_value.toLocaleString()}`;
+                    console.log(
+                      "accountsize",
+                      accountSize,
+                      "displayValue",
+                      displayValue
+                    );
                     return (
                       <button
                         key={subscription.id}
@@ -168,7 +174,7 @@ export default function ChooseAccount() {
                             : "bg-neutral-800 text-gray-400"
                         }`}
                       >
-                        {displayValue}
+                        {`${subscription.subscription_value / 1000}k`}
                       </button>
                     );
                   })
