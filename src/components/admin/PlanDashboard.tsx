@@ -35,6 +35,7 @@ export default function AdminDashboard() {
   const [deleteMessage, setDeleteMessage] = useState("");
   const [programSearch, setProgramSearch] = useState("");
   const [showProgramDropdown, setShowProgramDropdown] = useState(false);
+  const [editingId, setEditingId] = useState<number | null>(null);
   const [deleteConfirmation, setDeleteConfirmation] = useState<{
     show: boolean;
     id: number | null;
@@ -46,7 +47,6 @@ export default function AdminDashboard() {
   });
   const [formData, setFormData] = useState({
     program_id: "",
-    program_name: "",
     subscription_name: "",
     subscription_value: "",
     monthly_price: "",
@@ -198,34 +198,64 @@ export default function AdminDashboard() {
     fetchSubscriptions();
   }, [fetchPrograms, fetchSubscriptions]);
 
+  const handleEditSubscription = (subscription: Subscription) => {
+    setEditingId(subscription.id);
+    setFormData({
+      program_id: subscription.program_id,
+      subscription_name: subscription.subscription_name,
+      subscription_value: subscription.subscription_value,
+      monthly_price: subscription.monthly_price,
+      profit_target: subscription.profit_target,
+      maximum_position: subscription.maximum_position,
+      maximum_loss_limit: subscription.maximum_loss_limit,
+      amount: subscription.amount,
+    });
+    setShowForm(true);
+  };
+
+  const handleCancelForm = () => {
+    setShowForm(false);
+    setEditingId(null);
+    setFormData({
+      program_id: "",
+      subscription_name: "",
+      subscription_value: "",
+      monthly_price: "",
+      profit_target: "",
+      maximum_position: "",
+      maximum_loss_limit: "",
+      amount: "",
+    });
+  };
+
   const handleAddSubscription = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormLoading(true);
 
     try {
       const token = localStorage.getItem("adminToken");
+      const isEditing = editingId !== null;
+      const url = isEditing
+        ? `https://solo-clash-backend.vercel.app/api/v1/subscriptions/${editingId}`
+        : "https://solo-clash-backend.vercel.app/api/v1/subscriptions";
 
-      const response = await fetch(
-        "https://solo-clash-backend.vercel.app/api/v1/subscriptions",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify({
-            program_id: formData.program_id,
-            program_name: formData.program_name,
-            subscription_name: formData.subscription_name,
-            subscription_value: parseFloat(formData.subscription_value),
-            monthly_price: parseFloat(formData.monthly_price),
-            profit_target: parseFloat(formData.profit_target),
-            maximum_position: parseFloat(formData.maximum_position),
-            maximum_loss_limit: parseFloat(formData.maximum_loss_limit),
-            amount: parseFloat(formData.amount),
-          }),
-        }
-      );
+      const response = await fetch(url, {
+        method: isEditing ? "PATCH" : "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          program_id: formData.program_id,
+          subscription_name: formData.subscription_name,
+          subscription_value: parseFloat(formData.subscription_value),
+          monthly_price: parseFloat(formData.monthly_price),
+          profit_target: parseFloat(formData.profit_target),
+          maximum_position: parseFloat(formData.maximum_position),
+          maximum_loss_limit: parseFloat(formData.maximum_loss_limit),
+          amount: parseFloat(formData.amount),
+        }),
+      });
 
       const data = await response.json();
 
@@ -233,7 +263,6 @@ export default function AdminDashboard() {
         // Reset form
         setFormData({
           program_id: "",
-          program_name: "",
           subscription_name: "",
           subscription_value: "",
           monthly_price: "",
@@ -243,19 +272,32 @@ export default function AdminDashboard() {
           amount: "",
         });
         setShowForm(false);
+        setEditingId(null);
         // Show success message
         setSuccessMessage(
-          `✓ ${formData.subscription_name} added successfully!`
+          `✓ ${formData.subscription_name} ${
+            isEditing ? "updated" : "added"
+          } successfully!`
         );
         setTimeout(() => setSuccessMessage(""), 4000);
         // Refresh subscriptions
         await fetchSubscriptions();
       } else {
-        alert(data.message || "Failed to add subscription");
+        alert(
+          data.message ||
+            `Failed to ${isEditing ? "update" : "add"} subscription`
+        );
       }
     } catch (err) {
-      console.error("Error adding subscription:", err);
-      alert("An error occurred while adding subscription");
+      console.error(
+        `Error ${editingId ? "updating" : "adding"} subscription:`,
+        err
+      );
+      alert(
+        `An error occurred while ${
+          editingId ? "updating" : "adding"
+        } subscription`
+      );
     } finally {
       setFormLoading(false);
     }
@@ -564,7 +606,9 @@ export default function AdminDashboard() {
               Subscriptions
             </h3>
             <button
-              onClick={() => setShowForm(!showForm)}
+              onClick={() =>
+                showForm ? handleCancelForm() : setShowForm(true)
+              }
               style={{
                 padding: "10px 16px",
                 backgroundColor: "#2BB6DD",
@@ -754,40 +798,6 @@ export default function AdminDashboard() {
                     }}
                   />
                 )}
-
-                <div>
-                  <label
-                    style={{
-                      display: "block",
-                      marginBottom: "8px",
-                      color: "#FFFFFF",
-                      fontSize: "14px",
-                      fontWeight: 500,
-                    }}
-                  >
-                    Program Name
-                  </label>
-                  <input
-                    type="text"
-                    value={formData.program_name}
-                    onChange={(e) =>
-                      setFormData({ ...formData, program_name: e.target.value })
-                    }
-                    placeholder="Enter program name"
-                    required
-                    style={{
-                      width: "100%",
-                      padding: "10px",
-                      backgroundColor: "#1a1a1a",
-                      color: "#FFFFFF",
-                      border: "1px solid rgba(255, 255, 255, 0.2)",
-                      borderRadius: "6px",
-                      fontSize: "14px",
-                      outline: "none",
-                      boxSizing: "border-box",
-                    }}
-                  />
-                </div>
 
                 <div>
                   <label
@@ -1079,7 +1089,13 @@ export default function AdminDashboard() {
                   }
                 }}
               >
-                {formLoading ? "Adding..." : "Add Subscription"}
+                {formLoading
+                  ? editingId
+                    ? "Updating..."
+                    : "Adding..."
+                  : editingId
+                  ? "Update Subscription"
+                  : "Add Subscription"}
               </button>
             </form>
           )}
@@ -1218,34 +1234,62 @@ export default function AdminDashboard() {
                         {new Date(subscription.created_at).toLocaleDateString()}
                       </td>
                       <td style={{ padding: "12px" }}>
-                        <button
-                          onClick={() =>
-                            handleDeleteSubscription(subscription.id)
-                          }
-                          style={{
-                            padding: "6px 12px",
-                            backgroundColor: "#ff4444",
-                            color: "#FFFFFF",
-                            border: "none",
-                            borderRadius: "4px",
-                            fontSize: "12px",
-                            fontWeight: 600,
-                            cursor: "pointer",
-                            transition: "background-color 0.3s ease",
-                          }}
-                          onMouseEnter={(e) => {
-                            (
-                              e.currentTarget as HTMLButtonElement
-                            ).style.backgroundColor = "#cc0000";
-                          }}
-                          onMouseLeave={(e) => {
-                            (
-                              e.currentTarget as HTMLButtonElement
-                            ).style.backgroundColor = "#ff4444";
-                          }}
-                        >
-                          Delete
-                        </button>
+                        <div style={{ display: "flex", gap: "8px" }}>
+                          <button
+                            onClick={() => handleEditSubscription(subscription)}
+                            style={{
+                              padding: "6px 12px",
+                              backgroundColor: "#2BB6DD",
+                              color: "#030303",
+                              border: "none",
+                              borderRadius: "4px",
+                              fontSize: "12px",
+                              fontWeight: 600,
+                              cursor: "pointer",
+                              transition: "opacity 0.3s ease",
+                            }}
+                            onMouseEnter={(e) => {
+                              (
+                                e.currentTarget as HTMLButtonElement
+                              ).style.opacity = "0.8";
+                            }}
+                            onMouseLeave={(e) => {
+                              (
+                                e.currentTarget as HTMLButtonElement
+                              ).style.opacity = "1";
+                            }}
+                          >
+                            Edit
+                          </button>
+                          <button
+                            onClick={() =>
+                              handleDeleteSubscription(subscription.id)
+                            }
+                            style={{
+                              padding: "6px 12px",
+                              backgroundColor: "#ff4444",
+                              color: "#FFFFFF",
+                              border: "none",
+                              borderRadius: "4px",
+                              fontSize: "12px",
+                              fontWeight: 600,
+                              cursor: "pointer",
+                              transition: "background-color 0.3s ease",
+                            }}
+                            onMouseEnter={(e) => {
+                              (
+                                e.currentTarget as HTMLButtonElement
+                              ).style.backgroundColor = "#cc0000";
+                            }}
+                            onMouseLeave={(e) => {
+                              (
+                                e.currentTarget as HTMLButtonElement
+                              ).style.backgroundColor = "#ff4444";
+                            }}
+                          >
+                            Delete
+                          </button>
+                        </div>
                       </td>
                     </tr>
                   ))}
