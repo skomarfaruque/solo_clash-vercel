@@ -100,12 +100,6 @@ export default function NewWheel() {
       baseRotations +
       ((targetNormalizedRotation - currentNormalized + 360) % 360);
 
-    console.log(
-      `🎯 Target segment ${targetSegmentIndex}: current=${currentNormalized.toFixed(
-        2
-      )}, target=${targetNormalizedRotation}, rotation=${rotationNeeded}`
-    );
-
     return rotationNeeded;
   };
 
@@ -126,12 +120,7 @@ export default function NewWheel() {
       // Randomly select a winner from the allowedWinners array
       const randomIndex = Math.floor(Math.random() * allowedWinners.length);
       const randomWinner = allowedWinners[randomIndex];
-      console.log(
-        "🎲 Selected winner from array:",
-        randomWinner,
-        "from",
-        allowedWinners
-      );
+
       randomRotation = getRotationForSegment(randomWinner, rotation);
     }
 
@@ -167,20 +156,7 @@ export default function NewWheel() {
         Math.floor(adjustedRotation / segmentAngle) % segments.length;
       const winnerValue = segments[segmentIndex];
 
-      console.log(
-        "📊 Detection - Normalized:",
-        normalizedRotation.toFixed(2),
-        "Adjusted:",
-        adjustedRotation.toFixed(2),
-        "Index:",
-        segmentIndex
-      );
-
       setWinner(winnerValue);
-      console.log("🎯 Winner:", winnerValue);
-      console.log("Segment Index:", segmentIndex);
-      console.log("Final Rotation:", normalizedRotation.toFixed(2), "degrees");
-      console.log("Adjusted Angle:", adjustedRotation.toFixed(2), "degrees");
 
       // Call API to save wheel history
       if (wheelItems.length > 0 && wheelItems[segmentIndex]) {
