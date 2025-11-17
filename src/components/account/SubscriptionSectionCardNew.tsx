@@ -84,7 +84,10 @@ export default function SubscriptionSectionCardNew({
         <p className="text-xs text-gray-500 lg:hidden">Monthly Price</p>
         <p className="text-xl font-semibold flex lg:block">
           {currencyIcon}
-          {(subscription?.monthly_price ?? 45000) / 1000}k /mo{" "}
+          {subscription?.monthly_price
+            ? Math.floor(subscription.monthly_price)
+            : "45"}
+          /mo{" "}
           <sup
             className="font-normal text-xs sm:text-sm leading-6"
             style={{ color: "#B7B7B7" }}
@@ -100,15 +103,15 @@ export default function SubscriptionSectionCardNew({
         <p className="lg:block">
           {currencyIcon}
           {subscription?.profit_target
-            ? `${subscription.profit_target / 1000}K`
-            : "3K"}
+            ? Math.floor(subscription.profit_target)
+            : "3,000"}
         </p>
       </div>
       <div className="border-b border-[rgba(255,255,255,0.06)] flex justify-between items-center px-8 pt-[20px] pb-[20px]">
         <p className="text-xs text-gray-500 lg:hidden">Max Contracts</p>
         <p className="lg:block">
           {subscription?.maximum_position
-            ? `${subscription.maximum_position / 1000}K`
+            ? Math.floor(subscription.maximum_position)
             : "5"}{" "}
           Contracts
         </p>
@@ -118,8 +121,8 @@ export default function SubscriptionSectionCardNew({
         <p className="lg:block">
           {currencyIcon}
           {subscription?.maximum_loss_limit
-            ? `${subscription.maximum_loss_limit / 1000}K`
-            : "2K"}
+            ? Math.floor(subscription.maximum_loss_limit)
+            : "2,000"}
         </p>
       </div>
 
