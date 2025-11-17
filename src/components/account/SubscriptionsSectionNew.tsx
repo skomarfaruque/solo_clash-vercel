@@ -38,7 +38,6 @@ export default function SubscriptionsSectionNew({
       try {
         setIsLoading(true);
         const token = localStorage.getItem("adminToken");
-        console.log("Fetching subscriptions from client...");
 
         const response = await fetch(
           "https://solo-clash-backend.vercel.app/api/v1/subscriptions?limit=3",
@@ -51,14 +50,9 @@ export default function SubscriptionsSectionNew({
           }
         );
 
-        console.log("Response status:", response.status);
-
         const data = await response.json();
 
-        console.log("Response data:", data);
-
         if (data.success && data.data?.items) {
-          console.log("Subscriptions found:", data.data.items.length);
           setSubscriptions(data.data.items);
         } else {
           console.log("No subscriptions in response");
@@ -82,7 +76,6 @@ export default function SubscriptionsSectionNew({
     }
   }, [subscriptions]);
   const handleCurrencyChange = (currency: string) => {
-    console.log(`Currency changed to: ${currency}`);
     // Implement any additional logic needed when currency changes
     document.cookie = `currency=${currency}; path=/; max-age=31536000`;
     setSelectedCurrency(currency);
