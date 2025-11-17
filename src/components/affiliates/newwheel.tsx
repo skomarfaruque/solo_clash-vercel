@@ -361,22 +361,6 @@ export default function NewWheel() {
       )}
 
       {/* Wheel Items List - Fetched from /wheel-items API */}
-      <div className="mt-8 w-full max-w-md">
-        <h2 className="text-xl font-bold text-center mb-4">Wheel Items</h2>
-        <ul className="bg-[#1E1E2E] rounded-lg shadow-md divide-y divide-[#2C2C3E]">
-          {wheelItems.length === 0 ? (
-            <li className="p-4 text-center text-gray-400">
-              No items found or still loading...
-            </li>
-          ) : (
-            wheelItems.map((item, index) => (
-              <li key={index} className="p-4 flex items-center justify-between">
-                <span className="text-sm text-gray-300">{item.item_name}</span>
-              </li>
-            ))
-          )}
-        </ul>
-      </div>
     </div>
   );
 }
