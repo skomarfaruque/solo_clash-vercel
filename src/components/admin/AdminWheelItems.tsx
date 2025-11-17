@@ -26,6 +26,7 @@ export default function AdminWheelItems() {
     item_name: "",
     value: "",
     will_select: "no",
+    image_url: "",
   });
   const [deleteConfirmation, setDeleteConfirmation] = useState<{
     show: boolean;
@@ -150,6 +151,7 @@ export default function AdminWheelItems() {
       item_name: item.item_name,
       value: item.value,
       will_select: item.will_select ? "yes" : "no",
+      image_url: item.Image_Icon_url,
     });
     setShowForm(true);
   };
@@ -161,6 +163,7 @@ export default function AdminWheelItems() {
       item_name: "",
       value: "",
       will_select: "no",
+      image_url: "",
     });
   };
 
@@ -185,6 +188,7 @@ export default function AdminWheelItems() {
           item_name: formData.item_name,
           value: formData.value,
           will_select: formData.will_select === "yes",
+          Image_Icon_url: formData.image_url,
         }),
       });
 
@@ -195,6 +199,7 @@ export default function AdminWheelItems() {
           item_name: "",
           value: "",
           will_select: "no",
+          image_url: "",
         });
         setShowForm(false);
         setEditingId(null);
@@ -619,6 +624,40 @@ export default function AdminWheelItems() {
                     <option value="no">No</option>
                     <option value="yes">Yes</option>
                   </select>
+                </div>
+
+                <div>
+                  <label
+                    style={{
+                      display: "block",
+                      marginBottom: "8px",
+                      color: "#FFFFFF",
+                      fontSize: "14px",
+                      fontWeight: 500,
+                    }}
+                  >
+                    Icon URL
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.image_url}
+                    onChange={(e) =>
+                      setFormData({ ...formData, image_url: e.target.value })
+                    }
+                    placeholder="Enter icon URL"
+                    required
+                    style={{
+                      width: "100%",
+                      padding: "10px",
+                      backgroundColor: "#1a1a1a",
+                      color: "#FFFFFF",
+                      border: "1px solid rgba(255, 255, 255, 0.2)",
+                      borderRadius: "6px",
+                      fontSize: "14px",
+                      outline: "none",
+                      boxSizing: "border-box",
+                    }}
+                  />
                 </div>
               </div>
 
