@@ -17,7 +17,15 @@ interface WheelItem {
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL; // Fetch base URL from environment variables
 
-export default function NewWheel() {
+interface NewWheelProps {
+  isDisabled?: boolean;
+  disabledMessage?: string;
+}
+
+export default function NewWheel({
+  isDisabled = false,
+  disabledMessage = "",
+}: NewWheelProps) {
   const [rotation, setRotation] = useState(0);
   const [isSpinning, setIsSpinning] = useState(false);
   const [winner, setWinner] = useState<string | null>(null);
@@ -27,6 +35,20 @@ export default function NewWheel() {
   const [allowedWinners, setAllowedWinners] = useState<number[]>([]);
 
   const segmentAngle = segments.length > 0 ? 360 / segments.length : 60;
+
+  // Method to generate hash from environment data
+  const generateEnvironmentHash = (): string => {
+    const envString = navigator.userAgent;
+
+    // Simple hash function (djb2)
+    let hash = 5381;
+    for (let i = 0; i < envString.length; i++) {
+      hash = (hash << 5) + hash + envString.charCodeAt(i);
+      hash = hash & hash; // Convert to 32-bit integer
+    }
+
+    return Math.abs(hash).toString(16);
+  };
 
   // Method to save wheel history to API
   const saveWheelHistory = async (
@@ -39,7 +61,7 @@ export default function NewWheel() {
       const userId = user ? JSON.parse(user).id : null;
 
       const payload = {
-        environment: navigator.userAgent,
+        environment: generateEnvironmentHash(),
         user_id: userId,
         wheel_item_id: wheelItemId,
         wheel_item_value: wheelItemValue,
@@ -346,11 +368,22 @@ export default function NewWheel() {
 
       <button
         onClick={() => spinWheel()} // Random winner
-        disabled={isSpinning}
+        disabled={isSpinning || isDisabled}
         className="px-8 py-3 bg-gradient-to-r from-[#F37E2C] to-[#FFA362] text-black font-semibold text-lg rounded-xl hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {isSpinning ? "Spinning..." : "Spin the Wheel"}
+        {isSpinning
+          ? "Spinning..."
+          : isDisabled
+          ? "Spin Locked"
+          : "Spin the Wheel"}
       </button>
+
+      {/* Display disabled message */}
+      {isDisabled && disabledMessage && (
+        <div className="text-center p-4 bg-[#0B0B0C] rounded-lg border border-yellow-600">
+          <p className="text-sm text-yellow-400">{disabledMessage}</p>
+        </div>
+      )}
 
       {/* Display winner */}
       {winner && (

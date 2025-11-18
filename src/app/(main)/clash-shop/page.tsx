@@ -18,7 +18,7 @@ export default function RulesPage() {
       style={{ backgroundColor: "#030303" }}
     >
       <HeroSection />
-      <SpinDetailsSection />
+
       <HowToEarnCoins />
 
       <Banner
