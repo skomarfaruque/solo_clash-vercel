@@ -1,8 +1,25 @@
 import SpinDetailsCard from "./SpinDetailsCard";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+interface WheelHistoryItem {
+  id: number;
+  wheel_item_id: number;
+  wheel_item_value: string;
+  spining_datetime: string;
+  wheel_items?: {
+    id: number;
+    item_name: string;
+    value: string;
+    Image_Icon_url: string | null;
+    will_select: boolean;
+  };
+}
 
-export default function SpinDetailsSection() {
+export default function SpinDetailsSection({
+  wheelHistoryData,
+}: {
+  wheelHistoryData: WheelHistoryItem[];
+}) {
   const t = useTranslations();
   interface SpinDetailsCardData {
     title: string;
