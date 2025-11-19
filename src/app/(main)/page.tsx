@@ -14,10 +14,11 @@ export default async function Home() {
       style={{ backgroundColor: "#030303" }}
     >
       <HeroSection />
+      <SubscriptionsSectionNew />
       <WhyChooseUsSection />
       <TradePlatform />
       <HowItWorksSection />
-      <SubscriptionsSectionNew />
+
       <SpinWinTradeSection />
       <FaqSection />
       <Banner page="account" title="Banner Title" />
