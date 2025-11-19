@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import Heading from "../common/Heading";
 import NewWheel from "../affiliates/newwheel";
 import SpinDetailsSection from "./SpinDetailsSection";
+import { revalidateWheelHistory } from "@/actions/wheelHistory";
 
 interface WheelHistoryItem {
   id: number;
@@ -19,6 +20,12 @@ interface WheelHistoryItem {
   };
 }
 
+interface NewWheelProps {
+  isDisabled?: boolean;
+  disabledMessage?: string;
+  onSpinComplete?: () => void;
+}
+
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 export default function HeroSection() {
@@ -28,72 +35,85 @@ export default function HeroSection() {
   const [wheelHistoryData, setWheelHistoryData] = useState<WheelHistoryItem[]>(
     []
   );
+  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const checkWheelHistory = async () => {
-      try {
-        const token = localStorage.getItem("adminToken");
-        const user = localStorage.getItem("adminUser");
-        const userId = user ? JSON.parse(user).id : null;
+  // Fetch wheel history data
+  const fetchWheelHistory = async () => {
+    setIsLoading(true);
+    try {
+      const token = localStorage.getItem("adminToken");
+      const user = localStorage.getItem("adminUser");
+      const userId = user ? JSON.parse(user).id : null;
 
-        // Generate environment hash
-        const envString = navigator.userAgent;
-        let hash = 5381;
-        for (let i = 0; i < envString.length; i++) {
-          hash = (hash << 5) + hash + envString.charCodeAt(i);
-          hash = hash & hash;
-        }
-        const environmentHash = Math.abs(hash).toString(16);
+      // Generate environment hash
+      const envString = navigator.userAgent;
+      let hash = 5381;
+      for (let i = 0; i < envString.length; i++) {
+        hash = (hash << 5) + hash + envString.charCodeAt(i);
+        hash = hash & hash;
+      }
+      const environmentHash = Math.abs(hash).toString(16);
 
-        // Build query params
-        let url = `${BASE_URL}/wheel-history`;
-        if (userId) {
-          url += `?user_id=${userId}`;
-        } else {
-          url += `?environment=${environmentHash}`;
-        }
+      // Build query params
+      let url = `${BASE_URL}/wheel-history`;
+      if (userId) {
+        url += `?user_id=${userId}`;
+      } else {
+        url += `?environment=${environmentHash}`;
+      }
 
-        const response = await fetch(url, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            ...(token && { Authorization: `Bearer ${token}` }),
-          },
-        });
+      const response = await fetch(url, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          ...(token && { Authorization: `Bearer ${token}` }),
+        },
+        next: { tags: ["wheel-history"], revalidate: 300 }, // Revalidate every 5 minutes
+      });
 
-        if (response.ok) {
-          const data = await response.json();
+      if (response.ok) {
+        const data = await response.json();
 
-          if (data.data && data.data.items && data.data.items.length > 0) {
-            const items = data.data.items;
-            setWheelHistoryData(items);
+        if (data.data && data.data.items && data.data.items.length > 0) {
+          const items = data.data.items;
+          setWheelHistoryData(items);
 
-            const lastSpin = items[0];
-            const lastSpinTime = new Date(lastSpin.spining_datetime);
-            const currentTime = new Date();
-            const timeDifference =
-              currentTime.getTime() - lastSpinTime.getTime();
-            const hoursDifference = timeDifference / (1000 * 60 * 60);
+          const lastSpin = items[0];
+          const lastSpinTime = new Date(lastSpin.spining_datetime);
+          const currentTime = new Date();
+          const timeDifference = currentTime.getTime() - lastSpinTime.getTime();
+          const hoursDifference = timeDifference / (1000 * 60 * 60);
 
-            if (hoursDifference < 24) {
-              setIsSpinDisabled(true);
-              const remainingHours = Math.ceil(24 - hoursDifference);
-              setDisabledMessage(
-                `You can spin again in ${remainingHours} hour(s)`
-              );
-            } else {
-              setIsSpinDisabled(false);
-              setDisabledMessage("");
-            }
+          if (hoursDifference < 24) {
+            setIsSpinDisabled(true);
+            const remainingHours = Math.ceil(24 - hoursDifference);
+            setDisabledMessage(
+              `You can spin again in ${remainingHours} hour(s)`
+            );
+          } else {
+            setIsSpinDisabled(false);
+            setDisabledMessage("");
           }
         }
-      } catch (error) {
-        console.error("Error checking wheel history:", error);
       }
-    };
+    } catch (error) {
+      console.error("Error fetching wheel history:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
-    checkWheelHistory();
+  // Initial load on component mount
+  useEffect(() => {
+    fetchWheelHistory();
   }, []);
+
+  // Callback for when spin is complete
+  const handleSpinComplete = async () => {
+    // Revalidate cache and refresh wheel history after spin
+    await revalidateWheelHistory();
+    fetchWheelHistory();
+  };
 
   return (
     <>
@@ -126,11 +146,15 @@ export default function HeroSection() {
             <NewWheel
               isDisabled={isSpinDisabled}
               disabledMessage={disabledMessage}
+              onSpinComplete={handleSpinComplete}
             />
           </div>
         </div>
       </section>
-      <SpinDetailsSection wheelHistoryData={wheelHistoryData} />
+      <SpinDetailsSection
+        wheelHistoryData={wheelHistoryData}
+        isLoading={isLoading}
+      />
     </>
   );
 }

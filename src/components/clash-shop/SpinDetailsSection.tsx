@@ -17,9 +17,12 @@ interface WheelHistoryItem {
 
 export default function SpinDetailsSection({
   wheelHistoryData,
+  isLoading,
 }: {
   wheelHistoryData: WheelHistoryItem[];
+  isLoading?: boolean;
 }) {
+  console.log("Wheel History Data:", wheelHistoryData);
   const t = useTranslations();
   interface SpinDetailsCardData {
     title: string;
@@ -150,9 +153,29 @@ export default function SpinDetailsSection({
       </h1>
       {/* Features Grid */}
       <div className="grid grid-cols-1 gap-6 max-w-[780px] mx-auto">
-        {cardsData.map((card: SpinDetailsCardData, idx: number) => (
-          <SpinDetailsCard key={idx} iconPath={iconPaths[idx]} card={card} />
-        ))}
+        {isLoading ? (
+          // Show skeleton loaders while loading
+          Array.from({ length: 3 }).map((_, idx: number) => (
+            <SpinDetailsCard
+              key={`skeleton-${idx}`}
+              iconPath={iconPaths[idx]}
+              isLoading={true}
+            />
+          ))
+        ) : wheelHistoryData.length > 0 ? (
+          // Show actual data when loaded
+          wheelHistoryData.map((card: WheelHistoryItem, idx: number) => (
+            <SpinDetailsCard
+              key={idx}
+              iconPath={iconPaths[idx]}
+              wheelHistoryData={card}
+              isLoading={false}
+            />
+          ))
+        ) : (
+          // Show empty state
+          <p className="text-gray-400 text-center">No spin history available</p>
+        )}
       </div>
     </section>
   );
