@@ -20,11 +20,13 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL; // Fetch base URL from enviro
 interface NewWheelProps {
   isDisabled?: boolean;
   disabledMessage?: string;
+  onSpinComplete?: () => void;
 }
 
 export default function NewWheel({
   isDisabled = false,
   disabledMessage = "",
+  onSpinComplete,
 }: NewWheelProps) {
   const [rotation, setRotation] = useState(0);
   const [isSpinning, setIsSpinning] = useState(false);
@@ -83,6 +85,11 @@ export default function NewWheel({
 
       const data = await response.json();
       console.log("Wheel history saved:", data);
+
+      // Call the callback to refresh wheel history in parent component
+      if (onSpinComplete) {
+        onSpinComplete();
+      }
     } catch (error) {
       console.error("Error saving wheel history:", error);
     }
