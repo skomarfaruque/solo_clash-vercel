@@ -20,6 +20,7 @@ export default function SpinDetailsSection({
 }: {
   wheelHistoryData: WheelHistoryItem[];
 }) {
+  console.log("Wheel History Data:", wheelHistoryData);
   const t = useTranslations();
   interface SpinDetailsCardData {
     title: string;
@@ -150,8 +151,13 @@ export default function SpinDetailsSection({
       </h1>
       {/* Features Grid */}
       <div className="grid grid-cols-1 gap-6 max-w-[780px] mx-auto">
-        {cardsData.map((card: SpinDetailsCardData, idx: number) => (
-          <SpinDetailsCard key={idx} iconPath={iconPaths[idx]} card={card} />
+        {wheelHistoryData.map((card: WheelHistoryItem, idx: number) => (
+          <SpinDetailsCard
+            key={idx}
+            iconPath={iconPaths[idx]}
+            // card={card}
+            wheelHistoryData={card}
+          />
         ))}
       </div>
     </section>

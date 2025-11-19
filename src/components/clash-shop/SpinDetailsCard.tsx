@@ -2,17 +2,35 @@ import Image from "next/image";
 
 interface FeatureCardProps {
   readonly iconPath: string;
-  readonly card: CardDataProps;
+  readonly wheelHistoryData?: WheelHistoryItem;
 }
-interface CardDataProps {
-  title: string;
-  buttonBg: string;
-  buttonTitle: string;
-  date: string;
+interface WheelHistoryItem {
+  id: number;
+  wheel_item_id: number;
+  wheel_item_value: string;
+  spining_datetime: string;
+  wheel_items?: {
+    id: number;
+    item_name: string;
+    value: string;
+    Image_Icon_url: string | null;
+    will_select: boolean;
+  };
 }
+
+const formatDate = (dateString: string): string => {
+  if (!dateString) return "Date & Time";
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+};
+
 export default function SpinDetailsCard({
   iconPath,
-  card: { title, buttonBg, buttonTitle, date },
+  wheelHistoryData,
 }: FeatureCardProps) {
   return (
     <div
@@ -28,7 +46,7 @@ export default function SpinDetailsCard({
       <div className="flex items-center gap-4">
         <Image
           src={iconPath}
-          alt={title}
+          alt={wheelHistoryData?.wheel_items?.item_name || "Spin Item Icon"}
           width={40}
           height={40}
           className="w-[40px] h-[40px]"
@@ -43,7 +61,7 @@ export default function SpinDetailsCard({
             color: "#FFFFFF",
           }}
         >
-          {title}
+          {wheelHistoryData?.wheel_items?.item_name || "Spin Item"}
         </h3>
       </div>
       <p
@@ -55,7 +73,7 @@ export default function SpinDetailsCard({
           color: "#FFFFFF",
         }}
       >
-        {date}
+        {formatDate(wheelHistoryData?.spining_datetime || "")}
       </p>
       <button
         className="text-white bg-blue-500 px-4 py-2 rounded"
@@ -64,7 +82,7 @@ export default function SpinDetailsCard({
           gap: "10px",
           width: "111px",
           height: "40px",
-          background: `${buttonBg}`,
+          // background: `${buttonBg}`,
           borderRadius: "130px",
           fontWeight: 400,
           fontSize: "14px",
@@ -72,7 +90,7 @@ export default function SpinDetailsCard({
           color: "#FFFFFF",
         }}
       >
-        {buttonTitle}
+        button
       </button>
     </div>
   );
