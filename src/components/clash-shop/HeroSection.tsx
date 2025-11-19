@@ -28,9 +28,11 @@ export default function HeroSection() {
   const [wheelHistoryData, setWheelHistoryData] = useState<WheelHistoryItem[]>(
     []
   );
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const checkWheelHistory = async () => {
+      setIsLoading(true);
       try {
         const token = localStorage.getItem("adminToken");
         const user = localStorage.getItem("adminUser");
@@ -89,6 +91,8 @@ export default function HeroSection() {
         }
       } catch (error) {
         console.error("Error checking wheel history:", error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -130,7 +134,10 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
-      <SpinDetailsSection wheelHistoryData={wheelHistoryData} />
+      <SpinDetailsSection
+        wheelHistoryData={wheelHistoryData}
+        isLoading={isLoading}
+      />
     </>
   );
 }

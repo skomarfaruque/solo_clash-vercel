@@ -3,6 +3,7 @@ import Image from "next/image";
 interface FeatureCardProps {
   readonly iconPath: string;
   readonly wheelHistoryData?: WheelHistoryItem;
+  readonly isLoading?: boolean;
 }
 interface WheelHistoryItem {
   id: number;
@@ -31,10 +32,45 @@ const formatDate = (dateString: string): string => {
 export default function SpinDetailsCard({
   iconPath,
   wheelHistoryData,
+  isLoading,
 }: FeatureCardProps) {
+  if (isLoading) {
+    return (
+      <div
+        className="rounded-2xl flex text-center w-full justify-between px-5 py-6 items-center"
+        style={{
+          height: "100px",
+          backgroundImage: "url('/spin_details_card_bg.svg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="flex items-center gap-4">
+          <div
+            className="rounded-full bg-gray-600 animate-pulse"
+            style={{ width: "40px", height: "40px" }}
+          />
+          <div
+            className="rounded bg-gray-600 animate-pulse"
+            style={{ width: "100px", height: "16px" }}
+          />
+        </div>
+        <div
+          className="rounded bg-gray-600 animate-pulse"
+          style={{ width: "120px", height: "16px" }}
+        />
+        <div
+          className="rounded-full bg-gray-600 animate-pulse"
+          style={{ width: "111px", height: "40px" }}
+        />
+      </div>
+    );
+  }
+
   return (
     <div
-      className="rounded-2xl flex text-center w-full justify-between px-5 py-6"
+      className="rounded-2xl flex text-center w-full justify-between px-5 py-6 items-center"
       style={{
         height: "100px",
         backgroundImage: "url('/spin_details_card_bg.svg')",
