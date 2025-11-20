@@ -83,6 +83,7 @@ export default function SubscriptionsSectionNew({
 
   return (
     <section
+      id="subscriptions"
       className="justify-center text-center px-4 sm:px-6 lg:px-20 py-10 sm:py-16 lg:py-20"
       style={{ backgroundColor: "#030303" }}
     >

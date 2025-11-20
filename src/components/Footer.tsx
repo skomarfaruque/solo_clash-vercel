@@ -2,12 +2,13 @@ import LanguageSupport from "./LanguageSupport";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import "./Footer.css";
 
 export default function Footer() {
   const t = useTranslations("footer");
 
   const links = [
-    { href: "/account", label: t("links.accounts") },
+    { href: "/#subscriptions", label: t("links.accounts") },
     { href: "/rules", label: t("links.rules") },
     { href: "/faq", label: t("links.faq") },
     { href: "/", label: t("links.getStarted") },
@@ -87,10 +88,10 @@ export default function Footer() {
               </h4>
               <ul className="space-y-2">
                 {links.map((link, index) => (
-                  <li key={index}>
+                  <li key={index} className="footer-link-item">
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-white transition-colors text-sm"
+                      className="footer-link text-gray-400 hover:text-white transition-colors text-sm"
                     >
                       {link.label}
                     </Link>
@@ -106,10 +107,10 @@ export default function Footer() {
               </h4>
               <ul className="space-y-2">
                 {featuresLinks.map((link, index) => (
-                  <li key={index}>
+                  <li key={index} className="footer-link-item">
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-white transition-colors text-sm"
+                      className="footer-link text-gray-400 hover:text-white transition-colors text-sm"
                     >
                       {link.label}
                     </Link>
@@ -125,10 +126,10 @@ export default function Footer() {
               </h4>
               <ul className="space-y-2">
                 {partnersLinks.map((link, index) => (
-                  <li key={index}>
+                  <li key={index} className="footer-link-item">
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-white transition-colors text-sm"
+                      className="footer-link text-gray-400 hover:text-white transition-colors text-sm"
                     >
                       {link.label}
                     </Link>
@@ -142,10 +143,10 @@ export default function Footer() {
               <h4 className="text-lg font-semibold">{t("sections.support")}</h4>
               <ul className="space-y-2">
                 {supportLinks.map((link, index) => (
-                  <li key={index}>
+                  <li key={index} className="footer-link-item">
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-white transition-colors text-sm"
+                      className="footer-link text-gray-400 hover:text-white transition-colors text-sm"
                     >
                       {link.label}
                     </Link>
@@ -206,7 +207,7 @@ export default function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="footer-link text-gray-400 hover:text-white transition-colors text-sm"
                 >
                   {link.label}
                 </Link>
@@ -219,7 +220,7 @@ export default function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-[#FB782D] transition-colors"
+                  className="social-link text-gray-400 hover:text-[#FB782D] transition-colors"
                 >
                   <Image
                     src={link.icon}

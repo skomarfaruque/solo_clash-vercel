@@ -1,0 +1,62 @@
+/* Smooth scroll behavior for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Link hover animations */
+.footer-link {
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fb782d;
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+/* Social link animation */
+.social-link {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-4px);
+  filter: drop-shadow(0 8px 12px rgba(251, 120, 45, 0.4));
+}
+
+/* Section animation on scroll */
+.footer-section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered animation for links */
+.footer-link-item {
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.footer-link-item:nth-child(1) { animation-delay: 0.1s; }
+.footer-link-item:nth-child(2) { animation-delay: 0.2s; }
+.footer-link-item:nth-child(3) { animation-delay: 0.3s; }
+.footer-link-item:nth-child(4) { animation-delay: 0.4s; }
