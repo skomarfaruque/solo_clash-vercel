@@ -21,7 +21,9 @@ export default function IntercomProvider({ children }: IntercomProviderProps) {
       // Load Intercom script
       const script = document.createElement("script");
       script.async = true;
-      script.src = "https://widget.intercom.io/widget/" + process.env.NEXT_PUBLIC_INTERCOM_APP_ID;
+      script.src =
+        "https://widget.intercom.io/widget/" +
+        process.env.NEXT_PUBLIC_INTERCOM_APP_ID;
       document.head.appendChild(script);
 
       return () => {

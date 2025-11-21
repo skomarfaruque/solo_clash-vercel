@@ -11,7 +11,10 @@ export const intercomUtils = {
   /**
    * Identify a user in Intercom Chat
    */
-  identifyUser: (userId: string, userData: Record<string, string | number | boolean> = {}) => {
+  identifyUser: (
+    userId: string,
+    userData: Record<string, string | number | boolean> = {}
+  ) => {
     if (typeof window !== "undefined") {
       const intercomWindow = window as IntercomWindow;
       if (intercomWindow.Intercom) {
@@ -79,7 +82,10 @@ export const intercomUtils = {
   /**
    * Track an event (for analytics)
    */
-  trackEvent: (eventName: string, metadata: Record<string, string | number | boolean> = {}) => {
+  trackEvent: (
+    eventName: string,
+    metadata: Record<string, string | number | boolean> = {}
+  ) => {
     if (typeof window !== "undefined") {
       const intercomWindow = window as IntercomWindow;
       if (intercomWindow.Intercom) {

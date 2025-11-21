@@ -21,16 +21,16 @@ You can find your App ID in the [Intercom Messenger settings](https://app.interc
 When a user logs in, identify them in Intercom:
 
 ```typescript
-import { intercomUtils } from '@/utils/intercomUtils';
+import { intercomUtils } from "@/utils/intercomUtils";
 
 // After successful login
-intercomUtils.identifyUser('user_123', {
-  email: 'user@example.com',
-  name: 'John Doe',
-  phone: '1234567890',
+intercomUtils.identifyUser("user_123", {
+  email: "user@example.com",
+  name: "John Doe",
+  phone: "1234567890",
   // Add any custom attributes
-  subscription_type: 'premium',
-  signup_date: '2024-01-15'
+  subscription_type: "premium",
+  signup_date: "2024-01-15",
 });
 ```
 
@@ -39,10 +39,10 @@ intercomUtils.identifyUser('user_123', {
 Track user actions for analytics:
 
 ```typescript
-intercomUtils.trackEvent('subscription_purchased', {
-  subscription_id: 'sub_123',
+intercomUtils.trackEvent("subscription_purchased", {
+  subscription_id: "sub_123",
   amount: 99.99,
-  currency: 'USD'
+  currency: "USD",
 });
 ```
 
@@ -64,18 +64,18 @@ intercomUtils.show();
 Prompt the user with a pre-filled message:
 
 ```typescript
-intercomUtils.sendMessage('Hello! How can we help you?');
+intercomUtils.sendMessage("Hello! How can we help you?");
 ```
 
 #### Update User Information
 
 ```typescript
 intercomUtils.updateUser({
-  email: 'newemail@example.com',
-  name: 'Jane Doe',
+  email: "newemail@example.com",
+  name: "Jane Doe",
   custom_attributes: {
-    plan_status: 'active'
-  }
+    plan_status: "active",
+  },
 });
 ```
 
