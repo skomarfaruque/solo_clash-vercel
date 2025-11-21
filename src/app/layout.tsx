@@ -1,5 +1,7 @@
 import { NextIntlClientProvider } from "next-intl";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
+import IntercomProvider from "@/providers/IntercomProvider";
+import IntercomButton from "@/components/IntercomButton";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -26,7 +28,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased`}
       >
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <IntercomProvider>
+          <NextIntlClientProvider>
+            {children}
+            <IntercomButton />
+          </NextIntlClientProvider>
+        </IntercomProvider>
       </body>
     </html>
   );
