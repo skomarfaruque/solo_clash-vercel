@@ -30,6 +30,11 @@ export default function PaymentSection() {
       setMonthlyPrice(parsedSubscription?.monthly_price || "N/A");
     }
   }, []);
+  const handleCheckout = async () => {
+    const res = await fetch("/api/checkout", { method: "POST" });
+    const data = await res.json();
+    window.location.href = data.url;
+  };
 
   return (
     <section className="justify-center text-center min-h-screen px-4 sm:px-0 items-center flex py-30">
@@ -216,6 +221,7 @@ export default function PaymentSection() {
             </span>
           </label>
           <div className="flex items-center justify-center mt-[88px]">
+            <button onClick={handleCheckout}>Pay $20</button>
             <SvgButton2
               label="Pay USD $60.00"
               textStyle="font-medium text-base"
