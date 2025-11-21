@@ -12,10 +12,14 @@ import getLocaleFromCookie from "@/utils/getLocaleFromCookie";
 export default function AccountNavBar() {
   const t = useTranslations("accountNavbar");
   const [selectedLang, setSelectedLang] = useState("en");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
     setSelectedLang(getLocaleFromCookie());
+    // Check if user is logged in
+    const adminToken = localStorage.getItem("adminToken");
+    setIsLoggedIn(!!adminToken);
   }, []);
 
   const activeClass =
@@ -52,16 +56,18 @@ export default function AccountNavBar() {
             window.location.reload();
           }}
         />
-        <Link
-          href="/login"
-          className={
-            pathname === "/payment" || pathname === "/account"
-              ? activeClass
-              : inactiveClass
-          }
-        >
-          {t("login")}
-        </Link>
+        {!isLoggedIn && (
+          <Link
+            href="/login"
+            className={
+              pathname === "/payment" || pathname === "/account"
+                ? activeClass
+                : inactiveClass
+            }
+          >
+            {t("login")}
+          </Link>
+        )}
       </div>
     </nav>
   );

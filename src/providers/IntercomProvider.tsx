@@ -10,7 +10,7 @@ export default function IntercomProvider({ children }: IntercomProviderProps) {
   useEffect(() => {
     // Initialize Intercom with chat-only mode
     if (typeof window !== "undefined") {
-      // @ts-ignore
+      // @ts-expect-error donot know the type
       window.intercomSettings = {
         api_base: "https://api-iam.intercom.io",
         app_id: process.env.NEXT_PUBLIC_INTERCOM_APP_ID,
