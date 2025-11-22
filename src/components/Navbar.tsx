@@ -157,12 +157,14 @@ export default function Navbar() {
               window.location.reload();
             }}
           />
-          <Link
-            href="/get-funded"
-            className="bg-neutral-900 px-4 py-2 rounded-full font-medium h-[52px] flex items-center justify-center"
+          <a
+            href="https://dashboard.soloclash.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-neutral-900 px-4 py-2 rounded-full font-medium h-[52px] flex items-center justify-center cursor-pointer hover:bg-neutral-800 transition"
           >
             {t("navbar.getFunded")} →
-          </Link>
+          </a>
 
           {/* Social Icons */}
           {/* <div className="flex items-center gap-3">
@@ -275,13 +277,15 @@ export default function Navbar() {
                 </Link>
               ))}
             </div>
-            <Link
-              href="/get-funded"
-              className="bg-neutral-800 px-4 py-2 rounded-full font-medium h-[40px] flex items-center justify-center mt-4"
+            <a
+              href="https://dashboard.soloclash.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-neutral-800 px-4 py-2 rounded-full font-medium h-[40px] flex items-center justify-center mt-4 cursor-pointer hover:bg-neutral-700 transition"
               onClick={() => setDrawerOpen(false)}
             >
               {t("navbar.getFunded")} →
-            </Link>
+            </a>
             {/* Social Icons */}
             <div className="flex items-center gap-3 mt-4">
               {socialLinks.map(({ href, src, alt, width, height }) => (
