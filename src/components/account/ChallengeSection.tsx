@@ -26,7 +26,7 @@ export default function ChallengeSection() {
         </h2>
 
         <p className="text-gray-400 text-lg max-w-2xl">
-          It's a platform built for your potential.
+          `It&apos;s a platform built for your potential.`
         </p>
         <div>
           <SvgButton2
