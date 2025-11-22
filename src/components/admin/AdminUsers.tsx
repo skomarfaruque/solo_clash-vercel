@@ -3,6 +3,10 @@
 import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_BASE_URL ||
+  "https://solo-clash-backend.vercel.app/api/v1";
+
 interface User {
   id: string;
   email: string;
@@ -42,16 +46,13 @@ export default function AdminUsers() {
   const fetchCountries = useCallback(async () => {
     try {
       const token = localStorage.getItem("adminToken");
-      const response = await fetch(
-        "https://solo-clash-backend.vercel.app/api/v1/country",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const response = await fetch(`${API_BASE_URL}/country`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
       if (response.status === 401) {
         const { refreshAccessToken } = await import("@/utils/api");
@@ -62,16 +63,13 @@ export default function AdminUsers() {
           return;
         }
 
-        const retryResponse = await fetch(
-          "https://solo-clash-backend.vercel.app/api/v1/country",
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${newToken}`,
-            },
-          }
-        );
+        const retryResponse = await fetch(`${API_BASE_URL}/country`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${newToken}`,
+          },
+        });
 
         const data = await retryResponse.json();
         if (data.success && data.data?.items) {
@@ -99,16 +97,13 @@ export default function AdminUsers() {
   const fetchUsers = useCallback(async () => {
     try {
       const token = localStorage.getItem("adminToken");
-      const response = await fetch(
-        "https://solo-clash-backend.vercel.app/api/v1/users",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const response = await fetch(`${API_BASE_URL}/users`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
       if (response.status === 401) {
         const { refreshAccessToken } = await import("@/utils/api");
@@ -119,16 +114,13 @@ export default function AdminUsers() {
           return;
         }
 
-        const retryResponse = await fetch(
-          "https://solo-clash-backend.vercel.app/api/v1/users",
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${newToken}`,
-            },
-          }
-        );
+        const retryResponse = await fetch(`${API_BASE_URL}/users`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${newToken}`,
+          },
+        });
 
         const data = await retryResponse.json();
         if (data.success && data.data?.items) {
@@ -177,7 +169,7 @@ export default function AdminUsers() {
       const token = localStorage.getItem("adminToken");
 
       const response = await fetch(
-        `https://solo-clash-backend.vercel.app/api/v1/user/${deleteConfirmation.id}`,
+        `${API_BASE_URL}/user/${deleteConfirmation.id}`,
         {
           method: "DELETE",
           headers: {

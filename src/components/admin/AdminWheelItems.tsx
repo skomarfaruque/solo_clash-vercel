@@ -3,6 +3,10 @@
 import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_BASE_URL ||
+  "https://solo-clash-backend.vercel.app/api/v1";
+
 interface WheelItem {
   id: number;
   item_name: string;
@@ -42,16 +46,13 @@ export default function AdminWheelItems() {
   const fetchWheelItems = useCallback(async () => {
     try {
       const token = localStorage.getItem("adminToken");
-      const response = await fetch(
-        "https://solo-clash-backend.vercel.app/api/v1/wheel-items",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const response = await fetch(`${API_BASE_URL}/wheel-items`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
       if (response.status === 401) {
         const { refreshAccessToken } = await import("@/utils/api");
@@ -62,16 +63,13 @@ export default function AdminWheelItems() {
           return;
         }
 
-        const retryResponse = await fetch(
-          "https://solo-clash-backend.vercel.app/api/v1/wheel-items",
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${newToken}`,
-            },
-          }
-        );
+        const retryResponse = await fetch(`${API_BASE_URL}/wheel-items`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${newToken}`,
+          },
+        });
 
         const data = await retryResponse.json();
         if (data.success && data.data?.items) {
@@ -114,7 +112,7 @@ export default function AdminWheelItems() {
       const token = localStorage.getItem("adminToken");
 
       const response = await fetch(
-        `https://solo-clash-backend.vercel.app/api/v1/wheel-items/${deleteConfirmation.id}`,
+        `${API_BASE_URL}/wheel-items/${deleteConfirmation.id}`,
         {
           method: "DELETE",
           headers: {
@@ -175,8 +173,8 @@ export default function AdminWheelItems() {
       const token = localStorage.getItem("adminToken");
       const isEditing = editingId !== null;
       const url = isEditing
-        ? `https://solo-clash-backend.vercel.app/api/v1/wheel-items/${editingId}`
-        : "https://solo-clash-backend.vercel.app/api/v1/wheel-items";
+        ? `${API_BASE_URL}/wheel-items/${editingId}`
+        : `${API_BASE_URL}/wheel-items`;
 
       const response = await fetch(url, {
         method: isEditing ? "PATCH" : "POST",
