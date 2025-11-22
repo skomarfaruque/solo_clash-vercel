@@ -151,7 +151,7 @@ export default function PaymentSection() {
             </div>
           </div>
 
-          <div className="space-y-4 mb-6 text-left text-[16px]">
+          {/* <div className="space-y-4 mb-6 text-left text-[16px]">
             <div>
               <label className="text-sm block mb-1">
                 {t("cardNumberLabel")}
@@ -231,8 +231,8 @@ export default function PaymentSection() {
             <span className="text-left">
               {t("recurringMembershipCheckbox")}
             </span>
-          </label>
-          <div className="flex items-center justify-center mt-[88px]">
+          </label> */}
+          <div className="flex items-center mt-[88px]">
             <SvgButton2
               label={`Pay USD $${totalPayablePrice}`}
               textStyle="font-medium text-base"
