@@ -32,7 +32,6 @@ export default function SubscriptionSectionCardNew({
         "selectedSubscription",
         JSON.stringify(subscription)
       );
-      console.log("Subscription saved to localStorage:", subscription);
     }
 
     // Check if user is logged in
@@ -40,7 +39,7 @@ export default function SubscriptionSectionCardNew({
 
     if (userToken) {
       // User is logged in, redirect to account page
-      router.push("/account");
+      router.push("/payment");
     } else {
       // User is not logged in, redirect to signin page
       router.push("/login");
