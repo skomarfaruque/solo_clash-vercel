@@ -2,7 +2,6 @@
 import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
-import FeatureCard from "./WhyChooseUsCard";
 import HomeButton from "../HomeButton";
 import Heading from "../common/Heading";
 import Image from "next/image";
