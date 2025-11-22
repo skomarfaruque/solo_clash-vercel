@@ -18,9 +18,9 @@ export default function CurrencySelector({
   const t = useTranslations();
 
   const currencies = [
-    { title: "EUR", code: "eur" },
+    // { title: "EUR", code: "eur" },
     { title: "USD", code: "usd" },
-    { title: "TRY", code: "try" },
+    // { title: "TRY", code: "try" },
     // { title: "AUD", code: "aud" },
     // { title: "GBP", code: "gbp" },
     // { title: "XCD", code: "xcd" },
