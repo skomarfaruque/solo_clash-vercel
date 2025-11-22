@@ -31,11 +31,23 @@ export default function PaymentSection() {
     }
   }, []);
   const handleCheckout = async () => {
-    const res = await fetch("/api/checkout", { method: "POST" });
+    const amountInCents = Math.round(Number(totalPayablePrice) * 100);
+    const res = await fetch("/api/checkout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        productName: subscriptionName,
+        amount: amountInCents,
+      }),
+    });
     const data = await res.json();
     window.location.href = data.url;
   };
 
+  const totalPayablePrice = (
+    Number(monthlyPrice) +
+    (Number(monthlyPrice) * vat) / 100
+  ).toFixed(2);
   return (
     <section className="justify-center text-center min-h-screen px-4 sm:px-0 items-center flex py-30">
       {/* Content container */}
@@ -55,12 +67,12 @@ export default function PaymentSection() {
             <div className="flex justify-between">
               <span className="text-[#B7B7B7]">{t("accountSize")}</span>
               <span className="font-medium text-white">
-                {Number(subscriptionValue.replace(/[^0-9.-]+/g, "")) / 1000}k
+                ${Number(subscriptionValue.replace(/[^0-9.-]+/g, ""))}
               </span>
             </div>
             <div className="flex justify-between">
               <span className="text-[#B7B7B7]">{t("platform")}</span>
-              <span className="font-medium text-white">{platformValue}</span>
+              <span className="font-medium text-white">Volumetrica</span>
             </div>
           </div>
 
@@ -117,7 +129,7 @@ export default function PaymentSection() {
             </div>
             <div className="flex justify-between font-semibold text-lg">
               <span>{t("total")}</span>
-              <span>{t("totalValue")}</span>
+              <span>${totalPayablePrice}</span>
             </div>
           </div>
 
@@ -221,10 +233,10 @@ export default function PaymentSection() {
             </span>
           </label>
           <div className="flex items-center justify-center mt-[88px]">
-            <button onClick={handleCheckout}>Pay $20</button>
             <SvgButton2
-              label="Pay USD $60.00"
+              label={`Pay USD $${totalPayablePrice}`}
               textStyle="font-medium text-base"
+              onClick={handleCheckout}
             />
           </div>
         </div>
