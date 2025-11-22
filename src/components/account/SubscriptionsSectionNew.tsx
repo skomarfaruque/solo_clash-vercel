@@ -40,7 +40,7 @@ export default function SubscriptionsSectionNew({
         const token = localStorage.getItem("adminToken");
 
         const response = await fetch(
-          "https://solo-clash-backend.vercel.app/api/v1/subscriptions?limit=3",
+          `${process.env.NEXT_PUBLIC_BASE_URL}/subscriptions?limit=3`,
           {
             method: "GET",
             headers: {
