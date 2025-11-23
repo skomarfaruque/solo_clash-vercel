@@ -16,6 +16,8 @@ export default function PaymentSection() {
   const [monthlyPrice, setMonthlyPrice] = useState("N/A");
   const [userEmail, setUserEmail] = useState("");
   const [userId, setUserId] = useState("");
+  const [promoCode, setPromoCode] = useState("");
+  const [showErrorToast, setShowErrorToast] = useState(false);
   const vat = 25;
 
   useEffect(() => {
@@ -66,6 +68,11 @@ export default function PaymentSection() {
     Number(monthlyPrice) +
     (Number(monthlyPrice) * vat) / 100
   ).toFixed(2);
+
+  const handleApplyCoupon = () => {
+    setShowErrorToast(true);
+    setTimeout(() => setShowErrorToast(false), 3000);
+  };
   return (
     <section className="justify-center text-center min-h-screen px-4 sm:px-0 items-center flex py-30">
       {/* Content container */}
@@ -108,22 +115,22 @@ export default function PaymentSection() {
           </div>
 
           <div className="space-y-4 text-sm">
-            <label className="flex items-start gap-3">
+            <label className="flex items-start gap-3 cursor-pointer">
               <input
                 type="checkbox"
                 checked={checked1}
                 onChange={() => setChecked1(!checked1)}
-                className="mt-1 w-4 h-4 accent-orange-500"
+                className="mt-1 w-5 h-5 accent-orange-500 rounded cursor-pointer bg-neutral-700 border border-orange-500 transition hover:bg-neutral-600"
               />
               <span className="text-left">{t("rebillAgreementCheckbox1")}</span>
             </label>
 
-            <label className="flex items-start gap-3">
+            <label className="flex items-start gap-3 cursor-pointer">
               <input
                 type="checkbox"
                 checked={checked2}
                 onChange={() => setChecked2(!checked2)}
-                className="mt-1 w-4 h-4 accent-orange-500"
+                className="mt-1 w-5 h-5 accent-orange-500 rounded cursor-pointer bg-neutral-700 border border-orange-500 transition hover:bg-neutral-600"
               />
               <span className="text-left">{t("rebillAgreementCheckbox2")}</span>
             </label>
@@ -160,21 +167,26 @@ export default function PaymentSection() {
                 <input
                   type="text"
                   placeholder={t("promoCodePlaceholder")}
+                  value={promoCode}
+                  onChange={(e) => setPromoCode(e.target.value)}
                   className="flex-1 bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
                 />
-                <button className="bg-[rgba(251,120,45,0.1)] rounded-[12px] hover:bg-orange-500 px-4 py-2 text-sm font-medium text-[#FB782D] hover:text-white hover:opacity-80 transition hover:cursor-pointer">
+                <button
+                  onClick={handleApplyCoupon}
+                  className="bg-[rgba(251,120,45,0.1)] rounded-[12px] hover:bg-orange-500 px-4 py-2 text-sm font-medium text-[#FB782D] hover:text-white hover:opacity-80 transition hover:cursor-pointer"
+                >
                   {t("applyButton")}
                 </button>
               </div>
             </div>
           </div>
 
-          <label className="flex items-start gap-3">
+          <label className="flex items-start gap-3 cursor-pointer">
             <input
               type="checkbox"
               checked={checked3}
               onChange={() => setChecked3(!checked3)}
-              className="mt-1 w-4 h-4 accent-orange-500"
+              className="mt-1 w-5 h-5 accent-orange-500 rounded cursor-pointer bg-neutral-700 border border-orange-500 transition hover:bg-neutral-600"
             />
             <span className="text-left">{t("rebillAgreementCheckbox3")}</span>
           </label>
@@ -270,6 +282,54 @@ export default function PaymentSection() {
           </div>
         </div>
       </div>
+
+      {/* Error Toast Notification */}
+      {showErrorToast && (
+        <div
+          style={{
+            position: "fixed",
+            top: "20px",
+            right: "20px",
+            backgroundColor: "#ef4444",
+            border: "2px solid #dc2626",
+            borderRadius: "8px",
+            padding: "16px 24px",
+            display: "flex",
+            alignItems: "center",
+            gap: "12px",
+            zIndex: 99999,
+            boxShadow: "0 10px 25px rgba(0, 0, 0, 0.3)",
+            animation: "slideIn 0.3s ease-out",
+          }}
+        >
+          <svg
+            className="w-5 h-5 flex-shrink-0"
+            fill="white"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fillRule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+              clipRule="evenodd"
+            />
+          </svg>
+          <span style={{ fontSize: "14px", fontWeight: "600", color: "white" }}>
+            Invalid coupon
+          </span>
+        </div>
+      )}
+      <style>{`
+        @keyframes slideIn {
+          from {
+            transform: translateY(-20px);
+            opacity: 0;
+          }
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+      `}</style>
     </section>
   );
 }
