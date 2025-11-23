@@ -1,5 +1,5 @@
+"use client";
 import Image from "next/image";
-import SubscriptionActiveButton from "../SubscriptionActiveButton";
 import BlackButton from "../buttons/BlackButton";
 import SvgButton2 from "../buttons/svgButton2";
 
@@ -93,6 +93,9 @@ export default function TiredRewardCards({
             fullWidth
             radius={50}
             textStyle="font-normal"
+            onClick={() =>
+              window.open("https://affiliate.soloclash.com/login", "_blank")
+            }
           />
         ) : (
           <BlackButton text={buttonText} />
