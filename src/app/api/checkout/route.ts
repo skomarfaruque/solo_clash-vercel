@@ -11,6 +11,7 @@ export async function POST(request: NextRequest) {
       amount = 2000,
       userId,
       userEmail,
+      subscriptionId,
     } = body;
 
     const session = await stripe.checkout.sessions.create({
@@ -37,6 +38,7 @@ export async function POST(request: NextRequest) {
         subscription_name: productName,
         amount_paid: amount.toString(),
         user_id: userId || "",
+        product_id: subscriptionId || "",
         env: process.env.NEXT_PUBLIC_ENVIRONMENT || "dev",
       },
       success_url: `${process.env.NEXT_PUBLIC_APP_URL}/success`,
