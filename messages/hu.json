@@ -84,6 +84,11 @@
     "tradePlatform": {
       "heading": "Kereskedj a kedvenc platformjainkkal"
     },
+    "challengeSection": {
+      "heading": "Ez több, mint egy kihívás",
+      "description": "Ez a lehetőségedre épített platform.",
+      "button": "kezdj el kereskedni"
+    },
     "faqSection": {
       "heading": "Gyakran Ismételt Kérdések",
       "description": "Minden, amit tudnod kell a kezdéshez",

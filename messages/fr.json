@@ -124,6 +124,11 @@
     "tradePlatform": {
       "heading": "Tradez avec nos plateformes préférées"
     },
+    "challengeSection": {
+      "heading": "C'est plus qu'un défi",
+      "description": "C'est une plateforme construite pour votre potentiel.",
+      "button": "commencer à trader"
+    },
     "banner": {
       "title": "Prêt à trader du capital réel?"
     }

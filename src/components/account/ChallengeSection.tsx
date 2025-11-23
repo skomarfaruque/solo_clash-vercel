@@ -1,8 +1,11 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import SvgButton2 from "../buttons/svgButton2";
 
 export default function ChallengeSection() {
+  const t = useTranslations("accountPage.challengeSection");
+
   return (
     <section
       className="justify-center text-center px-4 sm:px-6 lg:px-20 py-10 sm:py-16 lg:py-20"
@@ -12,8 +15,6 @@ export default function ChallengeSection() {
         <h2
           className="font-inter font-bold text-white"
           style={{
-            width: "587px",
-            height: "44px",
             fontStyle: "normal",
             fontWeight: "700",
             fontSize: "40px",
@@ -22,15 +23,13 @@ export default function ChallengeSection() {
             letterSpacing: "0.005em",
           }}
         >
-          This is more than a challenge
+          {t("heading")}
         </h2>
 
-        <p className="text-gray-400 text-lg max-w-2xl">
-          `It&apos;s a platform built for your potential.`
-        </p>
+        <p className="text-gray-400 text-lg max-w-2xl">{t("description")}</p>
         <div>
           <SvgButton2
-            label="start trading"
+            label={t("button")}
             fullWidth
             iconSrc="/arrow_right.png"
           />

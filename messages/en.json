@@ -84,6 +84,11 @@
     "tradePlatform": {
       "heading": "Trade with our favorite platforms"
     },
+    "challengeSection": {
+      "heading": "This is more than a challenge",
+      "description": "It's a platform built for your potential.",
+      "button": "Start Trading"
+    },
     "faqSection": {
       "heading": "Frequently Asked Questions",
       "description": "Everything you need to know about getting started",
