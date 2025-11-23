@@ -429,7 +429,8 @@
   },
   "accountNavbar": {
     "yourChallenge": "Seu desafio",
-    "login": "Entrar"
+    "login": "Entrar",
+    "logout": "Sair"
   },
   "chooseAccount": {
     "chooseYourAccount": "Escolha Sua Conta",

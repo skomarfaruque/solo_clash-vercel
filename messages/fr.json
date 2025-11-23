@@ -452,7 +452,8 @@
   },
   "accountNavbar": {
     "yourChallenge": "Votre défi",
-    "login": "Connexion"
+    "login": "Connexion",
+    "logout": "Déconnexion"
   },
   "chooseAccount": {
     "chooseYourAccount": "Choisissez Votre Compte",

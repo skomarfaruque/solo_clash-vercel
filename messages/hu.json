@@ -427,8 +427,9 @@
     }
   },
   "accountNavbar": {
-    "yourChallenge": "A kihívásod",
-    "login": "Bejelentkezés"
+    "yourChallenge": "Az Ön kihívása",
+    "login": "Bejelentkezés",
+    "logout": "Kijelentkezés"
   },
   "chooseAccount": {
     "chooseYourAccount": "Válassza ki a fiókját",

@@ -453,7 +453,8 @@
   },
   "accountNavbar": {
     "yourChallenge": "تحديك",
-    "login": "تسجيل الدخول"
+    "login": "تسجيل الدخول",
+    "logout": "تسجيل الخروج"
   },
   "chooseAccount": {
     "chooseYourAccount": "اختر حسابك",

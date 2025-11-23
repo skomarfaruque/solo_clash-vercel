@@ -429,7 +429,8 @@
   },
   "accountNavbar": {
     "yourChallenge": "Senin meydan okuman",
-    "login": "Giriş yap"
+    "login": "Giriş yap",
+    "logout": "Çıkış yap"
   },
   "chooseAccount": {
     "chooseYourAccount": "Hesabınızı Seçin",

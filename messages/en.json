@@ -402,8 +402,8 @@
     "description": "Our programs are designed to help you succeed with unmatched support and resources."
   },
   "tiredRewards": {
-    "heading": "Tired Rewards",
-    "description": "Unlock exclusive rewards as you progress through our program."
+    "heading": "Tiered Rewards Earn More as You Grow",
+    "description": "Advance through our partner levels and unlock increasingly valuable rewards."
   },
   "affiliatesHeroSection": {
     "heading1": "Become a Partner with our",
@@ -428,7 +428,8 @@
   },
   "accountNavbar": {
     "yourChallenge": "Your challenge",
-    "login": "Login"
+    "login": "Login",
+    "logout": "Logout"
   },
   "chooseAccount": {
     "chooseYourAccount": "Choose Your Account",
