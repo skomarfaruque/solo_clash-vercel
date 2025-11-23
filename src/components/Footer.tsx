@@ -37,8 +37,8 @@ export default function Footer() {
 
   const socialLinks = [
     {
-      href: "https://www.youtube.com/@SoloClashOfficial",
-      label: t("social.youtube"),
+      href: "https://discord.gg/soloclash",
+      label: t("social.discord"),
       icon: "/footer/tv.png",
     },
     {

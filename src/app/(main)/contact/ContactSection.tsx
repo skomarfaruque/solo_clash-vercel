@@ -76,13 +76,13 @@ export default function ContactSection() {
           </div>
           <div className="flex flex-wrap items-center gap-4 md:gap-6 mt-10 md:mt-[80px] justify-center md:justify-start">
             <a
-              href="https://youtube.com"
+              href="https://discord.gg/soloclash"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Image
-                src="/icons/contacts/contact_youtube.png"
-                alt={t("contactSection.social.youtube")}
+                src="/icons/contacts/contact_discord.png"
+                alt={t("contactSection.social.discord")}
                 width={40}
                 height={40}
                 className="w-[40px] h-[40px] hover:opacity-80 transition"
