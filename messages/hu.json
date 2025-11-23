@@ -17,7 +17,37 @@
       "card2Title": "Világos kockázati szabályok rejtett díjak nélkül",
       "card2Desc": "Átláthatóság a tervezésben.",
       "card3Title": "Többnyelvű támogatás",
-      "card3Desc": "Tartalom és ügyfélszolgálat 6 nyelven."
+      "card3Desc": "Tartalom és ügyfélszolgálat 6 nyelven.",
+      "featureCards": [
+        {
+          "title": "Pontosság. Ellenőrzés. Szabadság.",
+          "description": "Azoknak a kereskedőknek készítve, akik többet követelnek."
+        },
+        {
+          "title": "Nincs zavaró elem. Nincs zaj.",
+          "description": "Csak tiszta teljesítmény."
+        },
+        {
+          "title": "Minden paraméternek értelme van.",
+          "description": "Átlátható, kiegyensúlyozott és igazságos az első naptól."
+        },
+        {
+          "title": "Kereskedj tisztázottan.",
+          "description": "Minden szabály azért létezik, hogy meghatalmazzon, nem hogy korlátozzon."
+        },
+        {
+          "title": "Nem követünk trendeket.",
+          "description": "Úgy tervezünk, ahogyan a saját számlás kereskedésnek lennie kellene."
+        },
+        {
+          "title": "Te a diagramokra összpontosítasz.",
+          "description": "Mi mindent megoldunk, a finanszírozástól a kifizetésekig."
+        },
+        {
+          "title": "Nőj korlátok nélkül",
+          "description": "Minél jobban teljesítesz, annál jobban növekedünk veled."
+        }
+      ]
     },
     "howItWorksSection": {
       "badge": "Hogyan működik",

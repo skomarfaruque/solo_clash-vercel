@@ -17,7 +17,37 @@
       "card2Title": "Reglas de riesgo claras sin tarifas ocultas",
       "card2Desc": "Transparente por diseño.",
       "card3Title": "Soporte multilingüe",
-      "card3Desc": "Contenido y atención al cliente en 6 idiomas."
+      "card3Desc": "Contenido y atención al cliente en 6 idiomas.",
+      "featureCards": [
+        {
+          "title": "Precisión. Control. Libertad.",
+          "description": "Construido para traders que exigen más."
+        },
+        {
+          "title": "Sin distracciones. Sin ruido.",
+          "description": "Solo desempeño puro."
+        },
+        {
+          "title": "Cada parámetro tiene sentido.",
+          "description": "Transparente, equilibrado y justo desde el primer día."
+        },
+        {
+          "title": "Negocia con claridad.",
+          "description": "Cada regla existe para empoderarte, no para restringirte."
+        },
+        {
+          "title": "No seguimos tendencias.",
+          "description": "Diseñamos lo que debería ser el trading con capital propio."
+        },
+        {
+          "title": "Tú enfócate en los gráficos.",
+          "description": "Nosotros nos encargamos de todo lo demás, desde la financiación hasta los pagos."
+        },
+        {
+          "title": "Crece sin límites",
+          "description": "Cuanto mejor actuemos, más crecemos contigo."
+        }
+      ]
     },
     "howItWorksSection": {
       "badge": "Cómo funciona",

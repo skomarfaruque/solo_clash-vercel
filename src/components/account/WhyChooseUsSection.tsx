@@ -6,73 +6,15 @@ import HomeButton from "../HomeButton";
 import Heading from "../common/Heading";
 import Image from "next/image";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
-import {
-  Antenna,
-  ChartNoAxesCombined,
-  Crosshair,
-  SlidersHorizontal,
-  Sprout,
-  TrendingUp,
-  VolumeOff,
-} from "lucide-react";
 
-const cards = [
-  {
-    id: 1,
-    title: "Precision. Control. Freedom.",
-    description: "Built for traders who demand more.",
-    icon: <TrendingUp size={36} color="#F5A623" />,
-    iconSrc: "/icons/slider/1.png",
-    rotate: 0,
-  },
-  {
-    id: 2,
-    title: "No distractions. No noise.",
-    description: "Just pure performance.",
-    icon: <Antenna size={36} color="#F5A623" />,
-    iconSrc: "/icons/slider/2.png",
-    rotate: -2.5,
-  },
-  {
-    id: 3,
-    title: "Every parameter makes sense.",
-    description: "Transparent, balanced, and fair, from day one.",
-    icon: <SlidersHorizontal size={36} color="#F5A623" />,
-    iconSrc: "/icons/slider/3.png",
-    rotate: 0,
-  },
-  {
-    id: 4,
-    title: "Trade with clarity.",
-    description: "Every rule exists to empower, not restrict.",
-    icon: <Sprout size={36} color="#F5A623" />,
-    iconSrc: "/icons/slider/4.png",
-    rotate: -1.5,
-  },
-  {
-    id: 5,
-    title: "We don’t follow trends.",
-    description: "We design what prop trading should feel like.",
-    icon: <ChartNoAxesCombined size={36} color="#F5A623" />,
-    iconSrc: "/icons/slider/5.png",
-    rotate: -3,
-  },
-  {
-    id: 6,
-    title: "You focus on the charts.",
-    description: "We handle everything else, from funding to payouts.",
-    icon: <VolumeOff size={36} color="#F5A623" />,
-    iconSrc: "/icons/slider/6.png",
-    rotate: -4,
-  },
-  {
-    id: 7,
-    title: "Grow without limits",
-    description: "The better you perform, the more we scale with you.",
-    icon: <Crosshair size={36} color="#F5A623" />,
-    iconSrc: "/icons/slider/7.png",
-    rotate: 0,
-  },
+const iconConfig = [
+  { iconSrc: "/icons/slider/1.png", rotate: 0 },
+  { iconSrc: "/icons/slider/2.png", rotate: -2.5 },
+  { iconSrc: "/icons/slider/3.png", rotate: 0 },
+  { iconSrc: "/icons/slider/4.png", rotate: -1.5 },
+  { iconSrc: "/icons/slider/5.png", rotate: -3 },
+  { iconSrc: "/icons/slider/6.png", rotate: -4 },
+  { iconSrc: "/icons/slider/7.png", rotate: 0 },
 ];
 
 function Card({
@@ -80,7 +22,7 @@ function Card({
   index,
   scrollYProgress,
 }: {
-  card: (typeof cards)[0];
+  card: { title: string; description: string; iconSrc: string; rotate: number };
   index: number;
   scrollYProgress: MotionValue<number>;
 }) {
@@ -138,6 +80,18 @@ export default function StackingStickyCards() {
   });
   const t = useTranslations();
   const router = useRouter();
+
+  // Build cards from translations
+  const cardsData = t.raw("accountPage.featureSection.featureCards") as Array<{
+    title: string;
+    description: string;
+  }>;
+
+  const cards = cardsData.map((card, index) => ({
+    ...card,
+    ...iconConfig[index],
+  }));
+
   return (
     <section
       className="justify-center text-center px-4 sm:px-6 lg:px-20 py-10 sm:py-16 lg:py-20"
@@ -159,7 +113,7 @@ export default function StackingStickyCards() {
         <div className="w-full relative flex flex-col items-center" ref={ref}>
           {cards.map((card, index) => (
             <Card
-              key={card.id}
+              key={index}
               card={card}
               index={index}
               scrollYProgress={scrollYProgress}
