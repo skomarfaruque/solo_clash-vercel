@@ -32,7 +32,7 @@ export default function Footer() {
     { href: "/privacy", label: t("legal.privacyPolicy") },
     { href: "/terms-conditions", label: t("legal.termsOfService") },
     { href: "/risk-disclosure", label: t("legal.riskDisclosure") },
-    { href: "/#", label: t("legal.cookiesPolicy") },
+    { href: "/cookie-policy", label: t("legal.cookiesPolicy") },
   ];
 
   const socialLinks = [
