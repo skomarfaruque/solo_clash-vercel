@@ -19,7 +19,7 @@ export default function Navbar() {
     { href: "/rules", label: t("navbar.rules") },
     { href: "/clash-shop", label: t("navbar.clashShop") },
     { href: "/affiliates", label: t("navbar.affiliates") },
-    { href: "/faq", label: t("navbar.faq") },
+    { href: "https://help.soloclash.com/", label: t("navbar.faq"), external: true },
     { href: "/contact", label: t("navbar.contactUs") },
   ];
 
@@ -134,15 +134,27 @@ export default function Navbar() {
           {/* Links */}
           <div className="hidden lg:flex items-center gap-6 text-sm ml-6">
             <div className="flex items-center gap-10">
-              {navLinks.map(({ href, label }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className={pathname === href ? activeClass : inactiveClass}
-                >
-                  {label}
-                </Link>
-              ))}
+              {navLinks.map(({ href, label, external }) =>
+                external ? (
+                  <a
+                    key={href}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={pathname === href ? activeClass : inactiveClass}
+                  >
+                    {label}
+                  </a>
+                ) : (
+                  <Link
+                    key={href}
+                    href={href}
+                    className={pathname === href ? activeClass : inactiveClass}
+                  >
+                    {label}
+                  </Link>
+                )
+              )}
             </div>
           </div>
         </div>
@@ -272,16 +284,29 @@ export default function Navbar() {
             </div>
             {/* Mobile Nav Links */}
             <div className="flex flex-col gap-4">
-              {navLinks.map(({ href, label }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className={pathname === href ? activeClass : inactiveClass}
-                  onClick={() => setDrawerOpen(false)}
-                >
-                  {label}
-                </Link>
-              ))}
+              {navLinks.map(({ href, label, external }) =>
+                external ? (
+                  <a
+                    key={href}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={pathname === href ? activeClass : inactiveClass}
+                    onClick={() => setDrawerOpen(false)}
+                  >
+                    {label}
+                  </a>
+                ) : (
+                  <Link
+                    key={href}
+                    href={href}
+                    className={pathname === href ? activeClass : inactiveClass}
+                    onClick={() => setDrawerOpen(false)}
+                  >
+                    {label}
+                  </Link>
+                )
+              )}
             </div>
             <a
               href="https://dashboard.soloclash.com/"
