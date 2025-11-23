@@ -161,11 +161,11 @@
     "heading": "Get in Touch",
     "description": "Everything you need to know about getting started",
     "address": {
-      "line1": "2118 Thornridge Cir. Syracuse,",
-      "line2": "Connecticut 35624"
+      "line1": "Meydan Grandstand, 6th floor,",
+      "line2": "Meydan Road, Nad Al Sheba | Dubai U.A.E."
     },
     "hours": {
-      "label": "Hours",
+      "label": "Working Hours",
       "value": "24/7 Support in 6 Languages and Live Chat"
     },
     "email": {
@@ -173,7 +173,7 @@
       "value": "support@soloclash.com"
     },
     "social": {
-      "youtube": "YouTube",
+      "discord": "Discord",
       "twitter": "Twitter",
       "instagram": "Instagram",
       "linkedin": "LinkedIn"

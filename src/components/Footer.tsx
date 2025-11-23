@@ -10,8 +10,8 @@ export default function Footer() {
   const links = [
     { href: "/#subscriptions", label: t("links.accounts") },
     { href: "/rules", label: t("links.rules") },
-    { href: "/faq", label: t("links.faq") },
-    { href: "/", label: t("links.getStarted") },
+    { href: "https://help.soloclash.com", label: t("links.faq"), external: true},
+    { href: "https://dashboard.soloclash.com/login", label: t("links.getStarted"), external: true },
   ];
 
   const featuresLinks = [
@@ -25,7 +25,7 @@ export default function Footer() {
   ];
 
   const supportLinks = [
-    { href: "/support/contact", label: t("support.contactUs") },
+    { href: "/contact", label: t("support.contactUs") },
   ];
 
   const legalLinks = [
@@ -37,8 +37,8 @@ export default function Footer() {
 
   const socialLinks = [
     {
-      href: "https://www.youtube.com/@SoloClashOfficial",
-      label: t("social.youtube"),
+      href: "https://discord.gg/soloclash",
+      label: t("social.discord"),
       icon: "/footer/tv.png",
     },
     {

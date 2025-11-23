@@ -14,6 +14,7 @@ export default function PaymentSection() {
   const [subscriptionName, setSubscriptionName] = useState("N/A");
   const [subscriptionValue, setSubscriptionValue] = useState("N/A");
   const [monthlyPrice, setMonthlyPrice] = useState("N/A");
+  const [subscriptionId, setSubscriptionId] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userId, setUserId] = useState("");
   const [promoCode, setPromoCode] = useState("");
@@ -31,6 +32,7 @@ export default function PaymentSection() {
           : "N/A"
       );
       setMonthlyPrice(parsedSubscription?.monthly_price || "N/A");
+      setSubscriptionId(parsedSubscription.id || "");
     }
 
     // Get logged in user info
@@ -58,6 +60,7 @@ export default function PaymentSection() {
         amount: amountInCents,
         userId: userId,
         userEmail: userEmail,
+        subscriptionId: subscriptionId,
       }),
     });
     const data = await res.json();

@@ -24,13 +24,14 @@ export default function Navbar() {
       label: t("navbar.faq"),
       external: true,
     },
-    { href: "/contact", label: t("navbar.contactUs") },
+    { href: "/contact", 
+      label: t("navbar.contactUs") },
   ];
 
   const socialLinks = [
     {
-      href: "https://discord.com",
-      src: "/reddit.png",
+      href: "https://discord.gg/soloclash",
+      src: "/tv.png",
       alt: "discord",
       width: 52,
       height: 42,
