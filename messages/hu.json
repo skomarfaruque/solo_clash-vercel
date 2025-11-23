@@ -363,7 +363,8 @@
     "forgotPassword": "Elfelejtetted a jelszavad?",
     "signIn": "BEJELENTKEZÉS",
     "newPlatform": "Új vagy a platformunkon?",
-    "signUp": "Regisztráció"
+    "signUp": "Regisztráció",
+    "loading": "Betöltés..."
   },
   "signupNavbar": {
     "welcome": "Üdvözöljük",

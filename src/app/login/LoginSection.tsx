@@ -9,8 +9,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 export default function LoginSection() {
   const t = useTranslations("login");
   const [showPassword, setShowPassword] = useState(false);
-  const [email, setEmail] = useState("sohag2847@gmail.com");
-  const [password, setPassword] = useState("123456");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [toast, setToast] = useState({
     show: false,
