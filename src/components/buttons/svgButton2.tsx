@@ -9,6 +9,7 @@ interface SvgButton2Props {
   readonly iconSrc?: string; // New prop for icon source
   readonly radius?: number;
   readonly padding?: string; // New prop for padding
+  readonly isDisabled?: boolean;
 }
 
 export default function SvgButton2({
@@ -19,6 +20,7 @@ export default function SvgButton2({
   iconSrc = "",
   radius = 12,
   padding = "",
+  isDisabled = false,
 }: SvgButton2Props) {
   const width = fullWidth ? "100%" : "fit-content";
   const paddingValue = padding || "70px";
@@ -26,14 +28,23 @@ export default function SvgButton2({
   return (
     <button
       onClick={onClick}
-      className={`relative h-[50px] flex items-center justify-center text-black font-semibold text-xl focus:outline-none transition-transform duration-200 hover:scale-105 overflow-hidden cursor-pointer`}
+      disabled={isDisabled}
+      className={`relative h-[50px] flex items-center justify-center text-black font-semibold text-xl focus:outline-none transition-transform duration-200 ${
+        isDisabled
+          ? "cursor-not-allowed opacity-50"
+          : "hover:scale-105 cursor-pointer"
+      } overflow-hidden`}
       style={{
-        background: "linear-gradient(94.79deg, #F37E2C 0.24%, #FFA362 100.24%)",
+        background: isDisabled
+          ? "linear-gradient(94.79deg, #888888 0.24%, #999999 100.24%)"
+          : "linear-gradient(94.79deg, #F37E2C 0.24%, #FFA362 100.24%)",
         border: "1px solid rgba(225, 225, 225, 0.3)",
         borderRadius: radius,
         width: width,
         padding: `0 ${paddingValue}`,
-        boxShadow: "-1px 3px 21px 0px rgba(255, 163, 98, 0.5)", // <-- added shadow here
+        boxShadow: isDisabled
+          ? "none"
+          : "-1px 3px 21px 0px rgba(255, 163, 98, 0.5)",
       }}
     >
       <span className={`z-10 ${textStyle} flex items-center gap-2`}>

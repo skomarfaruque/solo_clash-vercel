@@ -13,6 +13,8 @@ export default function PaymentSection() {
   const [subscriptionName, setSubscriptionName] = useState("N/A");
   const [subscriptionValue, setSubscriptionValue] = useState("N/A");
   const [monthlyPrice, setMonthlyPrice] = useState("N/A");
+  const [userEmail, setUserEmail] = useState("");
+  const [userId, setUserId] = useState("");
   const vat = 25;
   const searchParams = useSearchParams();
   const platformValue = searchParams.get("platform") || "N/A";
@@ -29,6 +31,18 @@ export default function PaymentSection() {
       );
       setMonthlyPrice(parsedSubscription?.monthly_price || "N/A");
     }
+
+    // Get logged in user info
+    const adminUserData = localStorage.getItem("adminUser");
+    if (adminUserData) {
+      try {
+        const adminUser = JSON.parse(adminUserData);
+        if (adminUser.email) setUserEmail(adminUser.email);
+        if (adminUser.id) setUserId(adminUser.id);
+      } catch (e) {
+        console.error("Failed to parse adminUser:", e);
+      }
+    }
   }, []);
   const handleCheckout = async () => {
     const amountInCents = Math.round(Number(totalPayablePrice) * 100);
@@ -38,6 +52,8 @@ export default function PaymentSection() {
       body: JSON.stringify({
         productName: subscriptionName,
         amount: amountInCents,
+        userId: userId,
+        userEmail: userEmail,
       }),
     });
     const data = await res.json();
@@ -151,6 +167,16 @@ export default function PaymentSection() {
             </div>
           </div>
 
+          <label className="flex items-start gap-3">
+            <input
+              type="checkbox"
+              checked={checked3}
+              onChange={() => setChecked3(!checked3)}
+              className="mt-1 w-4 h-4 accent-orange-500"
+            />
+            <span className="text-left">{t("rebillAgreementCheckbox3")}</span>
+          </label>
+
           {/* <div className="space-y-4 mb-6 text-left text-[16px]">
             <div>
               <label className="text-sm block mb-1">
@@ -237,6 +263,7 @@ export default function PaymentSection() {
               label={`Pay USD $${totalPayablePrice}`}
               textStyle="font-medium text-base"
               onClick={handleCheckout}
+              isDisabled={!(checked1 && checked2 && checked3) || !userId}
             />
           </div>
         </div>
