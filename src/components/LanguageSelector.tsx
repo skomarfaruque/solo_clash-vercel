@@ -55,14 +55,21 @@ export default function LanguageSelector({
         className="flex items-center gap-2 bg-neutral-900 h-[52px] px-4 py-1.5 rounded-full hover:cursor-pointer"
       >
         <Image
-          src={`/flags/${selectedLang}.png`}
+          src={`/flags/global_lang.png`}
           alt={selectedLangObj.title}
-          width={26}
-          height={26}
+          width={16}
+          height={16}
           className="rounded"
         />
-        {selectedLangObj.code}
-        <span className="ml-1">
+        <span className="uppercase">{selectedLangObj.code}</span>
+        <Image
+          src={`/large_down_white.png`}
+          alt={selectedLangObj.title}
+          width={13}
+          height={13}
+          className="rounded"
+        />
+        {/* <span className="ml-1">
           <svg
             className="ml-1"
             width="16"
@@ -81,7 +88,7 @@ export default function LanguageSelector({
               strokeLinejoin="round"
             />
           </svg>
-        </span>
+        </span> */}
       </button>
       {langOpen && (
         <div className="absolute mt-2 w-32 bg-neutral-800 rounded-lg shadow-lg z-20">
