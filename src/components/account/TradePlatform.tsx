@@ -27,14 +27,14 @@ export default function TradePlatform() {
     {
       name: "Volbook",
       logo: "/icons/platform/volbook.png",
-      width: 157,
-      height: 52,
+      width: 128,
+      height: 56,
     },
     {
       name: "Volsys",
       logo: "/icons/platform/volys.png",
-      width: 160,
-      height: 47,
+      width: 152,
+      height: 55,
     },
   ];
   return (

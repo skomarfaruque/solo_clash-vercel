@@ -31,6 +31,8 @@ export default function ChallengeSection() {
           <SvgButton2
             label={t("button")}
             fullWidth
+            textStyle="font-normal"
+            radius={50}
             iconSrc="/arrow_right.png"
           />
         </div>
