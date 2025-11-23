@@ -119,6 +119,18 @@ export default function Navbar() {
             <Image src="/logo.svg" alt="SOLO CLASH" width={65} height={52} />
           </Link>
 
+          {/* Hamburger for mobile */}
+          <button
+            className="lg:hidden flex flex-col items-center justify-center ml-2 p-2 rounded focus:outline-none focus:ring-2 focus:ring-orange-500"
+            onClick={() => setDrawerOpen(true)}
+            aria-label="Open menu"
+          >
+            <span className="block w-6 h-0.5 bg-white mb-1"></span>
+            <span className="block w-6 h-0.5 bg-white mb-1"></span>
+            <span className="block w-6 h-0.5 bg-white"></span>
+          </button>
+        </div>
+        <div className="flex items-center">
           {/* Links */}
           <div className="hidden lg:flex items-center gap-6 text-sm ml-6">
             <div className="flex items-center gap-10">
@@ -133,17 +145,6 @@ export default function Navbar() {
               ))}
             </div>
           </div>
-
-          {/* Hamburger for mobile */}
-          <button
-            className="lg:hidden flex flex-col items-center justify-center ml-2 p-2 rounded focus:outline-none focus:ring-2 focus:ring-orange-500"
-            onClick={() => setDrawerOpen(true)}
-            aria-label="Open menu"
-          >
-            <span className="block w-6 h-0.5 bg-white mb-1"></span>
-            <span className="block w-6 h-0.5 bg-white mb-1"></span>
-            <span className="block w-6 h-0.5 bg-white"></span>
-          </button>
         </div>
 
         {/* Right Section */}
