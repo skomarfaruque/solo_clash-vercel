@@ -125,6 +125,11 @@
     "tradePlatform": {
       "heading": "En sevdiğimiz platformlarla ticaret yapın"
     },
+    "challengeSection": {
+      "heading": "Bu sadece bir meydan okuma değil",
+      "description": "Sizin potansiyeliniz için tasarlanmış bir platform.",
+      "button": "ticarete başla"
+    },
     "banner": {
       "title": "Pronto para negociar capital real?"
     }

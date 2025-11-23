@@ -115,6 +115,11 @@
     "tradePlatform": {
       "heading": "Opera con nuestras plataformas favoritas"
     },
+    "challengeSection": {
+      "heading": "Esto es más que un desafío",
+      "description": "Es una plataforma construida para tu potencial.",
+      "button": "comenzar a comerciar"
+    },
     "banner": {
       "title": "¿Listo para operar con capital real?"
     }
