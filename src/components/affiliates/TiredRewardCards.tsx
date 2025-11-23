@@ -35,7 +35,7 @@ export default function TiredRewardCards({
       <div>
         <div className="flex items-center gap-4">
           <Image
-            src={icon}
+            src="/tiered_icon.png"
             alt={title}
             width={66}
             height={66}

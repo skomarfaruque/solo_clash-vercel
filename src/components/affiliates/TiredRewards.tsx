@@ -6,39 +6,45 @@ import Heading from "../common/Heading";
 const spinDetailsCards = [
   {
     iconPath: "/icons/coins_card/coin_card_1.png",
-    title: "Leaderboard Placements",
+    title: "Level 1 Starter",
     description: "Top 10 weekly rankings earn 50-200 coins",
     priceRange: "$0 - $100",
+    requirements: "Sign up",
   },
   {
     iconPath: "/icons/coins_card/coin_card_2.png",
-    title: "Tournament Points",
+    title: "Reach Level 2",
     description: "Earn coins based on tournament performance",
     priceRange: "$0 - $200",
+    requirements: "50 referred traders",
   },
   {
     iconPath: "/icons/coins_card/coin_card_3.png",
-    title: "Lucky Wheel",
+    title: "Level 3 - Pro",
     description: "Daily free spin with bonus coin rewards",
     priceRange: "$0 - $300",
+    requirements: "100 referred traders",
   },
   {
     iconPath: "/icons/coins_card/coin_card_4.png",
-    title: "Challenge Completion",
+    title: "Reach Level 4",
     description: "Bonus coins for passing evaluations",
     priceRange: "$0 - $400",
+    requirements: "200 referred traders",
   },
   {
     iconPath: "/icons/coins_card/coin_card_4.png",
-    title: "Challenge Completion",
+    title: "Level 5 - Inner Circle",
     description: "Bonus coins for passing evaluations",
     priceRange: "$0 - $400",
+    requirements: "Invitation by the firm",
   },
   {
     iconPath: "/icons/coins_card/coin_card_4.png",
-    title: "Challenge Completion",
+    title: "Legends Club",
     description: "Bonus coins for passing evaluations",
     priceRange: "$0 - $400",
+    requirements: "Handpicked by founders",
   },
 ];
 export default function TiredRewards() {
@@ -70,6 +76,7 @@ export default function TiredRewards() {
               title={card.title}
               description="Free spin every day"
               priceRange={card.priceRange}
+              requirements={card.requirements}
             />
           ))}
         </div>
