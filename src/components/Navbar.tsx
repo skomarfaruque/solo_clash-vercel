@@ -19,7 +19,11 @@ export default function Navbar() {
     { href: "/rules", label: t("navbar.rules") },
     { href: "/clash-shop", label: t("navbar.clashShop") },
     { href: "/affiliates", label: t("navbar.affiliates") },
-    { href: "https://help.soloclash.com/", label: t("navbar.faq"), external: true },
+    {
+      href: "https://help.soloclash.com/",
+      label: t("navbar.faq"),
+      external: true,
+    },
     { href: "/contact", label: t("navbar.contactUs") },
   ];
 
