@@ -29,7 +29,7 @@ export default function SvgButton2({
     <button
       onClick={onClick}
       disabled={isDisabled}
-      className={`relative h-[50px] flex items-center justify-center text-black font-semibold text-xl focus:outline-none transition-transform duration-200 ${
+      className={`relative h-[50px] flex items-center justify-center text-black font-semibold text-xl focus:outline-none transition-transform duration-200 cursor-pointer ${
         isDisabled
           ? "cursor-not-allowed opacity-50"
           : "hover:scale-105 cursor-pointer"

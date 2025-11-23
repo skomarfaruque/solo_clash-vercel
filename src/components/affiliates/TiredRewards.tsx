@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 
 import TiredRewardCards from "./TiredRewardCards";
 import Heading from "../common/Heading";
+import { button } from "framer-motion/client";
 
 const spinDetailsCards = [
   {
@@ -10,6 +11,10 @@ const spinDetailsCards = [
     description: "Top 10 weekly rankings earn 50-200 coins",
     priceRange: "$0 - $100",
     requirements: "Sign up",
+    commission: "10%",
+    discount: "5%",
+    bonus: "",
+    buttonText: "Join now",
   },
   {
     iconPath: "/icons/coins_card/coin_card_2.png",
@@ -17,6 +22,10 @@ const spinDetailsCards = [
     description: "Earn coins based on tournament performance",
     priceRange: "$0 - $200",
     requirements: "50 referred traders",
+    commission: "12.7%",
+    discount: "7%",
+    bonus: "One Free $50k Account",
+    buttonText: "Grow to Level 2",
   },
   {
     iconPath: "/icons/coins_card/coin_card_3.png",
@@ -24,6 +33,10 @@ const spinDetailsCards = [
     description: "Daily free spin with bonus coin rewards",
     priceRange: "$0 - $300",
     requirements: "100 referred traders",
+    commission: "15%",
+    discount: "10%",
+    bonus: "One Free $100k Account",
+    buttonText: "Reach Level 3",
   },
   {
     iconPath: "/icons/coins_card/coin_card_4.png",
@@ -31,6 +44,10 @@ const spinDetailsCards = [
     description: "Bonus coins for passing evaluations",
     priceRange: "$0 - $400",
     requirements: "200 referred traders",
+    commission: "20%",
+    discount: "10%",
+    bonus: "One Free $150k Account",
+    buttonText: "Unlock Elite",
   },
   {
     iconPath: "/icons/coins_card/coin_card_4.png",
@@ -38,6 +55,10 @@ const spinDetailsCards = [
     description: "Bonus coins for passing evaluations",
     priceRange: "$0 - $400",
     requirements: "Invitation by the firm",
+    commission: "Custom terms",
+    discount: "Custom",
+    bonus: "Priority support, co-marketing, special allocations",
+    buttonText: "Apply for consideration",
   },
   {
     iconPath: "/icons/coins_card/coin_card_4.png",
@@ -45,6 +66,10 @@ const spinDetailsCards = [
     description: "Bonus coins for passing evaluations",
     priceRange: "$0 - $400",
     requirements: "Handpicked by founders",
+    commission: "25%+ (custom)",
+    discount: "12%",
+    bonus: "Lifetime revenue share, executive access",
+    buttonText: "Claim Your Legacy",
   },
 ];
 export default function TiredRewards() {
@@ -72,11 +97,13 @@ export default function TiredRewards() {
           {spinDetailsCards.map((card, idx) => (
             <TiredRewardCards
               key={idx}
-              icon={card.iconPath}
+              index={idx}
               title={card.title}
-              description="Free spin every day"
-              priceRange={card.priceRange}
               requirements={card.requirements}
+              commission={card.commission}
+              discount={card.discount}
+              bonus={card.bonus}
+              buttonText={card.buttonText}
             />
           ))}
         </div>
