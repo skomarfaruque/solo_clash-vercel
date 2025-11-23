@@ -76,7 +76,9 @@ export default function AccountNavBar() {
         />
         {!isLoggedIn && (
           <Link
-            href="/login"
+            href={
+              pathname === "/payment" ? "/login?redirect=/payment" : "/login"
+            }
             className={
               pathname === "/payment" || pathname === "/account"
                 ? activeClass

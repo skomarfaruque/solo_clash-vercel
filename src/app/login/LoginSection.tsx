@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export default function LoginSection() {
   const t = useTranslations("login");
@@ -18,6 +18,8 @@ export default function LoginSection() {
     type: "success", // "success" or "error"
   });
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirectUrl = searchParams.get("redirect");
 
   const handleLogin = async () => {
     setLoading(true);
@@ -63,7 +65,9 @@ export default function LoginSection() {
         // Small delay to ensure cookies are set before redirect
         await new Promise((resolve) => setTimeout(resolve, 100));
 
-        router.push("/");
+        // Redirect to the page the user came from, or default to payment page
+        const destination = redirectUrl || "/payment";
+        router.push(destination);
       } else {
         setToast({
           show: true,

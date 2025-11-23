@@ -3,10 +3,11 @@
 import SvgButton2 from "@/components/buttons/svgButton2";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function PaymentSection() {
   const t = useTranslations("payment");
+  const router = useRouter();
   const [checked1, setChecked1] = useState(false);
   const [checked2, setChecked2] = useState(false);
   const [checked3, setChecked3] = useState(false);
@@ -16,8 +17,6 @@ export default function PaymentSection() {
   const [userEmail, setUserEmail] = useState("");
   const [userId, setUserId] = useState("");
   const vat = 25;
-  const searchParams = useSearchParams();
-  const platformValue = searchParams.get("platform") || "N/A";
 
   useEffect(() => {
     const savedSubscription = localStorage.getItem("selectedSubscription");
@@ -42,8 +41,11 @@ export default function PaymentSection() {
       } catch (e) {
         console.error("Failed to parse adminUser:", e);
       }
+    } else {
+      // Redirect to login if not authenticated
+      router.push("/login?redirect=/payment");
     }
-  }, []);
+  }, [router]);
   const handleCheckout = async () => {
     const amountInCents = Math.round(Number(totalPayablePrice) * 100);
     const res = await fetch("/api/checkout", {
