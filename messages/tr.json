@@ -27,7 +27,37 @@
       "card2Title": "Gizli ücret olmadan net risk kuralları",
       "card2Desc": "Şeffaflık esaslı.",
       "card3Title": "Çok dilli destek",
-      "card3Desc": "6 dilde içerik ve müşteri desteği."
+      "card3Desc": "6 dilde içerik ve müşteri desteği.",
+      "featureCards": [
+        {
+          "title": "Hassasiyet. Kontrol. Özgürlük.",
+          "description": "Daha fazlasını talep eden tüccarlar için inşa edildi."
+        },
+        {
+          "title": "Dikkat dağıtıcı yok. Gürültü yok.",
+          "description": "Sadece saf performans."
+        },
+        {
+          "title": "Her parametre anlamlı.",
+          "description": "Şeffaf, dengeli ve adil, ilk günden itibaren."
+        },
+        {
+          "title": "Netliği ile ticaret yapın.",
+          "description": "Her kural sizi güçlendirmek için var, sınırlamak için değil."
+        },
+        {
+          "title": "Trendleri takip etmiyoruz.",
+          "description": "Tescilli ticaretin nasıl olması gerektiğini tasarlarız."
+        },
+        {
+          "title": "Siz grafiklere odaklanın.",
+          "description": "Biz finansmandan ödemelere kadar her şeyi hallederiz."
+        },
+        {
+          "title": "Sınırsız büyüyün",
+          "description": "Ne kadar iyi performans gösterirseniz, o kadar bizimle büyürüz."
+        }
+      ]
     },
     "howItWorksSection": {
       "badge": "Nasıl çalışır",

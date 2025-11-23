@@ -27,7 +27,37 @@
       "card2Title": "Règles de risque claires sans frais cachés",
       "card2Desc": "Transparence par conception.",
       "card3Title": "Support multilingue",
-      "card3Desc": "Contenu et service client en 6 langues."
+      "card3Desc": "Contenu et service client en 6 langues.",
+      "featureCards": [
+        {
+          "title": "Précision. Contrôle. Liberté.",
+          "description": "Construit pour les traders qui en demandent plus."
+        },
+        {
+          "title": "Pas de distractions. Pas de bruit.",
+          "description": "Juste une performance pure."
+        },
+        {
+          "title": "Chaque paramètre a du sens.",
+          "description": "Transparent, équilibré et juste dès le premier jour."
+        },
+        {
+          "title": "Tradez en toute clarté.",
+          "description": "Chaque règle existe pour vous donner du pouvoir, pas pour vous restreindre."
+        },
+        {
+          "title": "Nous ne suivons pas les tendances.",
+          "description": "Nous concevons ce que le trading propriétaire devrait être."
+        },
+        {
+          "title": "Vous vous concentrez sur les graphiques.",
+          "description": "Nous gérons tout le reste, du financement aux paiements."
+        },
+        {
+          "title": "Croître sans limites",
+          "description": "Plus vous performez bien, plus nous grandissons avec vous."
+        }
+      ]
     },
     "howItWorksSection": {
       "badge": "Comment ça marche",

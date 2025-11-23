@@ -17,7 +17,37 @@
       "card2Title": "Clear risk rules with no hidden fees",
       "card2Desc": "Transparent by design.",
       "card3Title": "Multi-language support",
-      "card3Desc": "Content & customer care in 6 languages."
+      "card3Desc": "Content & customer care in 6 languages.",
+      "featureCards": [
+        {
+          "title": "Precision. Control. Freedom.",
+          "description": "Built for traders who demand more."
+        },
+        {
+          "title": "No distractions. No noise.",
+          "description": "Just pure performance."
+        },
+        {
+          "title": "Every parameter makes sense.",
+          "description": "Transparent, balanced, and fair, from day one."
+        },
+        {
+          "title": "Trade with clarity.",
+          "description": "Every rule exists to empower, not restrict."
+        },
+        {
+          "title": "We don't follow trends.",
+          "description": "We design what prop trading should feel like."
+        },
+        {
+          "title": "You focus on the charts.",
+          "description": "We handle everything else, from funding to payouts."
+        },
+        {
+          "title": "Grow without limits",
+          "description": "The better you perform, the more we scale with you."
+        }
+      ]
     },
     "howItWorksSection": {
       "badge": "How it works",
