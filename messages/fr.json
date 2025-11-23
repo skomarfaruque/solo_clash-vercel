@@ -386,7 +386,8 @@
     "rememberMe": "Souviens-toi de moi",
     "forgotPassword": "Mot de passe oublié?",
     "signIn": "SE CONNECTER",
-    "newPlatform": "Nouveau sur notre plateforme?",
+    "newPlatform": "Nouveau sur notre plateforme ?",
+    "loading": "Chargement...",
     "signUp": "S'inscrire"
   },
   "signupNavbar": {

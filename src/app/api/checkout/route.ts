@@ -37,6 +37,7 @@ export async function POST(request: NextRequest) {
         subscription_name: productName,
         amount_paid: amount.toString(),
         user_id: userId || "",
+        env: process.env.NEXT_PUBLIC_ENVIRONMENT || "dev",
       },
       success_url: `${process.env.NEXT_PUBLIC_APP_URL}/success`,
       cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/cancel`,

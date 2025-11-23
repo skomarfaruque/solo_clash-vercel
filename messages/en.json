@@ -363,7 +363,8 @@
     "forgotPassword": "Forgot Password?",
     "signIn": "SIGN IN",
     "newPlatform": "New on our platform?",
-    "signUp": "Sign Up"
+    "signUp": "Sign Up",
+    "loading": "Loading..."
   },
   "signupNavbar": {
     "welcome": "Welcome",

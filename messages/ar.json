@@ -388,7 +388,8 @@
     "forgotPassword": "هل نسيت كلمة المرور؟",
     "signIn": "تسجيل الدخول",
     "newPlatform": "جديد على منصتنا؟",
-    "signUp": "اشتراك"
+    "signUp": "اشتراك",
+    "loading": "جاري التحميل..."
   },
   "signupNavbar": {
     "welcome": "مرحبًا",

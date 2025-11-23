@@ -363,7 +363,8 @@
     "rememberMe": "Lembre-se de mim",
     "forgotPassword": "Esqueceu a senha?",
     "signIn": "ENTRAR",
-    "newPlatform": "Novo na nossa plataforma?",
+    "newPlatform": "Novo em nossa plataforma?",
+    "loading": "Carregando...",
     "signUp": "Inscrever-se"
   },
   "signupNavbar": {
