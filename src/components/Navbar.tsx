@@ -161,7 +161,12 @@ export default function Navbar() {
             href="https://dashboard.soloclash.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-neutral-900 px-4 py-2 rounded-full font-medium h-[52px] flex items-center justify-center cursor-pointer hover:bg-neutral-800 transition"
+            className="px-4 py-2 rounded-full font-medium h-[52px] flex items-center justify-center cursor-pointer transition"
+            style={{
+              background: "rgba(255, 255, 255, 0.1)",
+              border: "1px solid rgba(255, 255, 255, 0.06)",
+              backdropFilter: "blur(11.2993px)",
+            }}
           >
             {t("navbar.getFunded")} →
           </a>
@@ -281,7 +286,12 @@ export default function Navbar() {
               href="https://dashboard.soloclash.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-neutral-800 px-4 py-2 rounded-full font-medium h-[40px] flex items-center justify-center mt-4 cursor-pointer hover:bg-neutral-700 transition"
+              className="px-4 py-2 rounded-full font-medium h-[40px] flex items-center justify-center mt-4 cursor-pointer transition"
+              style={{
+                background: "rgba(255, 255, 255, 0.1)",
+                border: "1px solid rgba(255, 255, 255, 0.06)",
+                backdropFilter: "blur(11.2993px)",
+              }}
               onClick={() => setDrawerOpen(false)}
             >
               {t("navbar.getFunded")} →
