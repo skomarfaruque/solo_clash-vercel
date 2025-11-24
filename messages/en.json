@@ -72,7 +72,7 @@
     },
     "subscriptionsSection": {
       "heading": "Accounts built for scalable trading",
-      "description": "Pick the account that matches your style - every plan includes access to Volumetrica (VolSys & VolBook).",
+      "description": "Pick the account that matches your style - every plan includes access to Volumetrica (Deepmap & Deepcharts).",
       "plans": [
         {
           "step": "Basic",
@@ -92,6 +92,7 @@
       ],
       "viewFullPricing": "View full pricing"
     },
+    
     "spinWinTradeSection": {
       "heading": "Spin. Win. Trade",
       "description": "Daily spins, instant rewards - win Clash Coins, free tournament entries, discount codes, or even a funded account.",
@@ -174,12 +175,12 @@
     },
     "social": {
       "discord": "Discord",
-      "twitter": "Twitter",
+      "twitch": "Twitch",
       "instagram": "Instagram",
       "linkedin": "LinkedIn"
     },
     "form": {
-      "title": "Have Questions?",
+      "title": "Any Questions?",
       "nameLabel": "Your Name",
       "namePlaceholder": "Full name",
       "emailLabel": "Your Email",
@@ -286,7 +287,7 @@
       "cookiesPolicy": "Cookies Policy"
     },
     "social": {
-      "youtube": "YouTube",
+      "discord": "Discord",
       "twitch": "Twitch",
       "instagram": "Instagram",
       "tiktok": "TikTok"

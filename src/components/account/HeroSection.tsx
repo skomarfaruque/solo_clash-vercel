@@ -40,7 +40,7 @@ export default function HeroSection() {
             label={t("accountPage.heroSection.startNow")}
             iconSrc="/arrow_right.png"
             onClick={() => {
-              router.push("/account");
+              router.push("#subscriptions");
             }}
             radius={100}
             padding="20px"

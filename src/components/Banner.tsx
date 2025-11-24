@@ -46,7 +46,7 @@ export default function Banner({
               className="w-[66px] h-[66px]"
             />
           )}
-          <h2 className="font-bold text-5xl leading-tight text-white max-w-[583px]">
+          <h2 className="font-bold text-5xl leading-tight text-white max-w-[800px]">
             {title}
           </h2>
           {description && (

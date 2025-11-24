@@ -28,19 +28,20 @@ export default function ContactSection() {
           <p className="font-normal text-[18px] leading-[150%] text-gray-300">
             {t("contactSection.description")}
           </p>
-          <div className="flex flex-col gap-8 w-full max-w-md text-[#B7B7B7] mt-10 md:mt-[80px]">
-            {/* Address */}
+          <div className="flex flex-col gap-8 w-full max-w-md text-[#B7B7B7] mt-10 md:mt-[80px]">           
+
+            {/* Email */}
             <div className="flex gap-6">
               <Image
-                src="/icons/contacts/address_1.png"
+                src="/icons/contacts/address_3.png"
                 alt="Address"
                 width={75}
                 height={75}
                 className="w-[75px] h-[75px]"
               />
               <div className="text-sm leading-relaxed flex flex-1 flex-col justify-between items-start">
-                <span>{t("contactSection.address.line1")}</span>
-                <span>{t("contactSection.address.line2")}</span>
+                <span>{t("contactSection.email.label")}</span>
+                <span>{t("contactSection.email.value")}</span>
               </div>
             </div>
 
@@ -59,20 +60,21 @@ export default function ContactSection() {
               </div>
             </div>
 
-            {/* Email */}
+            {/* Address */}
             <div className="flex gap-6">
               <Image
-                src="/icons/contacts/address_3.png"
+                src="/icons/contacts/address_1.png"
                 alt="Address"
                 width={75}
                 height={75}
                 className="w-[75px] h-[75px]"
               />
               <div className="text-sm leading-relaxed flex flex-1 flex-col justify-between items-start">
-                <span>{t("contactSection.email.label")}</span>
-                <span>{t("contactSection.email.value")}</span>
+                <span>{t("contactSection.address.line1")}</span>
+                <span>{t("contactSection.address.line2")}</span>
               </div>
             </div>
+
           </div>
           <div className="flex flex-wrap items-center gap-4 md:gap-6 mt-10 md:mt-[80px] justify-center md:justify-start">
             <a
@@ -89,20 +91,20 @@ export default function ContactSection() {
               />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://www.twitch.tv/soloclashofficial"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Image
-                src="/icons/contacts/contact_x.png"
-                alt={t("contactSection.social.twitter")}
+                src="/icons/contacts/contact_twitch.png"
+                alt={t("contactSection.social.twitch")}
                 width={40}
                 height={40}
                 className="w-[40px] h-[40px] hover:opacity-80 transition"
               />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/soloclashofficial/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -115,7 +117,7 @@ export default function ContactSection() {
               />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.tiktok.com/@soloclashofficial"
               target="_blank"
               rel="noopener noreferrer"
             >

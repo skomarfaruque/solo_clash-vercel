@@ -1,11 +1,11 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import SvgButton2 from "../buttons/svgButton2";
 
 export default function ChallengeSection() {
   const t = useTranslations("accountPage.challengeSection");
-
+  const router = useRouter();
   return (
     <section
       className="justify-center text-center px-4 sm:px-6 lg:px-20 py-10 sm:py-16 lg:py-20"
@@ -34,6 +34,9 @@ export default function ChallengeSection() {
             textStyle="font-normal"
             radius={50}
             iconSrc="/arrow_right.png"
+            onClick={() => {
+              router.push("#subscriptions");
+            }}
           />
         </div>
       </div>

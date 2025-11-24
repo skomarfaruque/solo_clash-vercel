@@ -72,7 +72,7 @@
     },
     "subscriptionsSection": {
       "heading": "Cuentas diseñadas para trading escalable",
-      "description": "Elige la cuenta que se adapte a tu estilo: todos los planes incluyen acceso a Volumetrica (VolSys & VolBook).",
+      "description": "Elige la cuenta que se adapte a tu estilo: todos los planes incluyen acceso a Volumetrica (Deepmap & Deepcharts).",
       "plans": [
         {
           "step": "Básico",
@@ -162,8 +162,8 @@
     "heading": "Ponte en Contacto",
     "description": "Todo lo que necesitas saber para empezar",
     "address": {
-      "line1": "2118 Thornridge Cir. Syracuse,",
-      "line2": "Connecticut 35624"
+      "line1": "Gradería Meydan, 6º piso,",
+      "line2": "Camino Meydan, Nad Al Sheba | Dubái, E.A.U."
     },
     "hours": {
       "label": "Horario",
@@ -174,8 +174,8 @@
       "value": "support@soloclash.com"
     },
     "social": {
-      "youtube": "YouTube",
-      "twitter": "Twitter",
+      "discord": "Discord",
+      "twitch": "Twitch",
       "instagram": "Instagram",
       "linkedin": "LinkedIn"
     },
@@ -287,7 +287,7 @@
       "cookiesPolicy": "Política de Cookies"
     },
     "social": {
-      "youtube": "YouTube",
+      "discord": "Discord",
       "twitch": "Twitch",
       "instagram": "Instagram",
       "tiktok": "TikTok"
