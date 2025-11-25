@@ -91,7 +91,7 @@ export default function SubscriptionSectionCardNew({
             className="font-normal text-xs sm:text-sm leading-6"
             style={{ color: "#B7B7B7" }}
           >
-            {selectedCurrency}
+         
           </sup>
         </p>
       </div>

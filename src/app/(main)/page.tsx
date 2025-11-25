@@ -7,6 +7,7 @@ import FaqSection from "@/components/account/FaqSection";
 import Banner from "@/components/Banner";
 import SubscriptionsSectionNew from "@/components/account/SubscriptionsSectionNew";
 import TradePlatform from "@/components/account/TradePlatform";
+import { b } from "framer-motion/client";
 
 export default async function Home() {
   return (
@@ -21,7 +22,7 @@ export default async function Home() {
 
       <SpinWinTradeSection />
       <FaqSection />
-      <Banner page="account" title="Banner Title" />
+      <Banner page="account" title="Ready to trade real capital?" />
     </main>
   );
 }

@@ -72,7 +72,7 @@
     },
     "subscriptionsSection": {
       "heading": "حسابات مصممة لتداول قابل للتوسع",
-      "description": "اختر الحساب الذي يناسب أسلوبك - كل خطة تتضمن الوصول إلى Volumetrica (VolSys & VolBook).",
+      "description": "اختر الحساب الذي يناسب أسلوبك - كل خطة تتضمن الوصول إلى Volumetrica (Deepmap & Deepcharts).",
       "plans": [
         {
           "step": "أساسي",
@@ -92,7 +92,6 @@
       ],
       "viewFullPricing": "عرض التسعير الكامل"
     },
-
     "faqSection": {
       "heading": "الأسئلة الشائعة",
       "description": "كل ما تحتاج معرفته للبدء",
@@ -162,8 +161,8 @@
     "heading": "تواصل معنا",
     "description": "كل ما تحتاج معرفته للبدء",
     "address": {
-      "line1": "2118 ثورنريدج سيركل، سيراكيوز،",
-      "line2": "كونيتيكت 35624"
+      "line1": "مدرج ميدان، الطابق السادس",
+      "line2": "طريق ميدان، ند الشبا | دبي، الإمارات العربية المتحدة"
     },
     "hours": {
       "label": "ساعات العمل",
@@ -174,8 +173,8 @@
       "value": "support@soloclash.com"
     },
     "social": {
-      "youtube": "يوتيوب",
-      "twitter": "تويتر",
+      "discord": "ديسكورد", 
+      "twitch": "تويتش",
       "instagram": "انستغرام",
       "linkedin": "لينكدإن"
     },
@@ -287,7 +286,7 @@
       "cookiesPolicy": "سياسة الكوكيز"
     },
     "social": {
-      "youtube": "يوتيوب",
+      "discord": "ديسكورد",
       "twitch": "تويتش",
       "instagram": "إنستغرام",
       "tiktok": "تيك توك"

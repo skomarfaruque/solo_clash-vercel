@@ -44,7 +44,7 @@ export default function Navbar() {
       height: 52,
     },
     {
-      href: "hhttps://www.tiktok.com/@soloclashofficial",
+      href: "https://www.tiktok.com/@soloclash_official",
       src: "/tiktok.png",
       alt: "tiktok",
       width: 52,

@@ -52,7 +52,7 @@ export default function Footer() {
       icon: "/footer/instagram.png",
     },
     {
-      href: "https://www.tiktok.com/@soloclashofficial",
+      href: "https://www.tiktok.com/@soloclash_official",
       label: t("social.tiktok"),
       icon: "/footer/tiktok.png",
     },

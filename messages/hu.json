@@ -72,7 +72,7 @@
     },
     "subscriptionsSection": {
       "heading": "Számlák skálázható kereskedéshez",
-      "description": "Válaszd ki a stílusodhoz illő számlát – minden csomag tartalmazza a Volumetrica (VolSys & VolBook) hozzáférést.",
+      "description": "Válaszd ki a stílusodhoz illő számlát – minden csomag tartalmazza a Volumetrica (Deepmap & Deepcharts) hozzáférést.",
       "plans": [
         {
           "step": "Alap",
@@ -161,8 +161,8 @@
     "heading": "Lépj kapcsolatba velünk",
     "description": "Minden, amit tudnod kell a kezdéshez",
     "address": {
-      "line1": "2118 Thornridge Cir. Syracuse,",
-      "line2": "Connecticut 35624"
+      "line1": "Meydan lelátó, 6. emelet,",
+      "line2": "Meydan út, Nad Al Sheba | Dubaj, EAE"
     },
     "hours": {
       "label": "Nyitvatartás",
@@ -173,8 +173,8 @@
       "value": "support@soloclash.com"
     },
     "social": {
-      "youtube": "YouTube",
-      "twitter": "Twitter",
+      "discord": "Discord",
+      "twitch": "Twitch",
       "instagram": "Instagram",
       "linkedin": "LinkedIn"
     },
@@ -286,7 +286,7 @@
       "cookiesPolicy": "Cookie Szabályzat"
     },
     "social": {
-      "youtube": "YouTube",
+      "discord": "Discord",
       "twitch": "Twitch",
       "instagram": "Instagram",
       "tiktok": "TikTok"
