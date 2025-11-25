@@ -19,7 +19,7 @@ export default function PaymentSection() {
   const [userId, setUserId] = useState("");
   const [promoCode, setPromoCode] = useState("");
   const [showErrorToast, setShowErrorToast] = useState(false);
-  const vat = 25;
+  const vat = 5;
 
   useEffect(() => {
     const savedSubscription = localStorage.getItem("selectedSubscription");

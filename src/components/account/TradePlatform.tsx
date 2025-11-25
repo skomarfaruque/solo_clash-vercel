@@ -1,22 +1,12 @@
 "use client";
-import { useRouter } from "next/navigation";
-import BlackButton from "../buttons/BlackButton";
 import Heading from "../common/Heading";
 
-import SpinWinTradeCard from "./SpinWinTradeCard";
 import TradePlatformCard from "./TradePlatformCard";
 import { useTranslations } from "next-intl";
 
 export default function TradePlatform() {
-  const t = useTranslations("accountPage.spinWinTradeSection");
   const tPlatform = useTranslations("accountPage.tradePlatform");
-  const cards = t.raw("cards");
-  const icons = [
-    "spin_card_icon_one.svg",
-    "spin_card_icon_two.svg",
-    "spin_card_icon_three.svg",
-  ];
-  const router = useRouter();
+
   const brands = [
     {
       name: "Volumetrica",

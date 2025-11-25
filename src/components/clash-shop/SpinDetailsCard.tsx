@@ -28,7 +28,20 @@ const formatDate = (dateString: string): string => {
     day: "numeric",
   });
 };
-
+const cardsBg: string[] = [
+  "linear-gradient(90deg, #000C40 0%, #607D8B 100%)",
+  "linear-gradient(90deg, #9400D3 0%, #4B0082 100%)",
+  "linear-gradient(90deg, #72C6EF 0%, #004E8F 100%)",
+  "linear-gradient(90deg, #72C6EF 0%, #004E8F 100%)",
+  "linear-gradient(90deg, #E65C00 0%, #F9D423 100%)",
+];
+const buttonTitles: string[] = [
+  "Common",
+  "Epic",
+  "Rare",
+  "Legendary",
+  "Mythic",
+];
 export default function SpinDetailsCard({
   iconPath,
   wheelHistoryData,
@@ -118,7 +131,13 @@ export default function SpinDetailsCard({
           gap: "10px",
           width: "111px",
           height: "40px",
-          // background: `${buttonBg}`,
+          background: `${
+            cardsBg[
+              wheelHistoryData && wheelHistoryData.wheel_item_id
+                ? (wheelHistoryData.wheel_item_id - 1) % cardsBg.length
+                : 0
+            ]
+          }`,
           borderRadius: "130px",
           fontWeight: 400,
           fontSize: "14px",
@@ -126,7 +145,13 @@ export default function SpinDetailsCard({
           color: "#FFFFFF",
         }}
       >
-        button
+        {
+          buttonTitles[
+            wheelHistoryData && wheelHistoryData.wheel_item_id
+              ? (wheelHistoryData.wheel_item_id - 1) % buttonTitles.length
+              : 0
+          ]
+        }
       </button>
     </div>
   );
