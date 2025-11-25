@@ -117,7 +117,7 @@ export default function ContactSection() {
               />
             </a>
             <a
-              href="https://www.tiktok.com/@soloclashofficial"
+              href="https://www.tiktok.com/@soloclash_official"
               target="_blank"
               rel="noopener noreferrer"
             >
