@@ -173,7 +173,7 @@
       "value": "support@soloclash.com"
     },
     "social": {
-      "discord": "ديسكورد", 
+      "discord": "ديسكورد",
       "twitch": "تويتش",
       "instagram": "انستغرام",
       "linkedin": "لينكدإن"
@@ -506,6 +506,7 @@
     "defaultTitle": "مرحبًا بك في Solo Clash",
     "getStarted": "ابدأ الآن",
     "startChallenge": "ابدأ التحدي",
-    "redeemTicket": "استرد التذكرة المجانية الآن"
+    "redeemTicket": "استرد التذكرة المجانية الآن",
+    "readyToTrade": "هل أنت مستعد للتداول برأس مال حقيقي؟"
   }
 }
