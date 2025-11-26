@@ -1,10 +1,14 @@
 interface BannerButtonProps {
   text: string;
+  onClick?: () => void;
 }
 
-export default function BannerButton({ text }: BannerButtonProps) {
+export default function BannerButton({ text, onClick }: BannerButtonProps) {
   return (
-    <button className="relative cursor-pointer hover:scale-105 active:scale-95 transition-all duration-150">
+    <button
+      onClick={onClick}
+      className="relative cursor-pointer hover:scale-105 active:scale-95 transition-all duration-150"
+    >
       <svg
         width="339"
         height="117"

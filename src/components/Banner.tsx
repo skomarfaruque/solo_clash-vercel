@@ -9,11 +9,15 @@ export default function Banner({
   bannerIconPath,
   title,
   description,
+  buttonTitle,
+  onClick,
 }: Readonly<{
   page: string;
   title: string | null;
   description?: string | null;
   bannerIconPath?: string | null;
+  buttonTitle?: string | null;
+  onClick?: () => void;
 }>) {
   const t = useTranslations("bannerDetails");
 
@@ -58,7 +62,12 @@ export default function Banner({
             </p>
           )}
           {/* Banner Button */}
-          {page === "account" && <BannerButton text={t("getStarted")} />}
+          {page === "account" && (
+            <BannerButton
+              text={buttonTitle || t("getStarted")}
+              onClick={onClick}
+            />
+          )}
 
           {/* BannerRulesButton for rules page */}
           {page === "rules" && <BannerRulesButton text={t("startChallenge")} />}

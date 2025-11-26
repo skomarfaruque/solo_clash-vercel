@@ -92,7 +92,7 @@
       ],
       "viewFullPricing": "View full pricing"
     },
-    
+
     "spinWinTradeSection": {
       "heading": "Spin. Win. Trade",
       "description": "Daily spins, instant rewards - win Clash Coins, free tournament entries, discount codes, or even a funded account.",
@@ -483,6 +483,7 @@
     "defaultTitle": "Welcome to Solo Clash",
     "getStarted": "Get Started",
     "startChallenge": "Start Challenge",
-    "redeemTicket": "Redeem Free Ticket Now"
+    "redeemTicket": "Redeem Free Ticket Now",
+    "readyToTrade": "Ready to trade real capital?"
   }
 }
