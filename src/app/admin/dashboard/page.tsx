@@ -1,9 +1,11 @@
+import StripePaymentsSection from "@/components/admin/StripePaymentsSection";
+
 export default function DashboardPage() {
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold text-white mb-4">Dashboard</h1>
-        <p className="text-gray-400">Welcome to the Admin Dashboard</p>
+    <div className="min-h-screen bg-black">
+      <div className="p-6 md:p-8">
+        <h1 className="text-4xl font-bold text-white mb-8">Admin Dashboard</h1>
+        <StripePaymentsSection />
       </div>
     </div>
   );
