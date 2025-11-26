@@ -14,9 +14,28 @@ export default function DashboardLayout({
 }) {
   return (
     <div style={{ display: "flex", minHeight: "100vh" }}>
-      <AdminSidebar />
-      <main style={{ flex: 1, display: "flex", flexDirection: "column" }}>
-        <AdminHeader />
+      <div
+        style={{
+          position: "fixed",
+          left: 0,
+          top: 0,
+          height: "100vh",
+          zIndex: 50,
+        }}
+      >
+        <AdminSidebar />
+      </div>
+      <main
+        style={{
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
+          marginLeft: "250px",
+        }}
+      >
+        <div style={{ position: "sticky", top: 0, zIndex: 40 }}>
+          <AdminHeader />
+        </div>
         <div style={{ flex: 1, overflowY: "auto" }}>{children}</div>
       </main>
     </div>

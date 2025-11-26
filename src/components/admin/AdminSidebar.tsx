@@ -68,13 +68,14 @@ export default function AdminSidebar() {
     <aside
       style={{
         width: isCollapsed ? "80px" : "250px",
-        minHeight: "100vh",
+        height: "100vh",
         backgroundColor: "#030303",
         borderRight: "1px solid #2BB6DD",
         display: "flex",
         flexDirection: "column",
         transition: "width 0.3s ease",
         padding: "20px 0",
+        overflowY: "auto",
       }}
     >
       {/* Header */}
