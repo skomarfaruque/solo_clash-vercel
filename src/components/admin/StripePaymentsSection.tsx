@@ -173,7 +173,7 @@ export default function StripePaymentsSection() {
                 onClick={() =>
                   setExpandedIndex(expandedIndex === index ? null : index)
                 }
-                className="w-full px-4 py-3 bg-gray-900 hover:bg-gray-800 transition flex items-center justify-between text-left"
+                className="w-full px-4 py-3 bg-gray-900 hover:bg-gray-800 transition flex items-center justify-between text-left cursor-pointer"
               >
                 <div className="flex items-center gap-4 flex-1">
                   <span className="text-gray-400 text-sm">{index + 1}</span>
