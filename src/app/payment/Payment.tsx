@@ -58,7 +58,8 @@ export default function PaymentSection() {
   }, [router]);
   const handleCheckout = async () => {
     const amountInCents = Math.round(
-      Number(appliedCoupon ? appliedCoupon.finalAmount : totalPayablePrice) * 100
+      Number(appliedCoupon ? appliedCoupon.finalAmount : totalPayablePrice) *
+        100
     );
     const res = await fetch("/api/checkout", {
       method: "POST",
@@ -343,7 +344,11 @@ export default function PaymentSection() {
           </label> */}
           <div className="flex items-center mt-[88px]">
             <SvgButton2
-              label={`Pay USD $${appliedCoupon ? appliedCoupon.finalAmount.toFixed(2) : totalPayablePrice}`}
+              label={`Pay USD $${
+                appliedCoupon
+                  ? appliedCoupon.finalAmount.toFixed(2)
+                  : totalPayablePrice
+              }`}
               textStyle="font-medium text-base"
               onClick={handleCheckout}
               isDisabled={!(checked1 && checked2 && checked3) || !userId}
