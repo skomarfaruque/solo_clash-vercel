@@ -19,6 +19,12 @@ export default function PaymentSection() {
   const [userId, setUserId] = useState("");
   const [promoCode, setPromoCode] = useState("");
   const [showErrorToast, setShowErrorToast] = useState(false);
+  const [appliedCoupon, setAppliedCoupon] = useState<{
+    code: string;
+    discount: number;
+    finalAmount: number;
+  } | null>(null);
+  const [loading, setLoading] = useState(false);
   const vat = 5;
 
   useEffect(() => {
@@ -51,7 +57,9 @@ export default function PaymentSection() {
     }
   }, [router]);
   const handleCheckout = async () => {
-    const amountInCents = Math.round(Number(totalPayablePrice) * 100);
+    const amountInCents = Math.round(
+      Number(appliedCoupon ? appliedCoupon.finalAmount : totalPayablePrice) * 100
+    );
     const res = await fetch("/api/checkout", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -72,9 +80,55 @@ export default function PaymentSection() {
     (Number(monthlyPrice) * vat) / 100
   ).toFixed(2);
 
-  const handleApplyCoupon = () => {
-    setShowErrorToast(true);
-    setTimeout(() => setShowErrorToast(false), 3000);
+  const handleApplyCoupon = async () => {
+    if (!promoCode.trim()) {
+      setShowErrorToast(true);
+      setTimeout(() => setShowErrorToast(false), 3000);
+      return;
+    }
+
+    try {
+      setLoading(true);
+      const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
+      const params = new URLSearchParams({
+        couponCode: promoCode,
+        orderAmount: monthlyPrice,
+      });
+
+      const response = await fetch(
+        `${baseUrl}/stripe-payment-public/coupons-validation?${params}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.ok && data.valid) {
+        // Coupon is valid
+        const discountAmount = Number(monthlyPrice) - Number(data.finalAmount);
+        setAppliedCoupon({
+          code: data.couponCodeApplied || promoCode,
+          discount: discountAmount,
+          finalAmount: Number(data.finalAmount),
+        });
+        setPromoCode("");
+      } else {
+        // Coupon is invalid
+        setShowErrorToast(true);
+        setTimeout(() => setShowErrorToast(false), 3000);
+      }
+    } catch (error) {
+      console.error("Error validating coupon:", error);
+      setShowErrorToast(true);
+      setTimeout(() => setShowErrorToast(false), 3000);
+    } finally {
+      setLoading(false);
+    }
   };
   return (
     <section className="justify-center text-center min-h-screen px-4 sm:px-0 items-center flex py-30">
@@ -155,6 +209,12 @@ export default function PaymentSection() {
               <span>{t("vat")}</span>
               <span>{vat}%</span>
             </div>
+            {appliedCoupon && (
+              <div className="flex justify-between text-green-400">
+                <span>Coupon ({appliedCoupon.code})</span>
+                <span>-${appliedCoupon.discount.toFixed(2)}</span>
+              </div>
+            )}
             <div className="flex justify-between font-semibold text-lg">
               <span>{t("total")}</span>
               <span>${totalPayablePrice}</span>
@@ -172,13 +232,19 @@ export default function PaymentSection() {
                   placeholder={t("promoCodePlaceholder")}
                   value={promoCode}
                   onChange={(e) => setPromoCode(e.target.value)}
-                  className="flex-1 bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500"
+                  disabled={loading}
+                  className="flex-1 bg-[rgba(255,255,255,0.03)] border border-[rgba(255,250,250,0.06)] rounded-[12px] px-3 py-2 text-sm text-white placeholder-gray-500 disabled:opacity-50"
                 />
                 <button
                   onClick={handleApplyCoupon}
-                  className="bg-[rgba(251,120,45,0.1)] rounded-[12px] hover:bg-orange-500 px-4 py-2 text-sm font-medium text-[#FB782D] hover:text-white hover:opacity-80 transition hover:cursor-pointer"
+                  disabled={loading || !!appliedCoupon}
+                  className="bg-[rgba(251,120,45,0.1)] rounded-[12px] hover:bg-orange-500 px-4 py-2 text-sm font-medium text-[#FB782D] hover:text-white hover:opacity-80 transition hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {t("applyButton")}
+                  {loading
+                    ? "Validating..."
+                    : appliedCoupon
+                    ? "Applied ✓"
+                    : t("applyButton")}
                 </button>
               </div>
             </div>
@@ -277,7 +343,7 @@ export default function PaymentSection() {
           </label> */}
           <div className="flex items-center mt-[88px]">
             <SvgButton2
-              label={`Pay USD $${totalPayablePrice}`}
+              label={`Pay USD $${appliedCoupon ? appliedCoupon.finalAmount.toFixed(2) : totalPayablePrice}`}
               textStyle="font-medium text-base"
               onClick={handleCheckout}
               isDisabled={!(checked1 && checked2 && checked3) || !userId}
