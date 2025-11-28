@@ -111,11 +111,16 @@ export default function PaymentSection() {
 
       if (response.ok && data.valid) {
         // Coupon is valid
-        const discountAmount = Number(monthlyPrice) - Number(data.finalAmount);
+        const finalAmountBeforeTax = Number(data.finalAmount);
+        const finalAmountWithTax = (
+          finalAmountBeforeTax +
+          (finalAmountBeforeTax * vat) / 100
+        ).toFixed(2);
+        const discountAmount = Number(monthlyPrice) - finalAmountBeforeTax;
         setAppliedCoupon({
           code: data.couponCodeApplied || promoCode,
           discount: discountAmount,
-          finalAmount: Number(data.finalAmount),
+          finalAmount: Number(finalAmountWithTax),
         });
         setPromoCode("");
       } else {
@@ -218,7 +223,12 @@ export default function PaymentSection() {
             )}
             <div className="flex justify-between font-semibold text-lg">
               <span>{t("total")}</span>
-              <span>${totalPayablePrice}</span>
+              <span>
+                $
+                {appliedCoupon
+                  ? appliedCoupon.finalAmount.toFixed(2)
+                  : totalPayablePrice}
+              </span>
             </div>
           </div>
 
