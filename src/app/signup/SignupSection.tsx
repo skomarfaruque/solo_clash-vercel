@@ -74,7 +74,7 @@ export default function SignupSection() {
       try {
         const token = localStorage.getItem("adminToken");
         const response = await fetch(
-          "https://solo-clash-backend.vercel.app/api/v1/country",
+          `${process.env.NEXT_PUBLIC_BASE_URL}/country`,
           {
             method: "GET",
             headers: {
@@ -171,7 +171,7 @@ export default function SignupSection() {
       };
 
       const response = await fetch(
-        "https://solo-clash-backend.vercel.app/api/v1/auth/register",
+        `${process.env.NEXT_PUBLIC_BASE_URL}/auth/register`,
         {
           method: "POST",
           headers: {
