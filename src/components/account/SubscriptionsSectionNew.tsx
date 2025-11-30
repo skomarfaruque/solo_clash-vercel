@@ -96,11 +96,11 @@ export default function SubscriptionsSectionNew({
           {t("description")}
         </p>
         {/* Currency Selector */}
-        <CurrencySelector
+        {/*<CurrencySelector
           className="mb-8"
           selectedCurrency={selectedCurrency}
           onCurrencySelect={(currency) => handleCurrencyChange(currency)}
-        />
+        />  */}
 
         {/* Labels and Subscriptions Container */}
         <div className="flex gap-8 w-full max-w-7xl">

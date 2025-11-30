@@ -31,8 +31,15 @@ export default function Navbar() {
   const socialLinks = [
     {
       href: "https://discord.gg/soloclash",
-      src: "/tv.png",
+      src: "/reddit.png",
       alt: "discord",
+      width: 52,
+      height: 42,
+    },
+    {
+      href: "https://www.twitch.tv/soloclashofficial",
+      src: "/twitch.png",
+      alt: "twitch",
       width: 52,
       height: 42,
     },
@@ -50,17 +57,11 @@ export default function Navbar() {
       width: 52,
       height: 52,
     },
-    {
-      href: "https://www.twitch.tv/soloclashofficial",
-      src: "/twitch.png",
-      alt: "twitch",
-      width: 52,
-      height: 42,
-    },
+    
   ];
 
   const activeClass =
-    "px-6 py-3 rounded-[58px] bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)] shadow-[0px_2px_12px_rgba(7,5,24,0.5)]";
+    "px-6 py-3 text-white transition-colors text-sm font-medium border-b-2 border-orange-500";
   const inactiveClass = "text-[#B7B7B7] hover:text-white transition";
 
   const languages = [

@@ -5,7 +5,7 @@ const rulesCards = [
     iconPath: "/icons/rules/rules_1.png",
     title: "Evaluation Period",
     description:
-      "A minimum of three (3) trading days is required to complete the challenge. There is no maximum time limit to finish the evaluation.",
+      "A minimum of two (2) trading days is required to complete the challenge. There is no maximum time limit to finish the evaluation.",
   },
   {
     iconPath: "/icons/rules/rules_2.png",
@@ -17,7 +17,7 @@ const rulesCards = [
     iconPath: "/icons/rules/rules_3.png",
     title: "Profit Consistency",
     description:
-      "A 30% consistency rule applies only during the evaluation phase. Traders must follow 30% of consistency to reach the profit target without breaching the maximum drawdown.",
+      "A 30% consistency rule applies only during the evaluation phase. Traders must follow 50% of consistency to reach the profit target without breaching the maximum drawdown.",
   },
   {
     iconPath: "/icons/rules/rules_4.png",

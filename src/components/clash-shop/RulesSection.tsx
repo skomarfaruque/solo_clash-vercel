@@ -5,7 +5,7 @@ const rulesCards = [
     iconPath: "/icons/rules/rules_1.png",
     title: "Evaluation Period",
     description:
-      "A minimum of three (3) trading days is required to complete the challenge. There is no maximum time limit to finish the evaluation.",
+      "A minimum of two (2) trading days is required to complete the challenge. There is no maximum time limit to finish the evaluation.",
   },
   {
     iconPath: "/icons/rules/rules_2.png",

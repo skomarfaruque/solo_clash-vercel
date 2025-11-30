@@ -52,6 +52,10 @@ export default function LanguageSupport() {
               document.cookie = `locale=${lang.code}; path=/; max-age=31536000`;
               window.location.reload();
             }}
+            onMouseOver={() => {
+              document.cookie = `locale=${lang.code}; path=/; max-age=31536000`;
+              window.location.reload();
+            }}
           >
             {lang.title}
           </button>
