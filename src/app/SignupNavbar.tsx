@@ -93,7 +93,15 @@ export default function SignupNavbar() {
                 </button>
               )}
               {idx < steps.length - 1 && (
-                <div className={`mx-2 ${isStepAccessible(steps[idx + 1].id) ? "text-white" : "text-neutral-500 opacity-40"}`}>{">"}</div>
+                <div
+                  className={`mx-2 ${
+                    isStepAccessible(steps[idx + 1].id)
+                      ? "text-white"
+                      : "text-neutral-500 opacity-40"
+                  }`}
+                >
+                  {">"}
+                </div>
               )}
             </div>
           );
