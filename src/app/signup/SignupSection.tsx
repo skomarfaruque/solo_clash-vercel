@@ -546,13 +546,13 @@ export default function SignupSection() {
                     className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 custom-input"
                     disabled={loadingCountries}
                   >
-                    <option value="">
+                    <option value="" className="text-black">
                       {loadingCountries
                         ? "Loading countries..."
                         : "--Please Select--"}
                     </option>
                     {countries.map((country) => (
-                      <option key={country.id} value={country.id}>
+                      <option key={country.id} value={country.id} className="text-black">
                         {country.name}
                       </option>
                     ))}

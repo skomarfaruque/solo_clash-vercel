@@ -2,13 +2,15 @@ import React from "react";
 
 interface BannerRulesButtonProps {
   text: string;
+  onClick?: () => void;
 }
 
-const BannerRulesButton: React.FC<BannerRulesButtonProps> = ({ text }) => {
+const BannerRulesButton: React.FC<BannerRulesButtonProps> = ({ text,  onClick }) => {
   return (
     <button
       className="flex items-center justify-center gap-2 px-0 py-0 border-none bg-transparent cursor-pointer"
       style={{ width: 205, height: 52 }}
+      onClick={onClick}
     >
       <span className="relative flex items-center justify-center w-full h-full">
         <svg

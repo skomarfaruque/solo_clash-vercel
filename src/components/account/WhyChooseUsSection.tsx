@@ -99,7 +99,7 @@ export default function StackingStickyCards() {
     >
       <div className="flex flex-col justify-center items-center gap-6">
         {/* Top Badge */}
-        <HomeButton onClick={() => router.push("/account")}>
+        <HomeButton onClick={() => router.push("#subscriptions")}>
           {t("accountPage.featureSection.badge")}
         </HomeButton>
 

@@ -1,7 +1,10 @@
+"use client";
+
 import BannerButton from "./BannerButton";
 import BannerRulesButton from "./BannerRulesButton";
 import Image from "next/image";
 import WhiteButton from "./buttons/WhiteButton";
+import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 
 export default function Banner({
@@ -19,6 +22,7 @@ export default function Banner({
   buttonTitle?: string | null;
   onClick?: () => void;
 }>) {
+  const router = useRouter();
   const t = useTranslations("bannerDetails");
 
   return (
@@ -70,11 +74,16 @@ export default function Banner({
           )}
 
           {/* BannerRulesButton for rules page */}
-          {page === "rules" && <BannerRulesButton text={t("startChallenge")} />}
+          {page === "rules" && <BannerRulesButton text={t("startChallenge")} 
+                                onClick={() => router.push("../#subscriptions")}
+          />}
 
           {/* BannerRulesButton for clash-shop page */}
           {page === "clash-shop" && (
-            <WhiteButton text={t("redeemTicket")} iconPath="/trophy.png" />
+            <>
+              <WhiteButton text={t("redeemTicket")} iconPath="/trophy.png"/>
+              <span className="bg-gradient-to-r from-blue-400 via-sky-500 to-orange-500 bg-clip-text text-transparent">Coming Soon...</span>
+            </>
           )}
         </div>
       </div>

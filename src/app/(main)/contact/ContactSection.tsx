@@ -122,8 +122,8 @@ export default function ContactSection() {
               rel="noopener noreferrer"
             >
               <Image
-                src="/icons/contacts/contact_linkedin.png"
-                alt={t("contactSection.social.linkedin")}
+                src="/icons/contacts/contact_tiktok.png"
+                alt={t("contactSection.social.tiktok")}
                 width={40}
                 height={40}
                 className="w-[40px] h-[40px] hover:opacity-80 transition"
