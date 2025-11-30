@@ -443,7 +443,7 @@ export default function SignupSection() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute inset-y-0 right-3 flex items-center text-neutral-400 hover:text-white"
+                  className="absolute inset-y-0 right-3 flex items-center text-neutral-400 hover:text-white cursor-pointer"
                 >
                   {showPassword ? "🙈" : "👁️"}
                 </button>
@@ -467,7 +467,7 @@ export default function SignupSection() {
                 <button
                   type="button"
                   onClick={() => setShowConfirm(!showConfirm)}
-                  className="absolute inset-y-0 right-3 flex items-center text-neutral-400 hover:text-white"
+                  className="absolute inset-y-0 right-3 flex items-center text-neutral-400 hover:text-white cursor-pointer"
                 >
                   {showConfirm ? "🙈" : "👁️"}
                 </button>
@@ -481,7 +481,7 @@ export default function SignupSection() {
                   type="checkbox"
                   checked={agreedToPrivacy}
                   onChange={(e) => setAgreedToPrivacy(e.target.checked)}
-                  className="h-4 w-4 text-orange-500 rounded focus:ring-2 focus:ring-orange-500"
+                  className="h-4 w-4 text-orange-500 rounded focus:ring-2 focus:ring-orange-500 cursor-pointer"
                 />
                 <label className="text-sm text-gray-300">
                   {t.rich("privacyPolicy", {
@@ -515,7 +515,7 @@ export default function SignupSection() {
                   name="is_news_letter"
                   checked={formData.is_news_letter}
                   onChange={handleChange}
-                  className="h-4 w-4 text-orange-500 rounded focus:ring-2 focus:ring-orange-500"
+                  className="h-4 w-4 text-orange-500 rounded focus:ring-2 focus:ring-orange-500 cursor-pointer"
                 />
                 <label className="text-sm text-gray-300">
                   {t("newsletter")}
@@ -726,7 +726,7 @@ export default function SignupSection() {
                   name="confirm"
                   checked={confirmName}
                   onChange={(e) => setConfirmName(e.target.checked)}
-                  className="h-4 w-4 text-orange-500 rounded focus:ring-2 focus:ring-orange-500"
+                  className="h-4 w-4 text-orange-500 rounded focus:ring-2 focus:ring-orange-500 cursor-pointer"
                 />
                 <label className="text-sm text-gray-300">
                   {t("confirmName")}
