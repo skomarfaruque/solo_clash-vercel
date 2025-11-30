@@ -379,7 +379,7 @@
     "usernameLabel": "Nombre de usuario",
     "passwordLabel": "Contraseña",
     "confirmPasswordLabel": "Confirmar contraseña",
-    "privacyPolicy": "Acepto la Política de Privacidad y los Términos y Condiciones.",
+    "privacyPolicy": "Acepto la <privacy>Política de Privacidad</privacy> y los <terms>Términos y Condiciones</terms>.",
     "newsletter": "Me gustaría suscribirme al boletín de Solo Clash Futures.",
     "signUpButton": "REGISTRARSE",
     "alreadyHaveAccount": "¿Ya tienes una cuenta?",
@@ -483,7 +483,7 @@
     "defaultTitle": "Bienvenido a Solo Clash",
     "getStarted": "Comenzar",
     "startChallenge": "Iniciar desafío",
-    "redeemTicket": "Canjear entrada gratuita ahora",
+    "redeemTicket": "Próximamente...",
     "readyToTrade": "¿Listo para operar con capital real?"
   }
 }

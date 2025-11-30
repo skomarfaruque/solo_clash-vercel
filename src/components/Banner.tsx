@@ -80,10 +80,7 @@ export default function Banner({
 
           {/* BannerRulesButton for clash-shop page */}
           {page === "clash-shop" && (
-            <>
               <WhiteButton text={t("redeemTicket")} iconPath="/trophy.png"/>
-              <span className="bg-gradient-to-r from-blue-400 via-sky-500 to-orange-500 bg-clip-text text-transparent">Coming Soon...</span>
-            </>
           )}
         </div>
       </div>

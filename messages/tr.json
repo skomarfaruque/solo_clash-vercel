@@ -379,7 +379,7 @@
     "usernameLabel": "Kullanıcı Adı",
     "passwordLabel": "Şifre",
     "confirmPasswordLabel": "Şifreyi Onayla",
-    "privacyPolicy": "Gizlilik Politikası ve Şartlar ve Koşulları kabul ediyorum.",
+    "privacyPolicy": "<privacy>Gizlilik Politikası</privacy> ve <terms>Şartlar ve Koşulları</terms> kabul ediyorum.",
     "newsletter": "Solo Clash Futures bültenine abone olmak istiyorum.",
     "signUpButton": "KAYDOL",
     "alreadyHaveAccount": "Hesabınız var mı?",
@@ -482,7 +482,7 @@
   "bannerDetails": {
     "defaultTitle": "Solo Clash'a Hoş Geldiniz",
     "getStarted": "Hemen Başla",
-    "startChallenge": "Meydan Okumayı Başlat",
+    "startChallenge": "Yakında...",
     "redeemTicket": "Ücretsiz Bileti Şimdi Al",
     "readyToTrade": "Gerçek sermaye ile ticaret yapmaya hazır mısınız?"
   }

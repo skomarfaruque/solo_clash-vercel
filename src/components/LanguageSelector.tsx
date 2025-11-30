@@ -18,17 +18,39 @@ export default function LanguageSelector({
   const t = useTranslations();
 
   const languages = [
-    { title: t("navbar.langEnglish"), code: "en" },
-    { title: t("navbar.langArabic"), code: "ar" },
-    { title: t("navbar.langTurkish"), code: "tr" },
-    { title: t("navbar.langPortuguese"), code: "pt" },
-    { title: t("navbar.langFrench"), code: "fr" },
-    { title: t("navbar.langSpanish"), code: "es" },
-    { title: t("navbar.langHungarian"), code: "hu" },
+    { title: t("navbar.langEnglish"), code: "en", flag: "en.png" },
+    { title: t("navbar.langArabic"), code: "ar", flag: "ar.png" },
+    { title: t("navbar.langTurkish"), code: "tr", flag: "tr.png" },
+    { title: t("navbar.langPortuguese"), code: "pt", flag: "pt.png" },
+    { title: t("navbar.langFrench"), code: "fr", flag: "fr.png" },
+    { title: t("navbar.langSpanish"), code: "es", flag: "es.png" },
+    { title: t("navbar.langHungarian"), code: "hu", flag: "hu.png" },
   ];
 
   const [langOpen, setLangOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setLangOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setLangOpen(false);
+    }, 150);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
@@ -49,7 +71,12 @@ export default function LanguageSelector({
     languages.find((l) => l.code === selectedLang) || languages[0];
 
   return (
-    <div className={`relative ${className}`} ref={dropdownRef}>
+    <div
+      className={`relative ${className}`}
+      ref={dropdownRef}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <button
         onClick={() => setLangOpen(!langOpen)}
         className="flex items-center gap-2 bg-neutral-900 h-[52px] px-4 py-1.5 rounded-full hover:cursor-pointer"
@@ -67,41 +94,36 @@ export default function LanguageSelector({
           alt={selectedLangObj.title}
           width={13}
           height={13}
-          className="rounded"
+          className={`rounded transition-transform duration-200 ${
+            langOpen ? "rotate-180" : ""
+          }`}
         />
-        {/* <span className="ml-1">
-          <svg
-            className="ml-1"
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-            focusable="false"
-          >
-            <path
-              d="M4 6l4 4 4-4"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </span> */}
       </button>
       {langOpen && (
-        <div className="absolute mt-2 w-32 bg-neutral-800 rounded-lg shadow-lg z-20">
-          {languages.map((lang) => (
-            <button
-              key={lang.code}
-              className={`w-full px-4 py-2 text-left hover:bg-neutral-700 ${
-                selectedLang === lang.code ? "bg-neutral-700 font-bold" : ""
-              }`}
-              onClick={() => onLanguageChange(lang.code)}
-            >
-              {lang.title}
-            </button>
+        <div className="absolute mt-2 w-44 bg-neutral-800 rounded-lg shadow-lg z-20 overflow-hidden py-1">
+          {languages.map((lang, index) => (
+            <div key={lang.code}>
+              <button
+                className={`w-full px-4 py-2.5 text-left flex items-center gap-3 transition-all duration-200 hover:text-orange-400 hover:pl-5 cursor-pointer ${
+                  selectedLang === lang.code
+                    ? "text-orange-400 font-bold"
+                    : "text-gray-300"
+                }`}
+                onClick={() => onLanguageChange(lang.code)}
+              >
+                <Image
+                  src={`/flags/${lang.flag}`}
+                  alt={lang.title}
+                  width={20}
+                  height={14}
+                  className="rounded-sm object-cover"
+                />
+                <span className="text-sm">{lang.title}</span>
+              </button>
+              {index < languages.length - 1 && (
+                <div className="mx-3 border-b border-neutral-700" />
+              )}
+            </div>
           ))}
         </div>
       )}
