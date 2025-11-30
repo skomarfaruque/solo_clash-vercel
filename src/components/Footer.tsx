@@ -12,7 +12,7 @@ export default function Footer() {
     { href: "/#subscriptions", label: t("links.accounts") },
     { href: "/rules", label: t("links.rules") },
     { href: "https://help.soloclash.com", label: t("links.faq"), external: true},
-    { href: "https://dashboard.soloclash.com/login", label: t("links.getStarted"), external: true },
+    { href: "/#subscriptions", label: t("links.getStarted"), external: true },
   ];
 
   const featuresLinks = [
