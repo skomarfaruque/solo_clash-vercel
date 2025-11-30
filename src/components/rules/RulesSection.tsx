@@ -17,7 +17,7 @@ const rulesCards = [
     iconPath: "/icons/rules/rules_3.png",
     title: "Profit Consistency",
     description:
-      "A 30% consistency rule applies only during the evaluation phase. Traders must follow 50% of consistency to reach the profit target without breaching the maximum drawdown.",
+      "A 50% consistency rule applies only during the evaluation phase. Traders must follow 50% of consistency to reach the profit target without breaching the maximum drawdown.",
   },
   {
     iconPath: "/icons/rules/rules_4.png",

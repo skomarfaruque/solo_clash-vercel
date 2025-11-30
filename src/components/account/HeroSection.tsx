@@ -46,7 +46,9 @@ export default function HeroSection() {
             padding="20px"
           />
           <span className="text-gray-300 hover:text-white transition cursor-pointer">
+            <a href="./#subscriptions">
             {t("accountPage.heroSection.seeAccountTypes")}
+            </a>
           </span>
         </div>
       </div>

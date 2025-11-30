@@ -8,3 +8,11 @@
   border: 1px solid rgba(225, 225, 225, 0.3) !important;
   color: black !important;
 }
+.language-button:hover {
+  background: linear-gradient(
+    94.79deg,
+    #f37e2c 0.24%,
+    #ffa362 100.24%
+  ) !important;
+  color: black !important;
+}

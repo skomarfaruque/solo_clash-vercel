@@ -39,7 +39,7 @@ export default function LanguageSupport() {
         {languages.map((lang) => (
           <button
             key={lang.code}
-            className={`language-button px-4 py-2 text-sm hover:cursor-pointer transition${
+            className={`language-button px-4 py-2 text-sm hover:cursor-pointer text-orange-500 transition${
               currentLang === lang.code ? " active " + lang.code : ""
             }`}
             style={{
@@ -49,10 +49,6 @@ export default function LanguageSupport() {
               background: "transparent",
             }}
             onClick={() => {
-              document.cookie = `locale=${lang.code}; path=/; max-age=31536000`;
-              window.location.reload();
-            }}
-            onMouseOver={() => {
               document.cookie = `locale=${lang.code}; path=/; max-age=31536000`;
               window.location.reload();
             }}
