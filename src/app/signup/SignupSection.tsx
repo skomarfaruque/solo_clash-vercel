@@ -54,7 +54,17 @@ export default function SignupSection() {
   useEffect(() => {
     const savedFormData = localStorage.getItem("signupFormData");
     if (savedFormData) {
-      setFormData(JSON.parse(savedFormData));
+      const parsed = JSON.parse(savedFormData);
+      setFormData(parsed);
+
+      // Restore checkbox states
+      if (parsed.email && parsed.user_name && parsed.password) {
+        // If we have step 1 data, check if privacy was agreed
+        const step1Valid = localStorage.getItem("step1Valid");
+        if (step1Valid === "true") {
+          setAgreedToPrivacy(true);
+        }
+      }
     }
   }, []);
 
@@ -112,6 +122,9 @@ export default function SignupSection() {
     }
   };
 
+  // Note: step1Valid is NOT set automatically - only set when Sign Up button is clicked
+  // Note: step2Valid is NOT set here automatically - only set after successful API response
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -128,8 +141,9 @@ export default function SignupSection() {
         }, 5000);
         return;
       }
-      // Save form data to localStorage before navigating to step 2
+      // Save form data and validation status to localStorage before navigating to step 2
       localStorage.setItem("signupFormData", JSON.stringify(formData));
+      localStorage.setItem("step1Valid", "true");
       window.location.href = "/signup?step=2";
       return;
     }
@@ -170,10 +184,17 @@ export default function SignupSection() {
       const data = await response.json();
 
       if (data.success) {
-        // Clear localStorage and navigate to step 3
+        // Mark registration as complete and clear all signup-related data
+        localStorage.setItem("registrationComplete", "true");
         localStorage.removeItem("signupFormData");
+        localStorage.removeItem("step1Valid");
+        localStorage.removeItem("step2Valid");
+
+        // Navigate to step 3
         window.location.href = "/signup?step=3";
       } else {
+        // Clear step 2 validation on error
+        localStorage.removeItem("step2Valid");
         // Show error toast
         setToast({
           show: true,
@@ -186,6 +207,8 @@ export default function SignupSection() {
       }
     } catch (err) {
       console.error("Error during registration:", err);
+      // Clear step 2 validation on error
+      localStorage.removeItem("step2Valid");
       setToast({
         show: true,
         message: "An error occurred during registration. Please try again.",
@@ -220,11 +243,88 @@ export default function SignupSection() {
     localStorage.removeItem("signupFormData");
   };
 
+  // Validation functions
+  const isStep1Valid = () => {
+    return (
+      formData.email.trim() !== "" &&
+      formData.user_name.trim() !== "" &&
+      formData.password.trim() !== "" &&
+      formData.confirmPassword.trim() !== "" &&
+      formData.password === formData.confirmPassword &&
+      agreedToPrivacy
+    );
+  };
+
+  const isStep2Valid = () => {
+    return (
+      formData.first_name.trim() !== "" &&
+      formData.last_name.trim() !== "" &&
+      formData.address_line_1.trim() !== "" &&
+      formData.address_line_2.trim() !== "" &&
+      formData.city.trim() !== "" &&
+      formData.post_code.trim() !== "" &&
+      formData.country_id.trim() !== "" &&
+      formData.date_of_birth.trim() !== "" &&
+      confirmName
+    );
+  };
+
   // Reset form when reaching step 3
   useEffect(() => {
     if (step === "3") {
       resetForm();
     }
+  }, [step]);
+
+  // Clear signup data on page reload/leave from step 3
+  useEffect(() => {
+    if (step === "3") {
+      const handleBeforeUnload = () => {
+        // Clear all signup data when page is about to reload or user leaves
+        localStorage.removeItem("registrationComplete");
+        localStorage.removeItem("signupFormData");
+        localStorage.removeItem("step1Valid");
+      };
+
+      // Also clear data when component unmounts (user navigates away)
+      const cleanup = () => {
+        localStorage.removeItem("registrationComplete");
+        localStorage.removeItem("signupFormData");
+        localStorage.removeItem("step1Valid");
+      };
+
+      window.addEventListener("beforeunload", handleBeforeUnload);
+
+      return () => {
+        window.removeEventListener("beforeunload", handleBeforeUnload);
+        // Clear data when user navigates away
+        cleanup();
+      };
+    }
+  }, [step]);
+
+  // Prevent accessing step 2 or 3 without completing previous steps
+  // Only check after component has mounted and data is loaded
+  useEffect(() => {
+    if (step === "1") return; // Always allow step 1
+
+    // Give time for formData to be restored from localStorage
+    const timer = setTimeout(() => {
+      const step1Status = localStorage.getItem("step1Valid");
+      const hasFormData = localStorage.getItem("signupFormData");
+      const registrationComplete = localStorage.getItem("registrationComplete");
+
+      // Only redirect if we're sure step 1 wasn't completed
+      if (step === "2" && step1Status !== "true" && !hasFormData) {
+        window.location.href = "/signup?step=1";
+      }
+      // For step 3, only allow if registration was successfully completed
+      if (step === "3" && registrationComplete !== "true") {
+        window.location.href = "/signup?step=1";
+      }
+    }, 200);
+
+    return () => clearTimeout(timer);
   }, [step]);
 
   return (
@@ -405,7 +505,8 @@ export default function SignupSection() {
             <form onSubmit={handleSubmit}>
               <button
                 type="submit"
-                className="w-full relative rounded-lg bg-gradient-to-r from-orange-500 to-orange-400 py-3 font-semibold text-black shadow-md hover:opacity-90 transition overflow-hidden cursor-pointer"
+                disabled={!isStep1Valid()}
+                className="w-full relative rounded-lg bg-gradient-to-r from-orange-500 to-orange-400 py-3 font-semibold text-black shadow-md hover:opacity-90 transition overflow-hidden cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <span className="relative z-10">{t("signUpButton")}</span>
                 {/* glowing orange light effect */}
@@ -552,7 +653,11 @@ export default function SignupSection() {
                         : "--Please Select--"}
                     </option>
                     {countries.map((country) => (
-                      <option key={country.id} value={country.id} className="text-black">
+                      <option
+                        key={country.id}
+                        value={country.id}
+                        className="text-black"
+                      >
                         {country.name}
                       </option>
                     ))}
@@ -601,8 +706,8 @@ export default function SignupSection() {
 
               <button
                 type="submit"
-                disabled={registering || !confirmName}
-                className="w-full py-3 rounded-lg bg-gradient-to-r from-orange-500 to-orange-400 text-black font-semibold shadow-lg hover:opacity-90 transition disabled:opacity-60 cursor-pointer"
+                disabled={registering || !confirmName || !isStep2Valid()}
+                className="w-full py-3 rounded-lg bg-gradient-to-r from-orange-500 to-orange-400 text-black font-semibold shadow-lg hover:opacity-90 transition disabled:opacity-60 cursor-pointer disabled:cursor-not-allowed"
               >
                 {registering ? "Registering..." : t("submitButton")}
               </button>
