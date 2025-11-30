@@ -378,7 +378,7 @@
     "usernameLabel": "Felhasználónév",
     "passwordLabel": "Jelszó",
     "confirmPasswordLabel": "Jelszó megerősítése",
-    "privacyPolicy": "Egyetértek az Adatvédelmi Irányelvekkel és a Felhasználási Feltételekkel.",
+    "privacyPolicy": "Egyetértek az <privacy>Adatvédelmi Irányelvekkel</privacy> és a <terms>Felhasználási Feltételekkel</terms>.",
     "newsletter": "Szeretnék feliratkozni a Solo Clash Futures hírlevelére.",
     "signUpButton": "REGISZTRÁCIÓ",
     "alreadyHaveAccount": "Már van fiókod?",

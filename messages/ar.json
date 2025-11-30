@@ -402,7 +402,7 @@
     "usernameLabel": "اسم المستخدم",
     "passwordLabel": "كلمة المرور",
     "confirmPasswordLabel": "تأكيد كلمة المرور",
-    "privacyPolicy": "أوافق على سياسة الخصوصية والشروط والأحكام.",
+    "privacyPolicy": "أوافق على <privacy>سياسة الخصوصية</privacy> و<terms>الشروط والأحكام</terms>.",
     "newsletter": "أود الاشتراك في النشرة الإخبارية لـ Solo Clash Futures.",
     "signUpButton": "سجل",
     "alreadyHaveAccount": "هل لديك حساب؟",

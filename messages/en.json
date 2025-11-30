@@ -379,7 +379,7 @@
     "usernameLabel": "Username",
     "passwordLabel": "Password",
     "confirmPasswordLabel": "Confirm Password",
-    "privacyPolicy": "I agree with the Privacy Policy and Terms & Conditions.",
+    "privacyPolicy": "I agree with the <privacy>Privacy Policy</privacy> and <terms>Terms & Conditions</terms>.",
     "newsletter": "I would like to subscribe to the Solo Clash Futures newsletter.",
     "signUpButton": "SIGN UP",
     "alreadyHaveAccount": "Have an account?",

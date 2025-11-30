@@ -484,7 +484,29 @@ export default function SignupSection() {
                   className="h-4 w-4 text-orange-500 rounded focus:ring-2 focus:ring-orange-500"
                 />
                 <label className="text-sm text-gray-300">
-                  {t("privacyPolicy")} <span className="text-red-500">*</span>
+                  {t.rich("privacyPolicy", {
+                    privacy: (chunks) => (
+                      <a
+                        href="/privacy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-orange-400 hover:text-orange-300 underline"
+                      >
+                        {chunks}
+                      </a>
+                    ),
+                    terms: (chunks) => (
+                      <a
+                        href="/terms-conditions"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-orange-400 hover:text-orange-300 underline"
+                      >
+                        {chunks}
+                      </a>
+                    ),
+                  })}{" "}
+                  <span className="text-red-500">*</span>
                 </label>
               </div>
               <div className="flex items-center space-x-2">
