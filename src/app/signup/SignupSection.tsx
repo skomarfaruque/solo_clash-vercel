@@ -688,6 +688,13 @@ export default function SignupSection() {
                   dateFormat="dd/MM/yyyy"
                   className="w-full px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-white custom-input"
                   placeholderText="Select your date of birth"
+                  showYearDropdown
+                  showMonthDropdown
+                  dropdownMode="select"
+                  yearDropdownItemNumber={100}
+                  scrollableYearDropdown
+                  maxDate={new Date()}
+                  minDate={new Date(1920, 0, 1)}
                 />
               </div>
 
