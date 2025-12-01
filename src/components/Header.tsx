@@ -22,9 +22,6 @@ export default function Header() {
               Account Types
             </button>
             <button className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition">
-              Rules
-            </button>
-            <button className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition">
               Support
             </button>
           </div>
