@@ -16,7 +16,7 @@ export default function Navbar() {
   const t = useTranslations();
   const navLinks = [
     { href: "/", label: t("navbar.account") },
-    { href: "/rules", label: t("navbar.rules") },
+    /*{ href: "/rules", label: t("navbar.rules") },*/
     { href: "/clash-shop", label: t("navbar.clashShop") },
     { href: "/affiliates", label: t("navbar.affiliates") },
     {

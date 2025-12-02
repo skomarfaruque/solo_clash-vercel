@@ -11,7 +11,7 @@ const spinDetailsCards = [
     description: "Top 10 weekly rankings earn 50-200 coins",
     priceRange: "$0 - $100",
     requirements: "Sign up",
-    commission: "10%",
+    commission: "5%",
     discount: "5%",
     bonus: "",
     buttonText: "Join now",
@@ -51,7 +51,7 @@ const spinDetailsCards = [
   },
   {
     iconPath: "/icons/coins_card/coin_card_4.png",
-    title: "Level 5 - Inner Circle",
+    title: "Level 5 - Inner Circle",
     description: "Bonus coins for passing evaluations",
     priceRange: "$0 - $400",
     requirements: "Invitation by the firm",
