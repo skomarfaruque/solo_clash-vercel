@@ -553,46 +553,60 @@ export default function TiredRewardCards({
                   ) : (
                     <div className="space-y-3">
                       {socials.map((social, idx) => (
-                        <div key={idx} className="flex gap-2">
-                          <select
-                            value={social.platform_id || ""}
-                            onChange={(e) =>
-                              handleSocialPlatformChange(
-                                idx,
-                                Number(e.target.value)
-                              )
-                            }
-                            className="w-40 px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500/50 cursor-pointer"
-                          >
-                            <option value="" className="text-gray-500">
-                              Select Platform
-                            </option>
-                            {socialLinkOptions.map((option) => (
-                              <option
-                                key={option.id}
-                                value={option.id}
-                                className="text-black"
-                              >
-                                {option.name}
+                        <div
+                          key={idx}
+                          className="flex flex-col sm:flex-row gap-2"
+                        >
+                          <div className="flex gap-2 w-full sm:w-auto">
+                            <select
+                              value={social.platform_id || ""}
+                              onChange={(e) =>
+                                handleSocialPlatformChange(
+                                  idx,
+                                  Number(e.target.value)
+                                )
+                              }
+                              className="flex-1 sm:flex-none sm:w-40 px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500/50 cursor-pointer"
+                            >
+                              <option value="" className="text-gray-500">
+                                Select Platform
                               </option>
-                            ))}
-                          </select>
-                          <input
-                            type="url"
-                            value={social.url}
-                            onChange={(e) =>
-                              handleSocialUrlChange(idx, e.target.value)
-                            }
-                            placeholder="https://example.com/yourprofile"
-                            className="flex-1 px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50"
-                          />
-                          <button
-                            type="button"
-                            onClick={() => handleRemoveSocial(idx)}
-                            className="p-2 text-red-500 hover:bg-red-500/10 rounded-lg transition-colors cursor-pointer"
-                          >
-                            <X className="w-4 h-4" />
-                          </button>
+                              {socialLinkOptions.map((option) => (
+                                <option
+                                  key={option.id}
+                                  value={option.id}
+                                  className="text-black"
+                                >
+                                  {option.name}
+                                </option>
+                              ))}
+                            </select>
+                            <button
+                              type="button"
+                              onClick={() => handleRemoveSocial(idx)}
+                              className="p-2 text-red-500 hover:bg-red-500/10 rounded-lg transition-colors cursor-pointer sm:hidden"
+                            >
+                              <X className="w-4 h-4" />
+                            </button>
+                          </div>
+                          <div className="flex gap-2 flex-1">
+                            <input
+                              type="url"
+                              value={social.url}
+                              onChange={(e) =>
+                                handleSocialUrlChange(idx, e.target.value)
+                              }
+                              placeholder="https://example.com/yourprofile"
+                              className="flex-1 px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50"
+                            />
+                            <button
+                              type="button"
+                              onClick={() => handleRemoveSocial(idx)}
+                              className="hidden sm:block p-2 text-red-500 hover:bg-red-500/10 rounded-lg transition-colors cursor-pointer"
+                            >
+                              <X className="w-4 h-4" />
+                            </button>
+                          </div>
                         </div>
                       ))}
                       <button
