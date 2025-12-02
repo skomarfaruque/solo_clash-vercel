@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import BlackButton from "../buttons/BlackButton";
 import SvgButton2 from "../buttons/svgButton2";
 import { Plus, X } from "lucide-react";
@@ -39,6 +40,7 @@ export default function TiredRewardCards({
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const router = useRouter();
 
   // Social link options from API
   const [socialLinkOptions, setSocialLinkOptions] = useState<
@@ -104,7 +106,7 @@ export default function TiredRewardCards({
     if (isLoggedIn) {
       setShowModal(true);
     } else {
-      window.open("https://affiliate.soloclash.com/login", "_blank");
+      router.push("/login?redirect=/affiliates");
     }
   };
 
