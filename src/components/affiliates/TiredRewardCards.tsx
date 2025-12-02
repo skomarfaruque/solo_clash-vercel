@@ -5,6 +5,18 @@ import BlackButton from "../buttons/BlackButton";
 import SvgButton2 from "../buttons/svgButton2";
 import { Plus, X } from "lucide-react";
 
+interface SocialLinkOption {
+  id: number;
+  name: string;
+  icon?: string;
+}
+
+interface SocialEntry {
+  platform_id: number;
+  platform_name: string;
+  url: string;
+}
+
 interface TiredRewardCardsProps {
   readonly title: string;
   readonly index: number;
@@ -28,6 +40,12 @@ export default function TiredRewardCards({
   const [showModal, setShowModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Social link options from API
+  const [socialLinkOptions, setSocialLinkOptions] = useState<
+    SocialLinkOption[]
+  >([]);
+  const [loadingSocialOptions, setLoadingSocialOptions] = useState(false);
+
   // Form state
   const [followerCount, setFollowerCount] = useState("");
   const [hasPartnerships, setHasPartnerships] = useState<boolean | null>(null);
@@ -36,7 +54,7 @@ export default function TiredRewardCards({
   const [targetAudience, setTargetAudience] = useState("");
   const [tradingContent, setTradingContent] = useState("");
   const [tradingLinks, setTradingLinks] = useState<string[]>([]);
-  const [socials, setSocials] = useState<string[]>([]);
+  const [socials, setSocials] = useState<SocialEntry[]>([]);
 
   const [toast, setToast] = useState<{
     show: boolean;
@@ -48,6 +66,39 @@ export default function TiredRewardCards({
     const token = localStorage.getItem("adminToken");
     setIsLoggedIn(!!token);
   }, []);
+
+  // Fetch social link options when modal opens
+  useEffect(() => {
+    if (showModal && socialLinkOptions.length === 0) {
+      fetchSocialLinkOptions();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [showModal]);
+
+  const fetchSocialLinkOptions = async () => {
+    setLoadingSocialOptions(true);
+    try {
+      const token = localStorage.getItem("adminToken");
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/affiliate-social-links`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            ...(token && { Authorization: `Bearer ${token}` }),
+          },
+        }
+      );
+      const data = await response.json();
+      if (data.success && data.data) {
+        setSocialLinkOptions(data.data.items || data.data);
+      }
+    } catch (error) {
+      console.error("Error fetching social link options:", error);
+    } finally {
+      setLoadingSocialOptions(false);
+    }
+  };
 
   const handleButtonClick = () => {
     if (isLoggedIn) {
@@ -66,11 +117,31 @@ export default function TiredRewardCards({
   };
 
   const handleAddSocial = () => {
-    setSocials([...socials, ""]);
+    setSocials([...socials, { platform_id: 0, platform_name: "", url: "" }]);
   };
 
   const handleRemoveSocial = (index: number) => {
     setSocials(socials.filter((_, i) => i !== index));
+  };
+
+  const handleSocialPlatformChange = (index: number, platformId: number) => {
+    const platform = socialLinkOptions.find((opt) => opt.id === platformId);
+    const newSocials = [...socials];
+    newSocials[index] = {
+      ...newSocials[index],
+      platform_id: platformId,
+      platform_name: platform?.name || "",
+    };
+    setSocials(newSocials);
+  };
+
+  const handleSocialUrlChange = (index: number, url: string) => {
+    const newSocials = [...socials];
+    newSocials[index] = {
+      ...newSocials[index],
+      url: url,
+    };
+    setSocials(newSocials);
   };
 
   const resetForm = () => {
@@ -96,7 +167,9 @@ export default function TiredRewardCards({
       target_audience: targetAudience,
       trading_content: tradingContent,
       trading_links: tradingLinks.filter((link) => link.trim() !== ""),
-      social_links: socials.filter((social) => social.trim() !== ""),
+      social_links: socials.filter(
+        (social) => social.platform_id && social.url.trim() !== ""
+      ),
     };
 
     try {
@@ -501,25 +574,47 @@ export default function TiredRewardCards({
                       <button
                         type="button"
                         onClick={handleAddSocial}
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500 text-black rounded-lg hover:opacity-90 transition-opacity text-sm font-medium cursor-pointer"
+                        disabled={loadingSocialOptions}
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500 text-black rounded-lg hover:opacity-90 transition-opacity text-sm font-medium cursor-pointer disabled:opacity-50"
                       >
                         <Plus className="w-4 h-4" />
-                        ADD
+                        {loadingSocialOptions ? "Loading..." : "ADD"}
                       </button>
                     </div>
                   ) : (
                     <div className="space-y-3">
                       {socials.map((social, idx) => (
                         <div key={idx} className="flex gap-2">
+                          <select
+                            value={social.platform_id || ""}
+                            onChange={(e) =>
+                              handleSocialPlatformChange(
+                                idx,
+                                Number(e.target.value)
+                              )
+                            }
+                            className="w-40 px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500/50 cursor-pointer"
+                          >
+                            <option value="" className="text-gray-500">
+                              Select Platform
+                            </option>
+                            {socialLinkOptions.map((option) => (
+                              <option
+                                key={option.id}
+                                value={option.id}
+                                className="text-black"
+                              >
+                                {option.name}
+                              </option>
+                            ))}
+                          </select>
                           <input
                             type="url"
-                            value={social}
-                            onChange={(e) => {
-                              const newSocials = [...socials];
-                              newSocials[idx] = e.target.value;
-                              setSocials(newSocials);
-                            }}
-                            placeholder="https://example.com"
+                            value={social.url}
+                            onChange={(e) =>
+                              handleSocialUrlChange(idx, e.target.value)
+                            }
+                            placeholder="https://example.com/yourprofile"
                             className="flex-1 px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50"
                           />
                           <button
