@@ -1,7 +1,7 @@
 import ChooseAccount from "./ChooseAccount";
 
 export const metadata = {
-  title: "Account | Clash Shop",
+  title: "Account | Solo Clash",
   description:
     "Read the official rules and guidelines before participating in Clash Shop challenges.",
 };

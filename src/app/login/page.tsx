@@ -1,7 +1,7 @@
 import LoginSection from "./LoginSection";
 
 export const metadata = {
-  title: "Login | Clash Shop",
+  title: "Login | Solo Clash",
   description:
     "Read the official rules and guidelines before participating in Clash Shop challenges.",
 };

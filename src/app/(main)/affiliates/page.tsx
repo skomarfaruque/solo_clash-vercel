@@ -9,7 +9,7 @@ import TiredRewards from "@/components/affiliates/TiredRewards";
 import CommissionSection from "@/components/affiliates/CommissionSection";
 
 export const metadata = {
-  title: "Affiliates | Clash Shop",
+  title: "Affiliates | Solo Clash",
   description:
     "Read the official rules and guidelines before participating in Clash Shop challenges.",
 };

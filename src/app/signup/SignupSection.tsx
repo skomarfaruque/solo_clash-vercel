@@ -260,7 +260,6 @@ export default function SignupSection() {
       formData.first_name.trim() !== "" &&
       formData.last_name.trim() !== "" &&
       formData.address_line_1.trim() !== "" &&
-      formData.address_line_2.trim() !== "" &&
       formData.city.trim() !== "" &&
       formData.post_code.trim() !== "" &&
       formData.country_id.trim() !== "" &&
@@ -616,7 +615,6 @@ export default function SignupSection() {
               <div>
                 <label className="block text-sm mb-1">
                   {t("address2Label")}
-                  <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
