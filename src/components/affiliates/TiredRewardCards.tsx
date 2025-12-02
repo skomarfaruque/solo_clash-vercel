@@ -195,7 +195,7 @@ export default function TiredRewardCards({
 
           {/* Modal Content */}
           <div
-            className="relative z-10 w-full max-w-4xl mx-4 max-h-[90vh] overflow-y-auto rounded-2xl"
+            className="relative z-10 w-full max-w-2xl mx-4 max-h-[90vh] overflow-y-auto rounded-2xl"
             style={{
               background:
                 "linear-gradient(306.21deg, #0a0a0a 39.33%, #1a1a1a 99.95%)",
