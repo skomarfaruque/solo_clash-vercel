@@ -165,6 +165,18 @@ export default function TiredRewardCards({
       return;
     }
 
+    // Validate minimum follower count
+    const followerCountNum = parseInt(followerCount) || 0;
+    if (followerCountNum < 500) {
+      setToast({
+        show: true,
+        message: "Minimum 500 followers required.",
+        type: "error",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
     // Build details array from socials
     const details = socials
       .filter((social) => social.platform_id && social.url.trim() !== "")
@@ -386,12 +398,16 @@ export default function TiredRewardCards({
                   <span className="text-yellow-500 ml-1">*</span>
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   placeholder="e.g., 1500"
                   value={followerCount}
-                  onChange={(e) => setFollowerCount(e.target.value)}
+                  onChange={(e) => {
+                    const value = e.target.value.replace(/[^0-9]/g, "");
+                    setFollowerCount(value);
+                  }}
+                  min={500}
                   required
-                  className="w-full px-4 py-2.5 bg-neutral-900 border border-neutral-700 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-colors"
+                  className="w-full px-4 py-2.5 bg-neutral-900 border border-neutral-700 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-colors [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                 />
                 <p className="text-xs text-gray-500 mt-2">
                   Minimum: 500 followers required
