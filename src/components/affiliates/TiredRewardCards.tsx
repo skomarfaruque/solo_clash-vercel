@@ -53,7 +53,7 @@ export default function TiredRewardCards({
   const [trafficStrategy, setTrafficStrategy] = useState("");
   const [targetAudience, setTargetAudience] = useState("");
   const [tradingContent, setTradingContent] = useState("");
-  const [tradingLinks, setTradingLinks] = useState<string[]>([]);
+  const [tradingLink, setTradingLink] = useState("");
   const [socials, setSocials] = useState<SocialEntry[]>([]);
 
   const [toast, setToast] = useState<{
@@ -108,14 +108,6 @@ export default function TiredRewardCards({
     }
   };
 
-  const handleAddTradingLink = () => {
-    setTradingLinks([...tradingLinks, ""]);
-  };
-
-  const handleRemoveTradingLink = (index: number) => {
-    setTradingLinks(tradingLinks.filter((_, i) => i !== index));
-  };
-
   const handleAddSocial = () => {
     setSocials([...socials, { platform_id: 0, platform_name: "", url: "" }]);
   };
@@ -151,7 +143,7 @@ export default function TiredRewardCards({
     setTrafficStrategy("");
     setTargetAudience("");
     setTradingContent("");
-    setTradingLinks([]);
+    setTradingLink("");
     setSocials([]);
   };
 
@@ -159,22 +151,43 @@ export default function TiredRewardCards({
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Get user_id from localStorage
+    const adminUser = localStorage.getItem("adminUser");
+    const userId = adminUser ? JSON.parse(adminUser).id : null;
+
+    if (!userId) {
+      setToast({
+        show: true,
+        message: "User not found. Please log in again.",
+        type: "error",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Build details array from socials
+    const details = socials
+      .filter((social) => social.platform_id && social.url.trim() !== "")
+      .map((social) => ({
+        social_type_id: social.platform_id,
+        url: social.url.trim(),
+      }));
+
     const payload = {
-      follower_count: followerCount,
-      has_partnerships: hasPartnerships,
+      user_id: userId,
+      follower_count: parseInt(followerCount) || 0,
+      existing_partnerships: hasPartnerships ?? false,
       promotion_strategy: promotionStrategy,
-      traffic_strategy: trafficStrategy,
+      traffic_plan: trafficStrategy,
       target_audience: targetAudience,
-      trading_content: tradingContent,
-      trading_links: tradingLinks.filter((link) => link.trim() !== ""),
-      social_links: socials.filter(
-        (social) => social.platform_id && social.url.trim() !== ""
-      ),
+      trading_content_examples: tradingContent,
+      affiliate_trading_platforms: tradingLink.trim(),
+      details: details,
     };
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/affiliate/join`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}/affiliate-application`,
         {
           method: "POST",
           headers: {
@@ -497,64 +510,20 @@ export default function TiredRewardCards({
               <div className="mb-8">
                 <div className="mb-4">
                   <h2 className="text-xl font-semibold text-white">
-                    Trading Platform Links
+                    Trading Platform Link
                   </h2>
                   <p className="text-sm text-gray-400 mt-2">
-                    All profiles must be public, active, and contain futures
-                    trading content. Private accounts will be automatically
-                    declined.
+                    Profile must be public, active, and contain futures trading
+                    content. Private accounts will be automatically declined.
                   </p>
                 </div>
-                <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
-                  {tradingLinks.length === 0 ? (
-                    <div className="text-center py-8">
-                      <p className="text-gray-500 mb-4">
-                        No trading links added yet.
-                      </p>
-                      <button
-                        type="button"
-                        onClick={handleAddTradingLink}
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500 text-black rounded-lg hover:opacity-90 transition-opacity text-sm font-medium cursor-pointer"
-                      >
-                        <Plus className="w-4 h-4" />
-                        ADD
-                      </button>
-                    </div>
-                  ) : (
-                    <div className="space-y-3">
-                      {tradingLinks.map((link, idx) => (
-                        <div key={idx} className="flex gap-2">
-                          <input
-                            type="url"
-                            value={link}
-                            onChange={(e) => {
-                              const newLinks = [...tradingLinks];
-                              newLinks[idx] = e.target.value;
-                              setTradingLinks(newLinks);
-                            }}
-                            placeholder="https://example.com"
-                            className="flex-1 px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50"
-                          />
-                          <button
-                            type="button"
-                            onClick={() => handleRemoveTradingLink(idx)}
-                            className="p-2 text-red-500 hover:bg-red-500/10 rounded-lg transition-colors cursor-pointer"
-                          >
-                            <X className="w-4 h-4" />
-                          </button>
-                        </div>
-                      ))}
-                      <button
-                        type="button"
-                        onClick={handleAddTradingLink}
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500 text-black rounded-lg hover:opacity-90 transition-opacity text-sm font-medium mt-2 cursor-pointer"
-                      >
-                        <Plus className="w-4 h-4" />
-                        ADD
-                      </button>
-                    </div>
-                  )}
-                </div>
+                <input
+                  type="text"
+                  value={tradingLink}
+                  onChange={(e) => setTradingLink(e.target.value)}
+                  placeholder="https://example.com"
+                  className="w-full px-4 py-3 bg-neutral-900 border border-neutral-800 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50"
+                />
               </div>
 
               {/* Social Links */}
