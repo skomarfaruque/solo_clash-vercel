@@ -51,7 +51,7 @@ const spinDetailsCards = [
   },
   {
     iconPath: "/icons/coins_card/coin_card_4.png",
-    title: "Level 5 - Inner Circle",
+    title: "Level 5 - Inner Circle",
     description: "Bonus coins for passing evaluations",
     priceRange: "$0 - $400",
     requirements: "Invitation by the firm",
