@@ -104,7 +104,7 @@ export default function TiredRewardCards({
     if (isLoggedIn) {
       setShowModal(true);
     } else {
-      window.open("https://affiliate.soloclash.com/login", "_blank");
+      window.location.href = "/login?redirect=/affiliates";
     }
   };
 
