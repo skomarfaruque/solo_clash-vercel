@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import BlackButton from "../buttons/BlackButton";
 import SvgButton2 from "../buttons/svgButton2";
+import { Plus, X } from "lucide-react";
 
 interface TiredRewardCardsProps {
   readonly title: string;
@@ -26,11 +27,17 @@ export default function TiredRewardCards({
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+
+  // Form state
+  const [followerCount, setFollowerCount] = useState("");
+  const [hasPartnerships, setHasPartnerships] = useState<boolean | null>(null);
+  const [promotionStrategy, setPromotionStrategy] = useState("");
+  const [trafficStrategy, setTrafficStrategy] = useState("");
+  const [targetAudience, setTargetAudience] = useState("");
+  const [tradingContent, setTradingContent] = useState("");
+  const [tradingLinks, setTradingLinks] = useState<string[]>([]);
+  const [socials, setSocials] = useState<string[]>([]);
+
   const [toast, setToast] = useState<{
     show: boolean;
     message: string;
@@ -50,22 +57,49 @@ export default function TiredRewardCards({
     }
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+  const handleAddTradingLink = () => {
+    setTradingLinks([...tradingLinks, ""]);
+  };
+
+  const handleRemoveTradingLink = (index: number) => {
+    setTradingLinks(tradingLinks.filter((_, i) => i !== index));
+  };
+
+  const handleAddSocial = () => {
+    setSocials([...socials, ""]);
+  };
+
+  const handleRemoveSocial = (index: number) => {
+    setSocials(socials.filter((_, i) => i !== index));
+  };
+
+  const resetForm = () => {
+    setFollowerCount("");
+    setHasPartnerships(null);
+    setPromotionStrategy("");
+    setTrafficStrategy("");
+    setTargetAudience("");
+    setTradingContent("");
+    setTradingLinks([]);
+    setSocials([]);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    const payload = {
+      follower_count: followerCount,
+      has_partnerships: hasPartnerships,
+      promotion_strategy: promotionStrategy,
+      traffic_strategy: trafficStrategy,
+      target_audience: targetAudience,
+      trading_content: tradingContent,
+      trading_links: tradingLinks.filter((link) => link.trim() !== ""),
+      social_links: socials.filter((social) => social.trim() !== ""),
+    };
+
     try {
-      // TODO: Replace with actual API endpoint
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_URL}/affiliate/join`,
         {
@@ -74,7 +108,7 @@ export default function TiredRewardCards({
             "Content-Type": "application/json",
             Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(payload),
         }
       );
 
@@ -87,7 +121,7 @@ export default function TiredRewardCards({
           type: "success",
         });
         setShowModal(false);
-        setFormData({ name: "", email: "", message: "" });
+        resetForm();
       } else {
         setToast({
           show: true,
@@ -161,17 +195,17 @@ export default function TiredRewardCards({
 
           {/* Modal Content */}
           <div
-            className="relative z-10 w-full max-w-md mx-4 p-6 rounded-2xl"
+            className="relative z-10 w-full max-w-4xl mx-4 max-h-[90vh] overflow-y-auto rounded-2xl"
             style={{
               background:
-                "linear-gradient(306.21deg, #000000 39.33%, #1F1E1E 99.95%)",
+                "linear-gradient(306.21deg, #0a0a0a 39.33%, #1a1a1a 99.95%)",
               border: "1px solid rgba(255, 255, 255, 0.1)",
             }}
           >
             {/* Close Button */}
             <button
               onClick={() => setShowModal(false)}
-              className="absolute top-4 right-4 text-gray-400 hover:text-white transition cursor-pointer"
+              className="absolute top-4 right-4 text-gray-400 hover:text-white transition cursor-pointer z-10"
             >
               <svg
                 className="w-6 h-6"
@@ -188,57 +222,339 @@ export default function TiredRewardCards({
               </svg>
             </button>
 
-            <h2 className="text-xl font-bold text-white mb-6">
-              Join Affiliate Program
-            </h2>
+            <form onSubmit={handleSubmit} className="p-8 text-left">
+              <div className="mb-10">
+                <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
+                  Affiliate Application
+                </h1>
+                <p className="text-base text-gray-400">
+                  Join our affiliate program and start earning commissions
+                </p>
+              </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="flex flex-col gap-2">
-                <label className="text-sm text-gray-300">Name</label>
+              {/* Eligibility Requirements */}
+              <div className="mb-8">
+                <div className="mb-4">
+                  <h2 className="text-xl font-semibold text-white">
+                    Eligibility Requirements
+                  </h2>
+                  <p className="text-sm text-gray-400 mt-2">
+                    Please ensure you meet the following criteria before
+                    applying
+                  </p>
+                </div>
+                <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+                  <div className="space-y-4">
+                    <div className="space-y-3 text-sm text-gray-300">
+                      <div className="flex items-start gap-3">
+                        <span className="text-orange-500 font-semibold text-lg leading-none mt-0.5">
+                          ✓
+                        </span>
+                        <span className="leading-relaxed">
+                          Minimum 500-1,000 active followers/subscribers
+                        </span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-orange-500 font-semibold text-lg leading-none mt-0.5">
+                          ✓
+                        </span>
+                        <span className="leading-relaxed">
+                          Public, active platform with regular futures trading
+                          content
+                        </span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-orange-500 font-semibold text-lg leading-none mt-0.5">
+                          ✓
+                        </span>
+                        <span className="leading-relaxed">
+                          Demonstrated expertise in futures trading
+                        </span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-orange-500 font-semibold text-lg leading-none mt-0.5">
+                          ✓
+                        </span>
+                        <span className="leading-relaxed">
+                          Full disclosure of existing prop firm partnerships
+                        </span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-orange-500 font-semibold text-lg leading-none mt-0.5">
+                          ✓
+                        </span>
+                        <span className="leading-relaxed">
+                          Applications with private accounts or no trading
+                          content will be automatically declined
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Follower Count */}
+              <div className="mb-8">
+                <label className="block text-white font-medium text-base mb-3">
+                  Current Follower/Subscriber Count
+                  <span className="text-yellow-500 ml-1">*</span>
+                </label>
                 <input
                   type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Enter your name"
-                  className="w-full rounded-lg bg-neutral-900 border border-neutral-700 px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  placeholder="e.g., 1500"
+                  value={followerCount}
+                  onChange={(e) => setFollowerCount(e.target.value)}
                   required
+                  className="w-full px-4 py-2.5 bg-neutral-900 border border-neutral-700 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-colors"
                 />
+                <p className="text-xs text-gray-500 mt-2">
+                  Minimum: 500 followers required
+                </p>
               </div>
 
-              <div className="flex flex-col gap-2">
-                <label className="text-sm text-gray-300">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="Enter your email"
-                  className="w-full rounded-lg bg-neutral-900 border border-neutral-700 px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-orange-500"
-                  required
-                />
+              {/* Existing Partnerships */}
+              <div className="mb-8">
+                <div className="mb-4">
+                  <h2 className="text-xl font-semibold text-white">
+                    Existing Prop Firm Partnerships
+                  </h2>
+                  <p className="text-sm text-gray-400 mt-2">
+                    Full disclosure is required. This helps us understand your
+                    current partnerships and avoid conflicts.
+                  </p>
+                </div>
+                <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+                  <div className="space-y-4">
+                    <label className="flex items-center gap-3 cursor-pointer p-3 rounded-lg hover:bg-neutral-800/50 transition-colors">
+                      <input
+                        type="radio"
+                        name="partnerships"
+                        checked={hasPartnerships === true}
+                        onChange={() => setHasPartnerships(true)}
+                        className="w-5 h-5 accent-orange-500 cursor-pointer"
+                      />
+                      <span className="text-white font-medium">
+                        Yes, I have existing partnerships
+                      </span>
+                    </label>
+                    <label className="flex items-center gap-3 cursor-pointer p-3 rounded-lg hover:bg-neutral-800/50 transition-colors">
+                      <input
+                        type="radio"
+                        name="partnerships"
+                        checked={hasPartnerships === false}
+                        onChange={() => setHasPartnerships(false)}
+                        className="w-5 h-5 accent-orange-500 cursor-pointer"
+                      />
+                      <span className="text-white font-medium">
+                        No existing partnerships
+                      </span>
+                    </label>
+                  </div>
+                </div>
               </div>
 
-              <div className="flex flex-col gap-2">
-                <label className="text-sm text-gray-300">Message</label>
+              {/* Promotion Strategy */}
+              <div className="mb-8">
+                <label className="block text-white font-medium text-base mb-3">
+                  What is your promotion strategy?
+                  <span className="text-yellow-500 ml-1">*</span>
+                </label>
                 <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Tell us why you want to join..."
+                  placeholder="Provide a detailed answer demonstrating your trading expertise..."
+                  value={promotionStrategy}
+                  onChange={(e) => setPromotionStrategy(e.target.value)}
+                  required
                   rows={4}
-                  className="w-full rounded-lg bg-neutral-900 border border-neutral-700 px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-orange-500 resize-none"
+                  className="w-full px-4 py-2.5 bg-neutral-900 border border-neutral-700 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 resize-none transition-colors leading-relaxed"
                 />
               </div>
 
-              <div className="pt-4">
-                <SvgButton2
-                  label={isSubmitting ? "Submitting..." : "Submit Application"}
-                  fullWidth
-                  radius={50}
-                  textStyle="font-normal"
-                  isDisabled={isSubmitting}
+              {/* Traffic Strategy */}
+              <div className="mb-8">
+                <label className="block text-white font-medium text-base mb-3">
+                  How do you plan to drive traffic to our platform?
+                  <span className="text-yellow-500 ml-1">*</span>
+                </label>
+                <textarea
+                  placeholder="Provide a detailed answer demonstrating your trading expertise..."
+                  value={trafficStrategy}
+                  onChange={(e) => setTrafficStrategy(e.target.value)}
+                  required
+                  rows={4}
+                  className="w-full px-4 py-2.5 bg-neutral-900 border border-neutral-700 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 resize-none transition-colors leading-relaxed"
                 />
+              </div>
+
+              {/* Target Audience */}
+              <div className="mb-8">
+                <label className="block text-white font-medium text-base mb-3">
+                  What is your target audience?
+                  <span className="text-yellow-500 ml-1">*</span>
+                </label>
+                <textarea
+                  placeholder="Provide a detailed answer demonstrating your trading expertise..."
+                  value={targetAudience}
+                  onChange={(e) => setTargetAudience(e.target.value)}
+                  required
+                  rows={4}
+                  className="w-full px-4 py-2.5 bg-neutral-900 border border-neutral-700 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 resize-none transition-colors leading-relaxed"
+                />
+              </div>
+
+              {/* Trading Content */}
+              <div className="mb-8">
+                <label className="block text-white font-medium text-base mb-3">
+                  Please provide examples of your recent futures trading content
+                  <span className="text-yellow-500 ml-1">*</span>
+                </label>
+                <textarea
+                  placeholder="Provide a detailed answer demonstrating your trading expertise..."
+                  value={tradingContent}
+                  onChange={(e) => setTradingContent(e.target.value)}
+                  required
+                  rows={4}
+                  className="w-full px-4 py-2.5 bg-neutral-900 border border-neutral-700 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 resize-none transition-colors leading-relaxed"
+                />
+                <p className="text-xs text-gray-500 mt-2">
+                  Provide links or descriptions of your recent content
+                </p>
+              </div>
+
+              {/* Trading Platform Links */}
+              <div className="mb-8">
+                <div className="mb-4">
+                  <h2 className="text-xl font-semibold text-white">
+                    Trading Platform Links
+                  </h2>
+                  <p className="text-sm text-gray-400 mt-2">
+                    All profiles must be public, active, and contain futures
+                    trading content. Private accounts will be automatically
+                    declined.
+                  </p>
+                </div>
+                <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+                  {tradingLinks.length === 0 ? (
+                    <div className="text-center py-8">
+                      <p className="text-gray-500 mb-4">
+                        No trading links added yet.
+                      </p>
+                      <button
+                        type="button"
+                        onClick={handleAddTradingLink}
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500 text-black rounded-lg hover:opacity-90 transition-opacity text-sm font-medium cursor-pointer"
+                      >
+                        <Plus className="w-4 h-4" />
+                        ADD
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="space-y-3">
+                      {tradingLinks.map((link, idx) => (
+                        <div key={idx} className="flex gap-2">
+                          <input
+                            type="url"
+                            value={link}
+                            onChange={(e) => {
+                              const newLinks = [...tradingLinks];
+                              newLinks[idx] = e.target.value;
+                              setTradingLinks(newLinks);
+                            }}
+                            placeholder="https://example.com"
+                            className="flex-1 px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => handleRemoveTradingLink(idx)}
+                            className="p-2 text-red-500 hover:bg-red-500/10 rounded-lg transition-colors cursor-pointer"
+                          >
+                            <X className="w-4 h-4" />
+                          </button>
+                        </div>
+                      ))}
+                      <button
+                        type="button"
+                        onClick={handleAddTradingLink}
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500 text-black rounded-lg hover:opacity-90 transition-opacity text-sm font-medium mt-2 cursor-pointer"
+                      >
+                        <Plus className="w-4 h-4" />
+                        ADD
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Social Links */}
+              <div className="mb-8">
+                <div className="mb-4">
+                  <h2 className="text-xl font-semibold text-white">
+                    Social Links
+                  </h2>
+                  <p className="text-sm text-gray-400 mt-2">
+                    Add your social media profiles
+                  </p>
+                </div>
+                <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+                  {socials.length === 0 ? (
+                    <div className="text-center py-8">
+                      <p className="text-gray-500 mb-4">No socials linked.</p>
+                      <button
+                        type="button"
+                        onClick={handleAddSocial}
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500 text-black rounded-lg hover:opacity-90 transition-opacity text-sm font-medium cursor-pointer"
+                      >
+                        <Plus className="w-4 h-4" />
+                        ADD
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="space-y-3">
+                      {socials.map((social, idx) => (
+                        <div key={idx} className="flex gap-2">
+                          <input
+                            type="url"
+                            value={social}
+                            onChange={(e) => {
+                              const newSocials = [...socials];
+                              newSocials[idx] = e.target.value;
+                              setSocials(newSocials);
+                            }}
+                            placeholder="https://example.com"
+                            className="flex-1 px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => handleRemoveSocial(idx)}
+                            className="p-2 text-red-500 hover:bg-red-500/10 rounded-lg transition-colors cursor-pointer"
+                          >
+                            <X className="w-4 h-4" />
+                          </button>
+                        </div>
+                      ))}
+                      <button
+                        type="button"
+                        onClick={handleAddSocial}
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500 text-black rounded-lg hover:opacity-90 transition-opacity text-sm font-medium mt-2 cursor-pointer"
+                      >
+                        <Plus className="w-4 h-4" />
+                        ADD
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Submit Button */}
+              <div className="mt-10 pt-8 border-t border-neutral-800">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-orange-500 to-orange-400 text-black px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg hover:opacity-95 transition-all active:scale-95 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting
+                    ? "Submitting..."
+                    : "Submit Trading Affiliate Application"}
+                </button>
               </div>
             </form>
           </div>
