@@ -7,9 +7,11 @@ export const metadata = {
   description:
     "Read the official rules and guidelines before participating in Clash Shop challenges.",
   icons: {
-    icon: "/favicon.v2.svg",
-    shortcut: "/favicon.v2.svg",
-    apple: "/favicon.v2.svg",
+    icon: [
+      { url: "/favicon.v2.svg", type: "image/svg+xml" }, // modern browsers
+      { url: "/favicon.png", sizes: "128x128", type: "image/png" }, // Safari fallback
+    ],
+    apple: "/favicon.png", // Apple Touch Icon must be PNG
   },
 };
 export default function RootLayout({
