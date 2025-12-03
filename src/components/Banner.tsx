@@ -28,19 +28,29 @@ export default function Banner({
   return (
     <section
       className="flex items-center justify-center py-20 px-6 lg:px-20"
-      style={{ backgroundColor: "#030303" }}
+      style={{
+        backgroundColor: "#030303",
+        willChange: "transform",
+        transform: "translateZ(0)",
+        WebkitTransform: "translateZ(0)",
+      }}
     >
       <div
         className="flex items-center justify-center"
         style={{
           width: "1325px",
           minHeight: "410px",
-          backgroundImage: "url('/banner_bg.svg')",
+          backgroundImage: "url('/banner_bg_new.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           paddingTop: "74px",
           paddingBottom: "70px",
+          willChange: "transform",
+          transform: "translateZ(0)",
+          WebkitTransform: "translateZ(0)",
+          backfaceVisibility: "hidden",
+          WebkitBackfaceVisibility: "hidden",
         }}
       >
         <div className="flex flex-col items-center justify-center text-center gap-8">
@@ -74,13 +84,16 @@ export default function Banner({
           )}
 
           {/* BannerRulesButton for rules page */}
-          {page === "rules" && <BannerRulesButton text={t("startChallenge")} 
-                                onClick={() => router.push("../#subscriptions")}
-          />}
+          {page === "rules" && (
+            <BannerRulesButton
+              text={t("startChallenge")}
+              onClick={() => router.push("../#subscriptions")}
+            />
+          )}
 
           {/* BannerRulesButton for clash-shop page */}
           {page === "clash-shop" && (
-              <WhiteButton text={t("redeemTicket")} iconPath="/trophy.png"/>
+            <WhiteButton text={t("redeemTicket")} iconPath="/trophy.png" />
           )}
         </div>
       </div>

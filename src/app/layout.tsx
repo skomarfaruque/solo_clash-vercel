@@ -24,9 +24,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" style={{ backgroundColor: "#030303" }}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased`}
+        style={{ backgroundColor: "#030303" }}
       >
         <IntercomProvider>
           <NextIntlClientProvider>
