@@ -37,6 +37,11 @@ const NAV_ITEMS: NavItem[] = [
     icon: "🎡",
   },
   {
+    label: "Affiliate",
+    href: "/admin/dashboard/affiliate",
+    icon: "🤝",
+  },
+  {
     label: "Reports",
     href: "/admin/dashboard/reports",
     icon: "📈",

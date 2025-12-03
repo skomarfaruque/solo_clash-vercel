@@ -10,6 +10,7 @@ import SubscriptionsSectionNew from "@/components/account/SubscriptionsSectionNe
 import TradePlatform from "@/components/account/TradePlatform";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
+
 export default function Home() {
   const router = useRouter();
   const t = useTranslations("bannerDetails");

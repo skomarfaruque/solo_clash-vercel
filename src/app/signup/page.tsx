@@ -1,7 +1,7 @@
 import SignupSection from "./SignupSection";
 
 export const metadata = {
-  title: "Signup | Clash Shop",
+  title: "Signup | Solo Clash",
   description:
     "Read the official rules and guidelines before participating in Clash Shop challenges.",
 };

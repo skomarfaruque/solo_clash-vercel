@@ -17,7 +17,7 @@ export default function Navbar() {
   const navLinks = [
     { href: "/", label: t("navbar.account") },
     /*{ href: "/rules", label: t("navbar.rules") },*/
-    { href: "/clash-shop", label: t("navbar.clashShop") },
+    /*{ href: "/clash-shop", label: t("navbar.clashShop") },*/
     { href: "/affiliates", label: t("navbar.affiliates") },
     {
       href: "https://help.soloclash.com/",

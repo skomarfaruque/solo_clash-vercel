@@ -1,7 +1,7 @@
 import ContactSection from "./ContactSection";
 
 export const metadata = {
-  title: "Contact | Clash Shop",
+  title: "Contact Us | Solo Clash",
   description:
     "Read the official rules and guidelines before participating in Clash Shop challenges.",
 };

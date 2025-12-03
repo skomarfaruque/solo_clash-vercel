@@ -6,7 +6,7 @@ import FaqHeroSection from "./FaqHeroSection";
 import FaqPageFaq from "@/components/faq/FaqPageFaq";
 
 export const metadata = {
-  title: "Faq | Clash Shop",
+  title: "FAQ | Solo Clash",
   description:
     "Read the official rules and guidelines before participating in Clash Shop challenges.",
 };

@@ -1,7 +1,7 @@
 import PaymentSection from "./Payment";
 
 export const metadata = {
-  title: "Payment | Clash Shop",
+  title: "Payment | Solo Clash",
   description:
     "Read the official rules and guidelines before participating in Clash Shop challenges.",
 };

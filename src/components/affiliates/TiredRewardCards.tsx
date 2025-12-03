@@ -32,7 +32,7 @@ export default function TiredRewardCards({
   index,
   title,
   requirements = "requirement",
-  commission = "10%",
+  commission = "5%",
   discount = "5%",
   bonus = "One Free $50k Account",
   buttonText = "Join now",
@@ -525,7 +525,7 @@ export default function TiredRewardCards({
               </div>
 
               {/* Trading Platform Links */}
-              <div className="mb-8">
+              {/*<div className="mb-8">
                 <div className="mb-4">
                   <h2 className="text-xl font-semibold text-white">
                     Trading Platform Link
@@ -542,7 +542,7 @@ export default function TiredRewardCards({
                   placeholder="https://example.com"
                   className="w-full px-4 py-3 bg-neutral-900 border border-neutral-800 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50"
                 />
-              </div>
+              </div> */}
 
               {/* Social Links */}
               <div className="mb-8">

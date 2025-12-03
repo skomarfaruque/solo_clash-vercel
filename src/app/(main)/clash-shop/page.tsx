@@ -5,7 +5,7 @@ import HowToEarnCoins from "@/components/clash-shop/HowToEarnCoins";
 import { useTranslations } from "next-intl";
 
 export const metadata = {
-  title: "Rules & Guidelines | Clash Shop",
+  title: "Rules & Guidelines | Solo Clash",
   description:
     "Read the official rules and guidelines before participating in Clash Shop challenges.",
 };
