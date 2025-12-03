@@ -136,7 +136,7 @@ export default function Navbar() {
             <span className="block w-6 h-0.5 bg-white"></span>
           </button>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center ml-34">
           {/* Links */}
           <div className="hidden lg:flex items-center gap-6 text-sm ml-6">
             <div className="flex items-center gap-10">

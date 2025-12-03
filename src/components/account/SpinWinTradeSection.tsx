@@ -42,12 +42,11 @@ export default function SpinWinTradeSection() {
               />
             ))}
         </div>
-
+         {/*onClick={() => router.push("/clash-shop")}*/}
         <div className="mt-10 sm:mt-14">
           <BlackButton
             text={t("button")}
-            iconPath="/arrow_right_white.png"
-            onClick={() => router.push("/clash-shop")}
+            iconPath="/arrow_right_white.png"           
           />
         </div>
       </div>
