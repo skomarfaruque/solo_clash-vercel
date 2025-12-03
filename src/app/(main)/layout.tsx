@@ -6,6 +6,11 @@ export const metadata = {
   title: "Solo Clash",
   description:
     "Read the official rules and guidelines before participating in Clash Shop challenges.",
+  icons: {
+    icon: "/favicon.v2.svg",
+    shortcut: "/favicon.v2.svg",
+    apple: "/favicon.v2.svg",
+  },
 };
 export default function RootLayout({
   children,
