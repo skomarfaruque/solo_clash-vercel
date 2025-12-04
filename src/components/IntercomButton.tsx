@@ -1,10 +1,10 @@
 "use client";
 
-import { intercomUtils } from "@/utils/intercomUtils";
-
 export default function IntercomButton() {
   const handleClick = () => {
-    intercomUtils.open();
+    if (typeof window !== "undefined" && window.Intercom) {
+      window.Intercom("show");
+    }
   };
 
   return (

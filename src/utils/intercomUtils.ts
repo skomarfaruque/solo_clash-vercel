@@ -3,10 +3,6 @@
  * Chat-only mode configuration
  */
 
-interface IntercomWindow extends Window {
-  Intercom?: (command: string, ...args: unknown[]) => void;
-}
-
 export const intercomUtils = {
   /**
    * Identify a user in Intercom Chat
@@ -15,19 +11,16 @@ export const intercomUtils = {
     userId: string,
     userData: Record<string, string | number | boolean> = {}
   ) => {
-    if (typeof window !== "undefined") {
-      const intercomWindow = window as IntercomWindow;
-      if (intercomWindow.Intercom) {
-        intercomWindow.Intercom("boot", {
-          app_id: process.env.NEXT_PUBLIC_INTERCOM_APP_ID,
-          user_id: userId,
-          email: userData.email || "",
-          name: userData.name || "",
-          custom_attributes: {
-            ...userData,
-          },
-        });
-      }
+    if (typeof window !== "undefined" && window.Intercom) {
+      window.Intercom("boot", {
+        app_id: process.env.NEXT_PUBLIC_INTERCOM_APP_ID,
+        user_id: userId,
+        email: userData.email || "",
+        name: userData.name || "",
+        custom_attributes: {
+          ...userData,
+        },
+      });
     }
   },
 
@@ -35,11 +28,8 @@ export const intercomUtils = {
    * Open/Show the Intercom chat
    */
   open: () => {
-    if (typeof window !== "undefined") {
-      const intercomWindow = window as IntercomWindow;
-      if (intercomWindow.Intercom) {
-        intercomWindow.Intercom("show");
-      }
+    if (typeof window !== "undefined" && window.Intercom) {
+      window.Intercom("show");
     }
   },
 
@@ -47,11 +37,8 @@ export const intercomUtils = {
    * Hide the Intercom chat
    */
   hide: () => {
-    if (typeof window !== "undefined") {
-      const intercomWindow = window as IntercomWindow;
-      if (intercomWindow.Intercom) {
-        intercomWindow.Intercom("hide");
-      }
+    if (typeof window !== "undefined" && window.Intercom) {
+      window.Intercom("hide");
     }
   },
 
@@ -59,11 +46,8 @@ export const intercomUtils = {
    * Send a pre-filled message to chat
    */
   sendMessage: (message: string) => {
-    if (typeof window !== "undefined") {
-      const intercomWindow = window as IntercomWindow;
-      if (intercomWindow.Intercom) {
-        intercomWindow.Intercom("showNewMessage", message);
-      }
+    if (typeof window !== "undefined" && window.Intercom) {
+      window.Intercom("showNewMessage", message);
     }
   },
 
@@ -71,11 +55,8 @@ export const intercomUtils = {
    * Update user attributes
    */
   updateUser: (userData: Record<string, string | number | boolean>) => {
-    if (typeof window !== "undefined") {
-      const intercomWindow = window as IntercomWindow;
-      if (intercomWindow.Intercom) {
-        intercomWindow.Intercom("update", userData);
-      }
+    if (typeof window !== "undefined" && window.Intercom) {
+      window.Intercom("update", userData);
     }
   },
 
@@ -86,11 +67,8 @@ export const intercomUtils = {
     eventName: string,
     metadata: Record<string, string | number | boolean> = {}
   ) => {
-    if (typeof window !== "undefined") {
-      const intercomWindow = window as IntercomWindow;
-      if (intercomWindow.Intercom) {
-        intercomWindow.Intercom("trackEvent", eventName, metadata);
-      }
+    if (typeof window !== "undefined" && window.Intercom) {
+      window.Intercom("trackEvent", eventName, metadata);
     }
   },
 
@@ -98,11 +76,8 @@ export const intercomUtils = {
    * Logout user from chat
    */
   shutdown: () => {
-    if (typeof window !== "undefined") {
-      const intercomWindow = window as IntercomWindow;
-      if (intercomWindow.Intercom) {
-        intercomWindow.Intercom("shutdown");
-      }
+    if (typeof window !== "undefined" && window.Intercom) {
+      window.Intercom("shutdown");
     }
   },
 };
