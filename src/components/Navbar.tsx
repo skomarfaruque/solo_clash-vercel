@@ -24,8 +24,7 @@ export default function Navbar() {
       label: t("navbar.faq"),
       external: true,
     },
-    { href: "/contact", 
-      label: t("navbar.contactUs") },
+    { href: "/contact", label: t("navbar.contactUs") },
   ];
 
   const socialLinks = [
@@ -57,7 +56,6 @@ export default function Navbar() {
       width: 52,
       height: 52,
     },
-    
   ];
 
   const activeClass =
@@ -136,7 +134,7 @@ export default function Navbar() {
             <span className="block w-6 h-0.5 bg-white"></span>
           </button>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center ml-34">
           {/* Links */}
           <div className="hidden lg:flex items-center gap-6 text-sm ml-6">
             <div className="flex items-center gap-10">
@@ -231,7 +229,7 @@ export default function Navbar() {
               <span className="block w-6 h-0.5 bg-white -rotate-45 -translate-y-1.5"></span>
             </button>
             {/* Mobile Language Dropdown */}
-            <div className="relative" ref={mobileLangDropdownRef}>
+            <div className="relative z-[9999]" ref={mobileLangDropdownRef}>
               <button
                 type="button"
                 onClick={() => setLangOpen((open) => !open)}
@@ -267,14 +265,17 @@ export default function Navbar() {
                 </svg>
               </button>
               {langOpen && (
-                <div className="absolute mt-2 w-32 bg-neutral-800 rounded-lg shadow-lg z-20">
+                <div
+                  className="absolute mt-2 w-40 bg-[#1a1a1a] rounded-lg shadow-xl z-[9999] border border-neutral-700 py-1"
+                  style={{ isolation: "isolate" }}
+                >
                   {languages.map((lang) => (
                     <button
                       key={lang.code}
-                      className={`w-full px-4 py-2 text-left hover:bg-neutral-700 ${
+                      className={`w-full px-4 py-2.5 text-left transition-colors duration-150 ${
                         selectedLang === lang.code
-                          ? "bg-neutral-700 font-bold"
-                          : ""
+                          ? "bg-orange-500/20 text-orange-400 font-semibold border-l-2 border-orange-500"
+                          : "text-gray-200 hover:bg-neutral-700 hover:text-white"
                       }`}
                       onClick={() => {
                         document.cookie = `locale=${lang.code}; path=/; max-age=31536000`;
