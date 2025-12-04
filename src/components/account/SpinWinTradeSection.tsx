@@ -14,7 +14,6 @@ export default function SpinWinTradeSection() {
     "spin_card_icon_two.svg",
     "spin_card_icon_three.svg",
   ];
-  const router = useRouter();
   return (
     <section
       className="justify-center text-center px-4 sm:px-6 lg:px-20 py-10 sm:py-16 lg:py-20"
@@ -35,19 +34,16 @@ export default function SpinWinTradeSection() {
             cards.map((card, idx) => (
               <SpinWinTradeCard
                 key={card.title}
-                backgroundImage="spin_win_trade_card_bg.svg"
+                backgroundImage="spin_win_trade_card_bg.png"
                 icon={icons[idx]}
                 title={card.title}
                 description={card.description}
               />
             ))}
         </div>
-         {/*onClick={() => router.push("/clash-shop")}*/}
+        {/*onClick={() => router.push("/clash-shop")}*/}
         <div className="mt-10 sm:mt-14">
-          <BlackButton
-            text={t("button")}
-            iconPath="/arrow_right_white.png"           
-          />
+          <BlackButton text={t("button")} iconPath="/arrow_right_white.png" />
         </div>
       </div>
     </section>

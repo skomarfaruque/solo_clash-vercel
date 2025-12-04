@@ -31,7 +31,6 @@ export default function Home() {
         title={t("readyToTrade")}
         buttonTitle={t("getStarted")}
         onClick={() => {
-          // scroll to /account/challenge
           router.push("#subscriptions");
         }}
       />

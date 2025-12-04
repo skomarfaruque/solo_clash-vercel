@@ -8,9 +8,9 @@ export default function HowItWorksSection() {
   const t = useTranslations("accountPage.howItWorksSection");
   const steps = t.raw("steps");
   const images = [
-    "how_works_bg_one.svg",
-    "how_works_bg_two.svg",
-    "how_works_bg_three.svg",
+    "how_works_bg_one.png",
+    "how_works_bg_two.png",
+    "how_works_bg_three.png",
   ];
   return (
     <section
