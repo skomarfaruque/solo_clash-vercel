@@ -25,7 +25,7 @@ export default function PaymentSection() {
     finalAmount: number;
   } | null>(null);
   const [loading, setLoading] = useState(false);
-  const vat = 5;
+  const [vat, setVat] = useState(0);
 
   useEffect(() => {
     const savedSubscription = localStorage.getItem("selectedSubscription");
@@ -48,6 +48,10 @@ export default function PaymentSection() {
         const adminUser = JSON.parse(adminUserData);
         if (adminUser.email) setUserEmail(adminUser.email);
         if (adminUser.id) setUserId(adminUser.id);
+        // Apply 5% VAT only if user's country_id is 168
+        if (adminUser.country_id === 168) {
+          setVat(5);
+        }
       } catch (e) {
         console.error("Failed to parse adminUser:", e);
       }
