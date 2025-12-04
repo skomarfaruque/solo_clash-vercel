@@ -6,6 +6,17 @@ interface IntercomProviderProps {
   children: React.ReactNode;
 }
 
+declare global {
+  interface Window {
+    Intercom?: ((...args: unknown[]) => void) & {
+      q?: unknown[][];
+      c?: (args: unknown[]) => void;
+    };
+    intercomSettings?: Record<string, unknown>;
+    attachEvent?: (event: string, callback: () => void) => void;
+  }
+}
+
 export default function IntercomProvider({ children }: IntercomProviderProps) {
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -17,15 +28,12 @@ export default function IntercomProvider({ children }: IntercomProviderProps) {
       return;
     }
 
-    // Intercom standard snippet
-    // @ts-expect-error - Intercom global
     window.intercomSettings = {
       api_base: "https://api-iam.intercom.io",
       app_id: APP_ID,
       hide_default_launcher: true,
     };
 
-    // @ts-expect-error - Intercom initialization
     (function () {
       const w = window;
       const ic = w.Intercom;
@@ -34,21 +42,26 @@ export default function IntercomProvider({ children }: IntercomProviderProps) {
         ic("update", w.intercomSettings);
       } else {
         const d = document;
-        const i = function () {
-          i.c(arguments);
+        const intercomFunc = function (...args: unknown[]) {
+          if (intercomFunc.c) intercomFunc.c(args);
+        } as ((...args: unknown[]) => void) & {
+          q: unknown[][];
+          c: (args: unknown[]) => void;
         };
-        i.q = [];
-        i.c = function (args) {
-          i.q.push(args);
+        intercomFunc.q = [];
+        intercomFunc.c = function (args: unknown[]) {
+          intercomFunc.q.push(args);
         };
-        w.Intercom = i;
+        w.Intercom = intercomFunc;
         const l = function () {
           const s = d.createElement("script");
           s.type = "text/javascript";
           s.async = true;
           s.src = "https://widget.intercom.io/widget/" + APP_ID;
           const x = d.getElementsByTagName("script")[0];
-          x.parentNode.insertBefore(s, x);
+          if (x && x.parentNode) {
+            x.parentNode.insertBefore(s, x);
+          }
         };
         if (document.readyState === "complete") {
           l();
@@ -61,9 +74,7 @@ export default function IntercomProvider({ children }: IntercomProviderProps) {
     })();
 
     // Boot Intercom
-    // @ts-expect-error - Intercom global
     if (window.Intercom) {
-      // @ts-expect-error - Intercom global
       window.Intercom("boot", {
         api_base: "https://api-iam.intercom.io",
         app_id: APP_ID,
@@ -72,9 +83,7 @@ export default function IntercomProvider({ children }: IntercomProviderProps) {
     }
 
     return () => {
-      // @ts-expect-error - Intercom global
       if (window.Intercom) {
-        // @ts-expect-error - Intercom global
         window.Intercom("shutdown");
       }
     };

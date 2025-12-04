@@ -2,9 +2,7 @@
 
 export default function IntercomButton() {
   const handleClick = () => {
-    // @ts-expect-error - Intercom global
     if (typeof window !== "undefined" && window.Intercom) {
-      // @ts-expect-error - Intercom global
       window.Intercom("show");
     }
   };
