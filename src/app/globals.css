@@ -37,7 +37,11 @@ body {
 }
 
 /* Safari GPU acceleration fixes for smooth scrolling */
-*:not(.intercom-lightweight-app):not(.intercom-lightweight-app *):not(#intercom-container):not(#intercom-container *):not(.intercom-namespace):not(.intercom-namespace *) {
+*:not(.intercom-lightweight-app):not(.intercom-lightweight-app *):not(
+    #intercom-container
+  ):not(#intercom-container *):not(.intercom-namespace):not(
+    .intercom-namespace *
+  ) {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
@@ -45,7 +49,9 @@ body {
 /* Prevent white flash on Safari during scroll */
 section,
 main,
-div:not(.intercom-lightweight-app):not(.intercom-lightweight-app *):not(#intercom-container *):not(.intercom-namespace *) {
+div:not(.intercom-lightweight-app):not(.intercom-lightweight-app *):not(
+    #intercom-container *
+  ):not(.intercom-namespace *) {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
